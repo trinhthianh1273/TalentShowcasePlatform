@@ -192,4 +192,7 @@ dist
 .pnp.*
 
 # angular cache
-.angular/cache/
+TalentShowcasePlatform-UI/.angular/cache/
+
+# bỏ qua .vs
+TalentShowcasePlatform/.vs/
