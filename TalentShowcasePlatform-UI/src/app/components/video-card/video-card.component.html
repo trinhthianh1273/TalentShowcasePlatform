@@ -1,11 +1,10 @@
-<div class="w-full h-[360px] bg-gray-200 flex items-center justify-center" *ngIf="visible">
-    <video
-      class="video-js vjs-default-skin"
-      controls
-      preload="none"
-      width="640"
-      height="360"
-    >
-      <source [src]="src" type="video/mp4" />
-    </video>
-  </div>
+<div *ngIf="!videoData">Đang tải thông tin video...</div>
+<video #target class="video-js vjs-default-skin" *ngIf="visible" muted autoplay playsinline
+  preload="auto" disablePictureInPicture controlsList="nodownload nofullscreen noremoteplayback" width="100%"
+  height="auto">
+  <source [src]="videoPath + `sampe1.mp4`" type="video/mp4" />
+</video>
+
+<!-- muted autoplay playsinline: Cho phép tự động phát trên hầu hết trình duyệt.
+controlsList="nodownload...": Ẩn các chức năng không mong muốn (tùy trình duyệt).
+pointer-events-none trên video: Ngăn người dùng tương tác. -->

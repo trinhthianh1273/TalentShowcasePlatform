@@ -9,6 +9,7 @@ using Infrastructure.Persistences.BEContext;
 using Infrastructure.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.FileProviders;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 
@@ -94,12 +95,22 @@ app.UseAuthorization();
 app.UseCors();
 
 app.UseRouting();
-// ...
-//app.UseEndpoints(endpoints =>
+
+// Cho phép truy cập static files
+//app.UseStaticFiles();
+//app.UseStaticFiles(new StaticFileOptions
 //{
-//	endpoints.MapHub<ChatHub>("/chat"); // Map Hub tới một endpoint
-//	endpoints.MapControllers();
+//	FileProvider = new PhysicalFileProvider(
+//		Path.Combine(builder.Environment.WebRootPath, "Assets/Video")),
+//	RequestPath = "/Assets/Video"
 //});
+
+// ...
+   //app.UseEndpoints(endpoints =>
+   //{
+   //	endpoints.MapHub<ChatHub>("/chat"); // Map Hub tới một endpoint
+   //	endpoints.MapControllers();
+   //});
 app.UseCors("MyPolicy");
 app.MapControllers();
 

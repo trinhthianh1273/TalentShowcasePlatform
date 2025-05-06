@@ -1,16 +1,25 @@
-import { Component, ElementRef, Input } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, Input, OnInit } from '@angular/core';
+import { SharedModule } from '../shared/shared.module';
 
 @Component({
   selector: 'app-video-card',
-  imports: [],
+  imports: [
+    SharedModule
+  ],
   templateUrl: './video-card.component.html',
   styleUrl: './video-card.component.css'
 })
-export class VideoCardComponent {
+export class VideoCardComponent implements OnInit {
+  videoPath = 'https://localhost:7172/api/Videos/video-path/';
+  @Input() videoData!: any;
   @Input() src!: string;
   visible = false;
 
   constructor(private el: ElementRef) { }
+  ngOnInit(): void {
+    // console.log("video data: ", this.videoData);
+    // console.log("video src: ", this.src);
+  }
 
   ngAfterViewInit() {
     const observer = new IntersectionObserver(

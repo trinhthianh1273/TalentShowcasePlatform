@@ -19,6 +19,24 @@ public class VideosController : ControllerBase
 		_mediator = mediator;
 	}
 
+	[HttpGet("video-path/{fileName}")]
+	public IActionResult GetVideoPath(string fileName)
+	{
+		// Lấy thư mục gốc của dự án bằng cách di chuyển lên từ thư mục hiện tại
+		var projectRootPath = Directory.GetParent(Directory.GetCurrentDirectory()).FullName;
+
+
+		// Kết hợp đường dẫn gốc với thư mục Assets/Videos
+		var videoPath = Path.Combine(projectRootPath, "Assets", "Videos", fileName);
+
+		Console.WriteLine(videoPath);
+		if (!System.IO.File.Exists(videoPath))
+			return NotFound("Video not found" + videoPath);
+
+		var stream = new FileStream(videoPath, FileMode.Open, FileAccess.Read);
+		return File(stream, "video/mp4", enableRangeProcessing: true); // hỗ trợ seek
+	}
+
 	[HttpPost]
 	public async Task<ActionResult<Result<Guid>>> CreateVideo(CreateVideoCommand command)
 	{

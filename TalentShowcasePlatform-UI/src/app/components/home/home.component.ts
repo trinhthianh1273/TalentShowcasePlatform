@@ -6,6 +6,7 @@ import { Subscription } from 'rxjs';
 import { ClientLogger } from '../../services/client-logger.service';
 import { SharedModule } from '../shared/shared.module';
 import { VideoCardComponent } from '../video-card/video-card.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -21,10 +22,10 @@ export class HomeComponent implements OnInit{
   isLogin : boolean = true;
   videoList: Array<any> = []; // Khai báo biến videoList để lưu trữ danh sách video
   constructor(
-    @Inject(PLATFORM_ID) private platformId: Object,
     private SDService: SendDataService,
     private GDService: GetDataService,
-    private logger: ClientLogger
+    private logger: ClientLogger,
+    private router: Router
   ) { }
 
   ngOnInit() {
@@ -37,18 +38,25 @@ export class HomeComponent implements OnInit{
   getAllVideo() {
     this.videoSubscription = this.GDService.getVideos().subscribe({
       next: (res: any) => {
-        console.log("Video data: ", res?.data); // Sử dụng optional chaining để tránh lỗi nếu res hoặc res.data là null/undefined
+         // Sử dụng optional chaining để tránh lỗi nếu res hoặc res.data là null/undefined
         if (res?.data) {
           this.SDService.sendVideo(res.data);
+          this.videoList = res.data; // Lưu trữ danh sách video vào biến videoList
+          console.log("Video data: ", this.videoList);
         }
       },
       error: (err: any) => {
-        console.error("Lỗi khi lấy dữ liệu video:", err);
+        console.error("Lỗi khi lấy dữ liệu video:", err.message);
         // Xử lý lỗi tại đây, ví dụ: hiển thị thông báo cho người dùng
       },
       complete: () => {
         console.log("Hoàn thành việc lấy dữ liệu video");
       }
     });
+  }
+
+  navigateToDetail(id: any) {
+    console.log(id);
+    this.router.navigate(['/video'], { queryParams: { id: id } });
   }
 }

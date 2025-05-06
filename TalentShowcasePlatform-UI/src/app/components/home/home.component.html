@@ -157,15 +157,39 @@
     <!-- Video list for mobile, grid for md+ with 4 columns on lg+ -->
     <section class="flex flex-col md:grid md:grid-cols-2 md:sm:grid-cols-3 lg:grid-cols-4 gap-x-6 gap-y-8 pr-2"
       style="scrollbar-width: thin; scrollbar-color: #cbd5e1 transparent;">
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-4">
-        <app-video-card *ngFor="let video of videoList" [src]="video.url"></app-video-card>
-      </div>
-      <!-- Video 1 -->
-      <article class="flex flex-col md:block space-y-1 cursor-pointer select-text">
+      <!-- <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-4">
+
+      </div> -->
+      <article *ngFor="let video of videoList" (click)="navigateToDetail(video.id)" class="flex flex-col md:block space-y-1 cursor-pointer select-text">
         <div class="relative rounded-md overflow-hidden flex-shrink-0 md:block md:w-full">
-          <!-- <img alt="Outdoor art installation with buildings in background, video thumbnail"
+          <app-video-card [videoData]="video" [src]="video.url"></app-video-card>
+          <span
+            class="absolute bottom-1 right-1 bg-black bg-opacity-70 text-white text-[10px] px-1 rounded select-none">
+            10:55
+          </span>
+        </div>
+        <div class="flex items-center space-x-2 text-xs text-[#6b6b6b] mt-2 md:mt-0">
+          <img alt="Peter Moussa profile picture, circular avatar with letter P on gray background"
+            class="w-5 h-5 rounded-full object-cover" height="20"
+            src="https://storage.googleapis.com/a1aa/image/9ae27665-7959-4471-2fba-f9ebc6831831.jpg" width="20" />
+          <span class="font-semibold text-[13px] text-[#0f0f0f] truncate max-w-[180px]">
+            {{ video.description }}
+          </span>
+        </div>
+        <p class="text-[11px] text-[#6b6b6b] leading-tight select-text max-w-[180px] truncate">
+          {{ video.userNavigationDto.userName}}
+        </p>
+        <p class="text-[10px] text-[#6b6b6b] leading-tight select-text max-w-[180px] truncate">
+          3,726 views • {{ video.uploadedAt  | date: 'MMMM d, y'}}
+        </p>
+      </article>
+
+      <!-- Video 1 -->
+      <!-- <article class="flex flex-col md:block space-y-1 cursor-pointer select-text">
+        <div class="relative rounded-md overflow-hidden flex-shrink-0 md:block md:w-full">
+          <img alt="Outdoor art installation with buildings in background, video thumbnail"
             class="w-full h-auto object-cover rounded-md" height="180"
-            src="https://storage.googleapis.com/a1aa/image/58024d3a-b5af-4432-d715-a4fc03be4813.jpg" width="320" /> -->
+            src="https://storage.googleapis.com/a1aa/image/58024d3a-b5af-4432-d715-a4fc03be4813.jpg" width="320" />
 
           <video class="w-full h-auto object-cover rounded-md" height="180" width="320" controls>
             <source src="https://www.youtube.com/watch?v=9QcEC3skKH4" type="video/mp4">
@@ -189,189 +213,7 @@
         <p class="text-[10px] text-[#6b6b6b] leading-tight select-text max-w-[180px] truncate">
           3,726 views • April 30, 2017
         </p>
-      </article>
-      <!-- Video 2 -->
-      <article class="flex flex-col md:block space-y-1 cursor-pointer select-text">
-        <div class="relative rounded-md overflow-hidden flex-shrink-0 md:block md:w-full">
-          <img alt="Black and white art with ART text on body, video thumbnail"
-            class="w-full h-auto object-cover rounded-md" height="180"
-            src="https://storage.googleapis.com/a1aa/image/ceaec0cf-3e7e-430f-e6a7-b06dc2c6d343.jpg" width="320" />
-          <span
-            class="absolute bottom-1 right-1 bg-black bg-opacity-70 text-white text-[10px] px-1 rounded select-none">
-            02:58
-          </span>
-        </div>
-        <div class="flex items-center space-x-2 text-xs text-[#6b6b6b] mt-2 md:mt-0">
-          <img alt="Carla Maciel profile picture, circular avatar with letter C on gray background"
-            class="w-5 h-5 rounded-full object-cover" height="20"
-            src="https://storage.googleapis.com/a1aa/image/fb2da501-faf3-49c3-4238-84933b32198d.jpg" width="20" />
-          <span class="font-semibold text-[13px] text-[#0f0f0f] truncate max-w-[180px]">
-            Art eating Art
-          </span>
-        </div>
-        <p class="text-[11px] text-[#6b6b6b] leading-tight select-text max-w-[180px] truncate">
-          Carla Maciel
-        </p>
-        <p class="text-[10px] text-[#6b6b6b] leading-tight select-text max-w-[180px] truncate">
-          6,912 views • June 15, 2018
-        </p>
-      </article>
-      <!-- Video 3 -->
-      <article class="flex flex-col md:block space-y-1 cursor-pointer select-text">
-        <div class="relative rounded-md overflow-hidden flex-shrink-0 md:block md:w-full">
-          <img alt="Close-up of paintbrushes in container, video thumbnail"
-            class="w-full h-auto object-cover rounded-md" height="180"
-            src="https://storage.googleapis.com/a1aa/image/b0f950a0-f87e-447d-c08c-3319cfdaffb0.jpg" width="320" />
-          <span
-            class="absolute bottom-1 right-1 bg-black bg-opacity-70 text-white text-[10px] px-1 rounded select-none">
-            01:24
-          </span>
-        </div>
-        <div class="flex items-center space-x-2 text-xs text-[#6b6b6b] mt-2 md:mt-0">
-          <img alt="Travis Bentley profile picture, circular avatar with letter T on gray background"
-            class="w-5 h-5 rounded-full object-cover" height="20"
-            src="https://storage.googleapis.com/a1aa/image/652e3566-9c9d-4300-bad1-1be68d798064.jpg" width="20" />
-          <span class="font-semibold text-[13px] text-[#0f0f0f] truncate max-w-[180px]">
-            Art
-          </span>
-        </div>
-        <p class="text-[11px] text-[#6b6b6b] leading-tight select-text max-w-[180px] truncate">
-          Travis Bentley
-        </p>
-        <p class="text-[10px] text-[#6b6b6b] leading-tight select-text max-w-[180px] truncate">
-          15.6K views • March 13, 2019
-        </p>
-      </article>
-      <!-- Video 4 -->
-      <article class="flex flex-col md:block space-y-1 cursor-pointer select-text">
-        <div class="relative rounded-md overflow-hidden flex-shrink-0 md:block md:w-full">
-          <img alt="Arabic calligraphy art on dark background, video thumbnail"
-            class="w-full h-auto object-cover rounded-md" height="180"
-            src="https://storage.googleapis.com/a1aa/image/5beae4ea-3e70-4d14-e429-e2ae0e135d5f.jpg" width="320" />
-          <span
-            class="absolute bottom-1 right-1 bg-black bg-opacity-70 text-white text-[10px] px-1 rounded select-none">
-            01:41
-          </span>
-        </div>
-        <div class="flex items-center space-x-2 text-xs text-[#6b6b6b] mt-2 md:mt-0">
-          <img alt="Mohammed Al Jazeera profile picture, circular avatar with letter M on gray background"
-            class="w-5 h-5 rounded-full object-cover" height="20"
-            src="https://storage.googleapis.com/a1aa/image/d8a82192-4c17-4844-9291-e047d072490a.jpg" width="20" />
-          <span class="font-semibold text-[13px] text-[#0f0f0f] truncate max-w-[180px]">
-            Arabic Art | oriental Art | Reel _2...
-          </span>
-        </div>
-        <p class="text-[11px] text-[#6b6b6b] leading-tight select-text max-w-[180px] truncate">
-          Mohammed Al Jazeera
-        </p>
-        <p class="text-[10px] text-[#6b6b6b] leading-tight select-text max-w-[180px] truncate">
-          December 23, 2014
-        </p>
-      </article>
-      <!-- Video 5 -->
-      <article class="flex flex-col md:block space-y-1 cursor-pointer select-text">
-        <div class="relative rounded-md overflow-hidden flex-shrink-0 md:block md:w-full">
-          <img alt="Colorful illustration of room layout with furniture, video thumbnail"
-            class="w-full h-auto object-cover rounded-md" height="180"
-            src="https://storage.googleapis.com/a1aa/image/c04863fc-d3ee-49f2-c786-da5434a5c614.jpg" width="320" />
-          <span
-            class="absolute bottom-1 right-1 bg-black bg-opacity-70 text-white text-[10px] px-1 rounded select-none">
-            01:14
-          </span>
-        </div>
-        <div class="flex items-center space-x-2 text-xs text-[#6b6b6b] mt-2 md:mt-0">
-          <img alt="Mike Alger profile picture, circular avatar with letter M on gray background"
-            class="w-5 h-5 rounded-full object-cover" height="20"
-            src="https://storage.googleapis.com/a1aa/image/3e8a76f7-385e-4712-6450-e731350c9009.jpg" width="20" />
-          <span class="font-semibold text-[13px] text-[#0f0f0f] truncate max-w-[180px]">
-            ART
-          </span>
-        </div>
-        <p class="text-[11px] text-[#6b6b6b] leading-tight select-text max-w-[180px] truncate">
-          Mike Alger
-        </p>
-        <p class="text-[10px] text-[#6b6b6b] leading-tight select-text max-w-[180px] truncate">
-          5,592 views • November 5, 2013
-        </p>
-      </article>
-      <!-- Video 6 -->
-      <article class="flex flex-col md:block space-y-1 cursor-pointer select-text">
-        <div class="relative rounded-md overflow-hidden flex-shrink-0 md:block md:w-full">
-          <img alt="Vintage portrait of woman in white dress, video thumbnail"
-            class="w-full h-auto object-cover rounded-md" height="180"
-            src="https://storage.googleapis.com/a1aa/image/34b96bef-cbc8-4a4c-f2f1-1b1e7d570ccc.jpg" width="320" />
-          <span
-            class="absolute bottom-1 right-1 bg-black bg-opacity-70 text-white text-[10px] px-1 rounded select-none">
-            03:47
-          </span>
-        </div>
-        <div class="flex items-center space-x-2 text-xs text-[#6b6b6b] mt-2 md:mt-0">
-          <img alt="Joe Zazulak (Spiral Silverstar) profile picture, circular avatar with letter J on gray background"
-            class="w-5 h-5 rounded-full object-cover" height="20"
-            src="https://storage.googleapis.com/a1aa/image/3f64c177-b8eb-466a-b776-dd9b924a8c35.jpg" width="20" />
-          <span class="font-semibold text-[13px] text-[#0f0f0f] truncate max-w-[180px]">
-            Fine Art (Art is fine)
-          </span>
-        </div>
-        <p class="text-[11px] text-[#6b6b6b] leading-tight select-text max-w-[180px] truncate">
-          Joe Zazulak (Spiral Silverstar)
-        </p>
-        <p class="text-[10px] text-[#6b6b6b] leading-tight select-text max-w-[180px] truncate">
-          January 21, 2013
-        </p>
-      </article>
-      <!-- Video 7 -->
-      <article class="flex flex-col md:block space-y-1 cursor-pointer select-text">
-        <div class="relative rounded-md overflow-hidden flex-shrink-0 md:block md:w-full">
-          <img alt="Kinetic installation with bubble flow, video thumbnail"
-            class="w-full h-auto object-cover rounded-md" height="180"
-            src="https://storage.googleapis.com/a1aa/image/5d7f3afd-ab85-4255-e57d-ad5663172181.jpg" width="320" />
-          <span
-            class="absolute bottom-1 right-1 bg-black bg-opacity-70 text-white text-[10px] px-1 rounded select-none">
-            01:12
-          </span>
-        </div>
-        <div class="flex items-center space-x-2 text-xs text-[#6b6b6b] mt-2 md:mt-0">
-          <img alt="Jung yeojin profile picture, circular avatar with letter J on gray background"
-            class="w-5 h-5 rounded-full object-cover" height="20"
-            src="https://storage.googleapis.com/a1aa/image/c8ec9eef-6970-4604-c36f-4cf5394ddd93.jpg" width="20" />
-          <span class="font-semibold text-[13px] text-[#0f0f0f] truncate max-w-[180px]">
-            kinetic installation : bubble flow...
-          </span>
-        </div>
-        <p class="text-[11px] text-[#6b6b6b] leading-tight select-text max-w-[180px] truncate">
-          Jung yeojin
-        </p>
-        <p class="text-[10px] text-[#6b6b6b] leading-tight select-text max-w-[180px] truncate">
-          2,384 views • March 29, 2016
-        </p>
-      </article>
-      <!-- Video 8 -->
-      <article class="flex flex-col md:block space-y-1 cursor-pointer select-text">
-        <div class="relative rounded-md overflow-hidden flex-shrink-0 md:block md:w-full">
-          <img alt="Cartoon characters holding hands at table, video thumbnail"
-            class="w-full h-auto object-cover rounded-md" height="180"
-            src="https://storage.googleapis.com/a1aa/image/abfe5fcc-20b0-41d3-fbf8-be34f97e00b8.jpg" width="320" />
-          <span
-            class="absolute bottom-1 right-1 bg-black bg-opacity-70 text-white text-[10px] px-1 rounded select-none">
-            02:17
-          </span>
-        </div>
-        <div class="flex items-center space-x-2 text-xs text-[#6b6b6b] mt-2 md:mt-0">
-          <img alt="Cameron profile picture, circular avatar with letter C on gray background"
-            class="w-5 h-5 rounded-full object-cover" height="20"
-            src="https://storage.googleapis.com/a1aa/image/6bcc14e7-c539-4258-4c53-a36f178114e1.jpg" width="20" />
-          <span class="font-semibold text-[13px] text-[#0f0f0f] truncate max-w-[180px]">
-            Art's Cool Art School
-          </span>
-        </div>
-        <p class="text-[11px] text-[#6b6b6b] leading-tight select-text max-w-[180px] truncate">
-          Cameron
-        </p>
-        <p class="text-[10px] text-[#6b6b6b] leading-tight select-text max-w-[180px] truncate">
-          881 views • May 1, 2018
-        </p>
-      </article>
+      </article> -->
     </section>
   </main>
   <!-- Search bar overlay for mobile -->
