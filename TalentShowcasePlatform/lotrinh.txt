@@ -1,0 +1,5 @@
+﻿1️⃣	Viết Entity User, Category, Role
+2️⃣	Viết DbContext & cấu hình EF Core
+3️⃣	Tạo command RegisterUser (CQRS + Handler)
+4️⃣	Tạo Repository + Inject vào DI
+5️⃣	Tạo Controller UserController để gọi handler

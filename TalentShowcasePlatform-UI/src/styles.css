@@ -1,0 +1,44 @@
+/* You can add global styles to this file, and also import other style files */
+@import "tailwindcss";
+
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    height: 100vh;
+    overflow: hidden;
+  }
+  /* Custom scrollbar for the main content */
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 8px;
+  }
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background-color: transparent;
+    border-radius: 10px;
+  }
+  /* Make sidebar fixed on desktop */
+  @media (min-width: 768px) {
+    #sidebar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100vh;
+      overflow-y: auto;
+      z-index: 40;
+    }
+    main {
+      margin-left: 14rem; /* width of sidebar */
+      height: 100vh;
+      overflow-y: auto;
+    }
+  }
+  /* On mobile, sidebar is fixed and toggled */
+  #sidebar {
+    transition: transform 0.3s ease-in-out;
+    z-index: 50;
+  }
+  #overlay, #searchOverlay {
+    z-index: 45;
+  }
