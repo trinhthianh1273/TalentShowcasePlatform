@@ -63,6 +63,13 @@ public class VideosController : ControllerBase
 		return await _mediator.Send(new GetAllVideosQuery()); 
 	}
 
+	[HttpGet]
+	[Route("page")]
+	public async Task<ActionResult<PaginatedResult<VideoDto>>> GetVideoPagination([FromQuery] GetVideoPaginationQuery query)
+	{
+		return await _mediator.Send(query);
+	}
+
 	[HttpPut("{id}")]
 	public async Task<ActionResult<Result<bool>>> UpdateVideo(Guid id, UpdateVideoCommand command)
 	{ 

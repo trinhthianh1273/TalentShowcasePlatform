@@ -33,4 +33,10 @@ export class VideoCardComponent implements OnInit {
     );
     observer.observe(this.el.nativeElement);
   }
+
+  // ngOnDestroy(): void {
+  //   if (this.player) {
+  //     this.player.dispose();
+  //   }
+  // }
 }

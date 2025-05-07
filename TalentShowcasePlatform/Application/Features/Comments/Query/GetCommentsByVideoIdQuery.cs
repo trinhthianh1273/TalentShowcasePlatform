@@ -33,6 +33,7 @@ public class GetCommentsByVideoIdQueryHandler : IRequestHandler<GetCommentsByVid
 	{
 		var comments = _unitOfWork.Repository<Comment>().Entities
 							.Where(c => c.VideoId == request.VideoId)
+							.OrderByDescending(c => c.CreatedAt)
 							.Include(c => c.Video).Include(c => c.User);
 		return Result<IEnumerable<CommentDto>>.Success(_mapper.Map<IEnumerable<CommentDto>>(comments));
 	}

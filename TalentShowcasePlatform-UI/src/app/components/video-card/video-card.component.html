@@ -1,8 +1,8 @@
-<div *ngIf="!videoData">Đang tải thông tin video...</div>
-<video #target class="video-js vjs-default-skin" *ngIf="visible" muted autoplay playsinline
+<!-- <div *ngIf="!videoData">Đang tải thông tin video...</div> -->
+<video #target class="video-js vjs-default-skin" preload="auto" muted autoplay playsinline
   preload="auto" disablePictureInPicture controlsList="nodownload nofullscreen noremoteplayback" width="100%"
-  height="auto">
-  <source [src]="videoPath + `sampe1.mp4`" type="video/mp4" />
+  height="auto" [attr.data-setup]="{}" >
+  <source [src]="videoPath + src" type="video/mp4" />
 </video>
 
 <!-- muted autoplay playsinline: Cho phép tự động phát trên hầu hết trình duyệt.
