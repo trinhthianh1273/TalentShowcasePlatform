@@ -1,7 +1,7 @@
 <!-- <div *ngIf="!videoData">Đang tải thông tin video...</div> -->
-<video #target class="video-js vjs-default-skin" preload="auto" muted autoplay playsinline
+<video #target class="video-js vjs-default-skin" muted autoplay playsinline
   preload="auto" disablePictureInPicture controlsList="nodownload nofullscreen noremoteplayback" width="100%"
-  height="auto" [attr.data-setup]="{}" >
+ height="auto" [attr.data-setup]="{}" >
   <source [src]="videoPath + src" type="video/mp4" />
 </video>
 

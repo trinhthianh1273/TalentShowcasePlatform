@@ -92,6 +92,7 @@ public class LoginUserHandler : IRequestHandler<LoginUserCommand, Result<Authent
 			UserId = user.Id,
 			UserName = user.UserName,
 			Email = user.Email,
+			avatarUrl = user.AvatarUrl,
 			Token = tokenHandler.WriteToken(token)
 		};
 	}

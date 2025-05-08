@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { SharedModule } from './components/shared/shared.module';
+import { AuthStateService } from './services/auth-state.service';
 
 @Component({
   selector: 'app-root',
@@ -11,6 +12,18 @@ import { SharedModule } from './components/shared/shared.module';
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'TalentShowcasePlatform-UI';
+  constructor(
+    private authStateService: AuthStateService
+  ) { }
+  ngOnInit(): void {
+    this.authStateService.isLoggedIn$.subscribe(loggedIn => {
+      // console.log('Trạng thái đăng nhập (AppComponent):', loggedIn);
+    });
+
+    this.authStateService.currentUser$.subscribe(user => {
+      // console.log('Thông tin người dùng (AppComponent):', user);
+    });
+  }
 }

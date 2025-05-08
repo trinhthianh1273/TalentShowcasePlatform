@@ -1,4 +1,4 @@
-<div  class="fixed inset-0 bg-black bg-opacity-70 z-40" (click)="closePopup()">
+<div class="fixed inset-0 bg-black bg-opacity-70 z-40" (click)="closePopup()">
 </div>
 
 <div aria-labelledby="login-title" aria-modal="true" role="dialog"
@@ -38,19 +38,31 @@
             <span class="mx-3 text-xs text-gray-400 select-none">OR</span>
             <div class="flex-grow border-t border-gray-300"></div>
         </div>
-        <form>
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
             <input
                 class="w-full border border-gray-300 rounded-md py-2 px-3 mb-3 text-xs text-gray-400 placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-cyan-400 focus:border-cyan-400"
-                placeholder="you@email.com" required type="email" />
+                placeholder="you@email.com" type="email" formControlName="email" />
+            <div *ngIf="emailControl?.invalid && (emailControl?.dirty || emailControl?.touched)"
+                class="text-red-500 text-xs mb-2">
+                <div *ngIf="emailControl?.errors?.['required']">Email là bắt buộc.</div>
+                <div *ngIf="emailControl?.errors?.['email'] || emailControl?.errors?.['pattern']">Email không đúng định
+                    dạng.</div>
+            </div>
             <input
                 class="w-full border border-gray-300 rounded-md py-2 px-3 mb-2 text-xs text-gray-400 placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-cyan-400 focus:border-cyan-400"
-                placeholder="Password" required type="password" />
+                placeholder="Mật khẩu" type="password" formControlName="password" />
+            <div *ngIf="passwordControl?.invalid && (passwordControl?.dirty || passwordControl?.touched)"
+                class="text-red-500 text-xs mb-2">
+                <div *ngIf="passwordControl?.errors?.['required']">Mật khẩu là bắt buộc.</div>
+                <div *ngIf="passwordControl?.errors?.['minlength']">Mật khẩu phải có ít nhất 8 ký tự.</div>
+            </div>
             <div class="mb-5 text-xs text-black underline cursor-pointer select-none">
-                Forgot your password?
+                Quên mật khẩu?
             </div>
             <button class="w-full bg-cyan-400 hover:bg-cyan-500 text-black font-semibold text-xs rounded-md py-2 mb-4"
-                type="submit">
-                Log in with an email
+                type="submit" [disabled]="loginForm.invalid || isLoading">
+                <span *ngIf="!isLoading">Đăng nhập</span>
+                <span *ngIf="isLoading">Đang đăng nhập...</span>
             </button>
         </form>
         <p class="text-center text-xs text-black select-none">

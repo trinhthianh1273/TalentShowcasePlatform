@@ -1,7 +1,4 @@
 import { AfterViewInit, Component, HostListener, Inject, OnInit, PLATFORM_ID } from '@angular/core';
-import { SideBarComponent } from '../side-bar/side-bar.component';
-import { SendDataService } from '../../services/send.data.service';
-import { GetDataService } from '../../services/get.data.service';
 import { Subscription } from 'rxjs';
 import { ClientLogger } from '../../services/client-logger.service';
 import { SharedModule } from '../shared/shared.module';
@@ -9,21 +6,32 @@ import { VideoCardComponent } from '../video-card/video-card.component';
 import { Router } from '@angular/router';
 import { VideosService } from '../../services/videos.service';
 import { LoginComponent } from "../login/login.component";
+import { AuthService } from '../../services/auth.service';
+import { LoginResponse } from '../../interfaces/interface';
+import { Enviroment } from '../../../environment';
+import { SidebarComponent } from '../sidebar/sidebar.component';
+import { NavbarComponent } from '../navbar/navbar.component';
+import { AuthStateService } from '../../services/auth-state.service';
+import { DataService } from '../../services/data.service';
+import { SubjectService } from '../../services/subject.service';
 
 @Component({
   selector: 'app-home',
   imports: [
     VideoCardComponent,
     SharedModule,
-    LoginComponent
+    LoginComponent,
+    NavbarComponent
 ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
 export class HomeComponent implements OnInit {
   private videoSubscription: Subscription | undefined; // Để quản lý việc unsubscribe
-  isLogin: boolean = false;
+  isLoggedIn: boolean = false;
   videoList: any[] = []; // Khai báo biến videoList để lưu trữ danh sách video
+  currentUser: LoginResponse['data'] | null = null; // Cập nhật kiểu dữ liệu
+  private authSubscription: Subscription | undefined;
 
   page = 1;
   pageSize = 12;
@@ -33,17 +41,32 @@ export class HomeComponent implements OnInit {
   isLoginPopupVisible: boolean = false;
 
   constructor(
-    private SDService: SendDataService,
-    private GDService: GetDataService,
+    private subjectService: SubjectService,
+    private dataService: DataService,
     private videoService: VideosService,
-    private logger: ClientLogger,
+    private authStateService: AuthStateService,
     private router: Router
   ) { }
 
   ngOnInit() {
-    console.log("home page");
-    // this.getAllVideo();
     this.loadVideos();
+    this.authSubscription = this.authStateService.isLoggedIn$.subscribe(
+      (loggedIn) => {
+        this.isLoggedIn = loggedIn;
+      }
+    );
+
+    this.authSubscription.add(
+      this.authStateService.currentUser$.subscribe((user) => {
+        this.currentUser = user;
+      })
+    );
+  }
+
+  ngOnDestroy(): void {
+    if (this.authSubscription) {
+      this.authSubscription.unsubscribe();
+    }
   }
 
   @HostListener('window:scroll', [])
@@ -70,18 +93,18 @@ export class HomeComponent implements OnInit {
         // Xử lý lỗi tại đây, ví dụ: hiển thị thông báo cho người dùng
       },
       complete: () => {
-        console.log("Hoàn thành việc lấy dữ liệu video");
+        // console.log("Hoàn thành việc lấy dữ liệu video");
       }
     });
-    console.log("video: ", this.videoList);
   }
 
   getAllVideo() {
-    this.GDService.getVideos().subscribe({
+    this.dataService.getVideos().subscribe({
       next: (res: any) => {
         // Sử dụng optional chaining để tránh lỗi nếu res hoặc res.data là null/undefined
         if (res?.data) {
-          this.SDService.sendVideo(res.data);
+          this.subjectService.sendVideo(res.data);
+          this.videoList = res.data;
         }
       },
       error: (err: any) => {
@@ -89,7 +112,7 @@ export class HomeComponent implements OnInit {
         // Xử lý lỗi tại đây, ví dụ: hiển thị thông báo cho người dùng
       },
       complete: () => {
-        console.log("Hoàn thành việc lấy dữ liệu video");
+        // console.log("Hoàn thành việc lấy dữ liệu video");
       }
     });
   }
@@ -99,13 +122,11 @@ export class HomeComponent implements OnInit {
     this.router.navigate(['/video'], { queryParams: { id: id } });
   }
 
-  showLoginPopup():void {
-    console.log("đăng nhập");
-    this.isLoginPopupVisible = true;
+  handleLoginSuccess(userData: LoginResponse['data']): void {
+    this.isLoggedIn = true;
+    this.currentUser = userData; // Lưu trực tiếp dữ liệu người dùng
+    // console.log('Thông tin người dùng sau đăng nhập:', this.currentUser);
+    // Bây giờ bạn có thể sử dụng this.currentUser?.userId cho các chức năng khác
   }
 
-  hideLoginPopup(): void{
-    console.log("đóng popup");
-    this.isLoginPopupVisible = false;
-  }
 }
