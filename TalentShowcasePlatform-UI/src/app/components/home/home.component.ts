@@ -18,7 +18,7 @@ import { AsideLeftComponent } from "../aside-left/aside-left.component";
     HeaderComponent,
     AsideLeftComponent,
     AsideLeftComponent
-],
+  ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
@@ -26,6 +26,7 @@ export class HomeComponent implements OnInit {
   videoList: any[] = []; // Khai báo biến videoList để lưu trữ danh sách video
 
   isLoggedIn: boolean = false;
+  userId: any;
   currentUser: LoginResponse['data'] | null = null; // Cập nhật kiểu dữ liệu
   private authSubscription: Subscription | undefined;
 
@@ -54,6 +55,7 @@ export class HomeComponent implements OnInit {
     this.authSubscription.add(
       this.authStateService.currentUser$.subscribe((user) => {
         this.currentUser = user;
+        this.userId = user?.userId;
       })
     );
     console.log("user home: ", this.currentUser);
@@ -118,12 +120,11 @@ export class HomeComponent implements OnInit {
     this.router.navigate(['/video'], { queryParams: { id: id } });
   }
 
+
   handleLoginSuccess(userData: LoginResponse['data']): void {
     this.isLoggedIn = true;
     this.currentUser = userData; // Lưu trực tiếp dữ liệu người dùng
-    // console.log('Thông tin người dùng sau đăng nhập:', this.currentUser);
-    // Bây giờ bạn có thể sử dụng this.currentUser?.userId cho các chức năng khác
   }
 
-  
+
 }

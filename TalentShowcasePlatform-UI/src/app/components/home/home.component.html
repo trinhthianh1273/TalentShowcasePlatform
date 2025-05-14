@@ -1,6 +1,6 @@
 <div class="flex min-h-screen mx-auto relative h-full">
   <!-- Sidebar -->
-  <app-aside-left></app-aside-left>
+  <app-aside-left [userId]="userId"></app-aside-left>
   <!-- Overlay for sidebar on mobile -->
   <div id="overlay" class="fixed inset-0 bg-black bg-opacity-30 z-20 hidden md:hidden"></div>
   <!-- Main content -->
@@ -16,9 +16,10 @@
             type="button">
             <i class="fas fa-globe-americas text-sm">
             </i>
-            <span>
+            <a href="/home" class="hover:cursor-pointer">Talent</a>
+            <!-- <span>
               Talent
-            </span>
+            </span> -->
           </button>
           <button
             class="flex items-center space-x-2 bg-[#e6e9eb] rounded-lg px-4 py-2 text-sm font-semibold text-[#0f1419]"

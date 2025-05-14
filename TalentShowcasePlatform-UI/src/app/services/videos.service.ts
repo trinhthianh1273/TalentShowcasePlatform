@@ -1,7 +1,7 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Enviroment } from '../../environment';
-import { UserData } from '../interfaces/interface';
+import { UserData, VideoData } from '../interfaces/interface';
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +14,7 @@ export class VideosService {
   }
 
   getVideoById(id: any) {
-    return this.http.get<any>(`${this.baseURL}/api/Videos/${id}`);
+    return this.http.get<VideoData>(`${this.baseURL}/api/Videos/${id}`);
   }
 
   getUserById(id: any) {
@@ -39,6 +39,10 @@ export class VideosService {
 
   postComment(data: any) {
     return this.http.post<any>(`${this.baseURL}/api/Comments`, data);
+  }
+
+  updateVideo(videoId: any, data: any) {
+    return this.http.put<any>(`${this.baseURL}/api/Videos/${videoId}`, data);
   }
 
   uploadVideo(data: any) {

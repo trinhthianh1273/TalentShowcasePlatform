@@ -29,3 +29,16 @@ export interface UserData {
   exception?: any;
   code?: number;
 }
+
+export interface VideoData {
+  messages?: string[];
+  succeeded?: boolean;
+  data?: {
+    id?: string;
+    title: string;
+    description?: string;
+    url?: string;
+    categoryId?: string;
+    IsPrivate?: boolean // để hiển thị checkbox
+  }
+}

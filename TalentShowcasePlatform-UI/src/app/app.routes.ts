@@ -11,7 +11,7 @@ export const routes: Routes = [
     { path: 'register', component: RegisterComponent },
     { path: 'video', loadComponent: () => import('./components/video-detail/video-detail.component').then(m => m.VideoDetailComponent) },
     {
-        path: 'user', loadComponent: () => import('./components/user/user.component').then(m => m.UserComponent),
+        path: 'library', loadComponent: () => import('./components/user/user.component').then(m => m.UserComponent),
     },
     {
         path: 'video-analysis',

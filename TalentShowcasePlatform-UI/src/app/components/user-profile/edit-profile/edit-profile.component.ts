@@ -1,20 +1,23 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { SharedModule } from '../../shared/shared.module';
 import { LoginResponse, UserData } from '../../../interfaces/interface';
 import { Subscription } from 'rxjs';
 import { ActivatedRoute } from '@angular/router';
 import { BasicInformationComponent } from './basic-information/basic-information.component';
+import { HeaderProfileComponent } from "../header-profile/header-profile.component";
 
 @Component({
   selector: 'app-edit-profile',
   imports: [
     BasicInformationComponent,
-    SharedModule
-  ],
+    SharedModule,
+    HeaderProfileComponent
+],
   templateUrl: './edit-profile.component.html',
   styleUrl: './edit-profile.component.css'
 })
 export class EditProfileComponent implements OnInit {
+  
   userId: any;
   isLoggedIn: boolean = false;
   currentUser: UserData['data'] | null = null; // Cập nhật kiểu dữ liệu
