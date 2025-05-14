@@ -1,0 +1,518 @@
+<!-- Top Navigation -->
+<header class="flex items-center justify-between px-4 sm:px-6 md:px-10 py-3 border-b border-gray-200">
+    <div class="flex items-center space-x-6 text-sm font-semibold">
+        <div class="flex items-center space-x-1 cursor-pointer">
+            <span class="font-black text-lg select-none">
+                Bēhance
+            </span>
+        </div>
+        <nav class="hidden md:flex space-x-6">
+            <a class="hover:underline" href="#">
+                Explore
+            </a>
+            <a class="hover:underline" href="#">
+                Find Jobs
+            </a>
+            <div class="relative group">
+                <button class="flex items-center space-x-1 hover:underline focus:outline-none">
+                    <span>
+                        Hire Freelancers
+                    </span>
+                    <i class="fas fa-chevron-down text-xs">
+                    </i>
+                </button>
+            </div>
+            <div class="relative group">
+                <button class="flex items-center space-x-1 hover:underline focus:outline-none">
+                    <span>
+                        Career Resources
+                    </span>
+                    <i class="fas fa-chevron-down text-xs">
+                    </i>
+                </button>
+            </div>
+        </nav>
+    </div>
+    <div class="flex items-center space-x-4">
+        <div class="relative text-gray-400">
+            <input aria-label="Search"
+                class="border border-gray-300 rounded-md py-1.5 pl-9 pr-3 text-sm focus:outline-none focus:ring-1 focus:ring-blue-600 focus:border-blue-600"
+                placeholder="Search..." type="search" />
+            <i class="fas fa-search absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm">
+            </i>
+        </div>
+        <button
+            class="bg-blue-600 text-white text-xs font-semibold px-3 py-1.5 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-600">
+            Upgrade to
+            <span class="uppercase">
+                pro
+            </span>
+        </button>
+        <button aria-label="Share Your Work" class="text-sm font-semibold hover:underline focus:outline-none">
+            Share Your Work
+        </button>
+        <button aria-label="Notifications" class="text-gray-700 hover:text-black focus:outline-none">
+            <i class="fas fa-bell text-lg">
+            </i>
+        </button>
+        <button aria-label="Messages" class="text-gray-700 hover:text-black focus:outline-none">
+            <i class="fas fa-envelope text-lg">
+            </i>
+        </button>
+        <button aria-label="User Profile"
+            class="w-8 h-8 rounded-full bg-cyan-600 flex items-center justify-center text-white font-semibold text-sm">
+            A
+        </button>
+        <img alt="Adobe logo black text on white background" class="w-6 h-6" height="24"
+            src="https://storage.googleapis.com/a1aa/image/760984de-abd8-44cb-4bb1-78abff300286.jpg" width="24" />
+    </div>
+</header>
+<main class="max-w-7xl mx-auto px-4 sm:px-6 md:px-10 mt-4 mb-10">
+    <button class="bg-green-700 text-white text-sm font-semibold rounded-md px-5 py-2 mb-6 inline-block">
+        Back to Profile
+    </button>
+    <div class="flex flex-col md:flex-row md:space-x-6">
+        <!-- Left Sidebar -->
+        <nav
+            class="hidden md:block w-64 border border-gray-200 rounded-md sticky top-20 overflow-auto bg-white">
+            <ul class="text-xs font-semibold text-blue-700 border-b border-gray-200">
+                <li class="px-6 py-3 border-l-4 border-blue-700 bg-blue-50">
+                    Basic Information
+                </li>
+                <li class="px-6 py-3 hover:bg-gray-50 cursor-pointer">
+                    Change Password
+                </li>
+                <!-- <li class="px-6 py-3 hover:bg-gray-50 cursor-pointer text-gray-600 font-normal">
+                    + Add a custom section
+                </li> -->
+            </ul>
+        </nav>
+       <app-basic-information class="flex-1 ml-0 md:ml-6 space-y-6 max-w-5xl" [userId]="userId"></app-basic-information>
+    </div>
+</main>
+<!-- Footer Dark -->
+<footer class="bg-gray-900 text-white text-xs">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-10 py-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-8">
+        <div>
+            <div class="font-black text-lg mb-4 select-none">
+                Bēhance
+            </div>
+        </div>
+        <div>
+            <div class="font-semibold mb-3">
+                Built For Creatives
+            </div>
+            <ul class="space-y-2">
+                <li>
+                    <a class="hover:underline" href="#">
+                        Find Inspiration
+                    </a>
+                </li>
+                <li>
+                    <a class="hover:underline" href="#">
+                        Get Hired
+                    </a>
+                </li>
+                <li>
+                    <a class="hover:underline" href="#">
+                        Sell Creative Assets
+                    </a>
+                </li>
+                <li>
+                    <a class="hover:underline" href="#">
+                        Sell Freelance Services
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div>
+            <div class="font-semibold mb-3">
+                Find Talent
+            </div>
+            <ul class="space-y-2">
+                <li>
+                    <a class="hover:underline" href="#">
+                        Post a Job
+                    </a>
+                </li>
+                <li>
+                    <a class="hover:underline" href="#">
+                        Graphic Designers
+                    </a>
+                </li>
+                <li>
+                    <a class="hover:underline" href="#">
+                        Photographers
+                    </a>
+                </li>
+                <li>
+                    <a class="hover:underline" href="#">
+                        Video Editors
+                    </a>
+                </li>
+                <li>
+                    <a class="hover:underline" href="#">
+                        Web Designers
+                    </a>
+                </li>
+                <li>
+                    <a class="hover:underline" href="#">
+                        Illustrators
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div>
+            <div class="font-semibold mb-3">
+                Talent
+            </div>
+            <ul class="space-y-2">
+                <li>
+                    <a class="hover:underline" href="#">
+                        About Talent
+                    </a>
+                </li>
+                <li>
+                    <a class="hover:underline" href="#">
+                        Download the App
+                    </a>
+                </li>
+                <li>
+                    <a class="hover:underline" href="#">
+                        Blog
+                    </a>
+                </li>
+                <li>
+                    <a class="hover:underline" href="#">
+                        Careers
+                    </a>
+                </li>
+                <li>
+                    <a class="hover:underline" href="#">
+                        Help Center
+                    </a>
+                </li>
+                <li>
+                    <a class="hover:underline" href="#">
+                        Contact Us
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div>
+            <div class="font-semibold mb-3">
+                Social
+            </div>
+            <ul class="space-y-2">
+                <li class="flex items-center space-x-2">
+                    <i class="fab fa-instagram text-xs">
+                    </i>
+                    <a class="hover:underline" href="#">
+                        Instagram
+                    </a>
+                </li>
+                <li class="flex items-center space-x-2">
+                    <i class="fab fa-twitter text-xs">
+                    </i>
+                    <a class="hover:underline" href="#">
+                        Twitter
+                    </a>
+                </li>
+                <li class="flex items-center space-x-2">
+                    <i class="fab fa-pinterest-p text-xs">
+                    </i>
+                    <a class="hover:underline" href="#">
+                        Pinterest
+                    </a>
+                </li>
+                <li class="flex items-center space-x-2">
+                    <i class="fab fa-facebook-f text-xs">
+                    </i>
+                    <a class="hover:underline" href="#">
+                        Facebook
+                    </a>
+                </li>
+                <li class="flex items-center space-x-2">
+                    <i class="fab fa-linkedin-in text-xs">
+                    </i>
+                    <a class="hover:underline" href="#">
+                        LinkedIn
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div
+        class="border-t border-gray-800 max-w-7xl mx-auto px-4 sm:px-6 md:px-10 py-4 flex flex-col sm:flex-row justify-between text-gray-500 text-[9px]">
+        <div class="flex items-center space-x-2 mb-2 sm:mb-0">
+            <img alt="Adobe logo white text on black background" class="w-5 h-5" height="20"
+                src="https://storage.googleapis.com/a1aa/image/1c703b72-c8ed-4551-7617-47b8170f24c9.jpg" width="20" />
+            <span>
+                © 2025 Adobe Inc. All rights reserved.
+            </span>
+        </div>
+        <nav class="flex flex-wrap items-center space-x-3 text-gray-500">
+            <a class="hover:underline" href="#">
+                English
+            </a>
+            <a class="hover:underline" href="#">
+                TOU
+            </a>
+            <a class="hover:underline" href="#">
+                Privacy
+            </a>
+            <a class="hover:underline" href="#">
+                Community
+            </a>
+            <a class="hover:underline" href="#">
+                Cookie preferences
+            </a>
+            <a class="hover:underline" href="#">
+                Do not sell or share my personal information
+            </a>
+        </nav>
+    </div>
+</footer>
+
+<!-- <div class="border border-gray-200 rounded-md p-6 text-sm text-gray-700">
+                <label class="flex flex-col w-full max-w-md mx-auto">
+                    <span class="font-semibold mb-2 uppercase text-xs">
+                        Teams
+                    </span>
+                    <input
+                        class="border border-gray-300 rounded px-3 py-3 text-sm focus:outline-none focus:ring-1 focus:ring-blue-600 focus:border-blue-600"
+                        placeholder="Team Name" type="text" />
+                </label>
+            </div>
+            On The Web
+            <div class="border border-gray-200 rounded-md p-8 text-sm text-gray-700 max-w-3xl mx-auto space-y-6">
+                <div>
+                    <h3 class="font-semibold uppercase mb-2 text-xs">
+                        On The Web
+                    </h3>
+                    <p class="text-[10px] text-gray-500 mb-4">
+                        <i class="fas fa-link mr-1">
+                        </i>
+                        <strong>
+                            Connected Accounts
+                        </strong>
+                    </p>
+                    <p class="text-[9px] text-gray-400 mb-4">
+                        Build trust with your network by connecting your social profiles
+                    </p>
+                    <div class="space-y-3">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center space-x-4 text-gray-500">
+                                <i class="fas fa-bars text-sm">
+                                </i>
+                                <i class="fab fa-twitter text-lg">
+                                </i>
+                                <span class="text-sm">
+                                    Twitter
+                                </span>
+                            </div>
+                            <button
+                                class="bg-blue-600 text-white text-xs font-semibold rounded-full px-4 py-2 flex items-center space-x-2 hover:bg-blue-700 focus:outline-none">
+                                <span>
+                                    Connect Twitter
+                                </span>
+                                <i class="fas fa-external-link-alt text-xs">
+                                </i>
+                            </button>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center space-x-4 text-gray-500">
+                                <i class="fas fa-bars text-sm">
+                                </i>
+                                <i class="fab fa-linkedin-in text-lg">
+                                </i>
+                                <span class="text-sm">
+                                    LinkedIn
+                                </span>
+                            </div>
+                            <button
+                                class="bg-blue-600 text-white text-xs font-semibold rounded-full px-4 py-2 flex items-center space-x-2 hover:bg-blue-700 focus:outline-none">
+                                <span>
+                                    Connect LinkedIn
+                                </span>
+                                <i class="fas fa-external-link-alt text-xs">
+                                </i>
+                            </button>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center space-x-4 text-gray-500">
+                                <i class="fas fa-bars text-sm">
+                                </i>
+                                <i class="fab fa-instagram text-lg">
+                                </i>
+                                <span class="text-sm">
+                                    Instagram
+                                </span>
+                            </div>
+                            <button
+                                class="bg-blue-600 text-white text-xs font-semibold rounded-full px-4 py-2 flex items-center space-x-2 hover:bg-blue-700 focus:outline-none">
+                                <span>
+                                    Connect Instagram
+                                </span>
+                                <i class="fas fa-external-link-alt text-xs">
+                                </i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <p class="text-[10px] font-semibold mb-2">
+                        Other Profiles
+                    </p>
+                    <p class="text-[9px] text-gray-400 mb-4">
+                        Enter your username to add these social accounts to your profile
+                    </p>
+                    <div class="space-y-3">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center space-x-4 text-gray-400">
+                                <i class="fas fa-bars text-sm">
+                                </i>
+                                <i class="fab fa-facebook-f text-lg">
+                                </i>
+                                <span class="text-sm">
+                                    Facebook
+                                </span>
+                            </div>
+                            <button
+                                class="border border-gray-300 text-xs font-semibold rounded-full px-4 py-2 hover:bg-gray-100 focus:outline-none">
+                                Add Username
+                            </button>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center space-x-4 text-gray-400">
+                                <i class="fas fa-bars text-sm">
+                                </i>
+                                <i class="fab fa-dribbble text-lg">
+                                </i>
+                                <span class="text-sm">
+                                    Dribbble
+                                </span>
+                            </div>
+                            <button
+                                class="border border-gray-300 text-xs font-semibold rounded-full px-4 py-2 hover:bg-gray-100 focus:outline-none">
+                                Add Username
+                            </button>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center space-x-4 text-gray-400">
+                                <i class="fas fa-bars text-sm">
+                                </i>
+                                <i class="fab fa-Talent-v text-lg">
+                                </i>
+                                <span class="text-sm">
+                                    Talent
+                                </span>
+                            </div>
+                            <button
+                                class="border border-gray-300 text-xs font-semibold rounded-full px-4 py-2 hover:bg-gray-100 focus:outline-none">
+                                Add Username
+                            </button>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center space-x-4 text-gray-400">
+                                <i class="fas fa-bars text-sm">
+                                </i>
+                                <i class="fas fa-circle text-xs">
+                                </i>
+                                <span class="text-sm">
+                                    Flickr
+                                </span>
+                            </div>
+                            <button
+                                class="border border-gray-300 text-xs font-semibold rounded-full px-4 py-2 hover:bg-gray-100 focus:outline-none">
+                                Add Username
+                            </button>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center space-x-4 text-gray-400">
+                                <i class="fas fa-bars text-sm">
+                                </i>
+                                <i class="fab fa-youtube text-lg">
+                                </i>
+                                <span class="text-sm">
+                                    YouTube
+                                </span>
+                            </div>
+                            <button
+                                class="border border-gray-300 text-xs font-semibold rounded-full px-4 py-2 hover:bg-gray-100 focus:outline-none">
+                                Add Username
+                            </button>
+                        </div>
+                    </div>
+                    <button class="text-xs text-gray-600 mt-3 hover:underline focus:outline-none">
+                        View More
+                        <i class="fas fa-chevron-down text-[10px] ml-1">
+                        </i>
+                    </button>
+                </div>
+            </div>
+            About Me
+            <div class="border border-gray-200 rounded-md p-8 max-w-3xl mx-auto text-sm text-gray-700 space-y-4">
+                <label class="flex flex-col">
+                    <span class="font-semibold uppercase text-xs">
+                        About Me
+                    </span>
+                    <input
+                        class="border border-gray-300 rounded px-3 py-3 text-sm focus:outline-none focus:ring-1 focus:ring-blue-600 focus:border-blue-600"
+                        type="text" value="About Me" />
+                </label>
+                <label class="flex flex-col">
+                    <span class="font-semibold text-xs">
+                        Description
+                    </span>
+                    <textarea
+                        class="border border-gray-300 rounded px-3 py-3 text-sm resize-none focus:outline-none focus:ring-1 focus:ring-blue-600 focus:border-blue-600"
+                        rows="4"></textarea>
+                </label>
+            </div>
+            Work Experience
+            <div class="border border-gray-200 rounded-md p-6 max-w-3xl mx-auto text-sm text-gray-700">
+                <div class="font-semibold uppercase text-xs mb-3">
+                    Work Experience
+                </div>
+                <button
+                    class="text-blue-600 text-sm font-semibold flex items-center space-x-2 hover:underline focus:outline-none">
+                    <i class="fas fa-pencil-alt text-sm">
+                    </i>
+                    <span>
+                        Add Work Experience
+                    </span>
+                </button>
+            </div>
+           Links
+            <div class="border border-gray-200 rounded-md p-6 max-w-3xl mx-auto text-sm text-gray-700 space-y-3">
+                <div class="font-semibold uppercase text-xs">
+                    Links
+                </div>
+                <form class="flex space-x-4 max-w-md">
+                    <label class="flex flex-col w-1/2">
+                        <span class="text-xs font-semibold">
+                            Link Title
+                        </span>
+                        <input
+                            class="border border-gray-300 rounded px-3 py-3 text-sm focus:outline-none focus:ring-1 focus:ring-blue-600 focus:border-blue-600"
+                            placeholder="Enter Link Title" type="text" />
+                    </label>
+                    <label class="flex flex-col w-1/2">
+                        <span class="text-xs font-semibold">
+                            Url
+                        </span>
+                        <input
+                            class="border border-gray-300 rounded px-3 py-3 text-sm focus:outline-none focus:ring-1 focus:ring-blue-600 focus:border-blue-600"
+                            placeholder="Enter URL" type="text" />
+                    </label>
+                    <button
+                        class="bg-blue-600 text-white text-sm font-semibold rounded-full px-6 py-2 self-end hover:bg-blue-700 focus:outline-none"
+                        type="submit">
+                        Add
+                    </button>
+                </form>
+            </div>
+            <div class="max-w-3xl mx-auto text-xs text-gray-600 font-semibold text-center cursor-pointer select-none">
+                + Add a custom section
+            </div> -->

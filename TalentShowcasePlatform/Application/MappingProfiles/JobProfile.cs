@@ -14,7 +14,8 @@ public class JobProfile : Profile
 {
 	public JobProfile()
 	{
-		CreateMap<Job, JobDto>();
+		CreateMap<Job, JobDto>()
+			.ForMember(dest => dest.PostedByUser, opt => opt.MapFrom(src => src.PostedByUser)); // Nếu bạn muốn map Role;
 		CreateMap<CreateJobCommand, Job>();
 		CreateMap<UpdateJobCommand, Job>();
 	}

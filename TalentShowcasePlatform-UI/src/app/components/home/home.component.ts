@@ -1,35 +1,31 @@
 import { AfterViewInit, Component, HostListener, Inject, OnInit, PLATFORM_ID } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { ClientLogger } from '../../services/client-logger.service';
 import { SharedModule } from '../shared/shared.module';
 import { VideoCardComponent } from '../video-card/video-card.component';
 import { Router } from '@angular/router';
 import { VideosService } from '../../services/videos.service';
-import { LoginComponent } from "../login/login.component";
-import { AuthService } from '../../services/auth.service';
 import { LoginResponse } from '../../interfaces/interface';
-import { Enviroment } from '../../../environment';
-import { SidebarComponent } from '../sidebar/sidebar.component';
-import { NavbarComponent } from '../navbar/navbar.component';
 import { AuthStateService } from '../../services/auth-state.service';
-import { DataService } from '../../services/data.service';
 import { SubjectService } from '../../services/subject.service';
+import { HeaderComponent } from '../header/header.component';
+import { AsideLeftComponent } from "../aside-left/aside-left.component";
 
 @Component({
   selector: 'app-home',
   imports: [
     VideoCardComponent,
     SharedModule,
-    LoginComponent,
-    NavbarComponent
+    HeaderComponent,
+    AsideLeftComponent,
+    AsideLeftComponent
 ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
 export class HomeComponent implements OnInit {
-  private videoSubscription: Subscription | undefined; // Để quản lý việc unsubscribe
-  isLoggedIn: boolean = false;
   videoList: any[] = []; // Khai báo biến videoList để lưu trữ danh sách video
+
+  isLoggedIn: boolean = false;
   currentUser: LoginResponse['data'] | null = null; // Cập nhật kiểu dữ liệu
   private authSubscription: Subscription | undefined;
 
@@ -42,7 +38,6 @@ export class HomeComponent implements OnInit {
 
   constructor(
     private subjectService: SubjectService,
-    private dataService: DataService,
     private videoService: VideosService,
     private authStateService: AuthStateService,
     private router: Router
@@ -61,6 +56,7 @@ export class HomeComponent implements OnInit {
         this.currentUser = user;
       })
     );
+    console.log("user home: ", this.currentUser);
   }
 
   ngOnDestroy(): void {
@@ -80,7 +76,7 @@ export class HomeComponent implements OnInit {
   loadVideos(): void {
     console.log('LOADING VIDEOS page', this.page);
     this.loading = true;
-    this.videoService.getVideos(this.page, this.pageSize).subscribe({
+    this.videoService.getVideosPage(this.page, this.pageSize).subscribe({
       next: (res: any) => {
         if (res?.data) {
           this.videoList.push(...res.data);
@@ -99,7 +95,7 @@ export class HomeComponent implements OnInit {
   }
 
   getAllVideo() {
-    this.dataService.getVideos().subscribe({
+    this.videoService.getVideos().subscribe({
       next: (res: any) => {
         // Sử dụng optional chaining để tránh lỗi nếu res hoặc res.data là null/undefined
         if (res?.data) {
@@ -129,4 +125,5 @@ export class HomeComponent implements OnInit {
     // Bây giờ bạn có thể sử dụng this.currentUser?.userId cho các chức năng khác
   }
 
+  
 }

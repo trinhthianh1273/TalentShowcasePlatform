@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Edit Profile | Behance Mock</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 font-sans text-sm text-gray-800">
+
+  <!-- Top Nav -->
+  <header class="bg-white shadow sticky top-0 z-40">
+    <div class="max-w-7xl mx-auto flex justify-between items-center px-4 py-2">
+      <div class="flex items-center space-x-6">
+        <span class="text-lg font-bold">Bēhance</span>
+        <a href="#" class="hover:underline">Explore</a>
+        <a href="#" class="hover:underline">Find Jobs</a>
+        <a href="#" class="hover:underline">Hire Freelancers</a>
+        <a href="#" class="hover:underline">Career Resources</a>
+
+        <!-- Search -->
+        <div class="relative">
+          <input type="text" placeholder="Search..."
+            class="pl-8 pr-3 py-1 rounded-full bg-gray-200 text-gray-700 placeholder-gray-500 text-sm" />
+          <svg class="w-4 h-4 text-gray-500 absolute left-2 top-1/2 transform -translate-y-1/2" fill="none"
+            stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M21 21l-4.35-4.35M10 18a8 8 0 100-16 8 8 0 000 16z" />
+          </svg>
+        </div>
+      </div>
+
+      <div class="flex items-center space-x-4">
+        <svg class="w-5 h-5 text-gray-700" fill="none" stroke="currentColor" stroke-width="2"
+          viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round"
+            d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+        </svg>
+        <svg class="w-5 h-5 text-gray-700" fill="none" stroke="currentColor" stroke-width="2"
+          viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round"
+            d="M15 17h5l-1.4-1.4A2.03 2.03 0 0118 14.16V11a6 6 0 00-4-5.66V4a2 2 0 10-4 0v1.34A6 6 0 006 11v3.16c0 .54-.21 1.06-.6 1.44L4 17h5m6 0v1a3 3 0 11-6 0v-1h6z" />
+        </svg>
+        <img src="./profile.jpeg" class="w-6 h-6 rounded-full border" />
+        <span class="text-gray-700">Adobe</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Back Button -->
+  <div class="max-w-7xl mx-auto px-4 mt-4">
+    <button class="bg-green-600 text-white px-4 py-1 rounded text-sm">Back to Profile</button>
+  </div>
+
+  <!-- Main Layout -->
+  <div class="max-w-7xl mx-auto mt-4 px-4 grid grid-cols-1 lg:grid-cols-4 gap-6">
+    <!-- Sidebar -->
+    <aside class="bg-white p-4 rounded shadow h-fit sticky top-16">
+      <div class="space-y-2">
+        <button onclick="showSection('basic')" class="tab-btn font-semibold text-left w-full">Basic Information</button>
+        <button onclick="showSection('teams')" class="tab-btn text-left w-full">Teams</button>
+        <button onclick="showSection('web')" class="tab-btn text-left w-full">On The Web</button>
+        <button onclick="showSection('about')" class="tab-btn text-left w-full">About Me</button>
+        <button onclick="showSection('work')" class="tab-btn text-left w-full">Work Experience</button>
+        <button onclick="showSection('milestones')" class="tab-btn text-left w-full">Milestones</button>
+        <button onclick="showSection('links')" class="tab-btn text-left w-full">Links</button>
+        <button class="text-blue-600 mt-2">+ Add a custom section</button>
+      </div>
+    </aside>
+
+    <!-- Content Area -->
+    <main class="col-span-1 lg:col-span-3 space-y-6">
+      <!-- Basic -->
+      <section id="section-basic" class="bg-white p-6 rounded shadow">
+        <h2 class="text-xl font-semibold mb-4">Basic Information</h2>
+        <div class="flex items-center space-x-4 mb-6">
+          <img src="./profile.jpeg" class="w-20 h-20 rounded-full border" />
+          <button class="text-blue-600 underline text-sm">Upload</button>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <input type="text" placeholder="First Name" class="border p-2 rounded w-full" value="Anh" />
+          <input type="text" placeholder="Last Name" class="border p-2 rounded w-full" value="Trịnh" />
+          <input type="text" placeholder="Occupation" class="border p-2 rounded w-full" />
+          <input type="text" placeholder="Company" class="border p-2 rounded w-full" />
+          <select class="border p-2 rounded w-full">
+            <option>Vietnam</option>
+          </select>
+          <input type="text" placeholder="City" class="border p-2 rounded w-full" />
+          <input type="url" placeholder="Website URL" class="border p-2 rounded w-full" />
+        </div>
+      </section>
+
+      <!-- Teams -->
+      <section id="section-teams" class="bg-white p-6 rounded shadow hidden">
+        <h2 class="text-xl font-semibold mb-4">Teams</h2>
+        <input type="text" placeholder="Team Name" class="border p-2 rounded w-full" />
+      </section>
+
+      <!-- Web -->
+      <section id="section-web" class="bg-white p-6 rounded shadow hidden">
+        <h2 class="text-xl font-semibold mb-4">Connected Accounts</h2>
+        <div class="space-y-2">
+          <div class="flex justify-between items-center border p-2 rounded">
+            <span>Twitter</span>
+            <button class="text-white bg-blue-600 px-3 py-1 rounded text-sm">Connect Twitter</button>
+          </div>
+          <div class="flex justify-between items-center border p-2 rounded">
+            <span>LinkedIn</span>
+            <button class="text-white bg-blue-600 px-3 py-1 rounded text-sm">Connect LinkedIn</button>
+          </div>
+          <div class="flex justify-between items-center border p-2 rounded">
+            <span>Instagram</span>
+            <button class="text-white bg-blue-600 px-3 py-1 rounded text-sm">Connect Instagram</button>
+          </div>
+        </div>
+
+        <h3 class="mt-6 mb-2 font-semibold">Other Profiles</h3>
+        <div class="space-y-2">
+          <div class="flex justify-between items-center border p-2 rounded">
+            <span>Facebook</span>
+            <button class="text-sm">Add Username</button>
+          </div>
+          <div class="flex justify-between items-center border p-2 rounded">
+            <span>Dribbble</span>
+            <button class="text-sm">Add Username</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- About Me -->
+      <section id="section-about" class="bg-white p-6 rounded shadow hidden">
+        <h2 class="text-xl font-semibold mb-4">About Me</h2>
+        <input type="text" placeholder="Section Title" class="border p-2 rounded w-full mb-2" value="About Me" />
+        <textarea placeholder="Description" rows="4" class="border p-2 rounded w-full"></textarea>
+      </section>
+
+      <!-- Work Experience -->
+      <section id="section-work" class="bg-white p-6 rounded shadow hidden">
+        <h2 class="text-xl font-semibold mb-4">Work Experience</h2>
+        <button class="text-blue-600 underline text-sm">+ Add Work Experience</button>
+      </section>
+
+      <!-- Milestones -->
+      <section id="section-milestones" class="bg-white p-6 rounded shadow hidden">
+        <h2 class="text-xl font-semibold mb-4">Milestones</h2>
+        <label class="flex items-center space-x-2">
+          <input type="checkbox" checked class="accent-blue-600" />
+          <span>Completed Courses</span>
+        </label>
+      </section>
+
+      <!-- Links -->
+      <section id="section-links" class="bg-white p-6 rounded shadow hidden">
+        <h2 class="text-xl font-semibold mb-4">Links</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <input type="text" placeholder="Link Title" class="border p-2 rounded w-full" />
+          <input type="url" placeholder="Enter URL" class="border p-2 rounded w-full" />
+        </div>
+        <button class="mt-2 bg-blue-600 text-white px-4 py-1 rounded text-sm">Add</button>
+      </section>
+    </main>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-black text-white text-sm mt-10">
+    <div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-5 gap-6 px-4 py-10">
+      <div><p class="font-bold mb-2">Built For Creatives</p></div>
+      <div><p class="font-bold mb-2">Find Talent</p></div>
+      <div><p class="font-bold mb-2">Behance</p></div>
+      <div><p class="font-bold mb-2">Social</p></div>
+    </div>
+    <div class="border-t border-gray-800 text-center py-4 text-xs">
+      <p>© 2025 Adobe Inc. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    function showSection(id) {
+      document.querySelectorAll("main > section").forEach((s) => {
+        s.classList.add("hidden");
+      });
+      document.getElementById("section-" + id).classList.remove("hidden");
+
+      document.querySelectorAll(".tab-btn").forEach(btn => {
+        btn.classList.remove("font-semibold", "text-blue-600");
+      });
+      event.target.classList.add("font-semibold", "text-blue-600");
+    }
+  </script>
+</body>
+</html>

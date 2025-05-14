@@ -1,0 +1,420 @@
+<div class=" justify-between sticky min-h-screen mx-auto p-4 space-y-4">
+    <!-- Top Navigation -->
+    <nav
+        class="flex items-center justify-between text-sm font-semibold text-gray-700 px-4 py-4 sticky top-0 bg-white shadow-md z-10">
+        <!-- Left: Logo + Title -->
+        <div class="flex items-center space-x-4 flex-1 min-w-0">
+            <div class="font-black italic text-2xl select-text cursor-default whitespace-nowrap">
+                Talent
+            </div>
+            <svg aria-hidden="true" class="w-3 h-3 text-gray-400" fill="none" stroke="currentColor" stroke-width="2"
+                viewBox="0 0 24 24">
+                <path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            <div class="truncate text-ellipsis text-sm text-gray-700">
+                {{ videoData.title }}
+            </div>
+        </div>
+
+        <!-- Right: Actions -->
+        <div class="flex items-center space-x-6 text-gray-600">
+            <button class="flex items-center space-x-1 text-sm font-semibold">
+                <i class="far fa-comment"></i>
+                <span>0</span>
+                <span>Comments</span>
+            </button>
+            <button form="myForm" (click)="updateVideo(videoData.id)"
+                class="flex items-center space-x-2 bg-gray-900 text-white rounded-full px-4 py-2 text-sm font-semibold hover:bg-gray-800"
+                type="submit">
+                <i class="fas fa-share-alt"></i>
+                <span>Share</span>
+                <!-- <svg aria-hidden="true" class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2"
+                    viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg> -->
+            </button>
+            <button
+                class="flex items-center space-x-2 bg-red-600 text-white rounded-full px-4 py-2 text-sm font-semibold hover:bg-red-700 transition"
+                type="button">
+                <i class="fas fa-trash-alt"></i>
+                <span>Delete</span>
+            </button>
+
+            <button aria-label="More options" class="text-gray-600 hover:text-gray-900">
+                <svg aria-hidden="true" class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M6 10a2 2 0 11-4 0 2 2 0 014 0zm6 0a2 2 0 11-4 0 2 2 0 014 0zm6 0a2 2 0 11-4 0 2 2 0 014 0z">
+                    </path>
+                </svg>
+            </button>
+            <button aria-label="User profile" class="rounded-full overflow-hidden w-8 h-8">
+                <img alt="User profile avatar" class="w-8 h-8 object-cover" height="32" [src]="avatarUrl" width="32" />
+            </button>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="flex flex-col lg:flex-row gap-6">
+        <!-- Left Sidebar with icons -->
+        <aside class="hidden lg:flex flex-col space-y-6 w-16 items-center pt-10">
+            <button aria-label="Appearance"
+                class="flex flex-col items-center gap-1 text-xs text-gray-500 hover:text-black">
+                <div class="bg-[#d9dce1] hover:bg-[#c1c5cc] p-3 rounded-full">
+                    <svg aria-hidden="true" class="w-6 h-6 text-gray-700" fill="currentColor" viewbox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M21 10.5a8.38 8.38 0 0 0-.9-3.8 8.5 8.5 0 0 0-7.6-4.7 8.38 8.38 0 0 0-3.8.9L3 3v18l3.7-3.7a8.38 8.38 0 0 0 3.8.9 8.5 8.5 0 0 0 7.6-4.7 8.38 8.38 0 0 0 .9-3.8z">
+                        </path>
+                    </svg>
+                </div>
+                Appearance
+            </button>
+            <button aria-label="Languages"
+                class="flex flex-col items-center gap-1 text-xs text-gray-500 hover:text-black">
+                <div class="bg-[#d9dce1] hover:bg-[#c1c5cc] p-3 rounded-full">
+                    <svg aria-hidden="true" class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor"
+                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewbox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 3v18m9-9H3"></path>
+                        <path d="M16 7l-4 10M8 7l4 10"></path>
+                    </svg>
+                </div>
+                Languages
+            </button>
+            <button aria-label="Analytics"
+                class="flex flex-col items-center gap-1 text-xs text-gray-700 bg-[#d9dce1] p-3 rounded-full">
+                <svg aria-hidden="true" class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round" viewbox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 20h9"></path>
+                    <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4 12.5-12.5z"></path>
+                </svg>
+                Editing
+            </button>
+            <button aria-label="Editing"
+                class="flex flex-col items-center gap-1 text-xs text-gray-500 hover:text-black">
+                <div class="bg-[#d9dce1] hover:bg-[#c1c5cc] p-3 rounded-full">
+                    <svg aria-hidden="true" class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round" viewbox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path d="M3 3v18h18"></path>
+                        <rect height="14" rx="2" ry="2" width="6" x="6" y="7"></rect>
+                        <rect height="10" rx="2" ry="2" width="6" x="14" y="11"></rect>
+                    </svg>
+                </div>
+                Analytics
+            </button>
+        </aside>
+        <!-- Video Player Section -->
+        <section class="flex-1 max-w-[900px] space-y-4">
+            <div class="relative rounded-lg overflow-hidden shadow-lg">
+                <video
+                    aria-label="Video player showing 'Get comprehensive analytics and track viewer retention across multiple channels' with a purple 'View plans' button"
+                    class="video-js vjs-default-skin w-full rounded-lg bg-black" autoplay muted controls playsinline
+                    preload="auto" width="100%" height="auto">
+                    <source [src]="src + videoData.url " type="video/mp4" />
+                </video>
+                <button aria-label="Like video" class="absolute top-3 right-3 text-white hover:text-red-500">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M4.318 6.318a4.5 4.5 0 016.364 0L12 7.636l1.318-1.318a4.5 4.5 0 116.364 6.364L12 21.364l-7.682-7.682a4.5 4.5 0 010-6.364z"
+                            stroke-linecap="round" stroke-linejoin="round">
+                        </path>
+                    </svg>
+                </button>
+            </div>
+            <!-- Title and Description Inputs -->
+            <form id="updateVideoForm" class="space-y-4">
+                <!-- Title -->
+                <div class="flex items-start space-x-6">
+                    <label class="w-28 font-semibold text-base cursor-default select-none flex items-center space-x-1"
+                        for="title">
+                        <span>
+                            Title
+                        </span>
+                        <i class="fas fa-info-circle text-gray-400 text-xs" title="Information about content">
+                        </i>
+                    </label>
+                    <div class="flex flex-col space-y-3 flex-1">
+                        <input
+                            class="flex-1 rounded-full border border-gray-300 px-4 py-2 text-sm text-[#6B7280] focus:outline-none focus:ring-2 focus:ring-purple-600"
+                            id="title" type="text" value="{{videoData.title}}" />
+                    </div>
+                </div>
+                <!-- Description -->
+                <div class="flex items-start space-x-6">
+                    <label class="w-28 font-semibold text-base cursor-default select-none flex items-center space-x-1"
+                        for="description">
+                        <span>
+                            Description
+                        </span>
+                        <i class="fas fa-info-circle text-gray-400 text-xs" title="Information about content">
+                        </i>
+                    </label>
+                    <div class="flex flex-col space-y-3 flex-1">
+                        <textarea
+                            class="flex-1 rounded-xl border border-gray-300 px-4 py-2 text-[15px] text-[#6B7280] resize-none focus:outline-none focus:ring-2 focus:ring-purple-600"
+                            id="description" placeholder="Add description..." rows="2"></textarea>
+                    </div>
+                </div>
+                <!-- Category -->
+                <div class="flex items-start space-x-6">
+                    <label class="w-28 font-semibold text-base cursor-default select-none flex items-center space-x-1"
+                        for="category">
+                        <span>
+                            Category
+                        </span>
+                        <i class="fas fa-info-circle text-gray-400 text-xs" title="Information about content">
+                        </i>
+                    </label>
+                    <div class="flex flex-col space-y-3 flex-1">
+                        <select
+                            class="w-60 rounded-xl border border-gray-300 px-4 py-2 text-sm text-black focus:outline-none focus:ring-2 focus:ring-purple-600"
+                            id="content" name="content">
+                            <option class=" text-[#6B7280] ">
+                                Choose category . . .
+                            </option>
+                            <option *ngFor="let category of categories" value="{{category.id}}"
+                                [selected]="category.id == videoData.categoryId">{{ category.name }}</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="flex items-start space-x-6">
+                    <label class="w-28 font-semibold text-base cursor-default select-none flex items-center space-x-1"
+                        for="public">
+                        <span>
+                            Public
+                        </span>
+                        <i class="fas fa-info-circle text-gray-400 text-xs" title="Information about content">
+                        </i>
+                    </label>
+
+                    <div class="relative hover:cursor-pointer">
+                        <input type="checkbox" [(ngModel)]="videoData.isPublic" (change)="onTogglePublic(videoData)"
+                            class="rounded-xl border border-gray-300 px-4 py-2 text-sm text-black focus:outline-none focus:ring-2 focus:ring-purple-600 form-checkbox h-4 w-4 hover:cursor-pointer" />
+                        <span class="flex-1 rounded-xl text-[15px] text-[#6B7280] ">
+                            Video is Public
+                        </span>
+                        <span class="flex-1 rounded-xl text-[15px] text-[#6B7280] " >
+                            Video is Private
+                        </span>
+                    </div>
+
+                </div>
+
+                <!-- Categories -->
+                <!-- <div class="flex items-center space-x-6">
+                    <label class="font-semibold text-[15px] leading-5 text-black flex items-center gap-1 cursor-default"
+                        for="categories">
+                        Categories
+                        <i aria-label="Information about categories"
+                            class="fas fa-info-circle text-[#6B7280] text-[14px]" title="Information about categories">
+                        </i>
+                    </label>
+                    <div>
+                        <button aria-label="Add category"
+                            class="w-10 h-10 rounded-md bg-[#E9ECEF] text-black text-2xl font-light flex items-center justify-center"
+                            type="button">
+                            +
+                        </button>
+                        <div aria-label="Category list"
+                            class="mt-2 max-h-48 w-[28rem] rounded-xl bg-white border border-[#E5E7EB] p-4 overflow-y-auto shadow-lg"
+                            role="list">
+                            <ul class="space-y-2 text-[15px] text-black">
+                                <li class="flex items-center gap-3">
+                                    <button aria-label="Collapse Ads and Commercials category"
+                                        class="w-6 h-6 rounded-sm bg-black text-white flex items-center justify-center"
+                                        type="button">
+                                        <i class="fas fa-minus text-[12px]">
+                                        </i>
+                                    </button>
+                                    <span>
+                                        Ads and Commercials
+                                    </span>
+                                </li>
+                                <li class="flex items-center gap-3">
+                                    <button aria-label="Collapse Animation category"
+                                        class="w-6 h-6 rounded-sm bg-black text-white flex items-center justify-center"
+                                        type="button">
+                                        <i class="fas fa-minus text-[12px]">
+                                        </i>
+                                    </button>
+                                    <span>
+                                        Animation
+                                    </span>
+                                </li>
+                                <li class="flex items-center gap-3">
+                                    <button aria-label="Collapse Branded Content category"
+                                        class="w-6 h-6 rounded-sm bg-black text-white flex items-center justify-center"
+                                        type="button">
+                                        <i class="fas fa-minus text-[12px]">
+                                        </i>
+                                    </button>
+                                    <span>
+                                        Branded Content
+                                    </span>
+                                    <select aria-label="Select language for Branded Content"
+                                        class="ml-4 rounded-lg border border-[#D1D5DB] text-[15px] text-[#374151] px-3 py-1 focus:outline-none focus:ring-2 focus:ring-[#2563EB]">
+                                        <option>
+                                            Language
+                                        </option>
+                                    </select>
+                                </li>
+                                <li class="flex items-center gap-3">
+                                    <label class="inline-flex items-center gap-2 cursor-pointer">
+                                        <input name="comedy" type="checkbox" />
+                                        <span>
+                                            Comedy
+                                        </span>
+                                    </label>
+                                </li>
+                                <li class="flex items-center gap-3">
+                                    <label class="inline-flex items-center gap-2 cursor-pointer">
+                                        <input name="documentary" type="checkbox" />
+                                        <span>
+                                            Documentary
+                                        </span>
+                                    </label>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="flex items-center space-x-2 flex-wrap max-w-xl">
+                        <span
+                            class="flex items-center space-x-1 bg-gray-200 rounded-lg px-3 py-1 text-sm text-gray-700">
+                            <span>
+                                Travel
+                            </span>
+                            <button aria-label="Remove Travel category"
+                                class="text-gray-400 hover:text-gray-600 focus:outline-none" type="button">
+                                <i class="fas fa-times text-xs">
+                                </i>
+                            </button>
+                        </span>
+                        <span
+                            class="flex items-center space-x-1 bg-gray-200 rounded-lg px-3 py-1 text-sm text-gray-700">
+                            <span>
+                                Trailers
+                            </span>
+                            <button aria-label="Remove Trailers category"
+                                class="text-gray-400 hover:text-gray-600 focus:outline-none" type="button">
+                                <i class="fas fa-times text-xs">
+                                </i>
+                            </button>
+                        </span>
+                    </div>
+                </div> -->
+                <!-- <div class="flex items-center space-x-2 text-xs text-gray-600">
+                    <span class="bg-gray-100 rounded-full px-3 py-1 select-text cursor-default">
+                        Storage
+                    </span>
+                    <a class="text-blue-500 font-semibold hover:underline" href="#">
+                        30MB/1GB
+                    </a>
+                </div> -->
+            </form>
+        </section>
+        <!-- Right Analytics Panel -->
+        <!-- <aside aria-label="Analytics panel"
+            class="w-full max-w-[360px] border border-gray-200 rounded-xl p-4 overflow-y-auto scrollbar-thin"
+            style="height: 600px">
+            <div class="flex justify-between items-center mb-4">
+                <h2 class="font-semibold text-gray-900 text-sm select-text cursor-default">
+                    Analytics
+                </h2>
+                <button aria-label="Close analytics panel" class="text-gray-500 hover:text-gray-700">
+                    <svg aria-hidden="true" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2"
+                        viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round">
+                        </path>
+                    </svg>
+                </button>
+            </div>
+            <button
+                class="w-full bg-gray-100 text-gray-700 text-xs font-semibold rounded-lg py-2 mb-6 hover:bg-gray-200 flex justify-center items-center space-x-1"
+                type="button">
+                <span>
+                    Advanced report
+                </span>
+            </button>
+            Video Section
+            <section class="mb-6">
+                <div class="flex justify-between items-center cursor-pointer select-text">
+                    <h3 class="font-semibold text-gray-900 text-xs">
+                        Video
+                    </h3>
+                    <svg aria-hidden="true" class="w-4 h-4 text-gray-600" fill="none" stroke="currentColor"
+                        stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round">
+                        </path>
+                    </svg>
+                </div>
+                <p class="text-[9px] text-gray-400 mt-1 select-text cursor-default">
+                    April 13, 2025 - Today
+                </p>
+                <div class="space-y-3 mt-3">
+                    <div class="bg-gray-100 rounded-lg p-3 text-xs text-gray-700 select-text cursor-default">
+                        <div class="flex justify-between mb-1">
+                            <span>
+                                Views
+                            </span>
+                            <span>
+                                -
+                            </span>
+                        </div>
+                        <div class="h-1 bg-blue-300 rounded-full">
+                        </div>
+                    </div>
+                    <div class="bg-gray-100 rounded-lg p-3 text-xs text-gray-700 select-text cursor-default">
+                        <div class="flex justify-between mb-1">
+                            <span>
+                                Impressions
+                            </span>
+                            <span>
+                                -
+                            </span>
+                        </div>
+                        <div class="h-1 bg-blue-300 rounded-full">
+                        </div>
+                    </div>
+                    <div class="bg-gray-100 rounded-lg p-3 text-xs text-gray-700 select-text cursor-default">
+                        <div class="flex justify-between mb-1">
+                            <span>
+                                View Rate
+                            </span>
+                            <span>
+                                -
+                            </span>
+                        </div>
+                        <div class="h-1 bg-blue-300 rounded-full">
+                        </div>
+                    </div>
+                </div>
+            </section>
+            Engagement Section
+            <section>
+                <div class="flex justify-between items-center cursor-pointer select-text">
+                    <h3 class="font-semibold text-gray-900 text-xs">
+                        Engagement
+                    </h3>
+                    <svg aria-hidden="true" class="w-4 h-4 text-gray-600" fill="none" stroke="currentColor"
+                        stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round">
+                        </path>
+                    </svg>
+                </div>
+                <p class="text-[9px] text-gray-400 mt-1 select-text cursor-default">
+                    April 13, 2025 - Today
+                </p>
+                <div class="bg-gray-50 rounded-lg p-3 mt-3 text-[9px] text-center text-gray-400 select-text cursor-default"
+                    style="line-height: 1.1">
+                    Unable to load Watch time data.
+                    <br />
+                    Refresh to try again or contact support.
+                </div>
+            </section>
+        </aside> -->
+    </div>
+</div>

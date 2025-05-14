@@ -1,0 +1,468 @@
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>
+   Reddit Clone Responsive
+  </title>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;display=swap" rel="stylesheet"/>
+  <style>
+   body {
+      font-family: 'Inter', sans-serif;
+    }
+    /* Scrollbar for horizontal scroll container */
+    .scrollbar-hide::-webkit-scrollbar {
+      display: none;
+    }
+    .scrollbar-hide {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+ </head>
+ <body class="bg-white text-gray-900">
+  <div class="flex flex-col md:flex-row min-h-screen max-w-[1200px] mx-auto border border-gray-200">
+   <!-- Sidebar -->
+   <aside class="md:flex flex-col w-full md:w-60 border-b md:border-b-0 md:border-r border-gray-200 px-4 py-4 md:py-6 text-sm text-gray-600 hidden md:block">
+    <nav class="space-y-1">
+     <a class="flex items-center gap-3 text-orange-500 font-semibold" href="#">
+      <i class="fab fa-reddit fa-lg">
+      </i>
+      <span class="text-lg font-bold">
+       reddit
+      </span>
+     </a>
+     <ul class="mt-6 space-y-1">
+      <li>
+       <a class="flex items-center gap-3 rounded-md px-3 py-2 hover:bg-gray-100 text-gray-900 font-semibold" href="#">
+        <i class="fas fa-home fa-fw">
+        </i>
+        Home
+       </a>
+      </li>
+      <li>
+       <a class="flex items-center gap-3 rounded-md px-3 py-2 bg-gray-100 text-gray-900 font-semibold" href="#">
+        <i class="fas fa-fire fa-fw">
+        </i>
+        Popular
+       </a>
+      </li>
+      <li>
+       <a class="flex items-center gap-3 rounded-md px-3 py-2 hover:bg-gray-100" href="#">
+        <i class="fas fa-compass fa-fw">
+        </i>
+        Explore
+       </a>
+      </li>
+      <li>
+       <a class="flex items-center gap-3 rounded-md px-3 py-2 hover:bg-gray-100" href="#">
+        <i class="fas fa-bolt fa-fw">
+        </i>
+        All
+       </a>
+      </li>
+     </ul>
+    </nav>
+    <div class="mt-8">
+     <h3 class="text-xs font-semibold uppercase text-gray-400 tracking-wide mb-2">
+      Custom Feeds
+     </h3>
+     <button class="flex items-center gap-2 text-gray-600 hover:text-gray-900 text-sm font-semibold">
+      <i class="fas fa-plus">
+      </i>
+      Create a custom feed
+     </button>
+    </div>
+    <div class="mt-8">
+     <h3 class="text-xs font-semibold uppercase text-gray-400 tracking-wide mb-2">
+      Reddit Feeds
+     </h3>
+     <ul class="space-y-1 text-gray-600 text-sm">
+      <li>
+       <a class="flex items-center gap-2 hover:text-gray-900" href="#">
+        <span class="text-xs text-gray-400">
+         r/
+        </span>
+        BestofRedditorUpdates
+       </a>
+      </li>
+      <li>
+       <a class="flex items-center gap-2 hover:text-gray-900" href="#">
+        <span class="text-xs text-gray-400">
+         r/
+        </span>
+        stocks
+       </a>
+      </li>
+      <li>
+       <a class="flex items-center gap-2 hover:text-gray-900" href="#">
+        <span class="text-xs text-gray-400">
+         r/
+        </span>
+        MaliciousCompliance
+       </a>
+      </li>
+      <li>
+       <a class="flex items-center gap-2 hover:text-gray-900" href="#">
+        <span class="text-xs text-gray-400">
+         r/
+        </span>
+        unforgiven
+       </a>
+      </li>
+     </ul>
+    </div>
+    <div class="mt-8">
+     <h3 class="text-xs font-semibold uppercase text-gray-400 tracking-wide mb-2">
+      Communities
+     </h3>
+     <ul class="space-y-1 text-gray-600 text-sm">
+      <li>
+       <a class="flex items-center gap-2 hover:text-gray-900" href="#">
+        <span class="text-xs text-gray-400">
+         r/
+        </span>
+        creatacommunity
+       </a>
+      </li>
+      <li>
+       <a class="flex items-center gap-2 hover:text-gray-900" href="#">
+        <span class="text-xs text-gray-400">
+         r/
+        </span>
+        announcements
+       </a>
+      </li>
+      <li>
+       <a class="flex items-center gap-2 hover:text-gray-900" href="#">
+        <span class="text-xs text-gray-400">
+         r/
+        </span>
+        confessions
+       </a>
+      </li>
+     </ul>
+    </div>
+   </aside>
+   <!-- Main content -->
+   <main class="flex-1 flex flex-col min-h-screen">
+    <!-- Top bar -->
+    <header class="flex items-center justify-between border-b border-gray-200 px-4 py-2">
+     <div class="flex items-center gap-3">
+      <button class="md:hidden text-gray-600 hover:text-gray-900">
+       <i class="fas fa-bars fa-lg">
+       </i>
+      </button>
+      <a class="flex items-center gap-2 text-orange-500 font-bold text-xl" href="#">
+       <i class="fab fa-reddit">
+       </i>
+       reddit
+      </a>
+     </div>
+     <div class="flex-1 max-w-xl mx-4 hidden sm:block">
+      <div class="relative">
+       <input class="w-full rounded-full border border-gray-300 bg-gray-100 py-2 pl-10 pr-4 text-sm placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent" placeholder="Search Reddit" type="text"/>
+       <i class="fas fa-search absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">
+       </i>
+      </div>
+     </div>
+     <div class="flex items-center gap-4 text-gray-600">
+      <button class="hidden sm:flex items-center gap-1 hover:text-gray-900">
+       <i class="fas fa-ellipsis-h">
+       </i>
+      </button>
+      <button class="hidden sm:flex items-center gap-1 hover:text-gray-900">
+       <i class="fas fa-bell">
+       </i>
+      </button>
+      <button class="hidden sm:flex items-center gap-1 hover:text-gray-900">
+       <i class="fas fa-plus">
+       </i>
+       <span class="hidden md:inline">
+        Create
+       </span>
+      </button>
+      <button class="flex items-center gap-1 hover:text-gray-900">
+       <img alt="User avatar with a red background and white letter U" class="rounded-full" height="24" src="https://storage.googleapis.com/a1aa/image/89278c64-bfcb-4ef4-1ca9-fce69b9d6d53.jpg" width="24"/>
+      </button>
+     </div>
+    </header>
+    <!-- Subnav -->
+    <nav class="flex flex-wrap gap-2 border-b border-gray-200 px-4 py-2 text-sm text-gray-600">
+     <button class="flex items-center gap-1 rounded-full border border-gray-300 px-3 py-1 hover:bg-gray-100">
+      <i class="fas fa-home">
+      </i>
+      Home
+     </button>
+     <button class="flex items-center gap-1 rounded-full border border-gray-300 px-3 py-1 bg-gray-100 text-gray-900 font-semibold">
+      Popular
+     </button>
+     <button class="flex items-center gap-1 rounded-full border border-gray-300 px-3 py-1 hover:bg-gray-100">
+      All
+     </button>
+     <button class="flex items-center gap-1 rounded-full border border-gray-300 px-3 py-1 hover:bg-gray-100">
+      News
+     </button>
+     <button class="flex items-center gap-1 rounded-full border border-gray-300 px-3 py-1 hover:bg-gray-100">
+      Sports
+     </button>
+     <button class="flex items-center gap-1 rounded-full border border-gray-300 px-3 py-1 hover:bg-gray-100">
+      Gaming
+     </button>
+     <button class="flex items-center gap-1 rounded-full border border-gray-300 px-3 py-1 hover:bg-gray-100">
+      Movies &amp; TV
+     </button>
+     <button class="flex items-center gap-1 rounded-full border border-gray-300 px-3 py-1 hover:bg-gray-100">
+      Aww
+     </button>
+     <button class="flex items-center gap-1 rounded-full border border-gray-300 px-3 py-1 hover:bg-gray-100">
+      Showerthoughts
+     </button>
+     <button class="flex items-center gap-1 rounded-full border border-gray-300 px-3 py-1 hover:bg-gray-100">
+      Music
+     </button>
+     <button class="flex items-center gap-1 rounded-full border border-gray-300 px-3 py-1 hover:bg-gray-100">
+      Art
+     </button>
+     <button class="flex items-center gap-1 rounded-full border border-gray-300 px-3 py-1 hover:bg-gray-100">
+      Science
+     </button>
+     <button class="flex items-center gap-1 rounded-full border border-gray-300 px-3 py-1 hover:bg-gray-100">
+      Food
+     </button>
+     <button class="flex items-center gap-1 rounded-full border border-gray-300 px-3 py-1 hover:bg-gray-100">
+      History
+     </button>
+     <button class="flex items-center gap-1 rounded-full border border-gray-300 px-3 py-1 hover:bg-gray-100">
+      Space
+     </button>
+    </nav>
+    <!-- Top news cards -->
+    <section class="flex gap-3 overflow-x-auto scrollbar-hide px-4 py-3 border-b border-gray-200 bg-white">
+     <article class="min-w-[180px] sm:min-w-[220px] rounded-md overflow-hidden shadow-sm cursor-pointer hover:shadow-md flex-shrink-0">
+      <img alt="Cloudy sky with text overlay: Conclave elects new Pope" class="w-full h-28 object-cover" height="120" src="https://storage.googleapis.com/a1aa/image/ded85564-7f15-470a-1292-d9aef026a83d.jpg" width="220"/>
+      <div class="px-3 py-2 bg-white">
+       <p class="text-xs font-semibold text-gray-900">
+        Conclave elects new Pope
+       </p>
+       <p class="text-[10px] text-gray-500 truncate">
+        The Catholic Church has elected Cardin...
+       </p>
+       <p class="text-[9px] text-gray-400 mt-1">
+        u/house 1h
+       </p>
+      </div>
+     </article>
+     <article class="min-w-[180px] sm:min-w-[220px] rounded-md overflow-hidden shadow-sm cursor-pointer hover:shadow-md flex-shrink-0">
+      <img alt="Two men talking with text overlay: US and UK trade deal" class="w-full h-28 object-cover" height="120" src="https://storage.googleapis.com/a1aa/image/b11c6d31-39d8-46ad-d9eb-1daa0732e202.jpg" width="220"/>
+      <div class="px-3 py-2 bg-white">
+       <p class="text-xs font-semibold text-gray-900">
+        US and UK trade deal
+       </p>
+       <p class="text-[10px] text-gray-500 truncate">
+        US removes tariffs on UK steel and alumi...
+       </p>
+       <p class="text-[9px] text-gray-400 mt-1">
+        u/house 1h
+       </p>
+      </div>
+     </article>
+     <article class="min-w-[180px] sm:min-w-[220px] rounded-md overflow-hidden shadow-sm cursor-pointer hover:shadow-md flex-shrink-0">
+      <img alt="Drone strike with text overlay: India Pakistan drone strikes" class="w-full h-28 object-cover" height="120" src="https://storage.googleapis.com/a1aa/image/8d29f88c-2ae5-4345-f0aa-8ab7562b1b74.jpg" width="220"/>
+      <div class="px-3 py-2 bg-white">
+       <p class="text-xs font-semibold text-gray-900">
+        India Pakistan drone strikes
+       </p>
+       <p class="text-[10px] text-gray-500 truncate">
+        India has used drones to hit Karachi, La...
+       </p>
+       <p class="text-[9px] text-gray-400 mt-1">
+        u/house 1h
+       </p>
+      </div>
+     </article>
+     <article class="min-w-[180px] sm:min-w-[220px] rounded-md overflow-hidden shadow-sm cursor-pointer hover:shadow-md flex-shrink-0">
+      <img alt="Soccer match with text overlay: Europa League final" class="w-full h-28 object-cover" height="120" src="https://storage.googleapis.com/a1aa/image/849f9389-5843-4630-0c6e-24213edb6088.jpg" width="220"/>
+      <div class="px-3 py-2 bg-white">
+       <p class="text-xs font-semibold text-gray-900">
+        Europa League final
+       </p>
+       <p class="text-[10px] text-gray-500 truncate">
+        The smile
+       </p>
+       <p class="text-[9px] text-gray-400 mt-1">
+        u/redditisfun and 22 more
+       </p>
+      </div>
+     </article>
+    </section>
+    <!-- Posts feed -->
+    <section class="flex-1 overflow-y-auto px-4 py-4 space-y-8 max-w-3xl mx-auto">
+     <!-- Post 1 -->
+     <article class="border border-gray-200 rounded-md p-4 space-y-3">
+      <header class="flex items-center gap-2 text-xs text-gray-500">
+       <img alt="User avatar with a red background and white letter U" class="rounded-full" height="20" src="https://storage.googleapis.com/a1aa/image/89278c64-bfcb-4ef4-1ca9-fce69b9d6d53.jpg" width="20"/>
+       <span class="font-semibold text-gray-900">
+        u/oneone
+       </span>
+       <span>
+        • 3.1k upvotes
+       </span>
+       <span>
+        • 1.1k comments
+       </span>
+       <span>
+        • 1h ago
+       </span>
+      </header>
+      <p class="text-sm text-gray-900">
+       People living within a mile of a golf course had more than twice the odds of Parkinson’s disease. The risk remained higher for people living up to three miles away but fades after that. Pesticides, including neurotoxins, used to keep fairways and greens well groomed, have been linked to Parkinson’s.
+      </p>
+      <a class="text-xs text-blue-600 break-words" href="http://www.psychiatrist.com/news/golf-course-living-linked-to-higher-parkinson-risk/" target="_blank">
+       http://www.psychiatrist.com/news/golf-course-living-linked-to-higher-parkinson-risk/
+      </a>
+      <div class="flex items-center gap-6 text-xs text-gray-500">
+       <button class="flex items-center gap-1 hover:text-gray-900">
+        <i class="far fa-arrow-alt-circle-up">
+        </i>
+        22k
+       </button>
+       <button class="flex items-center gap-1 hover:text-gray-900">
+        <i class="far fa-comment">
+        </i>
+        1.1k
+       </button>
+       <button class="flex items-center gap-1 hover:text-gray-900">
+        <i class="fas fa-share">
+        </i>
+        Share
+       </button>
+      </div>
+     </article>
+     <!-- Post 2 -->
+     <article class="border border-gray-200 rounded-md p-4 space-y-3">
+      <header class="flex items-center gap-2 text-xs text-gray-500">
+       <img alt="User avatar with a red background and white letter U" class="rounded-full" height="20" src="https://storage.googleapis.com/a1aa/image/89278c64-bfcb-4ef4-1ca9-fce69b9d6d53.jpg" width="20"/>
+       <span class="font-semibold text-gray-900">
+        u/username
+       </span>
+       <span>
+        • 3.1k upvotes
+       </span>
+       <span>
+        • 1.1k comments
+       </span>
+       <span>
+        • 1h ago
+       </span>
+      </header>
+      <p class="text-sm text-gray-900">
+       Alerts should help you, not send you into an existential spiral. Learn how to debug your mobile app without the nonsense in this upcoming workshop.
+      </p>
+      <img alt="Workshop banner with purple gradient background, text: Mobile App Monitoring Platforms Don't Have To Be Noisy, Cody De Arkland Head of Developer Experience, Sentry, RSVP NOW button" class="w-full rounded-md" height="300" src="https://storage.googleapis.com/a1aa/image/08c88ce4-197e-4fb5-8998-90dfe7da8863.jpg" width="600"/>
+      <div class="flex items-center gap-6 text-xs text-gray-500">
+       <button class="flex items-center gap-1 hover:text-gray-900">
+        <i class="far fa-arrow-alt-circle-up">
+        </i>
+        0
+       </button>
+       <button class="flex items-center gap-1 hover:text-gray-900">
+        <i class="fas fa-share">
+        </i>
+        Share
+       </button>
+       <button class="ml-auto rounded border border-gray-300 px-2 py-0.5 text-xs font-semibold hover:bg-gray-100">
+        Sign Up
+       </button>
+      </div>
+     </article>
+     <!-- Post 3 -->
+     <article class="border border-gray-200 rounded-md p-4 space-y-3">
+      <header class="flex items-center gap-2 text-xs text-gray-500">
+       <img alt="User avatar with a red background and white letter U" class="rounded-full" height="20" src="https://storage.googleapis.com/a1aa/image/89278c64-bfcb-4ef4-1ca9-fce69b9d6d53.jpg" width="20"/>
+       <span class="font-semibold text-gray-900">
+        u/programmerhumor
+       </span>
+       <span>
+        • 3.7k upvotes
+       </span>
+       <span>
+        • 1.1k comments
+       </span>
+       <span>
+        • 1h ago
+       </span>
+      </header>
+      <p class="text-sm text-gray-900">
+       what todo
+      </p>
+      <img alt="Cartoon man with worried face and text about project completion and boss" class="w-full rounded-md" height="300" src="https://storage.googleapis.com/a1aa/image/04a1bbb6-fdd8-4490-d91b-4572de164a53.jpg" width="600"/>
+      <div class="flex items-center gap-6 text-xs text-gray-500">
+       <button class="flex items-center gap-1 hover:text-gray-900">
+        <i class="far fa-arrow-alt-circle-up">
+        </i>
+        4.3k
+       </button>
+       <button class="flex items-center gap-1 hover:text-gray-900">
+        <i class="far fa-comment">
+        </i>
+        170
+       </button>
+       <button class="flex items-center gap-1 hover:text-gray-900">
+        <i class="fas fa-share">
+        </i>
+        Share
+       </button>
+      </div>
+     </article>
+     <!-- Post 4 -->
+     <article class="border border-gray-200 rounded-md p-4 space-y-3">
+      <header class="flex items-center gap-2 text-xs text-gray-500">
+       <img alt="User avatar with a red background and white letter U" class="rounded-full" height="20" src="https://storage.googleapis.com/a1aa/image/89278c64-bfcb-4ef4-1ca9-fce69b9d6d53.jpg" width="20"/>
+       <span class="font-semibold text-gray-900">
+        u/pics
+       </span>
+       <span>
+        • 3.7k upvotes
+       </span>
+       <span>
+        • 1.1k comments
+       </span>
+       <span>
+        • 1h ago
+       </span>
+      </header>
+      <p class="text-xs text-gray-600">
+       "Angels Unaware" boat in Vatican depicting 140 migrants fleeing war, commissioned by Pope Francis(†)
+      </p>
+      <img alt="Bronze sculpture of people on a boat in Vatican with columns in background" class="w-full rounded-md" height="300" src="https://storage.googleapis.com/a1aa/image/489ae379-27e8-4c57-f0c1-84cccb4c22d8.jpg" width="600"/>
+      <div class="flex items-center gap-6 text-xs text-gray-500">
+       <button class="flex items-center gap-1 hover:text-gray-900">
+        <i class="far fa-arrow-alt-circle-up">
+        </i>
+        11k
+       </button>
+       <button class="flex items-center gap-1 hover:text-gray-900">
+        <i class="far fa-comment">
+        </i>
+        142
+       </button>
+       <button class="flex items-center gap-1 hover:text-gray-900">
+        <i class="fas fa-share">
+        </i>
+        Share
+       </button>
+      </div>
+     </article>
+     <!-- Footer Reddit icon -->
+     <div class="flex justify-center py-6">
+      <img alt="Reddit logo orange smiling alien face" height="40" src="https://storage.googleapis.com/a1aa/image/f06d9541-a044-4955-d0bf-af45cad5aa4a.jpg" width="40"/>
+     </div>
+    </section>
+   </main>
+  </div>
+ </body>
+</html>

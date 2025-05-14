@@ -2,10 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { SharedModule } from './components/shared/shared.module';
 import { AuthStateService } from './services/auth-state.service';
+import { ToastrModule } from 'ngx-toastr';
+
 
 @Component({
   selector: 'app-root',
   imports: [
+     
     RouterOutlet,
     SharedModule
   ],

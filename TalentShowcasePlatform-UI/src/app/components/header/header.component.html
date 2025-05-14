@@ -1,0 +1,147 @@
+<app-login *ngIf="isLoginPopupVisible" (closed)="hideLoginPopup()"></app-login>
+<header
+  class="bg-white border-b border-[#cbd2db]  border-gray-200 flex pr-8 mb-6 justify-between sticky top-0 z-10">
+  <div class="flex items-center w-full md:w-1/2 justify-between p-6">
+
+    <!-- Search form hidden on small screens -->
+     <form aria-label="Search videos, folders, and more" class="flex  w-full items-center bg-white rounded-full border border-[#d9dee4] px-4 py-2" role="search">
+      <button aria-label="Select language" class="text-[#7a7a7a] pr-2 border-r border-[#d9dee4]" type="button">
+       <i class="fas fa-globe">
+       </i>
+       <i class="fas fa-chevron-down text-xs ml-1">
+       </i>
+      </button>
+      <input class="flex-1 pl-3 text-sm text-[#7a7a7a] focus:outline-none" placeholder="Search videos, folders, and more" type="search"/>
+      <button aria-label="Search" class="text-[#7a7a7a]" type="submit">
+       <i class="fas fa-search">
+       </i>
+      </button>
+     </form>
+    <!-- Search icon visible on small screens -->
+    <button id="searchToggle" aria-label="Open search"
+      class="md:hidden text-[#0f0f0f] text-lg p-2 rounded-full hover:bg-gray-200 transition">
+      <i class="fas fa-search">
+      </i>
+    </button>
+  </div>
+  <div *ngIf="isLoggedIn" class=" flex items-center space-x-4 ml-6">
+    <button aria-label="Help" class="text-[#0f0f0f] text-lg cursor-pointer">
+      <i class="fas fa-question-circle">
+      </i>
+    </button>
+    <button aria-label="Notifications" class="relative text-[#0f0f0f] text-lg cursor-pointer">
+      <i class="fas fa-bell">
+      </i>
+      <span class="absolute -top-1 -right-1 bg-red-600 rounded-full w-2 h-2">
+      </span>
+    </button>
+    <div class="relative">
+      <button aria-expanded="false" aria-haspopup="true"
+        class="bg-[#0f0f0f] text-white text-sm font-semibold rounded-full px-4 py-1 flex items-center space-x-1 cursor-pointer select-none">
+        <span>
+          Upload
+        </span>
+        <i class="fas fa-plus text-xs">
+        </i>
+      </button>
+    </div>
+    <!-- Profile dropdown -->
+    <div class="relative group inline-block" #popupWrapper>
+      <button aria-expanded="false" aria-haspopup="true" #profileButton (click)="togglePopup()"
+        class="w-10 h-10 rounded-full overflow-hidden border border-gray-300" id="profile-button" type="button">
+        <img alt="User profile picture of a person with light brown hair and beard" class="w-full h-full object-cover"
+          height="40" width="40" [src]="avatarUrl" />
+      </button>
+      <div *ngIf="popupOpen" #popup
+        class=" absolute right-0 mt-2 w-64 bg-white rounded-lg shadow-lg p-6 text-sm text-[#0f0f0f] z-10"
+        style="font-family: 'Inter', sans-serif;">
+        <div class="flex items-center gap-3 mb-4">
+          <img alt="User profile picture of a person with light brown hair and beard" class="w-10 h-10 rounded-full"
+            height="40" width="40" [src]="avatarUrl" />
+          <div>
+            <p class="font-semibold">
+              {{ currentUser.userName }}
+            </p>
+            <a class="text-[#8a63e8] text-xs underline hover:no-underline" [href]="'/user?id=' + userId">
+              View profile
+            </a>
+          </div>
+        </div>
+        <!-- <select aria-label="Select team" class="w-full rounded-md border border-[#d9dee4] bg-[#e6ebf1] py-2 px-3 mb-4">
+          <option>
+            {{ currentUser.userName }}
+          </option>
+        </select> -->
+        <hr class="border-[#d9dee4] mb-4" />
+        <button class="flex items-center gap-3 w-full mb-4 text-sm font-normal hover:bg-[#f4f7fa] rounded-md px-3 py-2"
+          type="button">
+          <i class="fas fa-cog text-lg">
+          </i>
+          <a [href]="'/profile?id=' + userId">
+            Settings
+          </a>
+        </button>
+        <button class="flex items-center gap-3 w-full mb-4 text-sm font-normal hover:bg-[#f4f7fa] rounded-md px-3 py-2"
+          type="button">
+          <i class="fas fa-moon text-lg">
+          </i>
+          Dark mode
+          <div class="ml-auto">
+            <label class="inline-flex relative items-center cursor-pointer" for="dark-mode-toggle">
+              <input class="sr-only peer" id="dark-mode-toggle" type="checkbox" value="" />
+              <div
+                class="w-11 h-6 bg-gray-200 rounded-full peer peer-focus:ring-4 peer-focus:ring-[#8a63e8] peer-checked:bg-[#8a63e8] relative">
+              </div>
+              <div
+                class="absolute left-1 top-1 bg-white w-4 h-4 rounded-full transition-transform peer-checked:translate-x-5">
+              </div>
+            </label>
+          </div>
+        </button>
+        <button class="flex items-center gap-3 w-full mb-4 text-sm font-normal hover:bg-[#f4f7fa] rounded-md px-3 py-2"
+          type="button">
+          <i class="fas fa-ellipsis-h">
+          </i>
+          More
+          <i class="fas fa-chevron-right ml-auto">
+          </i>
+        </button>
+        <hr class="border-[#d9dee4] mb-4" />
+        <!-- <button class="flex items-center gap-3 w-full mb-4 text-sm font-normal hover:bg-[#f4f7fa] rounded-md px-3 py-2"
+          type="button">
+          <i class="fas fa-shield-alt">
+          </i>
+          Legal
+          <i class="fas fa-chevron-right ml-auto">
+          </i>
+        </button> -->
+        <button (click)="logout()"
+          class="flex items-center gap-3 w-full text-sm font-normal hover:bg-[#f4f7fa] rounded-md px-3 py-2"
+          type="button">
+          <i class="fas fa-sign-out-alt">
+          </i>
+          Log out
+        </button>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="!isLoggedIn" class="ml-auto flex items-center space-x-4">
+    <button aria-label="Help"
+      class="text-gray-500 hover:text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded-full p-1"
+      type="button">
+      <i class="fas fa-question-circle text-lg">
+      </i>
+    </button>
+    <button (click)="showLoginPopup()"
+      class="text-gray-700 font-semibold text-sm hover:text-black focus:outline-none focus:ring-2 focus:ring-blue-500 rounded px-3 py-1"
+      type="button">
+      Log in
+    </button>
+
+    <button
+      class="bg-blue-500 text-white font-semibold text-sm rounded-full px-4 py-1.5 hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
+      type="button">
+      Join
+    </button>
+  </div>
+</header>

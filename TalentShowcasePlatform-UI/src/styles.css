@@ -1,5 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 @import "tailwindcss";
+@import 'ngx-toastr/toastr';
+
 
 body {
     font-family: 'Inter', sans-serif;
@@ -42,3 +44,5 @@ body {
   #overlay, #searchOverlay {
     z-index: 45;
   }
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

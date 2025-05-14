@@ -15,9 +15,11 @@ public class CreateUserCommand : IRequest<Result<Guid>>
 {
 	public string UserName { get; set; }
 	public string Email { get; set; }
+	public string FullName { get; set; }
 	public string Password { get; set; } // Consider hashing here or in handler
 	public string Bio { get; set; }
 	public string AvatarUrl { get; set; }
+	public string Location { get; set; }
 	public Guid RoleId { get; set; }
 }
 
@@ -40,9 +42,11 @@ public class CreateUserHandler : IRequestHandler<CreateUserCommand, Result<Guid>
 			Id = Guid.NewGuid(),
 			UserName = request.UserName,
 			Email = request.Email,
+			FullName = request.FullName,
 			PasswordHash = hashedPassword, // **NEVER** store plain text passwords
 			Bio = request.Bio,
 			AvatarUrl = request.AvatarUrl,
+			Location = request.Location,
 			RoleId = request.RoleId
 		};
 

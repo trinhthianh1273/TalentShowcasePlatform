@@ -9,14 +9,14 @@ import { Subscription } from 'rxjs';
 import { AuthStateService } from '../../services/auth-state.service';
 import { DataService } from '../../services/data.service';
 import { SubjectService } from '../../services/subject.service';
-import { NavbarComponent } from "../navbar/navbar.component";
+import { HeaderComponent } from '../header/header.component';
 
 @Component({
   selector: 'app-video-detail',
   standalone: true,
   imports: [
     SharedModule,
-    NavbarComponent
+    HeaderComponent
 ],
   templateUrl: './video-detail.component.html',
   styleUrl: './video-detail.component.css'

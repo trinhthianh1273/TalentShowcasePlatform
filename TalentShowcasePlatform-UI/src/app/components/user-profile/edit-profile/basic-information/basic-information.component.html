@@ -1,0 +1,129 @@
+<section class="flex-1 ml-0 md:ml-6 space-y-6 max-w-5xl">
+    <!-- Basic Information -->
+    <div class="border border-gray-200 rounded-md p-8 flex flex-col md:flex-row md:space-x-8">
+        <div class="w-full md:w-48 flex flex-col items-center md:items-start text-xs text-gray-600 font-semibold">
+            <span class="uppercase mb-3 text-[11px]">
+                Basic Information
+            </span>
+            <img [src]="avatarUrl" alt="User Avatar" class="w-28 h-28 mb-2" width="112" height="112" />
+            <input type="file" hidden (change)="onFileSelected($event)" #fileInput />
+            <button (click)="fileInput.click()"
+                class="text-blue-600 text-xs font-normal hover:underline focus:outline-none">
+                Change
+            </button>
+        </div>
+        <form [formGroup]="profileForm" (ngSubmit)="onSubmit()" class="flex-1 space-y-5 text-sm text-gray-700">
+            <label class="flex flex-col">
+                <span class="font-semibold mb-2 text-xs">
+                    Full Name
+                </span>
+                <input formControlName="fullName" [readonly]="!isEditing" class="border border-gray-300 rounded px-3 py-3 text-sm 
+         focus:outline-none focus:ring-1 focus:ring-blue-600 focus:border-blue-600
+         disabled:bg-gray-100 disabled:text-gray-500 disabled:cursor-not-allowed" type="text" />
+                <div *ngIf="fullNameControl?.errors?.['required']" class="text-red-500 text-xs mb-2">
+                    FullName là bắt buộc.
+                    <!-- <div *ngIf="fullNameControl?.errors?.['required']">FullName là bắt buộc.</div> -->
+                </div>
+            </label>
+
+            <label class=" flex flex-col">
+                <span class="font-semibold mb-2 text-xs">
+                    UserName
+                </span>
+                <input formControlName="userName" [readonly]="!isEditing" class="border border-gray-300 rounded px-3 py-3 text-sm 
+         focus:outline-none focus:ring-1 focus:ring-blue-600 focus:border-blue-600
+         disabled:bg-gray-100 disabled:text-gray-500 disabled:cursor-not-allowed" type="text" />
+                <div *ngIf="userNameControl?.errors?.['required']" class="text-red-500 text-xs mb-2">
+                    UserName là bắt buộc.
+                    <!-- <div *ngIf="fullNameControl?.errors?.['required']">FullName là bắt buộc.</div> -->
+                </div>
+            </label>
+            <!-- <div class="hidden flex flex-col md:flex-row md:space-x-6">
+                        <label class="flex flex-col w-full md:w-1/2">
+                            <span class="font-semibold mb-2 text-xs">
+                                First Name
+                            </span>
+                            <input
+                                class="border border-gray-300 rounded px-3 py-3 text-sm focus:outline-none focus:ring-1 focus:ring-blue-600 focus:border-blue-600"
+                                type="text" value="Anh" />
+                        </label>
+                        <label class="flex flex-col w-full md:w-1/2 mt-4 md:mt-0">
+                            <span class="font-semibold mb-2 text-xs">
+                                Last Name
+                            </span>
+                            <input
+                                class="border border-gray-300 rounded px-3 py-3 text-sm focus:outline-none focus:ring-1 focus:ring-blue-600 focus:border-blue-600"
+                                type="text" value="Trịnh" />
+                        </label>
+                    </div> -->
+            <label class="flex flex-col">
+                <span class="font-semibold mb-2 text-xs">
+                    Email
+                </span>
+                <input formControlName="email" readonly class="border border-gray-300 rounded px-3 py-3 text-sm 
+         focus:outline-none focus:ring-1 focus:ring-blue-600 focus:border-blue-600
+         disabled:bg-gray-100 disabled:text-gray-500 disabled:cursor-not-allowed" type="text" />
+            </label>
+            <label class="flex flex-col">
+                <span class="font-semibold mb-2 text-xs">
+                    Bio
+                </span>
+                <input formControlName="bio" class="border border-gray-300 rounded px-3 py-3 text-sm 
+         focus:outline-none focus:ring-1 focus:ring-blue-600 focus:border-blue-600
+         disabled:bg-gray-100 disabled:text-gray-500 disabled:cursor-not-allowed" type="text" />
+                <div *ngIf="bioControl?.errors?.['required']" class="text-red-500 text-xs mb-2">
+                    Bio là bắt buộc.
+                </div>
+            </label>
+            <div class="flex flex-col md:flex-row md:space-x-6">
+                <label class="flex flex-col w-full md:w-1/2">
+                    <span class="font-semibold mb-2 text-xs">
+                        Location
+                    </span>
+                    <select formControlName="location"
+                        class="border border-gray-300 rounded px-3 py-3 text-sm focus:outline-none focus:ring-1 focus:ring-blue-600 focus:border-blue-600 disabled:bg-gray-100 disabled:text-gray-500 disabled:cursor-not-allowed">
+                        <option *ngFor="let province of provinces" [value]="province">{{ province }}</option>
+                    </select>
+                    <div *ngIf="locationControl?.errors?.['required']" class="text-red-500 text-xs mb-2">
+                        Location là bắt buộc.
+                    </div>
+                </label>
+                <!-- <label class="flex flex-col w-full md:w-1/2 mt-4 md:mt-0">
+                            <span class="font-semibold mb-2 text-xs">
+                                City
+                            </span>
+                            <input
+                                class="border border-gray-300 rounded px-3 py-3 text-sm focus:outline-none focus:ring-1 focus:ring-blue-600 focus:border-blue-600"
+                                placeholder="City" type="text" />
+                        </label> -->
+            </div>
+            <!-- <label class="flex flex-col">
+                        <span class="font-semibold mb-2 text-xs">
+                            Talent
+                        </span>
+                    </label> -->
+            <button *ngIf="!isEditing" (click)="enableEdit()"
+                class="bg-yellow-500 hover:bg-yellow-600 text-white text-sm font-semibold rounded-full px-5 py-2 self-end flex items-center gap-2 transition-colors duration-200 space-x-3"
+                type="button">
+                <i class="fas fa-edit"></i>
+                Edit Profile
+            </button>
+            <button *ngIf="isEditing" (click)="cancelEdit()"
+                class="inline-flex bg-gray-400 hover:bg-gray-500 text-white text-sm font-semibold rounded-full px-5 py-2 self-end flex items-center gap-2 transition-colors duration-200"
+                type="button">
+                <i class="fas fa-times-circle"></i>
+                Cancel
+            </button>
+
+            <!-- Update button -->
+            <button *ngIf="isEditing"
+                class="inline-flex bg-green-600 hover:bg-green-700 text-white text-sm font-semibold rounded-full px-5 py-2 self-end flex items-center gap-2 transition-colors duration-200"
+                type="submit">
+                <i class="fas fa-save"></i>
+                Update
+            </button>
+
+        </form>
+    </div>
+    <!-- Teams -->
+</section>

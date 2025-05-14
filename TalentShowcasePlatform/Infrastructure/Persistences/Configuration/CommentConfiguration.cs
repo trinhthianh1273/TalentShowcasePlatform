@@ -19,7 +19,8 @@ public class CommentConfiguration : IEntityTypeConfiguration<Comment>
 		.HasDefaultValueSql("NEWID()");
 		builder.HasOne(c => c.Video)
 			   .WithMany(v => v.Comments)
-			   .HasForeignKey(c => c.VideoId);
+			   .HasForeignKey(c => c.VideoId)
+			   .OnDelete(DeleteBehavior.Cascade);
 		builder.HasOne(c => c.User)
 			   .WithMany(u => u.Comments)
 			   .HasForeignKey(c => c.UserId)

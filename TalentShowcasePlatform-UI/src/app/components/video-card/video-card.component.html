@@ -1,10 +1,11 @@
 <!-- <div *ngIf="!videoData">Đang tải thông tin video...</div> -->
-<video #target class="video-js vjs-default-skin" muted autoplay playsinline
-  preload="auto" disablePictureInPicture controlsList="nodownload nofullscreen noremoteplayback" width="100%"
- height="auto" [attr.data-setup]="{}" >
-  <source [src]="videoPath + src" type="video/mp4" />
-</video>
-
-<!-- muted autoplay playsinline: Cho phép tự động phát trên hầu hết trình duyệt.
-controlsList="nodownload...": Ẩn các chức năng không mong muốn (tùy trình duyệt).
-pointer-events-none trên video: Ngăn người dùng tương tác. -->
+<div class="relative rounded-md overflow-hidden flex-shrink-0 md:block md:w-full">
+  <video #target class="video-js vjs-default-skin" muted autoplay playsinline preload="auto" disablePictureInPicture
+    controlsList="nodownload nofullscreen noremoteplayback" width="100%" height="auto" [attr.data-setup]="{}">
+    <source [src]="videoPath + src" type="video/mp4" 
+    (loadedmetadata)="onLoadedMetadata($event, videoData)"/>
+  </video>
+  <span class="absolute bottom-1 right-1 bg-black bg-opacity-70 text-white text-[10px] px-1 rounded select-none">
+    {{ videoData.duration || 'Loading...' }}
+  </span>
+</div>

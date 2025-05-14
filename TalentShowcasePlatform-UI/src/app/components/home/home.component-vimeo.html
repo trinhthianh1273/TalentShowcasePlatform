@@ -3,7 +3,7 @@
   <aside id="sidebar" class="fixed inset-y-0 w-56 bg-[#e6ebf1] border-r border-[#d6dcd4] px-6 py-8 text-sm text-[#0f0f0f] transform -translate-x-full md:translate-x-0 md:flex md:flex-col md:justify-between">
     <div class="mb-10">
       <h1 class="font-black text-2xl italic" style="font-family: 'Lobster', cursive;">
-        vimeo
+        Talent
       </h1>
     </div>
     <nav class="flex flex-col space-y-4">
@@ -140,7 +140,7 @@
   <!-- Main content -->
   <main class="flex-1 scrollbar-thin">
     <!-- Top bar -->
-    <app-navbar [isLoggedIn]="isLoggedIn" [currentUser]="currentUser"></app-navbar>
+    <app-header [isLoggedIn]="isLoggedIn" [currentUser]="currentUser"></app-header>
 
     <!-- Results count and sort -->
     <div class="flex justify-between items-center mb-4 text-xs text-[#6b6b6b] select-text sticky">

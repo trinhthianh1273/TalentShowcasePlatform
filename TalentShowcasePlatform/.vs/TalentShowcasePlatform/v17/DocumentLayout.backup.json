@@ -3,28 +3,72 @@
   "WorkspaceRootPath": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{FD9469BC-BE4C-4444-9842-54E9E0AA41ED}|Application\\Application.csproj|a:\\talentshowcaseplatform\\talentshowcaseplatform\\application\\features\\auth\\loginuser\\loginusercommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FD9469BC-BE4C-4444-9842-54E9E0AA41ED}|Application\\Application.csproj|solutionrelative:application\\features\\auth\\loginuser\\loginusercommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{FD9469BC-BE4C-4444-9842-54E9E0AA41ED}|Application\\Application.csproj|a:\\talentshowcaseplatform\\talentshowcaseplatform\\application\\features\\videos\\command\\createvideocommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FD9469BC-BE4C-4444-9842-54E9E0AA41ED}|Application\\Application.csproj|solutionrelative:application\\features\\videos\\command\\createvideocommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FD9469BC-BE4C-4444-9842-54E9E0AA41ED}|Application\\Application.csproj|a:\\talentshowcaseplatform\\talentshowcaseplatform\\application\\features\\auth\\dto\\authenticationresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FD9469BC-BE4C-4444-9842-54E9E0AA41ED}|Application\\Application.csproj|solutionrelative:application\\features\\auth\\dto\\authenticationresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{FD9469BC-BE4C-4444-9842-54E9E0AA41ED}|Application\\Application.csproj|a:\\talentshowcaseplatform\\talentshowcaseplatform\\application\\features\\videos\\command\\updatevideocommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FD9469BC-BE4C-4444-9842-54E9E0AA41ED}|Application\\Application.csproj|solutionrelative:application\\features\\videos\\command\\updatevideocommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9C72789C-35A8-4C19-B6B0-5376179C2684}|API\\API.csproj|a:\\talentshowcaseplatform\\talentshowcaseplatform\\api\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9C72789C-35A8-4C19-B6B0-5376179C2684}|API\\API.csproj|solutionrelative:api\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{FD9469BC-BE4C-4444-9842-54E9E0AA41ED}|Application\\Application.csproj|a:\\talentshowcaseplatform\\talentshowcaseplatform\\application\\features\\videos\\command\\uploadvideocommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FD9469BC-BE4C-4444-9842-54E9E0AA41ED}|Application\\Application.csproj|solutionrelative:application\\features\\videos\\command\\uploadvideocommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FD9469BC-BE4C-4444-9842-54E9E0AA41ED}|Application\\Application.csproj|a:\\talentshowcaseplatform\\talentshowcaseplatform\\application\\features\\comments\\command\\updatecommentcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FD9469BC-BE4C-4444-9842-54E9E0AA41ED}|Application\\Application.csproj|solutionrelative:application\\features\\comments\\command\\updatecommentcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{9C72789C-35A8-4C19-B6B0-5376179C2684}|API\\API.csproj|a:\\talentshowcaseplatform\\talentshowcaseplatform\\api\\controllers\\videoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9C72789C-35A8-4C19-B6B0-5376179C2684}|API\\API.csproj|solutionrelative:api\\controllers\\videoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9C72789C-35A8-4C19-B6B0-5376179C2684}|API\\API.csproj|a:\\talentshowcaseplatform\\talentshowcaseplatform\\api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9C72789C-35A8-4C19-B6B0-5376179C2684}|API\\API.csproj|solutionrelative:api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{FD9469BC-BE4C-4444-9842-54E9E0AA41ED}|Application\\Application.csproj|a:\\talentshowcaseplatform\\talentshowcaseplatform\\application\\features\\videos\\query\\getvideobyuseridquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FD9469BC-BE4C-4444-9842-54E9E0AA41ED}|Application\\Application.csproj|solutionrelative:application\\features\\videos\\query\\getvideobyuseridquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FD9469BC-BE4C-4444-9842-54E9E0AA41ED}|Application\\Application.csproj|a:\\talentshowcaseplatform\\talentshowcaseplatform\\application\\features\\videos\\command\\uploadvideocommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FD9469BC-BE4C-4444-9842-54E9E0AA41ED}|Application\\Application.csproj|solutionrelative:application\\features\\videos\\command\\uploadvideocommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{FD9469BC-BE4C-4444-9842-54E9E0AA41ED}|Application\\Application.csproj|a:\\talentshowcaseplatform\\talentshowcaseplatform\\application\\features\\videos\\query\\getallvideosquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FD9469BC-BE4C-4444-9842-54E9E0AA41ED}|Application\\Application.csproj|solutionrelative:application\\features\\videos\\query\\getallvideosquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FD9469BC-BE4C-4444-9842-54E9E0AA41ED}|Application\\Application.csproj|a:\\talentshowcaseplatform\\talentshowcaseplatform\\application\\features\\users\\command\\updateusercommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FD9469BC-BE4C-4444-9842-54E9E0AA41ED}|Application\\Application.csproj|solutionrelative:application\\features\\users\\command\\updateusercommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FD9469BC-BE4C-4444-9842-54E9E0AA41ED}|Application\\Application.csproj|a:\\talentshowcaseplatform\\talentshowcaseplatform\\application\\features\\usertalents\\command\\createusertalentcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FD9469BC-BE4C-4444-9842-54E9E0AA41ED}|Application\\Application.csproj|solutionrelative:application\\features\\usertalents\\command\\createusertalentcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{48474E94-8CD0-42C5-8209-E8DF9DB489A8}|Domain\\Domain.csproj|a:\\talentshowcaseplatform\\talentshowcaseplatform\\domain\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{48474E94-8CD0-42C5-8209-E8DF9DB489A8}|Domain\\Domain.csproj|solutionrelative:domain\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FD9469BC-BE4C-4444-9842-54E9E0AA41ED}|Application\\Application.csproj|a:\\talentshowcaseplatform\\talentshowcaseplatform\\application\\features\\groupmembers\\command\\addusertogroupcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FD9469BC-BE4C-4444-9842-54E9E0AA41ED}|Application\\Application.csproj|solutionrelative:application\\features\\groupmembers\\command\\addusertogroupcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FD9469BC-BE4C-4444-9842-54E9E0AA41ED}|Application\\Application.csproj|a:\\talentshowcaseplatform\\talentshowcaseplatform\\application\\features\\groupmembers\\command\\addlistusertogroupcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FD9469BC-BE4C-4444-9842-54E9E0AA41ED}|Application\\Application.csproj|solutionrelative:application\\features\\groupmembers\\command\\addlistusertogroupcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FD9469BC-BE4C-4444-9842-54E9E0AA41ED}|Application\\Application.csproj|a:\\talentshowcaseplatform\\talentshowcaseplatform\\application\\features\\auth\\registeruser\\registerusercommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FD9469BC-BE4C-4444-9842-54E9E0AA41ED}|Application\\Application.csproj|solutionrelative:application\\features\\auth\\registeruser\\registerusercommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FD9469BC-BE4C-4444-9842-54E9E0AA41ED}|Application\\Application.csproj|a:\\talentshowcaseplatform\\talentshowcaseplatform\\application\\features\\auth\\loginuser\\loginusercommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FD9469BC-BE4C-4444-9842-54E9E0AA41ED}|Application\\Application.csproj|solutionrelative:application\\features\\auth\\loginuser\\loginusercommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9C72789C-35A8-4C19-B6B0-5376179C2684}|API\\API.csproj|a:\\talentshowcaseplatform\\talentshowcaseplatform\\api\\api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{9C72789C-35A8-4C19-B6B0-5376179C2684}|API\\API.csproj|solutionrelative:api\\api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FD9469BC-BE4C-4444-9842-54E9E0AA41ED}|Application\\Application.csproj|a:\\talentshowcaseplatform\\talentshowcaseplatform\\application\\features\\auth\\dto\\authenticationresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FD9469BC-BE4C-4444-9842-54E9E0AA41ED}|Application\\Application.csproj|solutionrelative:application\\features\\auth\\dto\\authenticationresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9C72789C-35A8-4C19-B6B0-5376179C2684}|API\\API.csproj|a:\\talentshowcaseplatform\\talentshowcaseplatform\\api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9C72789C-35A8-4C19-B6B0-5376179C2684}|API\\API.csproj|solutionrelative:api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C4A81C72-6FAC-4D2D-9FBD-C87D66D4CD6D}|Infrastructure\\Infrastructure.csproj|a:\\talentshowcaseplatform\\talentshowcaseplatform\\infrastructure\\persistences\\configuration\\grouppostconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -43,16 +87,8 @@
       "RelativeMoniker": "D:0:0:{C4A81C72-6FAC-4D2D-9FBD-C87D66D4CD6D}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\persistences\\configuration\\withdrawalrequestconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C4A81C72-6FAC-4D2D-9FBD-C87D66D4CD6D}|Infrastructure\\Infrastructure.csproj|a:\\talentshowcaseplatform\\talentshowcaseplatform\\infrastructure\\persistences\\configuration\\videoconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C4A81C72-6FAC-4D2D-9FBD-C87D66D4CD6D}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\persistences\\configuration\\videoconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{C4A81C72-6FAC-4D2D-9FBD-C87D66D4CD6D}|Infrastructure\\Infrastructure.csproj|a:\\talentshowcaseplatform\\talentshowcaseplatform\\infrastructure\\persistences\\configuration\\usertalentconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C4A81C72-6FAC-4D2D-9FBD-C87D66D4CD6D}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\persistences\\configuration\\usertalentconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C4A81C72-6FAC-4D2D-9FBD-C87D66D4CD6D}|Infrastructure\\Infrastructure.csproj|a:\\talentshowcaseplatform\\talentshowcaseplatform\\infrastructure\\persistences\\configuration\\userconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C4A81C72-6FAC-4D2D-9FBD-C87D66D4CD6D}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\persistences\\configuration\\userconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{48474E94-8CD0-42C5-8209-E8DF9DB489A8}|Domain\\Domain.csproj|a:\\talentshowcaseplatform\\talentshowcaseplatform\\domain\\entities\\group.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -79,10 +115,6 @@
       "RelativeMoniker": "D:0:0:{48474E94-8CD0-42C5-8209-E8DF9DB489A8}|Domain\\Domain.csproj|solutionrelative:domain\\entities\\videolike.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{48474E94-8CD0-42C5-8209-E8DF9DB489A8}|Domain\\Domain.csproj|a:\\talentshowcaseplatform\\talentshowcaseplatform\\domain\\entities\\video.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{48474E94-8CD0-42C5-8209-E8DF9DB489A8}|Domain\\Domain.csproj|solutionrelative:domain\\entities\\video.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{48474E94-8CD0-42C5-8209-E8DF9DB489A8}|Domain\\Domain.csproj|a:\\talentshowcaseplatform\\talentshowcaseplatform\\domain\\entities\\role.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{48474E94-8CD0-42C5-8209-E8DF9DB489A8}|Domain\\Domain.csproj|solutionrelative:domain\\entities\\role.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -97,10 +129,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{48474E94-8CD0-42C5-8209-E8DF9DB489A8}|Domain\\Domain.csproj|a:\\talentshowcaseplatform\\talentshowcaseplatform\\domain\\entities\\message.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{48474E94-8CD0-42C5-8209-E8DF9DB489A8}|Domain\\Domain.csproj|solutionrelative:domain\\entities\\message.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{48474E94-8CD0-42C5-8209-E8DF9DB489A8}|Domain\\Domain.csproj|a:\\talentshowcaseplatform\\talentshowcaseplatform\\domain\\entities\\job.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{48474E94-8CD0-42C5-8209-E8DF9DB489A8}|Domain\\Domain.csproj|solutionrelative:domain\\entities\\job.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{48474E94-8CD0-42C5-8209-E8DF9DB489A8}|Domain\\Domain.csproj|a:\\talentshowcaseplatform\\talentshowcaseplatform\\domain\\entities\\groupmember.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -223,14 +251,6 @@
       "RelativeMoniker": "D:0:0:{FD9469BC-BE4C-4444-9842-54E9E0AA41ED}|Application\\Application.csproj|solutionrelative:application\\features\\videolikes\\dto\\videolikedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FD9469BC-BE4C-4444-9842-54E9E0AA41ED}|Application\\Application.csproj|a:\\talentshowcaseplatform\\talentshowcaseplatform\\application\\features\\videos\\command\\updatevideocommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FD9469BC-BE4C-4444-9842-54E9E0AA41ED}|Application\\Application.csproj|solutionrelative:application\\features\\videos\\command\\updatevideocommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FD9469BC-BE4C-4444-9842-54E9E0AA41ED}|Application\\Application.csproj|a:\\talentshowcaseplatform\\talentshowcaseplatform\\application\\features\\videos\\command\\createvideocommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FD9469BC-BE4C-4444-9842-54E9E0AA41ED}|Application\\Application.csproj|solutionrelative:application\\features\\videos\\command\\createvideocommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{FD9469BC-BE4C-4444-9842-54E9E0AA41ED}|Application\\Application.csproj|a:\\talentshowcaseplatform\\talentshowcaseplatform\\application\\mappingprofiles\\usertalentprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{FD9469BC-BE4C-4444-9842-54E9E0AA41ED}|Application\\Application.csproj|solutionrelative:application\\mappingprofiles\\usertalentprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -245,14 +265,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{FD9469BC-BE4C-4444-9842-54E9E0AA41ED}|Application\\Application.csproj|a:\\talentshowcaseplatform\\talentshowcaseplatform\\application\\features\\usertalents\\command\\deleteusertalentcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{FD9469BC-BE4C-4444-9842-54E9E0AA41ED}|Application\\Application.csproj|solutionrelative:application\\features\\usertalents\\command\\deleteusertalentcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FD9469BC-BE4C-4444-9842-54E9E0AA41ED}|Application\\Application.csproj|a:\\talentshowcaseplatform\\talentshowcaseplatform\\application\\features\\usertalents\\command\\updateusertalentcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FD9469BC-BE4C-4444-9842-54E9E0AA41ED}|Application\\Application.csproj|solutionrelative:application\\features\\usertalents\\command\\updateusertalentcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FD9469BC-BE4C-4444-9842-54E9E0AA41ED}|Application\\Application.csproj|a:\\talentshowcaseplatform\\talentshowcaseplatform\\application\\features\\usertalents\\command\\createusertalentcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FD9469BC-BE4C-4444-9842-54E9E0AA41ED}|Application\\Application.csproj|solutionrelative:application\\features\\usertalents\\command\\createusertalentcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{FD9469BC-BE4C-4444-9842-54E9E0AA41ED}|Application\\Application.csproj|a:\\talentshowcaseplatform\\talentshowcaseplatform\\application\\features\\usertalents\\dto\\usertalentdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -371,10 +383,6 @@
       "RelativeMoniker": "D:0:0:{FD9469BC-BE4C-4444-9842-54E9E0AA41ED}|Application\\Application.csproj|solutionrelative:application\\features\\messages\\dto\\messagedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FD9469BC-BE4C-4444-9842-54E9E0AA41ED}|Application\\Application.csproj|a:\\talentshowcaseplatform\\talentshowcaseplatform\\application\\mappingprofiles\\jobprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FD9469BC-BE4C-4444-9842-54E9E0AA41ED}|Application\\Application.csproj|solutionrelative:application\\mappingprofiles\\jobprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{FD9469BC-BE4C-4444-9842-54E9E0AA41ED}|Application\\Application.csproj|a:\\talentshowcaseplatform\\talentshowcaseplatform\\application\\features\\jobs\\query\\getjobbyidquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{FD9469BC-BE4C-4444-9842-54E9E0AA41ED}|Application\\Application.csproj|solutionrelative:application\\features\\jobs\\query\\getjobbyidquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -389,26 +397,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{FD9469BC-BE4C-4444-9842-54E9E0AA41ED}|Application\\Application.csproj|a:\\talentshowcaseplatform\\talentshowcaseplatform\\application\\features\\jobs\\command\\updatejobcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{FD9469BC-BE4C-4444-9842-54E9E0AA41ED}|Application\\Application.csproj|solutionrelative:application\\features\\jobs\\command\\updatejobcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FD9469BC-BE4C-4444-9842-54E9E0AA41ED}|Application\\Application.csproj|a:\\talentshowcaseplatform\\talentshowcaseplatform\\application\\features\\jobs\\dto\\jobdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FD9469BC-BE4C-4444-9842-54E9E0AA41ED}|Application\\Application.csproj|solutionrelative:application\\features\\jobs\\dto\\jobdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FD9469BC-BE4C-4444-9842-54E9E0AA41ED}|Application\\Application.csproj|a:\\talentshowcaseplatform\\talentshowcaseplatform\\application\\features\\users\\query\\getallusersquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FD9469BC-BE4C-4444-9842-54E9E0AA41ED}|Application\\Application.csproj|solutionrelative:application\\features\\users\\query\\getallusersquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FD9469BC-BE4C-4444-9842-54E9E0AA41ED}|Application\\Application.csproj|a:\\talentshowcaseplatform\\talentshowcaseplatform\\application\\features\\users\\query\\getuserbyidquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FD9469BC-BE4C-4444-9842-54E9E0AA41ED}|Application\\Application.csproj|solutionrelative:application\\features\\users\\query\\getuserbyidquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FD9469BC-BE4C-4444-9842-54E9E0AA41ED}|Application\\Application.csproj|a:\\talentshowcaseplatform\\talentshowcaseplatform\\application\\features\\users\\command\\updateusercommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FD9469BC-BE4C-4444-9842-54E9E0AA41ED}|Application\\Application.csproj|solutionrelative:application\\features\\users\\command\\updateusercommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C4A81C72-6FAC-4D2D-9FBD-C87D66D4CD6D}|Infrastructure\\Infrastructure.csproj|a:\\talentshowcaseplatform\\talentshowcaseplatform\\infrastructure\\persistences\\configuration\\jobconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C4A81C72-6FAC-4D2D-9FBD-C87D66D4CD6D}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\persistences\\configuration\\jobconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{FD9469BC-BE4C-4444-9842-54E9E0AA41ED}|Application\\Application.csproj|a:\\talentshowcaseplatform\\talentshowcaseplatform\\application\\mappingprofiles\\groupmemberprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -433,10 +421,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{FD9469BC-BE4C-4444-9842-54E9E0AA41ED}|Application\\Application.csproj|a:\\talentshowcaseplatform\\talentshowcaseplatform\\application\\features\\groupmembers\\dto\\groupmemberdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{FD9469BC-BE4C-4444-9842-54E9E0AA41ED}|Application\\Application.csproj|solutionrelative:application\\features\\groupmembers\\dto\\groupmemberdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FD9469BC-BE4C-4444-9842-54E9E0AA41ED}|Application\\Application.csproj|a:\\talentshowcaseplatform\\talentshowcaseplatform\\application\\mappingprofiles\\groupprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FD9469BC-BE4C-4444-9842-54E9E0AA41ED}|Application\\Application.csproj|solutionrelative:application\\mappingprofiles\\groupprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{FD9469BC-BE4C-4444-9842-54E9E0AA41ED}|Application\\Application.csproj|a:\\talentshowcaseplatform\\talentshowcaseplatform\\application\\features\\groups\\query\\getgroupscreatedbyuserquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -521,10 +505,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{FD9469BC-BE4C-4444-9842-54E9E0AA41ED}|Application\\Application.csproj|a:\\talentshowcaseplatform\\talentshowcaseplatform\\application\\features\\contests\\query\\getcontestbyidquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{FD9469BC-BE4C-4444-9842-54E9E0AA41ED}|Application\\Application.csproj|solutionrelative:application\\features\\contests\\query\\getcontestbyidquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FD9469BC-BE4C-4444-9842-54E9E0AA41ED}|Application\\Application.csproj|a:\\talentshowcaseplatform\\talentshowcaseplatform\\application\\features\\comments\\command\\updatecommentcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FD9469BC-BE4C-4444-9842-54E9E0AA41ED}|Application\\Application.csproj|solutionrelative:application\\features\\comments\\command\\updatecommentcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{FD9469BC-BE4C-4444-9842-54E9E0AA41ED}|Application\\Application.csproj|a:\\talentshowcaseplatform\\talentshowcaseplatform\\application\\features\\comments\\query\\getcommentbyidquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -633,6 +613,10 @@
     {
       "AbsoluteMoniker": "D:0:0:{FD9469BC-BE4C-4444-9842-54E9E0AA41ED}|Application\\Application.csproj|a:\\talentshowcaseplatform\\talentshowcaseplatform\\application\\features\\awards\\query\\awarddto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{FD9469BC-BE4C-4444-9842-54E9E0AA41ED}|Application\\Application.csproj|solutionrelative:application\\features\\awards\\query\\awarddto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C4A81C72-6FAC-4D2D-9FBD-C87D66D4CD6D}|Infrastructure\\Infrastructure.csproj|a:\\talentshowcaseplatform\\talentshowcaseplatform\\infrastructure\\migrations\\20250510151443_user-fullname.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C4A81C72-6FAC-4D2D-9FBD-C87D66D4CD6D}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\migrations\\20250510151443_user-fullname.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -646,7 +630,7 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 16,
               "Title": "Program.cs",
               "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\API\\Program.cs",
               "RelativeDocumentMoniker": "API\\Program.cs",
@@ -672,43 +656,199 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "CreateVideoCommand.cs",
+              "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\Features\\Videos\\Command\\CreateVideoCommand.cs",
+              "RelativeDocumentMoniker": "Application\\Features\\Videos\\Command\\CreateVideoCommand.cs",
+              "ToolTip": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\Features\\Videos\\Command\\CreateVideoCommand.cs",
+              "RelativeToolTip": "Application\\Features\\Videos\\Command\\CreateVideoCommand.cs",
+              "ViewState": "AgIAACkAAAAAAAAAAAAIwDcAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-13T17:23:52.74Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "VideosController.cs",
+              "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\API\\Controllers\\VideosController.cs",
+              "RelativeDocumentMoniker": "API\\Controllers\\VideosController.cs",
+              "ToolTip": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\API\\Controllers\\VideosController.cs",
+              "RelativeToolTip": "API\\Controllers\\VideosController.cs",
+              "ViewState": "AgIAAEsAAAAAAAAAAAAxwFUAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-07T13:46:32.029Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "GetVideoByUserIdQuery.cs",
+              "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\Features\\Videos\\Query\\GetVideoByUserIdQuery.cs",
+              "RelativeDocumentMoniker": "Application\\Features\\Videos\\Query\\GetVideoByUserIdQuery.cs",
+              "ToolTip": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\Features\\Videos\\Query\\GetVideoByUserIdQuery.cs",
+              "RelativeToolTip": "Application\\Features\\Videos\\Query\\GetVideoByUserIdQuery.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAywCIAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-12T15:26:49.514Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "User.cs",
+              "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Domain\\Entities\\User.cs",
+              "RelativeDocumentMoniker": "Domain\\Entities\\User.cs",
+              "ToolTip": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Domain\\Entities\\User.cs",
+              "RelativeToolTip": "Domain\\Entities\\User.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABYAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-10T13:06:58.735Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "UpdateCommentCommand.cs",
+              "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\Features\\Comments\\Command\\UpdateCommentCommand.cs",
+              "RelativeDocumentMoniker": "Application\\Features\\Comments\\Command\\UpdateCommentCommand.cs",
+              "ToolTip": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\Features\\Comments\\Command\\UpdateCommentCommand.cs",
+              "RelativeToolTip": "Application\\Features\\Comments\\Command\\UpdateCommentCommand.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAADwvy8AAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-24T15:40:52.333Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "UpdateVideoCommand.cs",
+              "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\Features\\Videos\\Command\\UpdateVideoCommand.cs",
+              "RelativeDocumentMoniker": "Application\\Features\\Videos\\Command\\UpdateVideoCommand.cs",
+              "ToolTip": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\Features\\Videos\\Command\\UpdateVideoCommand.cs",
+              "RelativeToolTip": "Application\\Features\\Videos\\Command\\UpdateVideoCommand.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABIAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-25T08:04:15.4Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "UploadVideoCommand.cs",
+              "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\Features\\Videos\\Command\\UploadVideoCommand.cs",
+              "RelativeDocumentMoniker": "Application\\Features\\Videos\\Command\\UploadVideoCommand.cs",
+              "ToolTip": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\Features\\Videos\\Command\\UploadVideoCommand.cs",
+              "RelativeToolTip": "Application\\Features\\Videos\\Command\\UploadVideoCommand.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABIAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-25T11:21:13.902Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "AddUserToGroupCommand.cs",
+              "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\Features\\GroupMembers\\Command\\AddUserToGroupCommand.cs",
+              "RelativeDocumentMoniker": "Application\\Features\\GroupMembers\\Command\\AddUserToGroupCommand.cs",
+              "ToolTip": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\Features\\GroupMembers\\Command\\AddUserToGroupCommand.cs",
+              "RelativeToolTip": "Application\\Features\\GroupMembers\\Command\\AddUserToGroupCommand.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAA8AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-10T15:15:17.029Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "GetAllVideosQuery.cs",
+              "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\Features\\Videos\\Query\\GetAllVideosQuery.cs",
+              "RelativeDocumentMoniker": "Application\\Features\\Videos\\Query\\GetAllVideosQuery.cs",
+              "ToolTip": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\Features\\Videos\\Query\\GetAllVideosQuery.cs",
+              "RelativeToolTip": "Application\\Features\\Videos\\Query\\GetAllVideosQuery.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAmwCMAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-12T15:27:05.733Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "UpdateUserCommand.cs",
+              "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\Features\\Users\\Command\\UpdateUserCommand.cs",
+              "RelativeDocumentMoniker": "Application\\Features\\Users\\Command\\UpdateUserCommand.cs",
+              "ToolTip": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\Features\\Users\\Command\\UpdateUserCommand.cs",
+              "RelativeToolTip": "Application\\Features\\Users\\Command\\UpdateUserCommand.cs",
+              "ViewState": "AgIAACAAAAAAAAAAAAAywDEAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-12T11:55:53.1Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "CreateUserTalentCommand.cs",
+              "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\Features\\UserTalents\\Command\\CreateUserTalentCommand.cs",
+              "RelativeDocumentMoniker": "Application\\Features\\UserTalents\\Command\\CreateUserTalentCommand.cs",
+              "ToolTip": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\Features\\UserTalents\\Command\\CreateUserTalentCommand.cs",
+              "RelativeToolTip": "Application\\Features\\UserTalents\\Command\\CreateUserTalentCommand.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-25T07:59:14.323Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "AddListUserToGroupCommand.cs",
+              "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\Features\\GroupMembers\\Command\\AddListUserToGroupCommand.cs",
+              "RelativeDocumentMoniker": "Application\\Features\\GroupMembers\\Command\\AddListUserToGroupCommand.cs",
+              "ToolTip": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\Features\\GroupMembers\\Command\\AddListUserToGroupCommand.cs",
+              "RelativeToolTip": "Application\\Features\\GroupMembers\\Command\\AddListUserToGroupCommand.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAAA4AAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-10T15:15:09.578Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "RegisterUserCommand.cs",
+              "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\Features\\Auth\\RegisterUser\\RegisterUserCommand.cs",
+              "RelativeDocumentMoniker": "Application\\Features\\Auth\\RegisterUser\\RegisterUserCommand.cs",
+              "ToolTip": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\Features\\Auth\\RegisterUser\\RegisterUserCommand.cs",
+              "RelativeToolTip": "Application\\Features\\Auth\\RegisterUser\\RegisterUserCommand.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-10T15:15:08.143Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 153,
+              "Title": "20250510151443_user-fullname.cs",
+              "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Infrastructure\\Migrations\\20250510151443_user-fullname.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\Migrations\\20250510151443_user-fullname.cs",
+              "ToolTip": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Infrastructure\\Migrations\\20250510151443_user-fullname.cs",
+              "RelativeToolTip": "Infrastructure\\Migrations\\20250510151443_user-fullname.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-10T15:14:43.346Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "API.csproj",
+              "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\API\\API.csproj",
+              "RelativeDocumentMoniker": "API\\API.csproj",
+              "ToolTip": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\API\\API.csproj",
+              "RelativeToolTip": "API\\API.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-05-10T13:06:47.548Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
               "Title": "LoginUserCommand.cs",
               "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\Features\\Auth\\LoginUser\\LoginUserCommand.cs",
               "RelativeDocumentMoniker": "Application\\Features\\Auth\\LoginUser\\LoginUserCommand.cs",
               "ToolTip": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\Features\\Auth\\LoginUser\\LoginUserCommand.cs",
               "RelativeToolTip": "Application\\Features\\Auth\\LoginUser\\LoginUserCommand.cs",
-              "ViewState": "AgIAAEYAAAAAAAAAAAA3wFcAAAAcAAAAAAAAAA==",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAgwBQAAABOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-25T00:22:53.464Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-25T00:22:53.464Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "AuthenticationResponseDto.cs",
-              "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\Features\\Auth\\Dto\\AuthenticationResponseDto.cs",
-              "RelativeDocumentMoniker": "Application\\Features\\Auth\\Dto\\AuthenticationResponseDto.cs",
-              "ToolTip": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\Features\\Auth\\Dto\\AuthenticationResponseDto.cs",
-              "RelativeToolTip": "Application\\Features\\Auth\\Dto\\AuthenticationResponseDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAiAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-07T16:58:50.8Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "UsersController.cs",
-              "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\API\\Controllers\\UsersController.cs",
-              "RelativeDocumentMoniker": "API\\Controllers\\UsersController.cs",
-              "ToolTip": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\API\\Controllers\\UsersController.cs",
-              "RelativeToolTip": "API\\Controllers\\UsersController.cs",
-              "ViewState": "AgIAACAAAAAAAAAAAAA3wC0AAAA0AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-25T13:31:19.229Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 18,
               "Title": "PaymentConfiguration.cs",
               "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Infrastructure\\Persistences\\Configuration\\PaymentConfiguration.cs",
               "RelativeDocumentMoniker": "Infrastructure\\Persistences\\Configuration\\PaymentConfiguration.cs",
@@ -720,31 +860,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "UploadVideoCommand.cs",
-              "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\Features\\Videos\\Command\\UploadVideoCommand.cs",
-              "RelativeDocumentMoniker": "Application\\Features\\Videos\\Command\\UploadVideoCommand.cs",
-              "ToolTip": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\Features\\Videos\\Command\\UploadVideoCommand.cs",
-              "RelativeToolTip": "Application\\Features\\Videos\\Command\\UploadVideoCommand.cs",
-              "ViewState": "AgIAABwAAAAAAAAAAAAAAC0AAAA4AAAAAAAAAA==",
+              "DocumentIndex": 15,
+              "Title": "AuthenticationResponseDto.cs",
+              "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\Features\\Auth\\Dto\\AuthenticationResponseDto.cs",
+              "RelativeDocumentMoniker": "Application\\Features\\Auth\\Dto\\AuthenticationResponseDto.cs",
+              "ToolTip": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\Features\\Auth\\Dto\\AuthenticationResponseDto.cs",
+              "RelativeToolTip": "Application\\Features\\Auth\\Dto\\AuthenticationResponseDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-25T11:21:13.902Z"
+              "WhenOpened": "2025-05-07T16:58:50.8Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "VideosController.cs",
-              "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\API\\Controllers\\VideosController.cs",
-              "RelativeDocumentMoniker": "API\\Controllers\\VideosController.cs",
-              "ToolTip": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\API\\Controllers\\VideosController.cs",
-              "RelativeToolTip": "API\\Controllers\\VideosController.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAIBAwBUAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-07T13:46:32.029Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 19,
               "Title": "WalletConfiguration.cs",
               "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Infrastructure\\Persistences\\Configuration\\WalletConfiguration.cs",
               "RelativeDocumentMoniker": "Infrastructure\\Persistences\\Configuration\\WalletConfiguration.cs",
@@ -756,7 +884,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 20,
               "Title": "WithdrawalRequestConfiguration.cs",
               "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Infrastructure\\Persistences\\Configuration\\WithdrawalRequestConfiguration.cs",
               "RelativeDocumentMoniker": "Infrastructure\\Persistences\\Configuration\\WithdrawalRequestConfiguration.cs",
@@ -768,7 +896,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 17,
               "Title": "GroupPostConfiguration.cs",
               "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Infrastructure\\Persistences\\Configuration\\GroupPostConfiguration.cs",
               "RelativeDocumentMoniker": "Infrastructure\\Persistences\\Configuration\\GroupPostConfiguration.cs",
@@ -780,19 +908,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "VideoConfiguration.cs",
-              "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Infrastructure\\Persistences\\Configuration\\VideoConfiguration.cs",
-              "RelativeDocumentMoniker": "Infrastructure\\Persistences\\Configuration\\VideoConfiguration.cs",
-              "ToolTip": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Infrastructure\\Persistences\\Configuration\\VideoConfiguration.cs",
-              "RelativeToolTip": "Infrastructure\\Persistences\\Configuration\\VideoConfiguration.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABEAAAAdAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-25T13:17:33.846Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 21,
               "Title": "UserTalentConfiguration.cs",
               "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Infrastructure\\Persistences\\Configuration\\UserTalentConfiguration.cs",
               "RelativeDocumentMoniker": "Infrastructure\\Persistences\\Configuration\\UserTalentConfiguration.cs",
@@ -804,19 +920,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "UserConfiguration.cs",
-              "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Infrastructure\\Persistences\\Configuration\\UserConfiguration.cs",
-              "RelativeDocumentMoniker": "Infrastructure\\Persistences\\Configuration\\UserConfiguration.cs",
-              "ToolTip": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Infrastructure\\Persistences\\Configuration\\UserConfiguration.cs",
-              "RelativeToolTip": "Infrastructure\\Persistences\\Configuration\\UserConfiguration.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAABgAAAAlAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-25T09:31:24.566Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 24,
               "Title": "SkillLevel.cs",
               "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Domain\\ValueObject\\SkillLevel.cs",
               "RelativeDocumentMoniker": "Domain\\ValueObject\\SkillLevel.cs",
@@ -828,7 +932,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 22,
               "Title": "Group.cs",
               "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Domain\\Entities\\Group.cs",
               "RelativeDocumentMoniker": "Domain\\Entities\\Group.cs",
@@ -840,7 +944,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 23,
               "Title": "UserTalent.cs",
               "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Domain\\Entities\\UserTalent.cs",
               "RelativeDocumentMoniker": "Domain\\Entities\\UserTalent.cs",
@@ -852,7 +956,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 25,
               "Title": "AwardConfiguration.cs",
               "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Infrastructure\\Persistences\\Configuration\\AwardConfiguration.cs",
               "RelativeDocumentMoniker": "Infrastructure\\Persistences\\Configuration\\AwardConfiguration.cs",
@@ -864,7 +968,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 29,
               "Title": "Rating.cs",
               "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Domain\\Entities\\Rating.cs",
               "RelativeDocumentMoniker": "Domain\\Entities\\Rating.cs",
@@ -876,7 +980,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 30,
               "Title": "Notification.cs",
               "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Domain\\Entities\\Notification.cs",
               "RelativeDocumentMoniker": "Domain\\Entities\\Notification.cs",
@@ -888,7 +992,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 28,
               "Title": "Role.cs",
               "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Domain\\Entities\\Role.cs",
               "RelativeDocumentMoniker": "Domain\\Entities\\Role.cs",
@@ -900,19 +1004,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "Video.cs",
-              "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Domain\\Entities\\Video.cs",
-              "RelativeDocumentMoniker": "Domain\\Entities\\Video.cs",
-              "ToolTip": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Domain\\Entities\\Video.cs",
-              "RelativeToolTip": "Domain\\Entities\\Video.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-24T17:36:01.724Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 27,
               "Title": "VideoLike.cs",
               "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Domain\\Entities\\VideoLike.cs",
               "RelativeDocumentMoniker": "Domain\\Entities\\VideoLike.cs",
@@ -924,7 +1016,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 26,
               "Title": "View.cs",
               "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Domain\\Entities\\View.cs",
               "RelativeDocumentMoniker": "Domain\\Entities\\View.cs",
@@ -936,7 +1028,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 31,
               "Title": "Message.cs",
               "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Domain\\Entities\\Message.cs",
               "RelativeDocumentMoniker": "Domain\\Entities\\Message.cs",
@@ -948,19 +1040,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
-              "Title": "Job.cs",
-              "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Domain\\Entities\\Job.cs",
-              "RelativeDocumentMoniker": "Domain\\Entities\\Job.cs",
-              "ToolTip": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Domain\\Entities\\Job.cs",
-              "RelativeToolTip": "Domain\\Entities\\Job.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAkAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-24T17:34:42.905Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 32,
               "Title": "GroupMember.cs",
               "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Domain\\Entities\\GroupMember.cs",
               "RelativeDocumentMoniker": "Domain\\Entities\\GroupMember.cs",
@@ -972,7 +1052,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 33,
               "Title": "ContestEntry.cs",
               "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Domain\\Entities\\ContestEntry.cs",
               "RelativeDocumentMoniker": "Domain\\Entities\\ContestEntry.cs",
@@ -984,7 +1064,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 34,
               "Title": "Contest.cs",
               "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Domain\\Entities\\Contest.cs",
               "RelativeDocumentMoniker": "Domain\\Entities\\Contest.cs",
@@ -996,7 +1076,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 35,
               "Title": "Comment.cs",
               "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Domain\\Entities\\Comment.cs",
               "RelativeDocumentMoniker": "Domain\\Entities\\Comment.cs",
@@ -1008,7 +1088,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 36,
               "Title": "Certification.cs",
               "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Domain\\Entities\\Certification.cs",
               "RelativeDocumentMoniker": "Domain\\Entities\\Certification.cs",
@@ -1020,7 +1100,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 37,
               "Title": "Category.cs",
               "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Domain\\Entities\\Category.cs",
               "RelativeDocumentMoniker": "Domain\\Entities\\Category.cs",
@@ -1032,7 +1112,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 38,
               "Title": "Award.cs",
               "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Domain\\Entities\\Award.cs",
               "RelativeDocumentMoniker": "Domain\\Entities\\Award.cs",
@@ -1044,7 +1124,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 39,
               "Title": "BEContext.cs",
               "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Infrastructure\\Persistences\\DbContext\\BEContext.cs",
               "RelativeDocumentMoniker": "Infrastructure\\Persistences\\DbContext\\BEContext.cs",
@@ -1056,7 +1136,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 40,
               "Title": "DeleteVideoCommand.cs",
               "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\Features\\Videos\\Command\\DeleteVideoCommand.cs",
               "RelativeDocumentMoniker": "Application\\Features\\Videos\\Command\\DeleteVideoCommand.cs",
@@ -1068,7 +1148,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 35,
+              "DocumentIndex": 42,
               "Title": "SendMessageDto.cs",
               "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\Features\\Messages\\Dto\\SendMessageDto.cs",
               "RelativeDocumentMoniker": "Application\\Features\\Messages\\Dto\\SendMessageDto.cs",
@@ -1080,7 +1160,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
+              "DocumentIndex": 41,
               "Title": "ChatHub.cs",
               "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\API\\Hubs\\ChatHub.cs",
               "RelativeDocumentMoniker": "API\\Hubs\\ChatHub.cs",
@@ -1092,7 +1172,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 37,
+              "DocumentIndex": 44,
               "Title": "FileService.cs",
               "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Infrastructure\\Services\\FileService.cs",
               "RelativeDocumentMoniker": "Infrastructure\\Services\\FileService.cs",
@@ -1104,7 +1184,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 38,
+              "DocumentIndex": 45,
               "Title": "IFileService.cs",
               "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\Services\\IFileService.cs",
               "RelativeDocumentMoniker": "Application\\Services\\IFileService.cs",
@@ -1116,7 +1196,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 36,
+              "DocumentIndex": 43,
               "Title": "UploadVideoRequestDto.cs",
               "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\Features\\Videos\\Dto\\UploadVideoRequestDto.cs",
               "RelativeDocumentMoniker": "Application\\Features\\Videos\\Dto\\UploadVideoRequestDto.cs",
@@ -1128,7 +1208,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 39,
+              "DocumentIndex": 46,
               "Title": "appsettings.json",
               "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\API\\appsettings.json",
               "RelativeDocumentMoniker": "API\\appsettings.json",
@@ -1140,7 +1220,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 40,
+              "DocumentIndex": 47,
               "Title": "RemoveUserFromGroupCommand.cs",
               "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\Features\\GroupMembers\\Command\\RemoveUserFromGroupCommand.cs",
               "RelativeDocumentMoniker": "Application\\Features\\GroupMembers\\Command\\RemoveUserFromGroupCommand.cs",
@@ -1152,7 +1232,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 41,
+              "DocumentIndex": 48,
               "Title": "GetViewByIdQuery.cs",
               "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\Features\\Views\\Query\\GetViewByIdQuery.cs",
               "RelativeDocumentMoniker": "Application\\Features\\Views\\Query\\GetViewByIdQuery.cs",
@@ -1164,7 +1244,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 42,
+              "DocumentIndex": 49,
               "Title": "ViewDto.cs",
               "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\Features\\Views\\Dto\\ViewDto.cs",
               "RelativeDocumentMoniker": "Application\\Features\\Views\\Dto\\ViewDto.cs",
@@ -1176,7 +1256,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 43,
+              "DocumentIndex": 50,
               "Title": "GetAllViewsQuery.cs",
               "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\Features\\Views\\Query\\GetAllViewsQuery.cs",
               "RelativeDocumentMoniker": "Application\\Features\\Views\\Query\\GetAllViewsQuery.cs",
@@ -1188,7 +1268,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 44,
+              "DocumentIndex": 51,
               "Title": "GetAllVideoLikesQuery.cs",
               "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\Features\\VideoLikes\\Query\\GetAllVideoLikesQuery.cs",
               "RelativeDocumentMoniker": "Application\\Features\\VideoLikes\\Query\\GetAllVideoLikesQuery.cs",
@@ -1200,7 +1280,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 45,
+              "DocumentIndex": 52,
               "Title": "GetVideoLikeByIdQuery.cs",
               "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\Features\\VideoLikes\\Query\\GetVideoLikeByIdQuery.cs",
               "RelativeDocumentMoniker": "Application\\Features\\VideoLikes\\Query\\GetVideoLikeByIdQuery.cs",
@@ -1212,7 +1292,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 46,
+              "DocumentIndex": 53,
               "Title": "GetRatingByIdQuery.cs",
               "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\Features\\Ratings\\Query\\GetRatingByIdQuery.cs",
               "RelativeDocumentMoniker": "Application\\Features\\Ratings\\Query\\GetRatingByIdQuery.cs",
@@ -1224,7 +1304,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 47,
+              "DocumentIndex": 54,
               "Title": "GetAllRatingsQuery.cs",
               "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\Features\\Ratings\\Query\\GetAllRatingsQuery.cs",
               "RelativeDocumentMoniker": "Application\\Features\\Ratings\\Query\\GetAllRatingsQuery.cs",
@@ -1236,7 +1316,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 48,
+              "DocumentIndex": 55,
               "Title": "GetAllMessagesQuery.cs",
               "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\Features\\Messages\\Query\\GetAllMessagesQuery.cs",
               "RelativeDocumentMoniker": "Application\\Features\\Messages\\Query\\GetAllMessagesQuery.cs",
@@ -1248,7 +1328,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 49,
+              "DocumentIndex": 56,
               "Title": "ViewProfile.cs",
               "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\MappingProfiles\\ViewProfile.cs",
               "RelativeDocumentMoniker": "Application\\MappingProfiles\\ViewProfile.cs",
@@ -1260,7 +1340,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 50,
+              "DocumentIndex": 57,
               "Title": "DeleteViewCommand.cs",
               "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\Features\\Views\\Command\\DeleteViewCommand.cs",
               "RelativeDocumentMoniker": "Application\\Features\\Views\\Command\\DeleteViewCommand.cs",
@@ -1272,7 +1352,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 51,
+              "DocumentIndex": 58,
               "Title": "CreateViewCommand.cs",
               "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\Features\\Views\\Command\\CreateViewCommand.cs",
               "RelativeDocumentMoniker": "Application\\Features\\Views\\Command\\CreateViewCommand.cs",
@@ -1284,7 +1364,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 52,
+              "DocumentIndex": 59,
               "Title": "VideoLikeProfile.cs",
               "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\MappingProfiles\\VideoLikeProfile.cs",
               "RelativeDocumentMoniker": "Application\\MappingProfiles\\VideoLikeProfile.cs",
@@ -1296,7 +1376,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 53,
+              "DocumentIndex": 60,
               "Title": "DeleteVideoLikeCommand.cs",
               "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\Features\\VideoLikes\\Command\\DeleteVideoLikeCommand.cs",
               "RelativeDocumentMoniker": "Application\\Features\\VideoLikes\\Command\\DeleteVideoLikeCommand.cs",
@@ -1308,7 +1388,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 54,
+              "DocumentIndex": 61,
               "Title": "VideoLikeDto.cs",
               "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\Features\\VideoLikes\\Dto\\VideoLikeDto.cs",
               "RelativeDocumentMoniker": "Application\\Features\\VideoLikes\\Dto\\VideoLikeDto.cs",
@@ -1320,31 +1400,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 55,
-              "Title": "UpdateVideoCommand.cs",
-              "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\Features\\Videos\\Command\\UpdateVideoCommand.cs",
-              "RelativeDocumentMoniker": "Application\\Features\\Videos\\Command\\UpdateVideoCommand.cs",
-              "ToolTip": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\Features\\Videos\\Command\\UpdateVideoCommand.cs",
-              "RelativeToolTip": "Application\\Features\\Videos\\Command\\UpdateVideoCommand.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAD0AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-25T08:04:15.4Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 56,
-              "Title": "CreateVideoCommand.cs",
-              "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\Features\\Videos\\Command\\CreateVideoCommand.cs",
-              "RelativeDocumentMoniker": "Application\\Features\\Videos\\Command\\CreateVideoCommand.cs",
-              "ToolTip": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\Features\\Videos\\Command\\CreateVideoCommand.cs",
-              "RelativeToolTip": "Application\\Features\\Videos\\Command\\CreateVideoCommand.cs",
-              "ViewState": "AgIAACEAAAAAAAAAAAAIwCIAAAAUAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-25T08:04:03.212Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 57,
+              "DocumentIndex": 62,
               "Title": "UserTalentProfile.cs",
               "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\MappingProfiles\\UserTalentProfile.cs",
               "RelativeDocumentMoniker": "Application\\MappingProfiles\\UserTalentProfile.cs",
@@ -1356,7 +1412,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 59,
+              "DocumentIndex": 64,
               "Title": "GetUserTalentByIdQuery.cs",
               "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\Features\\UserTalents\\Query\\GetUserTalentByIdQuery.cs",
               "RelativeDocumentMoniker": "Application\\Features\\UserTalents\\Query\\GetUserTalentByIdQuery.cs",
@@ -1368,7 +1424,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 58,
+              "DocumentIndex": 63,
               "Title": "GetAllUserTalentsQuery.cs",
               "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\Features\\UserTalents\\Query\\GetAllUserTalentsQuery.cs",
               "RelativeDocumentMoniker": "Application\\Features\\UserTalents\\Query\\GetAllUserTalentsQuery.cs",
@@ -1380,7 +1436,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 60,
+              "DocumentIndex": 65,
               "Title": "DeleteUserTalentCommand.cs",
               "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\Features\\UserTalents\\Command\\DeleteUserTalentCommand.cs",
               "RelativeDocumentMoniker": "Application\\Features\\UserTalents\\Command\\DeleteUserTalentCommand.cs",
@@ -1392,31 +1448,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 61,
-              "Title": "UpdateUserTalentCommand.cs",
-              "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\Features\\UserTalents\\Command\\UpdateUserTalentCommand.cs",
-              "RelativeDocumentMoniker": "Application\\Features\\UserTalents\\Command\\UpdateUserTalentCommand.cs",
-              "ToolTip": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\Features\\UserTalents\\Command\\UpdateUserTalentCommand.cs",
-              "RelativeToolTip": "Application\\Features\\UserTalents\\Command\\UpdateUserTalentCommand.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAZAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-25T07:59:34.293Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 62,
-              "Title": "CreateUserTalentCommand.cs",
-              "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\Features\\UserTalents\\Command\\CreateUserTalentCommand.cs",
-              "RelativeDocumentMoniker": "Application\\Features\\UserTalents\\Command\\CreateUserTalentCommand.cs",
-              "ToolTip": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\Features\\UserTalents\\Command\\CreateUserTalentCommand.cs",
-              "RelativeToolTip": "Application\\Features\\UserTalents\\Command\\CreateUserTalentCommand.cs",
-              "ViewState": "AgIAABcAAAAAAAAAAAAiwDMAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-25T07:59:14.323Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 63,
+              "DocumentIndex": 66,
               "Title": "UserTalentDto.cs",
               "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\Features\\UserTalents\\Dto\\UserTalentDto.cs",
               "RelativeDocumentMoniker": "Application\\Features\\UserTalents\\Dto\\UserTalentDto.cs",
@@ -1428,7 +1460,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 64,
+              "DocumentIndex": 67,
               "Title": "RoleProfile.cs",
               "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\MappingProfiles\\RoleProfile.cs",
               "RelativeDocumentMoniker": "Application\\MappingProfiles\\RoleProfile.cs",
@@ -1440,7 +1472,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 65,
+              "DocumentIndex": 68,
               "Title": "GetAllRolesQuery.cs",
               "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\Features\\Roles\\Query\\GetAllRolesQuery.cs",
               "RelativeDocumentMoniker": "Application\\Features\\Roles\\Query\\GetAllRolesQuery.cs",
@@ -1452,7 +1484,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 66,
+              "DocumentIndex": 69,
               "Title": "GetRoleByIdQuery.cs",
               "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\Features\\Roles\\Query\\GetRoleByIdQuery.cs",
               "RelativeDocumentMoniker": "Application\\Features\\Roles\\Query\\GetRoleByIdQuery.cs",
@@ -1464,7 +1496,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 67,
+              "DocumentIndex": 70,
               "Title": "UpdateRoleCommand.cs",
               "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\Features\\Roles\\Command\\UpdateRoleCommand.cs",
               "RelativeDocumentMoniker": "Application\\Features\\Roles\\Command\\UpdateRoleCommand.cs",
@@ -1476,7 +1508,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 68,
+              "DocumentIndex": 71,
               "Title": "RoleDto.cs",
               "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\Features\\Roles\\Dto\\RoleDto.cs",
               "RelativeDocumentMoniker": "Application\\Features\\Roles\\Dto\\RoleDto.cs",
@@ -1488,7 +1520,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 69,
+              "DocumentIndex": 72,
               "Title": "RatingProfile.cs",
               "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\MappingProfiles\\RatingProfile.cs",
               "RelativeDocumentMoniker": "Application\\MappingProfiles\\RatingProfile.cs",
@@ -1500,7 +1532,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 70,
+              "DocumentIndex": 73,
               "Title": "DeleteRatingCommand.cs",
               "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\Features\\Ratings\\Command\\DeleteRatingCommand.cs",
               "RelativeDocumentMoniker": "Application\\Features\\Ratings\\Command\\DeleteRatingCommand.cs",
@@ -1512,7 +1544,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 71,
+              "DocumentIndex": 74,
               "Title": "UpdateRatingCommand.cs",
               "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\Features\\Ratings\\Command\\UpdateRatingCommand.cs",
               "RelativeDocumentMoniker": "Application\\Features\\Ratings\\Command\\UpdateRatingCommand.cs",
@@ -1524,7 +1556,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 72,
+              "DocumentIndex": 75,
               "Title": "CreateRatingCommand.cs",
               "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\Features\\Ratings\\Command\\CreateRatingCommand.cs",
               "RelativeDocumentMoniker": "Application\\Features\\Ratings\\Command\\CreateRatingCommand.cs",
@@ -1536,7 +1568,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 73,
+              "DocumentIndex": 76,
               "Title": "RatingDto.cs",
               "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\Features\\Ratings\\Dto\\RatingDto.cs",
               "RelativeDocumentMoniker": "Application\\Features\\Ratings\\Dto\\RatingDto.cs",
@@ -1548,7 +1580,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 74,
+              "DocumentIndex": 77,
               "Title": "PaymentProfile.cs",
               "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\MappingProfiles\\PaymentProfile.cs",
               "RelativeDocumentMoniker": "Application\\MappingProfiles\\PaymentProfile.cs",
@@ -1560,7 +1592,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 76,
+              "DocumentIndex": 79,
               "Title": "GetPaymentByIdQuery.cs",
               "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\Features\\Payments\\Query\\GetPaymentByIdQuery.cs",
               "RelativeDocumentMoniker": "Application\\Features\\Payments\\Query\\GetPaymentByIdQuery.cs",
@@ -1572,7 +1604,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 75,
+              "DocumentIndex": 78,
               "Title": "GetAllPaymentsQuery.cs",
               "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\Features\\Payments\\Query\\GetAllPaymentsQuery.cs",
               "RelativeDocumentMoniker": "Application\\Features\\Payments\\Query\\GetAllPaymentsQuery.cs",
@@ -1584,7 +1616,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 77,
+              "DocumentIndex": 80,
               "Title": "DeletePaymentCommand.cs",
               "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\Features\\Payments\\Command\\DeletePaymentCommand.cs",
               "RelativeDocumentMoniker": "Application\\Features\\Payments\\Command\\DeletePaymentCommand.cs",
@@ -1596,7 +1628,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 78,
+              "DocumentIndex": 81,
               "Title": "UpdatePaymentCommand.cs",
               "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\Features\\Payments\\Command\\UpdatePaymentCommand.cs",
               "RelativeDocumentMoniker": "Application\\Features\\Payments\\Command\\UpdatePaymentCommand.cs",
@@ -1608,7 +1640,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 79,
+              "DocumentIndex": 82,
               "Title": "CreatePaymentCommand.cs",
               "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\Features\\Payments\\Command\\CreatePaymentCommand.cs",
               "RelativeDocumentMoniker": "Application\\Features\\Payments\\Command\\CreatePaymentCommand.cs",
@@ -1620,7 +1652,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 80,
+              "DocumentIndex": 83,
               "Title": "PaymentDto.cs",
               "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\Features\\Payments\\Dto\\PaymentDto.cs",
               "RelativeDocumentMoniker": "Application\\Features\\Payments\\Dto\\PaymentDto.cs",
@@ -1632,7 +1664,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 81,
+              "DocumentIndex": 84,
               "Title": "NotificationProfile.cs",
               "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\MappingProfiles\\NotificationProfile.cs",
               "RelativeDocumentMoniker": "Application\\MappingProfiles\\NotificationProfile.cs",
@@ -1644,7 +1676,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 83,
+              "DocumentIndex": 86,
               "Title": "GetNotificationByIdQuery.cs",
               "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\Features\\Notifications\\Query\\GetNotificationByIdQuery.cs",
               "RelativeDocumentMoniker": "Application\\Features\\Notifications\\Query\\GetNotificationByIdQuery.cs",
@@ -1656,7 +1688,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 82,
+              "DocumentIndex": 85,
               "Title": "GetAllNotificationsQuery.cs",
               "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\Features\\Notifications\\Query\\GetAllNotificationsQuery.cs",
               "RelativeDocumentMoniker": "Application\\Features\\Notifications\\Query\\GetAllNotificationsQuery.cs",
@@ -1668,7 +1700,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 84,
+              "DocumentIndex": 87,
               "Title": "DeleteNotificationCommand.cs",
               "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\Features\\Notifications\\Command\\DeleteNotificationCommand.cs",
               "RelativeDocumentMoniker": "Application\\Features\\Notifications\\Command\\DeleteNotificationCommand.cs",
@@ -1680,7 +1712,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 85,
+              "DocumentIndex": 88,
               "Title": "UpdateNotificationCommand.cs",
               "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\Features\\Notifications\\Command\\UpdateNotificationCommand.cs",
               "RelativeDocumentMoniker": "Application\\Features\\Notifications\\Command\\UpdateNotificationCommand.cs",
@@ -1692,7 +1724,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 86,
+              "DocumentIndex": 89,
               "Title": "NotificationDto.cs",
               "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\Features\\Notifications\\Dto\\NotificationDto.cs",
               "RelativeDocumentMoniker": "Application\\Features\\Notifications\\Dto\\NotificationDto.cs",
@@ -1704,7 +1736,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 87,
+              "DocumentIndex": 90,
               "Title": "MessageProfile.cs",
               "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\MappingProfiles\\MessageProfile.cs",
               "RelativeDocumentMoniker": "Application\\MappingProfiles\\MessageProfile.cs",
@@ -1716,7 +1748,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 88,
+              "DocumentIndex": 91,
               "Title": "GetMessageByIdQuery.cs",
               "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\Features\\Messages\\Query\\GetMessageByIdQuery.cs",
               "RelativeDocumentMoniker": "Application\\Features\\Messages\\Query\\GetMessageByIdQuery.cs",
@@ -1728,7 +1760,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 89,
+              "DocumentIndex": 92,
               "Title": "DeleteMessageCommand.cs",
               "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\Features\\Messages\\Command\\DeleteMessageCommand.cs",
               "RelativeDocumentMoniker": "Application\\Features\\Messages\\Command\\DeleteMessageCommand.cs",
@@ -1740,7 +1772,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 90,
+              "DocumentIndex": 93,
               "Title": "UpdateMessageCommand.cs",
               "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\Features\\Messages\\Command\\UpdateMessageCommand.cs",
               "RelativeDocumentMoniker": "Application\\Features\\Messages\\Command\\UpdateMessageCommand.cs",
@@ -1752,7 +1784,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 91,
+              "DocumentIndex": 94,
               "Title": "MessageDto.cs",
               "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\Features\\Messages\\Dto\\MessageDto.cs",
               "RelativeDocumentMoniker": "Application\\Features\\Messages\\Dto\\MessageDto.cs",
@@ -1764,19 +1796,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 92,
-              "Title": "JobProfile.cs",
-              "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\MappingProfiles\\JobProfile.cs",
-              "RelativeDocumentMoniker": "Application\\MappingProfiles\\JobProfile.cs",
-              "ToolTip": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\MappingProfiles\\JobProfile.cs",
-              "RelativeToolTip": "Application\\MappingProfiles\\JobProfile.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-25T03:53:31.803Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 93,
+              "DocumentIndex": 95,
               "Title": "GetJobByIdQuery.cs",
               "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\Features\\Jobs\\Query\\GetJobByIdQuery.cs",
               "RelativeDocumentMoniker": "Application\\Features\\Jobs\\Query\\GetJobByIdQuery.cs",
@@ -1788,7 +1808,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 94,
+              "DocumentIndex": 96,
               "Title": "GetAllJobsQuery.cs",
               "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\Features\\Jobs\\Query\\GetAllJobsQuery.cs",
               "RelativeDocumentMoniker": "Application\\Features\\Jobs\\Query\\GetAllJobsQuery.cs",
@@ -1800,7 +1820,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 95,
+              "DocumentIndex": 97,
               "Title": "DeleteJobCommand.cs",
               "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\Features\\Jobs\\Command\\DeleteJobCommand.cs",
               "RelativeDocumentMoniker": "Application\\Features\\Jobs\\Command\\DeleteJobCommand.cs",
@@ -1812,7 +1832,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 96,
+              "DocumentIndex": 98,
               "Title": "UpdateJobCommand.cs",
               "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\Features\\Jobs\\Command\\UpdateJobCommand.cs",
               "RelativeDocumentMoniker": "Application\\Features\\Jobs\\Command\\UpdateJobCommand.cs",
@@ -1824,67 +1844,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 97,
-              "Title": "JobDto.cs",
-              "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\Features\\Jobs\\Dto\\JobDto.cs",
-              "RelativeDocumentMoniker": "Application\\Features\\Jobs\\Dto\\JobDto.cs",
-              "ToolTip": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\Features\\Jobs\\Dto\\JobDto.cs",
-              "RelativeToolTip": "Application\\Features\\Jobs\\Dto\\JobDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAlAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-25T03:43:37.265Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 98,
-              "Title": "GetAllUsersQuery.cs",
-              "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\Features\\Users\\Query\\GetAllUsersQuery.cs",
-              "RelativeDocumentMoniker": "Application\\Features\\Users\\Query\\GetAllUsersQuery.cs",
-              "ToolTip": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\Features\\Users\\Query\\GetAllUsersQuery.cs",
-              "RelativeToolTip": "Application\\Features\\Users\\Query\\GetAllUsersQuery.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAwwCUAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-24T17:52:51.509Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 99,
-              "Title": "GetUserByIdQuery.cs",
-              "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\Features\\Users\\Query\\GetUserByIdQuery.cs",
-              "RelativeDocumentMoniker": "Application\\Features\\Users\\Query\\GetUserByIdQuery.cs",
-              "ToolTip": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\Features\\Users\\Query\\GetUserByIdQuery.cs",
-              "RelativeToolTip": "Application\\Features\\Users\\Query\\GetUserByIdQuery.cs",
-              "ViewState": "AgIAABIAAAAAAAAAAADwvysAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-24T17:52:39.773Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 100,
-              "Title": "UpdateUserCommand.cs",
-              "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\Features\\Users\\Command\\UpdateUserCommand.cs",
-              "RelativeDocumentMoniker": "Application\\Features\\Users\\Command\\UpdateUserCommand.cs",
-              "ToolTip": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\Features\\Users\\Command\\UpdateUserCommand.cs",
-              "RelativeToolTip": "Application\\Features\\Users\\Command\\UpdateUserCommand.cs",
-              "ViewState": "AgIAACEAAAAAAAAAAAAQwDwAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-24T17:52:10.024Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 101,
-              "Title": "JobConfiguration.cs",
-              "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Infrastructure\\Persistences\\Configuration\\JobConfiguration.cs",
-              "RelativeDocumentMoniker": "Infrastructure\\Persistences\\Configuration\\JobConfiguration.cs",
-              "ToolTip": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Infrastructure\\Persistences\\Configuration\\JobConfiguration.cs",
-              "RelativeToolTip": "Infrastructure\\Persistences\\Configuration\\JobConfiguration.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-24T17:34:39.618Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 102,
               "Title": "GroupMemberProfile.cs",
               "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\MappingProfiles\\GroupMemberProfile.cs",
               "RelativeDocumentMoniker": "Application\\MappingProfiles\\GroupMemberProfile.cs",
@@ -1896,7 +1856,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 106,
+              "DocumentIndex": 103,
               "Title": "GetGroupMemberByIdQuery.cs",
               "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\Features\\GroupMembers\\Query\\GetGroupMemberByIdQuery.cs",
               "RelativeDocumentMoniker": "Application\\Features\\GroupMembers\\Query\\GetGroupMemberByIdQuery.cs",
@@ -1908,7 +1868,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 105,
+              "DocumentIndex": 102,
               "Title": "GetAllGroupMembersQuery.cs",
               "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\Features\\GroupMembers\\Query\\GetAllGroupMembersQuery.cs",
               "RelativeDocumentMoniker": "Application\\Features\\GroupMembers\\Query\\GetAllGroupMembersQuery.cs",
@@ -1920,7 +1880,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 104,
+              "DocumentIndex": 101,
               "Title": "GetGroupMembersByGroupIdQuery.cs",
               "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\Features\\GroupMembers\\Query\\GetGroupMembersByGroupIdQuery.cs",
               "RelativeDocumentMoniker": "Application\\Features\\GroupMembers\\Query\\GetGroupMembersByGroupIdQuery.cs",
@@ -1932,7 +1892,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 103,
+              "DocumentIndex": 100,
               "Title": "GetGroupMembersByUserIdQuery.cs",
               "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\Features\\GroupMembers\\Query\\GetGroupMembersByUserIdQuery.cs",
               "RelativeDocumentMoniker": "Application\\Features\\GroupMembers\\Query\\GetGroupMembersByUserIdQuery.cs",
@@ -1944,7 +1904,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 107,
+              "DocumentIndex": 104,
               "Title": "GroupMemberDto.cs",
               "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\Features\\GroupMembers\\Dto\\GroupMemberDto.cs",
               "RelativeDocumentMoniker": "Application\\Features\\GroupMembers\\Dto\\GroupMemberDto.cs",
@@ -1957,18 +1917,6 @@
             {
               "$type": "Document",
               "DocumentIndex": 108,
-              "Title": "GroupProfile.cs",
-              "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\MappingProfiles\\GroupProfile.cs",
-              "RelativeDocumentMoniker": "Application\\MappingProfiles\\GroupProfile.cs",
-              "ToolTip": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\MappingProfiles\\GroupProfile.cs",
-              "RelativeToolTip": "Application\\MappingProfiles\\GroupProfile.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAfAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-24T17:25:53.826Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 112,
               "Title": "UpdateGroupCommand.cs",
               "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\Features\\Groups\\Command\\UpdateGroupCommand.cs",
               "RelativeDocumentMoniker": "Application\\Features\\Groups\\Command\\UpdateGroupCommand.cs",
@@ -1980,7 +1928,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 111,
+              "DocumentIndex": 107,
               "Title": "GetGroupByIdQuery.cs",
               "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\Features\\Groups\\Query\\GetGroupByIdQuery.cs",
               "RelativeDocumentMoniker": "Application\\Features\\Groups\\Query\\GetGroupByIdQuery.cs",
@@ -1992,7 +1940,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 110,
+              "DocumentIndex": 106,
               "Title": "GetAllGroupsQuery.cs",
               "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\Features\\Groups\\Query\\GetAllGroupsQuery.cs",
               "RelativeDocumentMoniker": "Application\\Features\\Groups\\Query\\GetAllGroupsQuery.cs",
@@ -2004,7 +1952,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 109,
+              "DocumentIndex": 105,
               "Title": "GetGroupsCreatedByUserQuery.cs",
               "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\Features\\Groups\\Query\\GetGroupsCreatedByUserQuery.cs",
               "RelativeDocumentMoniker": "Application\\Features\\Groups\\Query\\GetGroupsCreatedByUserQuery.cs",
@@ -2016,7 +1964,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 113,
+              "DocumentIndex": 109,
               "Title": "DeleteGroupCommand.cs",
               "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\Features\\Groups\\Command\\DeleteGroupCommand.cs",
               "RelativeDocumentMoniker": "Application\\Features\\Groups\\Command\\DeleteGroupCommand.cs",
@@ -2028,7 +1976,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 114,
+              "DocumentIndex": 110,
               "Title": "GroupDto.cs",
               "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\Features\\Groups\\Dto\\GroupDto.cs",
               "RelativeDocumentMoniker": "Application\\Features\\Groups\\Dto\\GroupDto.cs",
@@ -2040,7 +1988,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 115,
+              "DocumentIndex": 111,
               "Title": "CreateContestEntryCommand.cs",
               "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\Features\\ContestEntries\\Command\\CreateContestEntryCommand.cs",
               "RelativeDocumentMoniker": "Application\\Features\\ContestEntries\\Command\\CreateContestEntryCommand.cs",
@@ -2052,7 +2000,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 116,
+              "DocumentIndex": 112,
               "Title": "AddVoteCommand.cs",
               "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\Features\\ContestEntries\\Command\\AddVoteCommand.cs",
               "RelativeDocumentMoniker": "Application\\Features\\ContestEntries\\Command\\AddVoteCommand.cs",
@@ -2064,7 +2012,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 117,
+              "DocumentIndex": 113,
               "Title": "ContestEntryProfile.cs",
               "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\MappingProfiles\\ContestEntryProfile.cs",
               "RelativeDocumentMoniker": "Application\\MappingProfiles\\ContestEntryProfile.cs",
@@ -2076,7 +2024,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 118,
+              "DocumentIndex": 114,
               "Title": "GetContestEntriesByContestIdQuery.cs",
               "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\Features\\ContestEntries\\Query\\GetContestEntriesByContestIdQuery.cs",
               "RelativeDocumentMoniker": "Application\\Features\\ContestEntries\\Query\\GetContestEntriesByContestIdQuery.cs",
@@ -2088,7 +2036,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 120,
+              "DocumentIndex": 116,
               "Title": "RemoveVoteCommand.cs",
               "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\Features\\ContestEntries\\Command\\RemoveVoteCommand.cs",
               "RelativeDocumentMoniker": "Application\\Features\\ContestEntries\\Command\\RemoveVoteCommand.cs",
@@ -2100,7 +2048,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 119,
+              "DocumentIndex": 115,
               "Title": "GetContestEntriesByVideoIdQuery.cs",
               "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\Features\\ContestEntries\\Query\\GetContestEntriesByVideoIdQuery.cs",
               "RelativeDocumentMoniker": "Application\\Features\\ContestEntries\\Query\\GetContestEntriesByVideoIdQuery.cs",
@@ -2112,7 +2060,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 121,
+              "DocumentIndex": 117,
               "Title": "DeleteContestEntryCommand.cs",
               "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\Features\\ContestEntries\\Command\\DeleteContestEntryCommand.cs",
               "RelativeDocumentMoniker": "Application\\Features\\ContestEntries\\Command\\DeleteContestEntryCommand.cs",
@@ -2124,7 +2072,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 122,
+              "DocumentIndex": 118,
               "Title": "UpdateContestEntryCommand.cs",
               "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\Features\\ContestEntries\\Command\\UpdateContestEntryCommand.cs",
               "RelativeDocumentMoniker": "Application\\Features\\ContestEntries\\Command\\UpdateContestEntryCommand.cs",
@@ -2136,7 +2084,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 123,
+              "DocumentIndex": 119,
               "Title": "ContestEntryDto.cs",
               "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\Features\\ContestEntries\\Dto\\ContestEntryDto.cs",
               "RelativeDocumentMoniker": "Application\\Features\\ContestEntries\\Dto\\ContestEntryDto.cs",
@@ -2148,7 +2096,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 125,
+              "DocumentIndex": 121,
               "Title": "ContestProfile.cs",
               "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\MappingProfiles\\ContestProfile.cs",
               "RelativeDocumentMoniker": "Application\\MappingProfiles\\ContestProfile.cs",
@@ -2160,7 +2108,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 124,
+              "DocumentIndex": 120,
               "Title": "ContestDto.cs",
               "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\Features\\Contests\\Dto\\ContestDto.cs",
               "RelativeDocumentMoniker": "Application\\Features\\Contests\\Dto\\ContestDto.cs",
@@ -2172,7 +2120,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 126,
+              "DocumentIndex": 122,
               "Title": "GetAllContestsQuery.cs",
               "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\Features\\Contests\\Query\\GetAllContestsQuery.cs",
               "RelativeDocumentMoniker": "Application\\Features\\Contests\\Query\\GetAllContestsQuery.cs",
@@ -2184,7 +2132,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 127,
+              "DocumentIndex": 123,
               "Title": "DeleteContestCommand.cs",
               "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\Features\\Contests\\Command\\DeleteContestCommand.cs",
               "RelativeDocumentMoniker": "Application\\Features\\Contests\\Command\\DeleteContestCommand.cs",
@@ -2196,7 +2144,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 129,
+              "DocumentIndex": 125,
               "Title": "GetContestByIdQuery.cs",
               "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\Features\\Contests\\Query\\GetContestByIdQuery.cs",
               "RelativeDocumentMoniker": "Application\\Features\\Contests\\Query\\GetContestByIdQuery.cs",
@@ -2208,7 +2156,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 128,
+              "DocumentIndex": 124,
               "Title": "UpdateContestCommand.cs",
               "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\Features\\Contests\\Command\\UpdateContestCommand.cs",
               "RelativeDocumentMoniker": "Application\\Features\\Contests\\Command\\UpdateContestCommand.cs",
@@ -2220,7 +2168,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 131,
+              "DocumentIndex": 126,
               "Title": "GetCommentByIdQuery.cs",
               "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\Features\\Comments\\Query\\GetCommentByIdQuery.cs",
               "RelativeDocumentMoniker": "Application\\Features\\Comments\\Query\\GetCommentByIdQuery.cs",
@@ -2232,19 +2180,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 130,
-              "Title": "UpdateCommentCommand.cs",
-              "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\Features\\Comments\\Command\\UpdateCommentCommand.cs",
-              "RelativeDocumentMoniker": "Application\\Features\\Comments\\Command\\UpdateCommentCommand.cs",
-              "ToolTip": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\Features\\Comments\\Command\\UpdateCommentCommand.cs",
-              "RelativeToolTip": "Application\\Features\\Comments\\Command\\UpdateCommentCommand.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAADwvy8AAAAtAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-24T15:40:52.333Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 132,
+              "DocumentIndex": 127,
               "Title": "GetAllCommentsQuery.cs",
               "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\Features\\Comments\\Query\\GetAllCommentsQuery.cs",
               "RelativeDocumentMoniker": "Application\\Features\\Comments\\Query\\GetAllCommentsQuery.cs",
@@ -2256,7 +2192,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 135,
+              "DocumentIndex": 130,
               "Title": "DeleteCategoryCommand.cs",
               "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\Features\\Categories\\Command\\DeleteCategoryCommand.cs",
               "RelativeDocumentMoniker": "Application\\Features\\Categories\\Command\\DeleteCategoryCommand.cs",
@@ -2268,7 +2204,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 136,
+              "DocumentIndex": 131,
               "Title": "UpdateCategoryCommand.cs",
               "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\Features\\Categories\\Command\\UpdateCategoryCommand.cs",
               "RelativeDocumentMoniker": "Application\\Features\\Categories\\Command\\UpdateCategoryCommand.cs",
@@ -2280,7 +2216,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 133,
+              "DocumentIndex": 128,
               "Title": "GetAllCategoriesQuery.cs",
               "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\Features\\Categories\\Query\\GetAllCategoriesQuery.cs",
               "RelativeDocumentMoniker": "Application\\Features\\Categories\\Query\\GetAllCategoriesQuery.cs",
@@ -2292,7 +2228,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 134,
+              "DocumentIndex": 129,
               "Title": "GetCategoryByIdQuery.cs",
               "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\Features\\Categories\\Query\\GetCategoryByIdQuery.cs",
               "RelativeDocumentMoniker": "Application\\Features\\Categories\\Query\\GetCategoryByIdQuery.cs",
@@ -2304,7 +2240,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 137,
+              "DocumentIndex": 132,
               "Title": "CertificationProfiles.cs",
               "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\MappingProfiles\\CertificationProfiles.cs",
               "RelativeDocumentMoniker": "Application\\MappingProfiles\\CertificationProfiles.cs",
@@ -2316,7 +2252,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 138,
+              "DocumentIndex": 133,
               "Title": "AwardProfile.cs",
               "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\MappingProfiles\\AwardProfile.cs",
               "RelativeDocumentMoniker": "Application\\MappingProfiles\\AwardProfile.cs",
@@ -2328,7 +2264,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 139,
+              "DocumentIndex": 134,
               "Title": "GetAllCertificationsQuery.cs",
               "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\Features\\Certifications\\Query\\GetAllCertificationsQuery.cs",
               "RelativeDocumentMoniker": "Application\\Features\\Certifications\\Query\\GetAllCertificationsQuery.cs",
@@ -2340,7 +2276,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 140,
+              "DocumentIndex": 135,
               "Title": "GetCertificationByIdQuery.cs",
               "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\Features\\Certifications\\Query\\GetCertificationByIdQuery.cs",
               "RelativeDocumentMoniker": "Application\\Features\\Certifications\\Query\\GetCertificationByIdQuery.cs",
@@ -2352,7 +2288,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 141,
+              "DocumentIndex": 136,
               "Title": "DeleteCertificationCommand.cs",
               "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\Features\\Certifications\\Command\\DeleteCertificationCommand.cs",
               "RelativeDocumentMoniker": "Application\\Features\\Certifications\\Command\\DeleteCertificationCommand.cs",
@@ -2364,7 +2300,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 142,
+              "DocumentIndex": 137,
               "Title": "UpdateCertificationCommand.cs",
               "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\Features\\Certifications\\Command\\UpdateCertificationCommand.cs",
               "RelativeDocumentMoniker": "Application\\Features\\Certifications\\Command\\UpdateCertificationCommand.cs",
@@ -2376,7 +2312,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 143,
+              "DocumentIndex": 138,
               "Title": "CreateCertificationCommand.cs",
               "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\Features\\Certifications\\Command\\CreateCertificationCommand.cs",
               "RelativeDocumentMoniker": "Application\\Features\\Certifications\\Command\\CreateCertificationCommand.cs",
@@ -2388,7 +2324,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 144,
+              "DocumentIndex": 139,
               "Title": "GetAllAchievementsQuery.cs",
               "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\Features\\Achievements\\Query\\GetAllAchievementsQuery.cs",
               "RelativeDocumentMoniker": "Application\\Features\\Achievements\\Query\\GetAllAchievementsQuery.cs",
@@ -2400,7 +2336,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 145,
+              "DocumentIndex": 140,
               "Title": "GetAchievementByIdQuery.cs",
               "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\Features\\Achievements\\Query\\GetAchievementByIdQuery.cs",
               "RelativeDocumentMoniker": "Application\\Features\\Achievements\\Query\\GetAchievementByIdQuery.cs",
@@ -2412,7 +2348,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 146,
+              "DocumentIndex": 141,
               "Title": "DeleteAchievementCommand.cs",
               "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\Features\\Achievements\\Command\\DeleteAchievementCommand.cs",
               "RelativeDocumentMoniker": "Application\\Features\\Achievements\\Command\\DeleteAchievementCommand.cs",
@@ -2424,7 +2360,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 147,
+              "DocumentIndex": 142,
               "Title": "Result.cs",
               "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Shared\\Results\\Result.cs",
               "RelativeDocumentMoniker": "Shared\\Results\\Result.cs",
@@ -2436,7 +2372,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 148,
+              "DocumentIndex": 143,
               "Title": "CertificationDto.cs",
               "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\Features\\Certifications\\Dto\\CertificationDto.cs",
               "RelativeDocumentMoniker": "Application\\Features\\Certifications\\Dto\\CertificationDto.cs",
@@ -2448,7 +2384,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 149,
+              "DocumentIndex": 144,
               "Title": "CategoryProfile.cs",
               "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\MappingProfiles\\CategoryProfile.cs",
               "RelativeDocumentMoniker": "Application\\MappingProfiles\\CategoryProfile.cs",
@@ -2460,7 +2396,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 152,
+              "DocumentIndex": 147,
               "Title": "CreateAwardCommand.cs",
               "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\Features\\Awards\\Command\\CreateAwardCommand.cs",
               "RelativeDocumentMoniker": "Application\\Features\\Awards\\Command\\CreateAwardCommand.cs",
@@ -2472,7 +2408,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 151,
+              "DocumentIndex": 146,
               "Title": "DeleteAwardCommand.cs",
               "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\Features\\Awards\\Command\\DeleteAwardCommand.cs",
               "RelativeDocumentMoniker": "Application\\Features\\Awards\\Command\\DeleteAwardCommand.cs",
@@ -2484,7 +2420,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 150,
+              "DocumentIndex": 145,
               "Title": "GetAwardByIdQuery.cs",
               "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\Features\\Awards\\Query\\GetAwardByIdQuery.cs",
               "RelativeDocumentMoniker": "Application\\Features\\Awards\\Query\\GetAwardByIdQuery.cs",
@@ -2496,7 +2432,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 153,
+              "DocumentIndex": 148,
               "Title": "CategoryDto.cs",
               "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\Features\\Categories\\Dto\\CategoryDto.cs",
               "RelativeDocumentMoniker": "Application\\Features\\Categories\\Dto\\CategoryDto.cs",
@@ -2508,7 +2444,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 154,
+              "DocumentIndex": 149,
               "Title": "IServiceCollectionExtensions.cs",
               "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\Extentiosn\\IServiceCollectionExtensions.cs",
               "RelativeDocumentMoniker": "Application\\Extentiosn\\IServiceCollectionExtensions.cs",
@@ -2520,7 +2456,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 155,
+              "DocumentIndex": 150,
               "Title": "UpdateAwardCommand.cs",
               "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\Features\\Awards\\Command\\UpdateAwardCommand.cs",
               "RelativeDocumentMoniker": "Application\\Features\\Awards\\Command\\UpdateAwardCommand.cs",
@@ -2532,7 +2468,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 156,
+              "DocumentIndex": 151,
               "Title": "GetAllAwardsQuery.cs",
               "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\Features\\Awards\\Query\\GetAllAwardsQuery.cs",
               "RelativeDocumentMoniker": "Application\\Features\\Awards\\Query\\GetAllAwardsQuery.cs",
@@ -2544,7 +2480,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 157,
+              "DocumentIndex": 152,
               "Title": "AwardDto.cs",
               "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\Features\\Awards\\Query\\AwardDto.cs",
               "RelativeDocumentMoniker": "Application\\Features\\Awards\\Query\\AwardDto.cs",

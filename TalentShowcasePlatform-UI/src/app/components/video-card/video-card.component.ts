@@ -34,9 +34,18 @@ export class VideoCardComponent implements OnInit {
     observer.observe(this.el.nativeElement);
   }
 
-  // ngOnDestroy(): void {
-  //   if (this.player) {
-  //     this.player.dispose();
-  //   }
-  // }
+  onLoadedMetadata(event: Event, video: any): void {
+    const duration = (event.target as HTMLVideoElement).duration;
+    video.duration = this.formatDuration(duration);
+  }
+
+  formatDuration(seconds: number): string {
+    const m = Math.floor(seconds / 60);
+    const s = Math.floor(seconds % 60);
+    return `${this.pad(m)}:${this.pad(s)}`;
+  }
+
+  pad(num: number): string {
+    return num < 10 ? '0' + num : num.toString();
+  }
 }

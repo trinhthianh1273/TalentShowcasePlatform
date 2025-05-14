@@ -1,0 +1,195 @@
+<div class="flex min-h-screen">
+    <app-aside-left></app-aside-left>
+    <main class="flex-1 px-4 overflow-y-auto">
+        <app-header [isLoggedIn]="isLoggedIn" [currentUser]="currentUser"></app-header>
+        <div class="px-4">
+            <!-- Upload, Import, Create, Record -->
+            <div class="flex flex-wrap gap-6 mb-8">
+                <input type="file" #fileInput accept="video/*" (change)="onVideoSelected($event)" hidden />
+                <button (click)="triggerFileInput()"
+                    class="flex items-center gap-4 bg-[#e6ebf1] rounded-xl px-6 py-4 w-52" type="button">
+                    <div class="bg-white rounded-lg p-3">
+                        <i class="fas fa-cloud-upload-alt text-xl">
+                        </i>
+                    </div>
+                    <div class="text-left">
+                        <p class="font-semibold text-sm">
+                            Upload
+                        </p>
+                        <p class="text-xs text-[#7a7a7a]">
+                            from computer
+                        </p>
+                    </div>
+                </button>
+                <button (click)="importVideo()" class="flex items-center gap-4 bg-[#e6ebf1] rounded-xl px-6 py-4 w-52"
+                    type="button">
+                    <div class="bg-white rounded-lg p-3">
+                        <i class="fas fa-download text-xl">
+                        </i>
+                    </div>
+                    <div class="text-left">
+                        <p class="font-semibold text-sm">
+                            Import
+                        </p>
+                        <p class="text-xs text-[#7a7a7a]">
+                            from Drive and more
+                        </p>
+                    </div>
+                </button>
+                <button (click)="createVideo()" class="flex items-center gap-4 bg-[#e6ebf1] rounded-xl px-6 py-4 w-52"
+                    type="button">
+                    <div class="bg-white rounded-lg p-3">
+                        <i class="fas fa-pen-nib text-xl">
+                        </i>
+                    </div>
+                    <div class="text-left">
+                        <p class="font-semibold text-sm">
+                            Create
+                        </p>
+                        <p class="text-xs text-[#7a7a7a]">
+                            new or from template
+                        </p>
+                    </div>
+                </button>
+                <button (click)="recordVideo()" class="flex items-center gap-4 bg-[#e6ebf1] rounded-xl px-6 py-4 w-52"
+                    type="button">
+                    <div class="bg-white rounded-lg p-3">
+                        <i class="fas fa-record-vinyl text-xl">
+                        </i>
+                    </div>
+                    <div class="text-left">
+                        <p class="font-semibold text-sm">
+                            Record
+                        </p>
+                        <p class="text-xs text-[#7a7a7a]">
+                            screen or webcam
+                        </p>
+                    </div>
+                </button>
+            </div>
+            <!-- Recents -->
+            <section>
+                <h2 class="font-semibold text-lg mb-4 flex items-center gap-1">
+                    Recents
+                    <i class="fas fa-chevron-right text-sm">
+                    </i>
+                </h2>
+                <div class="flex flex-wrap items-start gap-4">
+                    <div *ngFor="let video of videoList"
+                        class="pe-8 w-full sm:w-[48%] md:w-[31%] lg:w-[23%] flex flex-col gap-3 justify-center mb-4">
+                        <!-- Thumbnail -->
+                        <div class="relative rounded-xl overflow-hidden w-full h-28 flex-shrink-0">
+                            <video #target class="video-js vjs-default-skin" autoplay playsinline preload="auto"
+                                disablePictureInPicture controlsList="nodownload nofullscreen noremoteplayback"
+                                width="100%" height="auto" [attr.data-setup]="{}"
+                                (loadedmetadata)="onLoadedMetadata($event, video)">
+                                <source [src]="videoPath + video.url" type="video/mp4" />
+                            </video>
+                            <span
+                                class="absolute bottom-2 right-2 bg-black bg-opacity-70 text-white text-xs rounded px-1">
+                                {{ video.duration || 'Loading...' }}
+                            </span>
+                        </div>
+                        <div class="relative flex flex-col justify-center gap-1 max-w-xs">
+                            <div class="flex items-center gap-2">
+                                <p class="font-semibold text-sm truncate max-w-[180px]">
+                                    {{ video.title }}
+                                </p>
+                                <button aria-label="More options" class="ml-auto text-xl text-[#7a7a7a] w-8 h-8 rounded-full flex items-center justify-center hover:bg-gray-200 transition"
+                                    type="button">
+                                    <i (click)="openDropdownAnalysisVideo(video)" class="fas fa-ellipsis-v">
+                                    </i>
+                                </button>
+                                <!-- Dropdown menu for second video (visible) -->
+                                <div *ngIf="isOpenDropdownAnalysisVideo && dropdownVideoId == video.id"
+                                    aria-label="More options dropdown menu"
+                                    class="absolute left-full top-[-96px] ml-2 bg-white rounded-lg shadow-lg w-48 text-sm font-normal text-[#1a1a1a] z-50"
+                                    style="display: block;">
+                                    <ul class="flex flex-col divide-y divide-[#e4e6eb]">
+                                        <li>
+                                            <button class="flex items-center gap-2 px-4 py-2 w-full hover:bg-[#f7f7f9]"
+                                                type="button">
+                                                <i class="fas fa-link text-base"></i>
+                                                Copy link
+                                            </button>
+                                        </li>
+                                        <li>
+                                            <button (click)="goToVideoConfig(video.id)" class="flex items-center gap-2 px-4 py-2 w-full hover:bg-[#f7f7f9]"
+                                                type="button">
+                                                <i class="fas fa-chart-bar text-base">
+                                                </i>
+                                                Analytics
+                                            </button>
+                                        </li>
+                                        <li>
+                                            <button class="flex items-center gap-2 px-4 py-2 w-full hover:bg-[#f7f7f9]"
+                                                type="button">
+                                                <i class="fas fa-download text-base">
+                                                </i>
+                                                Download...
+                                            </button>
+                                        </li>
+                                        <!-- <li>
+                                                <button
+                                                    class="flex items-center gap-2 px-4 py-2 w-full hover:bg-[#f7f7f9]"
+                                                    type="button">
+                                                    <i class="fas fa-folder-open text-base"> </i>
+                                                    Move...
+                                                </button>
+                                            </li> -->
+                                        <li>
+                                            <button (click)="deleteVideo(video)" class="flex items-center gap-2 px-4 py-2 w-full hover:bg-[#f7f7f9]"
+                                                type="button">
+                                                <i class="fas fa-trash-alt text-base"></i>
+                                                Delete
+                                            </button>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <p class="text-xs text-[#7a7a7a]">
+                                {{ video.uploadedAt | date: 'MMMM d, y'}}
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+
+</div>
+
+<!-- Popup -->
+ <!-- <app-completing-popup *ngIf="isCompletingPopup" [isCompletingPopup]="isCompletingPopup"></app-completing-popup> -->
+<div *ngIf="isCompletingPopup" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+    <div class="bg-white rounded-lg shadow-lg p-6 w-full max-w-sm">
+        <h2 class="text-lg font-semibold mb-4">Thông báo</h2>
+        <p class="text-gray-700 mb-6">Chức năng đang hoàn thiện!</p>
+        <div class="text-right">
+            <button (click)="closePopup()" class="bg-gray-300 px-4 py-2 rounded hover:bg-gray-400">
+                Đóng
+            </button>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="handingVideo" class="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
+    <div class="bg-white rounded-xl p-8 flex flex-col items-center gap-4 shadow-md">
+        <i class="fas fa-spinner fa-spin text-3xl text-blue-500"></i>
+        <p class="text-gray-800 font-semibold">Đang thực hiện, vui lòng chờ...</p>
+    </div>
+</div>
+
+<!-- Popup thành công -->
+<div *ngIf="uploadSuccess" class="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
+    <div class="bg-white rounded-xl p-8 flex flex-col items-center gap-6 shadow-md text-center w-[90%] max-w-md">
+        <i class="fas fa-check-circle text-4xl text-green-500"></i>
+        <h2 class="text-xl font-semibold text-gray-800">Tải video thành công!</h2>
+        <button (click)="goToVideoConfig(uploadedVideoId)"
+            class="bg-blue-500 hover:bg-blue-600 text-white px-6 py-2 rounded-lg transition">
+            Đi tới cấu hình video
+        </button>
+    </div>
+</div>

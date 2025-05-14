@@ -88,4 +88,22 @@ public class UsersController : ControllerBase
 	{
 		return await _mediator.Send(new DeleteUserCommand { Id = id }); 
 	}
+
+	[HttpPost("Change-avatar/{id}")]
+	public async Task<ActionResult<Result<UserDto>>> UploadAvatar([FromForm] UploadAvatarCommand command)
+	{
+		try
+		{
+			var result = await _mediator.Send(command);
+			if (result.Succeeded)
+				return Ok(result); // hoặc return Ok(result);
+			return BadRequest(result);
+		}
+		catch (Exception ex)
+		{
+			Console.WriteLine($"Avatar upload failed: {ex}");
+			// Trả về JSON thay vì .ToString()
+			return StatusCode(500, new { error = "Internal Server Error", detail = ex.Message });
+		}
+	}
 }

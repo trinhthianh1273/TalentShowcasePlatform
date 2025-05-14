@@ -17,6 +17,7 @@ public class UserConfiguration : IEntityTypeConfiguration<User>
 		builder.HasKey(u => u.Id);
 		builder.Property(u => u.Id)
 		.HasDefaultValueSql("NEWID()");
+		builder.Property(u => u.FullName).HasMaxLength(100);
 		builder.Property(u => u.UserName).HasMaxLength(100);
 		builder.Property(u => u.Email).HasMaxLength(100);
 		builder.Property(u => u.PasswordHash).IsRequired();

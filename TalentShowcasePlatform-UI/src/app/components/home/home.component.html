@@ -1,249 +1,87 @@
-<div class="flex max-w-[1440px] mx-auto relative h-full">
+<div class="flex min-h-screen mx-auto relative h-full">
   <!-- Sidebar -->
-  <aside id="sidebar"
-    class="fixed inset-y-0 w-56 bg-[#e6ebf1] border-r border-[#d6dcd4] px-6 py-8 text-sm text-[#0f0f0f] transform -translate-x-full md:translate-x-0 md:flex md:flex-col md:justify-between">
-    <div class="mb-10">
-      <h1 class="font-black text-2xl italic" style="font-family: 'Lobster', cursive;">
-        vimeo
-      </h1>
-    </div>
-    <nav class="flex flex-col space-y-4">
-      <button aria-current="page"
-        class="flex items-center gap-3 bg-[#d9dee4] rounded-lg px-4 py-3 w-full font-semibold text-sm">
-        <i class="fas fa-home text-lg">
-        </i>
-        Home
-      </button>
-      <button class="flex items-center gap-3 text-sm font-normal hover:bg-[#d9dee4] rounded-lg px-4 py-3 w-full">
-        <i class="fas fa-th-large text-lg">
-        </i>
-        Library
-      </button>
-      <button class="flex items-center gap-3 text-sm font-normal hover:bg-[#d9dee4] rounded-lg px-4 py-3 w-full">
-        <i class="fas fa-video text-lg">
-        </i>
-        Live events
-      </button>
-      <button class="flex items-center gap-3 text-sm font-normal hover:bg-[#d9dee4] rounded-lg px-4 py-3 w-full">
-        <i class="fas fa-columns text-lg">
-        </i>
-        Showcases
-      </button>
-      <button class="flex items-center gap-3 text-sm font-normal hover:bg-[#d9dee4] rounded-lg px-4 py-3 w-full">
-        <i class="fas fa-chart-bar text-lg">
-        </i>
-        Analytics
-      </button>
-    </nav>
-    <div class="mt-10 border-t border-[#cbd2db] pt-4">
-      <div class="flex items-center justify-between font-bold text-sm mb-1 cursor-pointer select-none">
-        <span>
-          Starred
-        </span>
-        <i class="fas fa-chevron-up text-xs">
-        </i>
-      </div>
-      <p class="text-xs text-[#7a7a7a] leading-tight max-w-[13rem]">
-        Hover over a folder or video to add it to Starred
-      </p>
-    </div>
-    <button class="flex items-center gap-3 mt-10 text-sm font-normal hover:bg-[#d9dee4] rounded-lg px-4 py-3 w-full">
-      <img alt="SP logo icon" class="w-5 h-5" height="20"
-        src="https://storage.googleapis.com/a1aa/image/2b7a12a5-c944-4189-b4b0-dc4e1ce98b8b.jpg" width="20" />
-      Watch
-    </button>
-    <div class="mt-auto bg-white rounded-lg p-4 w-full max-w-[220px]">
-      <div class="flex justify-between items-center mb-2">
-        <span class="text-xs font-semibold">
-          Storage
-        </span>
-        <i class="fas fa-info-circle text-xs text-[#7a7a7a]">
-        </i>
-      </div>
-      <div class="text-xs text-[#7a7a7a] mb-2">
-        5MB of 1GB
-      </div>
-      <button class="bg-[#8a63e8] text-white text-xs font-semibold rounded-md px-3 py-1">
-        Upgrade
-      </button>
-    </div>
-  </aside>
-  <!-- <aside id="sidebar"
-    class="bg-[#e6ebf1] fixed inset-y-0 left-0 w-56 border-r border-[#d6dcd4] px-6 py-8 text-sm text-[#0f0f0f] transform -translate-x-full md:translate-x-0 md:flex md:flex-col md:justify-between">
-    <div>
-      <div class="mb-10">
-        <h1 class="font-black text-2xl mb-8 cursor-pointer select-text"
-          style="font-family: 'Arial Black', Arial, sans-serif;">
-          Talent
-        </h1>
-        <nav class="space-y-6">
-          <button class="flex items-center space-x-3 text-[#0f0f0f] hover:text-black cursor-pointer">
-            <i class="fas fa-home text-lg">
-            </i>
-            <span>
-              Home
-            </span>
-          </button>
-          <button class="flex items-center space-x-3 text-[#0f0f0f] hover:text-black cursor-pointer">
-            <i class="fas fa-archive text-lg">
-            </i>
-            <span>
-              Like
-            </span>
-          </button>
-          <button class="flex items-center space-x-3 text-[#0f0f0f] hover:text-black cursor-pointer">
-            <i class="fas fa-broadcast-tower text-lg">
-            </i>
-            <span>
-              Jobs
-            </span>
-          </button>
-          <button class="flex items-center space-x-3 text-[#0f0f0f] hover:text-black cursor-pointer">
-            <i class="fas fa-th-large text-lg">
-            </i>
-            <span>
-              Contest
-            </span>
-          </button>
-          <button class="flex items-center space-x-3 text-[#0f0f0f] hover:text-black cursor-pointer">
-            <i class="fas fa-chart-bar text-lg">
-            </i>
-            <span>
-              Analytics
-            </span>
-          </button>
-        </nav>
-      </div>
-      <div class="mb-6">
-        <div class="flex items-center space-x-1 text-[#0f0f0f] font-semibold cursor-pointer select-text">
-          <span>
-            Starred
-          </span>
-          <i class="fas fa-chevron-up text-xs">
-          </i>
-        </div>
-        <p class="mt-2 text-xs text-[#6b6b6b] leading-tight max-w-[180px] select-text">
-          Hover over a folder or video to add it to Starred
-        </p>
-      </div>
-      <div class="flex items-center space-x-2 text-xs text-[#0f0f0f] font-semibold mb-6 cursor-default select-text">
-        <span>
-          (sp)
-        </span>
-        <span>
-          Watch
-        </span>
-      </div>
-    </div>
-  </aside> -->
+  <app-aside-left></app-aside-left>
   <!-- Overlay for sidebar on mobile -->
   <div id="overlay" class="fixed inset-0 bg-black bg-opacity-30 z-20 hidden md:hidden"></div>
   <!-- Main content -->
-  <main class="flex-1 scrollbar-thin">
+  <main class="flex-1 px-4 overflow-y-auto scrollbar-thin">
     <!-- Top bar -->
-    <app-navbar [isLoggedIn]="isLoggedIn" [currentUser]="currentUser"></app-navbar>
-
-    <!-- Results count and sort -->
-    <section class="mt-6 flex flex-wrap items-center justify-between gap-4">
-      <div class="flex space-x-2">
-        <button
-          class="flex items-center space-x-2 bg-white border border-[#d1d5db] rounded-lg px-4 py-2 text-sm font-semibold text-[#0f1419]"
-          type="button">
-          <i class="fas fa-globe-americas text-sm">
-          </i>
+    <app-header [isLoggedIn]="isLoggedIn" [currentUser]="currentUser"></app-header>
+    <div class="px-6">
+      <!-- Results count and sort -->
+      <section class="mt-6 flex flex-wrap items-center justify-between gap-4">
+        <div class="flex space-x-2">
+          <button
+            class="flex items-center space-x-2 bg-white border border-[#d1d5db] rounded-lg px-4 py-2 text-sm font-semibold text-[#0f1419]"
+            type="button">
+            <i class="fas fa-globe-americas text-sm">
+            </i>
+            <span>
+              Talent
+            </span>
+          </button>
+          <button
+            class="flex items-center space-x-2 bg-[#e6e9eb] rounded-lg px-4 py-2 text-sm font-semibold text-[#0f1419]"
+            type="button">
+            <i class="fas fa-photo-video text-sm">
+            </i>
+            <span>
+              Library
+            </span>
+          </button>
+        </div>
+        <span class="text-sm text-[#6b7280] font-normal">
+          1.82M results
+        </span>
+      </section>
+      <!-- Sort and filter -->
+      <section class="mt-6 flex items-center justify-end space-x-4">
+        <div class="flex items-center space-x-1 text-sm font-semibold text-[#0f1419] cursor-pointer select-none">
           <span>
-            Vimeo
+            Relevance
           </span>
-        </button>
-        <button
-          class="flex items-center space-x-2 bg-[#e6e9eb] rounded-lg px-4 py-2 text-sm font-semibold text-[#0f1419]"
-          type="button">
-          <i class="fas fa-photo-video text-sm">
+          <svg aria-hidden="true" class="w-3 h-3 text-[#0f1419]" fill="none" stroke="currentColor" stroke-width="2"
+            viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round">
+            </path>
+          </svg>
+        </div>
+        <button aria-label="Filter results" class="text-[#0f1419] text-xl hover:text-[#7c4dff]" type="button">
+          <i class="fas fa-sliders-h">
           </i>
-          <span>
-            Library
-          </span>
         </button>
-      </div>
-      <span class="text-sm text-[#6b7280] font-normal">
-        1.82M results
-      </span>
-    </section>
-    <!-- Sort and filter -->
-    <section class="mt-6 flex items-center justify-end space-x-4">
-      <div class="flex items-center space-x-1 text-sm font-semibold text-[#0f1419] cursor-pointer select-none">
-       <span>
-        Relevance
-       </span>
-       <svg aria-hidden="true" class="w-3 h-3 text-[#0f1419]" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-        <path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round">
-        </path>
-       </svg>
-      </div>
-      <button aria-label="Filter results" class="text-[#0f1419] text-xl hover:text-[#7c4dff]" type="button">
-       <i class="fas fa-sliders-h">
-       </i>
-      </button>
-     </section>
-    <!-- Video list for mobile, grid for md+ with 4 columns on lg+ -->
-    <section class="flex flex-col mt-6 md:grid md:grid-cols-2 md:sm:grid-cols-3 lg:grid-cols-4 gap-x-6 gap-y-8 pr-2"
-      style="scrollbar-width: thin; scrollbar-color: #cbd5e1 transparent;">
-      <article *ngFor="let video of videoList" (click)="navigateToDetail(video.id)"
-        class="flex flex-col md:block space-y-1 cursor-pointer select-text">
-        <div class="relative rounded-md overflow-hidden flex-shrink-0 md:block md:w-full">
+      </section>
+      <!-- Video list for mobile, grid for md+ with 4 columns on lg+ -->
+      <section class="flex flex-col mt-6 md:grid md:grid-cols-2 md:sm:grid-cols-3 lg:grid-cols-4 gap-x-6 gap-y-8 pr-2"
+        style="scrollbar-width: thin; scrollbar-color: #cbd5e1 transparent;">
+        <article *ngFor="let video of videoList" (click)="navigateToDetail(video.id)"
+          class="flex flex-col md:block space-y-1 cursor-pointer select-text">
           <app-video-card [videoData]="video" [src]="video.url"></app-video-card>
-          <span
-            class="absolute bottom-1 right-1 bg-black bg-opacity-70 text-white text-[10px] px-1 rounded select-none">
-            10:55
-          </span>
-        </div>
-        <div class="flex items-center space-x-2 text-xs text-[#6b6b6b] mt-2 md:mt-0">
-          <img alt="Peter Moussa profile picture, circular avatar with letter P on gray background"
-            class="w-5 h-5 rounded-full object-cover" height="20"
-            src="https://storage.googleapis.com/a1aa/image/9ae27665-7959-4471-2fba-f9ebc6831831.jpg" width="20" />
-          <span class="font-semibold text-[13px] text-[#0f0f0f] truncate max-w-[180px]">
-            {{ video.description }}
-          </span>
-        </div>
-        <p class="text-[11px] text-[#6b6b6b] leading-tight select-text max-w-[180px] truncate">
-          {{ video.userNavigationDto.userName}}
-        </p>
-        <p class="text-[10px] text-[#6b6b6b] leading-tight select-text max-w-[180px] truncate">
-          ~ views • {{ video.uploadedAt | date: 'MMMM d, y'}}
-        </p>
-      </article>
+          <!-- <div class="relative rounded-md overflow-hidden flex-shrink-0 md:block md:w-full">
+            
+            <span
+              class="absolute bottom-1 right-1 bg-black bg-opacity-70 text-white text-[10px] px-1 rounded select-none">
+              {{ video.duration || 'Loading...' }}
+            </span>
+          </div> -->
+          <div class="flex items-center space-x-2 text-xs text-[#6b6b6b] mt-2 md:mt-0">
+            <img alt="Peter Moussa profile picture, circular avatar with letter P on gray background"
+              class="w-5 h-5 rounded-full object-cover" height="20"
+              src="https://storage.googleapis.com/a1aa/image/9ae27665-7959-4471-2fba-f9ebc6831831.jpg" width="20" />
+            <span class="font-semibold text-[13px] text-[#0f0f0f] truncate max-w-[180px]">
+              {{ video.description }}
+            </span>
+          </div>
+          <p class="text-[11px] text-[#6b6b6b] leading-tight select-text max-w-[180px] truncate">
+            {{ video.userNavigationDto.userName}}
+          </p>
+          <p class="text-[10px] text-[#6b6b6b] leading-tight select-text max-w-[180px] truncate">
+            ~ views • {{ video.uploadedAt | date: 'MMMM d, y'}}
+          </p>
+        </article>
 
-      <!-- Video 1 -->
-      <!-- <article class="flex flex-col md:block space-y-1 cursor-pointer select-text">
-        <div class="relative rounded-md overflow-hidden flex-shrink-0 md:block md:w-full">
-          <img alt="Outdoor art installation with buildings in background, video thumbnail"
-            class="w-full h-auto object-cover rounded-md" height="180"
-            src="https://storage.googleapis.com/a1aa/image/58024d3a-b5af-4432-d715-a4fc03be4813.jpg" width="320" />
-
-          <video class="w-full h-auto object-cover rounded-md" height="180" width="320" controls>
-            <source src="https://www.youtube.com/watch?v=9QcEC3skKH4" type="video/mp4">
-            Trình duyệt của bạn không hỗ trợ video này.
-          </video> <span
-            class="absolute bottom-1 right-1 bg-black bg-opacity-70 text-white text-[10px] px-1 rounded select-none">
-            10:55
-          </span>
-        </div>
-        <div class="flex items-center space-x-2 text-xs text-[#6b6b6b] mt-2 md:mt-0">
-          <img alt="Peter Moussa profile picture, circular avatar with letter P on gray background"
-            class="w-5 h-5 rounded-full object-cover" height="20"
-            src="https://storage.googleapis.com/a1aa/image/9ae27665-7959-4471-2fba-f9ebc6831831.jpg" width="20" />
-          <span class="font-semibold text-[13px] text-[#0f0f0f] truncate max-w-[180px]">
-            ART NOT ART - Documentary a...
-          </span>
-        </div>
-        <p class="text-[11px] text-[#6b6b6b] leading-tight select-text max-w-[180px] truncate">
-          Peter Moussa
-        </p>
-        <p class="text-[10px] text-[#6b6b6b] leading-tight select-text max-w-[180px] truncate">
-          3,726 views • April 30, 2017
-        </p>
-      </article> -->
-    </section>
+      </section>
+    </div>
   </main>
   <!-- Search bar overlay for mobile -->
   <div id="searchOverlay" class="fixed inset-0 bg-black bg-opacity-30 z-20 hidden"></div>

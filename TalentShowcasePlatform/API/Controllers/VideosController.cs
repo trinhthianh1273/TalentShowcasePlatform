@@ -38,9 +38,12 @@ public class VideosController : ControllerBase
 	}
 
 	[HttpPost]
-	public async Task<ActionResult<Result<Guid>>> CreateVideo(CreateVideoCommand command)
+	public async Task<ActionResult<Result<Guid>>> CreateVideo([FromForm] CreateVideoCommand command)
 	{
-		return await _mediator.Send(command); 
+		var result = await _mediator.Send(command);
+		if (result.Succeeded)
+			return Ok(result);
+		return BadRequest(result); 
 	}
 
 	[HttpPost]
@@ -55,6 +58,12 @@ public class VideosController : ControllerBase
 	public async Task<ActionResult<Result<VideoDto>>> GetVideoById(Guid id)
 	{
 		return await _mediator.Send(new GetVideoByIdQuery { Id = id }); 
+	}
+
+	[HttpGet("User/{id}")]
+	public async Task<ActionResult<Result<IEnumerable<VideoDto>>>> GetVideoByUserId(Guid id)
+	{
+		return await _mediator.Send(new GetVideoByUserIdQuery { Id = id });
 	}
 
 	[HttpGet]

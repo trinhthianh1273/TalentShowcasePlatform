@@ -1,6 +1,7 @@
 import { inject, Injectable } from '@angular/core';
 import { Enviroment } from '../../environment';
 import { HttpClient } from '@angular/common/http';
+import { UserData } from '../interfaces/interface';
 
 @Injectable({
   providedIn: 'root'
@@ -29,6 +30,6 @@ export class DataService {
   }
 
   getUserById(id: any) { 
-    return this.http.get<any>(`${this.baseURL}/api/Users/${id}`);  
+    return this.http.get<UserData>(`${this.baseURL}/api/Users/${id}`);  
   }
 }

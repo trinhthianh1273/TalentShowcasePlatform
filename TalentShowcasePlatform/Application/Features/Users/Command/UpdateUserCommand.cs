@@ -14,10 +14,10 @@ public class UpdateUserCommand : IRequest<Result<bool>>
 {
 	public Guid Id { get; set; }
 	public string UserName { get; set; }
+	public string FullName { get; set; }
 	public string Email { get; set; }
 	public string Bio { get; set; }
-	public string AvatarUrl { get; set; }
-	public Guid RoleId { get; set; }
+	public string Location { get; set; }
 }
 
 public class UpdateUserHandler : IRequestHandler<UpdateUserCommand, Result<bool>>
@@ -41,8 +41,8 @@ public class UpdateUserHandler : IRequestHandler<UpdateUserCommand, Result<bool>
 		user.UserName = request.UserName;
 		user.Email = request.Email;
 		user.Bio = request.Bio;
-		user.AvatarUrl = request.AvatarUrl;
-		user.RoleId = request.RoleId;
+		user.FullName = request.FullName;
+		user.Location = request.Location;
 
 		await _unitOfWork.Repository<User>().UpdateAsync(user);
 		var saveResult = await _unitOfWork.Save(cancellationToken);

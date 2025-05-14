@@ -10,15 +10,20 @@
 	public class Job : BaseEntity
 	{
 		public string Title { get; set; }
-		public string Description { get; set; }
-		public Guid PostedBy { get; set; }
-		public Guid CategoryId { get; set; }
+		public string? CompanyName { get; set; }
 		public string Location { get; set; }
+		public string AddressDetail { get; set; }
+		public string Description { get; set; }
+		public string Requirements { get; set; }
+		public string Benefits { get; set; }
 		public string JobType { get; set; }
 		public decimal? SalaryFrom { get; set; }
 		public decimal? SalaryTo { get; set; }
 		public DateTime? ExpiryDate { get; set; }
 		public string ContactEmail { get; set; }
+		public string ContactPhone { get; set; }
+		public Guid PostedBy { get; set; }
+		public Guid CategoryId { get; set; }
 		public DateTime CreatedAt { get; set; }
 
 		// Navigation Properties
