@@ -19,6 +19,8 @@ public class GroupConfiguration : IEntityTypeConfiguration<Group>
 		.HasDefaultValueSql("NEWID()");
 		builder.Property(g => g.Name).HasMaxLength(100);
 		builder.Property(g => g.Description).HasMaxLength(500);
+		builder.Property(g => g.CategoryId).HasMaxLength(50);
+
 		builder.HasOne(g => g.CreatedByUser)
 			   .WithMany(u => u.CreatedGroups)
 			   .HasForeignKey(g => g.CreatedBy)

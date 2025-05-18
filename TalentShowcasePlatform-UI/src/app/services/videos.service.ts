@@ -46,7 +46,7 @@ export class VideosService {
   }
 
   uploadVideo(data: any) {
-    return this.http.post<any>(`${this.baseURL}/api/Videos`, data);
+    return this.http.put<any>(`${this.baseURL}/api/Videos`, data);
   }
 
   deleteVideo(videoId: any) {

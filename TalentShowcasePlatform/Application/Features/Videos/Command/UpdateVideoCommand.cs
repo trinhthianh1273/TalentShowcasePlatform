@@ -17,7 +17,7 @@ public class UpdateVideoCommand : IRequest<Result<bool>>
 	public string Description { get; set; }
 	public string? Url { get; set; }
 	public Guid? CategoryId { get; set; }
-	public bool? IsPrivate { get; set; }
+	public bool IsPrivate { get; set; }
 }
 
 public class UpdateVideoHandler : IRequestHandler<UpdateVideoCommand, Result<bool>>

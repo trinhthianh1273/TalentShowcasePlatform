@@ -15,6 +15,7 @@ public record CreateGroupCommand : IRequest<Result<Guid>>
 {
 	public string Name { get; set; }
 	public string Description { get; set; }
+	public Guid CategoryId { get; set; }
 	public Guid CreatedBy { get; set; }
 }
 
@@ -34,6 +35,7 @@ public class CreateGroupCommandHandler : IRequestHandler<CreateGroupCommand, Res
 			Id = Guid.NewGuid(),
 			Name = request.Name,
 			Description = request.Description,
+			CategoryId = request.CategoryId,
 			CreatedBy = request.CreatedBy,
 			CreatedAt = DateTime.UtcNow
 		};

@@ -4,7 +4,8 @@
         class="flex items-center justify-between text-sm font-semibold text-gray-700 px-4 py-4 sticky top-0 bg-white shadow-md z-10">
         <!-- Left: Logo + Title -->
         <div class="flex items-center space-x-4 flex-1 min-w-0">
-            <a href="/home" class="font-black italic text-2xl select-text cursor-default whitespace-nowrap hover:cursor-pointer">
+            <a href="/home"
+                class="font-black italic text-2xl select-text cursor-default whitespace-nowrap hover:cursor-pointer">
                 Talent
             </a>
             <svg aria-hidden="true" class="w-3 h-3 text-gray-400" fill="none" stroke="currentColor" stroke-width="2"
@@ -44,9 +45,75 @@
                     </path>
                 </svg>
             </button>
-            <button aria-label="User profile" class="rounded-full overflow-hidden w-8 h-8">
-                <img alt="User profile avatar" class="w-8 h-8 object-cover" height="32" [src]="avatarUrl" width="32" />
-            </button>
+            <div class="relative group inline-block" #popupWrapper>
+                <button aria-expanded="false" aria-haspopup="true" #profileButton (click)="togglePopup()"
+                    aria-label="User profile" class="rounded-full overflow-hidden w-8 h-8">
+                    <img alt="User profile avatar" class="w-8 h-8 object-cover" height="32" [src]="avatarUrl"
+                        width="32" />
+                </button>
+                <div *ngIf="popupOpen" #popup
+                    class=" absolute right-0 mt-2 w-64 bg-white rounded-lg shadow-lg p-6 text-sm text-[#0f0f0f] z-10"
+                    style="font-family: 'Inter', sans-serif;">
+                    <div class="flex items-center gap-3 mb-4">
+                        <img alt="User profile picture of a person with light brown hair and beard"
+                            class="w-10 h-10 rounded-full" height="40" width="40" [src]="avatarUrl" />
+                        <div>
+                            <p class="font-semibold">
+                                {{ currentUser?.userName }}
+                            </p>
+                            <a class="text-[#8a63e8] text-xs underline hover:no-underline"
+                                [href]="'/library?id=' + currentUser?.userId">
+                                Library
+                            </a>
+                        </div>
+                    </div>
+                    <hr class="border-[#d9dee4] mb-4" />
+                    <button
+                        class="flex items-center gap-3 w-full mb-4 text-sm font-normal hover:bg-[#f4f7fa] rounded-md px-3 py-2"
+                        type="button">
+                        <i class="fas fa-cog text-lg">
+                        </i>
+                        <a [href]="'/profile?id=' + currentUser?.userId">
+                            Profile
+                        </a>
+                    </button>
+                    <button
+                        class="flex items-center gap-3 w-full mb-4 text-sm font-normal hover:bg-[#f4f7fa] rounded-md px-3 py-2"
+                        type="button">
+                        <i class="fas fa-moon text-lg">
+                        </i>
+                        Dark mode
+                        <div class="ml-auto">
+                            <label class="inline-flex relative items-center cursor-pointer" for="dark-mode-toggle">
+                                <input class="sr-only peer" id="dark-mode-toggle" type="checkbox" value="" />
+                                <div
+                                    class="w-11 h-6 bg-gray-200 rounded-full peer peer-focus:ring-4 peer-focus:ring-[#8a63e8] peer-checked:bg-[#8a63e8] relative">
+                                </div>
+                                <div
+                                    class="absolute left-1 top-1 bg-white w-4 h-4 rounded-full transition-transform peer-checked:translate-x-5">
+                                </div>
+                            </label>
+                        </div>
+                    </button>
+                    <button
+                        class="flex items-center gap-3 w-full mb-4 text-sm font-normal hover:bg-[#f4f7fa] rounded-md px-3 py-2"
+                        type="button">
+                        <i class="fas fa-ellipsis-h">
+                        </i>
+                        More
+                        <i class="fas fa-chevron-right ml-auto">
+                        </i>
+                    </button>
+                    <hr class="border-[#d9dee4] mb-4" />
+                    <button (click)="logout()"
+                        class="flex items-center gap-3 w-full text-sm font-normal hover:bg-[#f4f7fa] rounded-md px-3 py-2"
+                        type="button">
+                        <i class="fas fa-sign-out-alt">
+                        </i>
+                        Log out
+                    </button>
+                </div>
+            </div>
         </div>
     </nav>
 
@@ -111,9 +178,9 @@
                     </label>
                     <div class="flex flex-col space-y-3 flex-1">
                         <input
+                            [class.border-red-500]="updateVideoForm.get('title')?.invalid && updateVideoForm.get('title')?.touched"
                             class="flex-1 rounded-full border border-gray-300 px-4 py-2 text-sm text-[#6B7280] focus:outline-none focus:ring-2 focus:ring-purple-600"
-                            id="title" type="text" value="{{videoData?.title}}" 
-                            formControlName="title" />
+                            id="title" type="text" value="{{videoData?.title}}" formControlName="title" />
                     </div>
                 </div>
                 <!-- Description -->
@@ -127,11 +194,12 @@
                         </i>
                     </label>
                     <div class="flex flex-col space-y-3 flex-1">
-                        <textarea
-                            class="flex-1 rounded-xl border border-gray-300 px-4 py-2 text-[15px] text-[#6B7280] resize-none focus:outline-none focus:ring-2 focus:ring-purple-600"
-                            id="description" placeholder="Add description..." rows="2"
-                            formControlName="description" ></textarea>
+                        <textarea #autoResize (input)="resizeTextarea(autoResize)" formControlName="description"
+                            [class.border-red-500]="updateVideoForm.get('description')?.invalid && updateVideoForm.get('description')?.touched"
+                            class="rounded-xl border border-gray-300 px-4 py-2 text-[15px] text-[#6B7280] resize-none overflow-hidden focus:outline-none focus:ring-2 focus:ring-purple-600"
+                            id="description" placeholder="Add description..." rows="1"></textarea>
                     </div>
+
                 </div>
                 <!-- Category -->
                 <div class="flex items-start space-x-6">
@@ -145,8 +213,9 @@
                     </label>
                     <div class="flex flex-col space-y-3 flex-1">
                         <select aria-placeholder="Choose category . . ."
+                            [class.border-red-500]="updateVideoForm.get('categoryId')?.invalid && updateVideoForm.get('categoryId')?.touched"
                             class="w-60 rounded-xl border border-gray-300 px-4 py-2 text-sm text-black focus:outline-none focus:ring-2 focus:ring-purple-600"
-                            id="content" name="content" formControlName="categoryId" >
+                            id="content" name="content" formControlName="categoryId">
                             <option class=" text-[#6B7280] " *ngFor="let category of categories" value="{{category.id}}"
                                 [selected]="category?.id == videoData?.categoryId">{{ category?.name }}</option>
                         </select>
@@ -156,7 +225,7 @@
                     <label class="w-28 font-semibold text-base cursor-default select-none flex items-center space-x-1"
                         for="public">
                         <span>
-                            Public
+                            Private
                         </span>
                         <i class="fas fa-info-circle text-gray-400 text-xs" title="Information about content">
                         </i>
@@ -164,21 +233,19 @@
 
                     <div class="relative hover:cursor-pointer">
                         <input type="checkbox" (change)="onTogglePublic($event.target)"
-                            class="rounded-xl border border-gray-300 px-4 py-2 text-sm text-black focus:outline-none focus:ring-2 focus:ring-purple-600 form-checkbox h-4 w-4 hover:cursor-pointer" 
-                             [checked]="!videoData?.IsPrivate"
-                              formControlName="IsPrivate"/>
-                        <span *ngIf="!videoData?.IsPrivate" class="flex-1 rounded-xl text-[15px] text-[#6B7280] ">
-                            Video is Public 
-                        </span>
+                            class="rounded-xl border border-gray-300 px-4 py-2 text-sm text-black focus:outline-none focus:ring-2 focus:ring-purple-600 form-checkbox h-4 w-4 hover:cursor-pointer"
+                            [checked]="videoData?.IsPrivate" formControlName="IsPrivate" />
                         <span *ngIf="videoData?.IsPrivate" class="flex-1 rounded-xl text-[15px] text-[#6B7280] ">
-                            Video is Private 
+                            Video is Private
+                        </span>
+                        <span *ngIf="!videoData?.IsPrivate" class="flex-1 rounded-xl text-[15px] text-[#6B7280] ">
+                            Video is Public
                         </span>
                     </div>
-
                 </div>
-
-                <!-- Categories -->
-                <!-- <div class="flex items-center space-x-6">
+            </form>
+            <!-- Categories -->
+            <!-- <div class="flex items-center space-x-6">
                     <label class="font-semibold text-[15px] leading-5 text-black flex items-center gap-1 cursor-default"
                         for="categories">
                         Categories
@@ -279,7 +346,7 @@
                         </span>
                     </div>
                 </div> -->
-                <!-- <div class="flex items-center space-x-2 text-xs text-gray-600">
+            <!-- <div class="flex items-center space-x-2 text-xs text-gray-600">
                     <span class="bg-gray-100 rounded-full px-3 py-1 select-text cursor-default">
                         Storage
                     </span>
@@ -287,8 +354,6 @@
                         30MB/1GB
                     </a>
                 </div> -->
-            </form>
-
         </section>
         <!-- Right Analytics Panel -->
         <!-- <aside aria-label="Analytics panel"

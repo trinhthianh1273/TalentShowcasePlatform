@@ -37,8 +37,9 @@ export class HeaderComponent implements OnInit {
     private authStateService: AuthStateService
   ) {}
   ngOnInit(): void {
-    this.userId = this.currentUser.userId;
-    if(this.currentUser.avatarUrl) {
+    console.log("isLoggedIn", this.isLoggedIn);
+    this.userId = this.currentUser?.userId;
+    if(this.currentUser?.avatarUrl) {
       this.avatarUrl = this.avatarPath + this.currentUser.avatarUrl;
     }
   }

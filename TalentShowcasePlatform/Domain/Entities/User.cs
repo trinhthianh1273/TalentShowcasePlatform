@@ -49,5 +49,6 @@ public class User : BaseEntity
 	public ICollection<WithdrawalRequest> WithdrawalRequests { get; set; }
 	public ICollection<Follow> Following { get; set; } // Danh sách những người mà người dùng này đang theo dõi
 	public ICollection<Follow> Followers { get; set; } // Danh sách những người theo dõi người dùng này
+	public ICollection<CommentGroupPost> CommentGroupPosts { get; set; } 
 
 }

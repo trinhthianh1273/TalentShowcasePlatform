@@ -183,6 +183,41 @@ namespace Infrastructure.Migrations
                     b.ToTable("Comments", (string)null);
                 });
 
+            modelBuilder.Entity("Domain.Entities.CommentGroupPost", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Content")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid>("GroupPostId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid?>("ParentCommentId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CreatedAt");
+
+                    b.HasIndex("GroupPostId");
+
+                    b.HasIndex("ParentCommentId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("CommentGroupPosts", (string)null);
+                });
+
             modelBuilder.Entity("Domain.Entities.Contest", b =>
                 {
                     b.Property<Guid>("Id")
@@ -281,6 +316,10 @@ namespace Infrastructure.Migrations
                         .HasColumnType("uniqueidentifier")
                         .HasDefaultValueSql("NEWID()");
 
+                    b.Property<Guid>("CategoryId")
+                        .HasMaxLength(50)
+                        .HasColumnType("uniqueidentifier");
+
                     b.Property<DateTime>("CreatedAt")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
@@ -348,16 +387,28 @@ namespace Infrastructure.Migrations
                     b.Property<Guid>("GroupId")
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<string>("ImgUrl")
+                        .IsRequired()
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
+
+                    b.Property<DateTime?>("LastActivityDate")
+                        .HasColumnType("datetime2");
+
                     b.Property<Guid>("UserId")
                         .HasColumnType("uniqueidentifier");
 
                     b.HasKey("Id");
 
+                    b.HasIndex("CreatedAt");
+
                     b.HasIndex("GroupId");
+
+                    b.HasIndex("LastActivityDate");
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("GroupPost");
+                    b.ToTable("GroupPosts", (string)null);
                 });
 
             modelBuilder.Entity("Domain.Entities.Job", b =>
@@ -864,6 +915,32 @@ namespace Infrastructure.Migrations
                     b.Navigation("Video");
                 });
 
+            modelBuilder.Entity("Domain.Entities.CommentGroupPost", b =>
+                {
+                    b.HasOne("Domain.Entities.GroupPost", "GroupPost")
+                        .WithMany("Comments")
+                        .HasForeignKey("GroupPostId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Domain.Entities.CommentGroupPost", "ParentComment")
+                        .WithMany("ChildComments")
+                        .HasForeignKey("ParentCommentId")
+                        .OnDelete(DeleteBehavior.Restrict);
+
+                    b.HasOne("Domain.Entities.User", "User")
+                        .WithMany("CommentGroupPosts")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("GroupPost");
+
+                    b.Navigation("ParentComment");
+
+                    b.Navigation("User");
+                });
+
             modelBuilder.Entity("Domain.Entities.Contest", b =>
                 {
                     b.HasOne("Domain.Entities.User", "CreatedByUser")
@@ -1168,6 +1245,11 @@ namespace Infrastructure.Migrations
                     b.Navigation("Videos");
                 });
 
+            modelBuilder.Entity("Domain.Entities.CommentGroupPost", b =>
+                {
+                    b.Navigation("ChildComments");
+                });
+
             modelBuilder.Entity("Domain.Entities.Contest", b =>
                 {
                     b.Navigation("ContestEntries");
@@ -1178,6 +1260,11 @@ namespace Infrastructure.Migrations
                     b.Navigation("GroupMembers");
 
                     b.Navigation("GroupPosts");
+                });
+
+            modelBuilder.Entity("Domain.Entities.GroupPost", b =>
+                {
+                    b.Navigation("Comments");
                 });
 
             modelBuilder.Entity("Domain.Entities.Role", b =>
@@ -1192,6 +1279,8 @@ namespace Infrastructure.Migrations
                     b.Navigation("Awards");
 
                     b.Navigation("Certifications");
+
+                    b.Navigation("CommentGroupPosts");
 
                     b.Navigation("Comments");
 

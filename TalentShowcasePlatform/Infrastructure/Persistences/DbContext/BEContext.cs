@@ -56,6 +56,7 @@ public class BEContext : DbContext
 	public DbSet<Rating> Ratings { get; set; }
 	public DbSet<Group> Groups { get; set; }
 	public DbSet<GroupMember> GroupMembers { get; set; }
+	public DbSet<CommentGroupPost> CommentGroupPosts { get; set; }
 	public DbSet<Contest> Contests { get; set; }
 	public DbSet<ContestEntry> ContestEntries { get; set; }
 	public DbSet<Message> Messages { get; set; }

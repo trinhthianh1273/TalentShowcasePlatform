@@ -41,6 +41,7 @@ public class CreateListGroupCommandHandler : IRequestHandler<CreateListGroupComm
 				Id = Guid.NewGuid(),
 				Name = item.Name,
 				Description = item.Description,
+				CategoryId = item.CategoryId,
 				CreatedBy = item.CreatedBy,
 				CreatedAt = DateTime.UtcNow
 			};
