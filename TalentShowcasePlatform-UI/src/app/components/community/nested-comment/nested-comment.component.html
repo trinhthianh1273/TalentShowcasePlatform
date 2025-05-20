@@ -1,0 +1,35 @@
+<!-- <div class="flex items-center space-x-2 text-xs text-gray-600 font-semibold mb-1">
+        <button aria-label="Expand comment"
+            class="w-5 h-5 rounded-full border border-gray-400 flex items-center justify-center cursor-pointer">
+            <i class="fas fa-minus text-gray-600 text-[10px]"></i>
+        </button>
+    </div> -->
+
+<article class="pl-4 mt-2">
+    <div class="flex items-center space-x-2 text-xs text-gray-600 font-semibold mb-1">
+        <img [src]="comment.userAvatar" alt="avatar" class="w-8 h-8 rounded-full" height="32" width="32" />
+        <span> {{ comment.userName }} </span>
+        <span> • {{ comment.timeDiff }} </span>
+    </div>
+    <p class="text-sm text-gray-700 mb-1" [innerHTML]="comment.content"></p>
+    <div class="flex items-center space-x-2 text-xs text-gray-600 font-semibold mb-1">
+        <button *ngIf="comment.children?.length" aria-label="Expand comment"
+            class="w-5 h-5 rounded-full border border-gray-400 flex items-center justify-center cursor-pointer">
+            <i class="fas fa-minus text-gray-600 text-[10px]"></i>
+        </button>
+        <i class="far fa-thumbs-up"></i>
+        <span>{{ comment.vote }}</span>
+        <button class="flex items-center space-x-1 text-gray-600 hover:text-black">
+            <i class="far fa-comment"></i>
+            <span> Trả lời </span>
+        </button>
+        <button>
+            <i class="fas fa-ellipsis-h text-gray-600"></i>
+        </button>
+    </div>
+    <div *ngIf="comment.children?.length" class="border-gray-300 pl-4 mt-2">
+        <article *ngFor="let child of comment.children" class="border-l-2 border-gray-300 pl-4 mt-2">
+            <app-nested-comment [comment]="child"></app-nested-comment>
+        </article>
+    </div>
+</article>

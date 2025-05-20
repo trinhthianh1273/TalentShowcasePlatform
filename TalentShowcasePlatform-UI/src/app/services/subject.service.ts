@@ -16,6 +16,12 @@ constructor() { }
   private video$ = new BehaviorSubject<any>({});
   receivedVideo$ = this.video$.asObservable();
 
+  private community$ = new BehaviorSubject<any>({});
+  receivedCommunity$ = this.community$.asObservable();
+
+  private communityPost$ = new BehaviorSubject<any>({});
+  receivedCommunityPost$ = this.communityPost$.asObservable();
+
   sendAccount(data: any) {
     this.account$.next(data);
   }
@@ -25,5 +31,13 @@ constructor() { }
   }
   sendVideo(data: any) {
     this.video$.next(data);
+  }
+
+  sendCommunity(data: any) {
+    this.community$.next(data);
+  }
+
+  sendCommunityPost(data: any) {
+    this.communityPost$.next(data);
   }
 }

@@ -1,0 +1,122 @@
+<!-- Main Content -->
+<section class="flex-1 px-12 max-w-3xl space-y-6">
+    <div class="flex items-center space-x-2 text-sm text-gray-600 font-semibold">
+        <span>
+            Best
+        </span>
+        <button aria-label="Sort dropdown" class="text-gray-400">
+            <i class="fas fa-chevron-down">
+            </i>
+        </button>
+    </div>
+    <!-- Post 1 NSFW -->
+    <!-- <article class="space-y-2 border border-gray-200 rounded-md p-4">
+        <header class="flex items-center space-x-2 text-xs text-gray-500">
+            <span>
+                r/pettyrevenge
+            </span>
+            <span>
+                •
+            </span>
+            <span>
+                5 days ago
+            </span>
+        </header>
+        <div class="text-xs font-bold text-pink-600">
+            NSFW
+        </div>
+        <p class="font-semibold text-sm leading-snug">
+            My ex-wife kept the Clone-a-Willys I made her every Valentine’s Day. So I made sure her new boyfriend met
+            all of them.
+        </p>
+        <div class="rounded-md bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 text-center py-4 text-white text-xs font-semibold cursor-pointer select-none"
+            role="button" tabindex="0">
+            View NSFW content
+        </div>
+        <footer class="flex items-center space-x-3 text-xs text-gray-500">
+            <button class="flex items-center space-x-1 hover:text-gray-700">
+                <i class="fas fa-arrow-up">
+                </i>
+                <span>
+                    5.5K
+                </span>
+            </button>
+            <button class="flex items-center space-x-1 hover:text-gray-700">
+                <i class="far fa-comment">
+                </i>
+                <span>
+                    675
+                </span>
+            </button>
+            <button class="flex items-center space-x-1 hover:text-gray-700">
+                <i class="fas fa-share">
+                </i>
+                <span>
+                    Share
+                </span>
+            </button>
+        </footer>
+    </article> -->
+    <!-- Post 2 -->
+    <article *ngFor="let post of posts" class="space-y-2 border border-gray-200 rounded-md p-4 hover:cursor-pointer"
+        (click)="gotoPost(post?.id)">
+        <header class="flex items-center space-x-2 text-xs text-gray-500">
+            <img alt="UserImg" class="w-4 h-4 rounded-full" height="16" [src]="avatarPath + post?.userImgUrl"
+                width="16" />
+            <span>
+                {{ post?.groupName}}
+            </span>
+            <span>
+                •
+            </span>
+            <span>
+                {{ post?.lastActivityDate | date: 'short' }}
+            </span>
+            <span>
+                •
+            </span>
+            <span class="italic">
+                Popular near you
+            </span>
+        </header>
+        <div class="flex justify-between items-center">
+            <p class="font-semibold text-sm leading-snug flex-1">
+                {{ post?.title}}
+            </p>
+            <button aria-label="Join community"
+                class="bg-blue-600 text-white text-xs font-semibold rounded-full px-3 py-0.5 ml-3">
+                Join
+            </button>
+        </div>
+        <p class="text-xs text-gray-600 leading-snug">
+            {{ post?.content}}
+        </p>
+        <footer class="flex items-center space-x-3 text-xs text-gray-500">
+            <button class="flex items-center space-x-1 hover:text-gray-700">
+                <i class="fas fa-arrow-up">
+                </i>
+                <span>
+                    {{ post?.like ?? 0}}
+                </span>
+            </button>
+            <button class="flex items-center space-x-1 hover:text-gray-700">
+                <i class="far fa-comment">
+                </i>
+                <span>
+                    {{ post?.groupPostComments?.length ?? 0 }}
+                </span>
+            </button>
+            <button class="flex items-center space-x-1 hover:text-gray-700">
+                <i class="fas fa-share">
+                </i>
+                <span>
+                    Share
+                </span>
+            </button>
+        </footer>
+    </article>
+    <div class="flex justify-center py-6">
+        <img alt="Reddit orange circle logo with white smiling alien face" class="w-10 h-10" height="40"
+            src="https://storage.googleapis.com/a1aa/image/b41de8db-34fb-419a-6924-17946032aaf2.jpg" width="40" />
+    </div>
+</section>

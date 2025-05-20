@@ -1,0 +1,284 @@
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>
+   Reddit Clone
+  </title>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;display=swap" rel="stylesheet"/>
+  <style>
+   body {
+      font-family: "Inter", sans-serif;
+    }
+  </style>
+ </head>
+ <body class="bg-white text-gray-900">
+  <!-- Top Navbar -->
+  <header class="flex items-center justify-between px-4 py-2 border-b border-gray-300 sticky top-0 bg-white z-50">
+   <div class="flex items-center space-x-2">
+    <img alt="Reddit logo" class="w-8 h-8" src="https://www.redditstatic.com/desktop2x/img/favicon/android-icon-192x192.png"/>
+    <span class="text-2xl font-extrabold text-[#FF4500] select-none">
+     reddit
+    </span>
+   </div>
+   <form class="flex-grow max-w-lg mx-4">
+    <label class="sr-only" for="search">
+     Search Reddit
+    </label>
+    <input class="w-full rounded-full bg-gray-200 text-gray-700 placeholder-gray-500 py-2 px-4 text-sm focus:outline-none focus:ring-2 focus:ring-[#FF4500]" id="search" placeholder="Tìm kiếm trong Reddit" type="search"/>
+   </form>
+   <div class="flex items-center space-x-4 text-gray-900">
+    <button aria-label="Ads" class="text-xl">
+     <i class="fas fa-ad">
+     </i>
+    </button>
+    <button aria-label="Chat" class="text-xl">
+     <i class="far fa-comment-alt">
+     </i>
+    </button>
+    <button aria-label="Create" class="text-xl font-semibold">
+     +
+    </button>
+    <button aria-label="Notifications" class="relative text-xl">
+     <i class="far fa-bell">
+     </i>
+     <span class="absolute -top-1 -right-1 bg-[#FF4500] text-white text-xs rounded-full w-4 h-4 flex items-center justify-center font-bold">
+      1
+     </span>
+    </button>
+    <div class="relative">
+     <img alt="User avatar with green online dot" class="rounded-full" height="32" src="https://storage.googleapis.com/a1aa/image/dfa10e1a-1794-4f24-80e5-a1ae49fae478.jpg" width="32"/>
+     <span aria-label="Online status" class="absolute bottom-0 right-0 w-3 h-3 bg-green-600 border-2 border-white rounded-full">
+     </span>
+    </div>
+   </div>
+  </header>
+  <main class="flex h-[calc(100vh-48px)] overflow-hidden">
+   <!-- Sidebar -->
+   <aside class="flex flex-col w-72 border-r border-gray-300 overflow-y-auto scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-100">
+    <nav class="flex flex-col px-4 py-3 space-y-1 text-gray-700 text-sm">
+     <button aria-label="Trang chủ" class="flex items-center space-x-3 py-2 rounded hover:bg-gray-100 focus:outline-none">
+      <i class="fas fa-home text-lg">
+      </i>
+      <span>
+       Trang chủ
+      </span>
+     </button>
+     <button aria-current="page" aria-label="Phổ biến" class="flex items-center space-x-3 py-2 rounded bg-gray-200 font-semibold focus:outline-none">
+      <i class="fas fa-chart-line text-lg">
+      </i>
+      <span>
+       Phổ biến
+      </span>
+     </button>
+     <button aria-label="Khám phá" class="flex items-center space-x-3 py-2 rounded hover:bg-gray-100 focus:outline-none">
+      <i class="fas fa-user-friends text-lg">
+      </i>
+      <span>
+       Khám phá
+      </span>
+     </button>
+     <button aria-label="Tất cả" class="flex items-center space-x-3 py-2 rounded hover:bg-gray-100 focus:outline-none">
+      <i class="fas fa-chart-bar text-lg">
+      </i>
+      <span>
+       Tất cả
+      </span>
+     </button>
+     <hr class="my-4 border-gray-300"/>
+     <div class="text-xs uppercase text-gray-400 font-semibold flex items-center justify-between">
+      <span>
+       Bảng tin tùy chỉnh
+      </span>
+      <button aria-label="Toggle custom feed" class="focus:outline-none">
+       <i class="fas fa-chevron-down">
+       </i>
+      </button>
+     </div>
+     <button aria-label="Tạo bảng tin tùy chỉnh" class="flex items-center space-x-3 py-3 rounded hover:bg-gray-100 focus:outline-none">
+      <i class="fas fa-plus text-lg">
+      </i>
+      <span>
+       Tạo bảng tin tùy chỉnh
+      </span>
+     </button>
+     <hr class="my-4 border-gray-300"/>
+     <div class="text-xs uppercase text-gray-400 font-semibold flex items-center justify-between">
+      <span>
+       Cộng đồng
+      </span>
+      <button aria-label="Toggle communities" class="focus:outline-none">
+       <i class="fas fa-chevron-down">
+       </i>
+      </button>
+     </div>
+     <button aria-label="Tạo cộng đồng" class="flex items-center space-x-3 py-3 rounded hover:bg-gray-100 focus:outline-none">
+      <i class="fas fa-plus text-lg">
+      </i>
+      <span>
+       Tạo cộng đồng
+      </span>
+     </button>
+     <button aria-label="r/HonkaiStarRail" class="flex items-center space-x-3 py-2 rounded hover:bg-gray-100 focus:outline-none">
+      <img alt="Community icon for r/HonkaiStarRail, anime style character with pink hair" class="rounded-full" height="24" src="https://storage.googleapis.com/a1aa/image/631d2671-e8af-4202-ff45-08b796aa6735.jpg" width="24"/>
+      <span>
+       r/HonkaiStarRail
+      </span>
+      <i class="far fa-star ml-auto text-lg">
+      </i>
+     </button>
+     <hr class="my-4 border-gray-300"/>
+     <div class="text-xs uppercase text-gray-400 font-semibold flex items-center justify-between">
+      <span>
+       Tài nguyên
+      </span>
+      <button aria-label="Toggle resources" class="focus:outline-none">
+       <i class="fas fa-chevron-down">
+       </i>
+      </button>
+     </div>
+     <button aria-label="Giới thiệu về Reddit" class="flex items-center space-x-3 py-2 rounded hover:bg-gray-100 focus:outline-none">
+      <i class="fas fa-apple-alt text-lg">
+      </i>
+      <span>
+       Giới thiệu về Reddit
+      </span>
+     </button>
+     <button aria-label="Quảng cáo" class="flex items-center space-x-3 py-2 rounded hover:bg-gray-100 focus:outline-none">
+      <i class="fas fa-bullhorn text-lg">
+      </i>
+      <span>
+       Quảng cáo
+      </span>
+     </button>
+     <button aria-label="Reddit Pro" class="flex items-center space-x-3 py-2 rounded hover:bg-gray-100 focus:outline-none">
+      <i class="fas fa-chart-bar text-lg">
+      </i>
+      <span>
+       Reddit Pro
+      </span>
+      <span class="text-xs font-semibold text-[#FF4500] ml-1">
+       BETA
+      </span>
+     </button>
+     <button aria-label="Trợ giúp" class="flex items-center space-x-3 py-2 rounded hover:bg-gray-100 focus:outline-none">
+      <i class="fas fa-question-circle text-lg">
+      </i>
+      <span>
+       Trợ giúp
+      </span>
+     </button>
+     <button aria-label="Blog" class="flex items-center space-x-3 py-2 rounded hover:bg-gray-100 focus:outline-none">
+      <i class="far fa-file-alt text-lg">
+      </i>
+      <span>
+       Blog
+      </span>
+     </button>
+     <button aria-label="Nghề nghiệp" class="flex items-center space-x-3 py-2 rounded hover:bg-gray-100 focus:outline-none">
+      <i class="fas fa-briefcase text-lg">
+      </i>
+      <span>
+       Nghề nghiệp
+      </span>
+     </button>
+    </nav>
+   </aside>
+   <!-- Main content -->
+   <section class="flex-grow overflow-y-auto p-4 max-w-4xl">
+    <div class="flex items-center space-x-2 text-xs text-gray-600 mb-1 select-none">
+     <i class="fas fa-arrow-up text-[#FF4500]">
+     </i>
+     <span class="font-semibold text-black">
+      r/nextf***inglevel
+     </span>
+     <i class="fas fa-arrow-up text-[#FF4500]">
+     </i>
+     <span>
+      • 5 giờ trước
+     </span>
+     <button aria-label="Tham gia" class="ml-auto bg-[#0055FF] text-white text-xs rounded-full px-3 py-1 font-semibold hover:bg-[#0041cc] focus:outline-none">
+      Tham gia
+     </button>
+     <button aria-label="More options" class="text-xl text-gray-600 hover:text-gray-900 focus:outline-none">
+      <i class="fas fa-ellipsis-h">
+      </i>
+     </button>
+    </div>
+    <h2 class="font-semibold text-lg mb-3">
+     Triathlete’s perseverance against adversity
+    </h2>
+    <div class="rounded-lg overflow-hidden">
+     <video aria-label="TikTok video with TikTok logo and search bar @worldtriathlon" class="w-full rounded-lg" controls="">
+      <source src="https://placehold.co/720x405/000000/000000.mp4" type="video/mp4"/>
+      Your browser does not support the video tag.
+     </video>
+    </div>
+    <div class="flex items-center space-x-3 mt-4">
+     <button aria-label="Upvote 23 N" class="flex items-center space-x-1 bg-gray-200 rounded-full px-3 py-1 text-xs font-semibold text-gray-700 hover:bg-gray-300 focus:outline-none">
+      <i class="fas fa-arrow-up">
+      </i>
+      <span>
+       23 N
+      </span>
+      <i class="fas fa-arrow-down">
+      </i>
+     </button>
+     <button aria-label="Comments 496" class="flex items-center space-x-1 bg-gray-200 rounded-full px-3 py-1 text-xs font-semibold text-gray-700 hover:bg-gray-300 focus:outline-none">
+      <i class="far fa-comment">
+      </i>
+      <span>
+       496
+      </span>
+     </button>
+     <button aria-label="Award 1" class="flex items-center space-x-1 bg-gray-200 rounded-full px-3 py-1 text-xs font-semibold text-gray-700 hover:bg-gray-300 focus:outline-none">
+      <img alt="Award icon" class="w-4 h-4" height="16" src="https://storage.googleapis.com/a1aa/image/ff2e4da8-6653-432e-bb99-2085fbf429f5.jpg" width="16"/>
+      <span>
+       1
+      </span>
+     </button>
+     <button aria-label="Share" class="flex items-center space-x-1 bg-gray-200 rounded-full px-3 py-1 text-xs font-semibold text-gray-700 hover:bg-gray-300 focus:outline-none">
+      <i class="fas fa-share">
+      </i>
+      <span>
+       Chia sẻ
+      </span>
+     </button>
+    </div>
+    <article class="mt-6 border-t border-gray-300 pt-4">
+     <div class="flex items-center space-x-2 text-sm text-gray-700 font-semibold">
+      <img alt="User avatar purple circle with letter U" class="rounded-full" height="32" src="https://storage.googleapis.com/a1aa/image/933e3e68-c912-4e15-e1a8-e71db00cfc51.jpg" width="32"/>
+      <span>
+       u/newmediaproperties
+      </span>
+      <span class="text-gray-500 font-normal">
+       • Đã quảng bá
+      </span>
+     </div>
+     <h3 class="font-bold text-lg mt-2">
+      The Screener co global stock screener is a screener for value investors. Screener.co is a
+          ...
+     </h3>
+    </article>
+   </section>
+   <!-- Right side footer links -->
+   <aside class="hidden xl:flex flex-col w-48 p-4 text-xs text-gray-500 space-y-1">
+    <a class="hover:underline" href="#">
+     Quy tắc Reddit
+    </a>
+    <a class="hover:underline" href="#">
+     Chính sách quyền riêng tư
+    </a>
+    <a class="hover:underline" href="#">
+     Thỏa thuận người dùng
+    </a>
+    <a class="hover:underline" href="#">
+     Reddit, Inc. © 2025. Mọi quyền được bảo lưu.
+    </a>
+   </aside>
+  </main>
+ </body>
+</html>

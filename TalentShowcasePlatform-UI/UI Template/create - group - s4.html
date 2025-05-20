@@ -1,0 +1,209 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Reddit Community Type Modal</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+  />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap"
+    rel="stylesheet"
+  />
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+  </style>
+</head>
+<body class="bg-gray-100">
+  <div
+    class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4"
+    aria-modal="true"
+    role="dialog"
+    aria-labelledby="modal-title"
+  >
+    <div
+      class="bg-white rounded-2xl max-w-3xl w-full shadow-lg flex flex-col"
+      style="max-height: 90vh;"
+    >
+      <div class="flex justify-between items-start p-6 pb-2">
+        <h2
+          id="modal-title"
+          class="text-gray-900 font-extrabold text-xl leading-7"
+        >
+          What kind of community is this?
+        </h2>
+        <button
+          aria-label="Close modal"
+          class="text-gray-400 hover:text-gray-600 transition"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M6 18L18 6M6 6l12 12"
+            />
+          </svg>
+        </button>
+      </div>
+      <p class="px-6 text-gray-800 text-sm leading-tight mb-6 max-w-[720px]">
+        Decide who can view and contribute in your community. Only public
+        communities show up in search.
+        <strong>Important:</strong> Once set, you will need to submit a request
+        to change your community type.
+      </p>
+
+      <form class="px-6 pb-6 flex flex-col gap-4 overflow-y-auto max-h-[480px]">
+        <label
+          for="public"
+          class="flex items-center gap-4 bg-gray-100 rounded-md p-4 cursor-pointer"
+        >
+          <input
+            type="radio"
+            id="public"
+            name="community-type"
+            checked
+            class="appearance-none border border-gray-400 rounded-full w-5 h-5 checked:border-transparent checked:bg-black checked:bg-[url('data:image/svg+xml;utf8,<svg fill=\'white\' viewBox=\'0 0 24 24\' xmlns=\'http://www.w3.org/2000/svg\'><circle cx=\'12\' cy=\'12\' r=\'6\'/></svg>')]"
+          />
+          <div class="flex items-center gap-3">
+            <div class="flex items-center justify-center w-8 h-8 rounded-full bg-gray-300">
+              <i class="fas fa-globe-americas text-black text-lg"></i>
+            </div>
+            <div>
+              <p class="text-gray-900 text-sm font-normal">Public</p>
+              <p class="text-gray-500 text-xs leading-tight">
+                Anyone can view, post, and comment to this community
+              </p>
+            </div>
+          </div>
+        </label>
+
+        <label
+          for="restricted"
+          class="flex items-center gap-4 p-4 cursor-pointer rounded-md"
+        >
+          <input
+            type="radio"
+            id="restricted"
+            name="community-type"
+            class="appearance-none border border-gray-400 rounded-full w-5 h-5 checked:border-transparent checked:bg-black checked:bg-[url('data:image/svg+xml;utf8,<svg fill=\'white\' viewBox=\'0 0 24 24\' xmlns=\'http://www.w3.org/2000/svg\'><path d=\'M12 4.5c-4.142 0-7.5 3.358-7.5 7.5s3.358 7.5 7.5 7.5 7.5-3.358 7.5-7.5-3.358-7.5-7.5-7.5zm0 13.5c-3.313 0-6-2.687-6-6s2.687-6 6-6 6 2.687 6 6-2.687 6-6 6z\'/></svg>')]"
+          />
+          <div class="flex items-center gap-3">
+            <div class="flex items-center justify-center w-8 h-8 rounded-full bg-gray-300">
+              <i class="fas fa-eye-slash text-black text-lg"></i>
+            </div>
+            <div>
+              <p class="text-gray-900 text-sm font-normal">Restricted</p>
+              <p class="text-gray-500 text-xs leading-tight">
+                Anyone can view, but only approved users can contribute
+              </p>
+            </div>
+          </div>
+        </label>
+
+        <label
+          for="private"
+          class="flex items-center gap-4 p-4 cursor-pointer rounded-md"
+        >
+          <input
+            type="radio"
+            id="private"
+            name="community-type"
+            class="appearance-none border border-gray-400 rounded-full w-5 h-5 checked:border-transparent checked:bg-black checked:bg-[url('data:image/svg+xml;utf8,<svg fill=\'white\' viewBox=\'0 0 24 24\' xmlns=\'http://www.w3.org/2000/svg\'><rect x=\'9\' y=\'11\' width=\'6\' height=\'4\' rx=\'1\' ry=\'1\'/><path d=\'M12 2a5 5 0 0 0-5 5v3H6a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-7a2 2 0 0 0-2-2h-1V7a5 5 0 0 0-5-5z\'/></svg>')]"
+          />
+          <div class="flex items-center gap-3">
+            <div class="flex items-center justify-center w-8 h-8 rounded-full bg-gray-300">
+              <i class="fas fa-lock text-black text-lg"></i>
+            </div>
+            <div>
+              <p class="text-gray-900 text-sm font-normal">Private</p>
+              <p class="text-gray-500 text-xs leading-tight">
+                Only approved users can view and contribute
+              </p>
+            </div>
+          </div>
+        </label>
+
+        <hr class="border-t border-gray-300 my-6" />
+
+        <div class="flex items-center justify-between px-4">
+          <div class="flex items-center gap-4">
+            <div
+              class="flex items-center justify-center w-8 h-8 rounded-full bg-gray-300"
+              aria-hidden="true"
+            >
+              <i class="fas fa-18 text-black text-xs font-semibold">18</i>
+            </div>
+            <div>
+              <p class="text-gray-900 text-sm font-normal">Mature (18+)</p>
+              <p class="text-gray-500 text-xs leading-tight">
+                Users must be over 18 to view and contribute
+              </p>
+            </div>
+          </div>
+          <label
+            for="mature-toggle"
+            class="relative inline-flex items-center cursor-pointer"
+          >
+            <input
+              type="checkbox"
+              id="mature-toggle"
+              class="sr-only peer"
+              aria-checked="false"
+            />
+            <div
+              class="w-12 h-6 bg-gray-300 rounded-full peer peer-focus:ring-2 peer-focus:ring-blue-300 peer-checked:bg-gray-400 relative transition-colors"
+            ></div>
+            <div
+              class="absolute left-1 top-1 bg-white w-4 h-4 rounded-full shadow-md peer-checked:translate-x-6 transition-transform"
+            ></div>
+          </label>
+        </div>
+
+        <p class="text-xs text-gray-600 mt-10 max-w-[720px]">
+          By continuing, you agree to our
+          <a
+            href="#"
+            class="underline text-gray-700 hover:text-gray-900"
+            >Mod Code of Conduct</a
+          >
+          and acknowledge that you understand the
+          <a href="#" class="underline text-gray-700 hover:text-gray-900"
+            >Reddit Rules</a
+          >.
+        </p>
+
+        <div
+          class="flex justify-end gap-4 mt-6 pb-2 max-w-[720px] w-full items-center"
+        >
+          <div class="flex gap-2 text-gray-400 text-xs select-none">
+            <span>•</span><span>•</span><span>•</span><span class="text-gray-700">•</span>
+          </div>
+          <button
+            type="button"
+            class="bg-gray-200 text-black font-semibold rounded-full px-6 py-3 hover:bg-gray-300 transition"
+          >
+            Back
+          </button>
+          <button
+            type="submit"
+            class="bg-blue-800 text-white font-semibold rounded-full px-6 py-3 hover:bg-blue-900 transition"
+          >
+            Create Community
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</body>
+</html>

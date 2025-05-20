@@ -1,0 +1,184 @@
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>
+   Reddit Add Topics Modal
+  </title>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <style>
+   /* Custom scrollbar for the topics container */
+    .scrollbar-thin::-webkit-scrollbar {
+      width: 6px;
+    }
+    .scrollbar-thin::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    .scrollbar-thin::-webkit-scrollbar-thumb {
+      background-color: #cbd5e1; /* Tailwind slate-300 */
+      border-radius: 9999px;
+    }
+  </style>
+ </head>
+ <body class="bg-gray-100 font-sans">
+  <div aria-labelledby="modal-title" aria-modal="true" class="fixed inset-0 flex items-center justify-center p-6" role="dialog">
+   <div class="bg-white rounded-2xl max-w-3xl w-full max-h-[90vh] flex flex-col shadow-lg">
+    <header class="flex justify-between items-center px-8 pt-8 pb-4 border-b border-gray-200">
+     <h2 class="text-gray-900 font-extrabold text-lg leading-6" id="modal-title">
+      Add topics
+     </h2>
+     <button aria-label="Close" class="text-gray-400 hover:text-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-400 rounded-full p-1" type="button">
+      <i class="fas fa-times text-lg">
+      </i>
+     </button>
+    </header>
+    <p class="px-8 pb-6 text-gray-700 text-sm leading-relaxed">
+     Add up to 3 topics to help interested redditors find your community.
+    </p>
+    <div class="px-8 pb-6">
+     <form class="w-full">
+      <label class="sr-only" for="filter-topics">
+       Filter topics
+      </label>
+      <div class="relative text-gray-500 focus-within:text-gray-700">
+       <span class="absolute inset-y-0 left-4 flex items-center pointer-events-none">
+        <i class="fas fa-search text-base">
+        </i>
+       </span>
+       <input class="w-full rounded-full bg-gray-100 py-2 pl-12 pr-4 text-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:bg-white focus:text-gray-900" id="filter-topics" placeholder="Filter topics" type="search"/>
+      </div>
+     </form>
+    </div>
+    <div class="px-8 pb-4">
+     <p class="font-semibold text-gray-900 mb-2">
+      Topics 1/3
+     </p>
+     <div class="inline-flex items-center space-x-2 mb-6">
+      <span class="inline-flex items-center rounded-md border border-gray-300 bg-white px-3 py-1 text-xs font-normal text-gray-900">
+       Cosplay
+       <button aria-label="Remove Cosplay" class="ml-2 flex items-center justify-center rounded-full bg-gray-900 text-white w-5 h-5 text-xs font-bold hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-gray-900" type="button">
+        <i class="fas fa-times">
+        </i>
+       </button>
+      </span>
+     </div>
+    </div>
+    <div class="px-8 pb-8 overflow-y-auto scrollbar-thin" style="max-height: 360px;">
+     <!-- Anime & Cosplay -->
+     <section class="mb-6">
+      <h3 class="font-semibold text-gray-900 flex items-center mb-3 text-sm">
+       <img alt="Anime &amp; Cosplay icon" class="inline-block mr-2" height="20" loading="lazy" src="https://storage.googleapis.com/a1aa/image/85e9c732-1a21-42cf-95bb-78c061d6f815.jpg" width="20"/>
+       Anime &amp; Cosplay
+      </h3>
+      <div class="flex flex-wrap gap-2">
+       <button class="rounded-full bg-gray-200 text-gray-900 text-xs font-semibold px-3 py-1" type="button">
+        Anime &amp; Manga
+       </button>
+       <button class="rounded-full bg-gray-400 text-gray-900 text-xs font-semibold px-3 py-1 flex items-center space-x-1" type="button">
+        <span>
+         Cosplay
+        </span>
+        <i class="fas fa-times text-xs text-gray-700">
+        </i>
+       </button>
+      </div>
+     </section>
+     <!-- Art -->
+     <section class="mb-6">
+      <h3 class="font-semibold text-gray-900 flex items-center mb-3 text-sm">
+       <img alt="Art icon" class="inline-block mr-2" height="20" loading="lazy" src="https://storage.googleapis.com/a1aa/image/1740112a-4bc9-42e4-3b80-2217e68ee0c5.jpg" width="20"/>
+       Art
+      </h3>
+      <div class="flex flex-wrap gap-2">
+       <button class="rounded-full bg-gray-200 text-gray-900 text-xs font-semibold px-3 py-1" type="button">
+        Performing Arts
+       </button>
+       <button class="rounded-full bg-gray-200 text-gray-900 text-xs font-semibold px-3 py-1" type="button">
+        Architecture
+       </button>
+       <button class="rounded-full bg-gray-200 text-gray-900 text-xs font-semibold px-3 py-1" type="button">
+        Design
+       </button>
+       <button class="rounded-full bg-gray-200 text-gray-900 text-xs font-semibold px-3 py-1" type="button">
+        Art
+       </button>
+       <button class="rounded-full bg-gray-200 text-gray-900 text-xs font-semibold px-3 py-1" type="button">
+        Filmmaking
+       </button>
+       <button class="rounded-full bg-gray-200 text-gray-900 text-xs font-semibold px-3 py-1" type="button">
+        Digital Art
+       </button>
+       <button class="rounded-full bg-gray-200 text-gray-900 text-xs font-semibold px-3 py-1" type="button">
+        Photography
+       </button>
+      </div>
+     </section>
+     <!-- Business & Finance -->
+     <section class="mb-6">
+      <h3 class="font-semibold text-gray-900 flex items-center mb-3 text-sm">
+       <img alt="Business &amp; Finance icon" class="inline-block mr-2" height="20" loading="lazy" src="https://storage.googleapis.com/a1aa/image/1b50cb34-0dca-475e-6aeb-7880e5e995b1.jpg" width="20"/>
+       Business &amp; Finance
+      </h3>
+      <div class="flex flex-wrap gap-2">
+       <button class="rounded-full bg-gray-200 text-gray-900 text-xs font-semibold px-3 py-1" type="button">
+        Personal Finance
+       </button>
+       <button class="rounded-full bg-gray-200 text-gray-900 text-xs font-semibold px-3 py-1" type="button">
+        Crypto
+       </button>
+       <button class="rounded-full bg-gray-200 text-gray-900 text-xs font-semibold px-3 py-1" type="button">
+        Economics
+       </button>
+       <button class="rounded-full bg-gray-200 text-gray-900 text-xs font-semibold px-3 py-1" type="button">
+        Business News &amp; Discussion
+       </button>
+       <button class="rounded-full bg-gray-200 text-gray-900 text-xs font-semibold px-3 py-1" type="button">
+        Deals &amp; Marketplace
+       </button>
+       <button class="rounded-full bg-gray-200 text-gray-900 text-xs font-semibold px-3 py-1" type="button">
+        Startups &amp; Entrepreneurship
+       </button>
+       <button class="rounded-full bg-gray-200 text-gray-900 text-xs font-semibold px-3 py-1" type="button">
+        Real Estate
+       </button>
+       <button class="rounded-full bg-gray-200 text-gray-900 text-xs font-semibold px-3 py-1" type="button">
+        Stocks &amp; Investing
+       </button>
+      </div>
+     </section>
+     <!-- Collectibles & Other Hobbies -->
+     <section>
+      <h3 class="font-semibold text-gray-900 flex items-center mb-3 text-sm">
+       <img alt="Collectibles &amp; Other Hobbies icon" class="inline-block mr-2" height="20" loading="lazy" src="https://storage.googleapis.com/a1aa/image/3da9e215-b793-4d36-0a74-3d81b4251a49.jpg" width="20"/>
+       Collectibles &amp; Other Hobbies
+      </h3>
+      <div class="flex flex-wrap gap-2">
+       <button class="rounded-full bg-gray-200 text-gray-900 text-xs font-semibold px-3 py-1" type="button">
+        Model Building
+       </button>
+       <button class="rounded-full bg-gray-200 text-gray-900 text-xs font-semibold px-3 py-1" type="button">
+        Collectibles
+       </button>
+       <button class="rounded-full bg-gray-200 text-gray-900 text-xs font-semibold px-3 py-1" type="button">
+        Other Hobbies
+       </button>
+       <button class="rounded-full bg-gray-200 text-gray-900 text-xs font-semibold px-3 py-1" type="button">
+        Toys
+       </button>
+      </div>
+     </section>
+    </div>
+    <footer class="flex justify-between items-center px-8 py-6 border-t border-gray-200">
+     <button class="rounded-full bg-gray-200 text-gray-900 text-sm font-semibold px-6 py-3 hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-400" type="button">
+      Back
+     </button>
+     <button class="rounded-full bg-blue-900 text-white text-sm font-semibold px-6 py-3 hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-700" type="button">
+      Next
+     </button>
+    </footer>
+   </div>
+  </div>
+ </body>
+</html>

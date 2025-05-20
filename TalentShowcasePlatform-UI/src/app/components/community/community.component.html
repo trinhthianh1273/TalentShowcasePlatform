@@ -1,469 +1,92 @@
-<div class="flex flex-col md:flex-row max-w-[1444px] mx-auto border border-gray-200">
-  <aside
-    class="md:flex flex-col w-full md:w-60 border-b md:border-b-0 md:border-r border-gray-200 px-4 py-4 md:py-6 text-sm text-gray-600 hidden md:block">
-    <nav class="space-y-1">
-      <a class="flex items-center gap-3 text-orange-500 font-semibold" href="#">
-        <i class="fab fa-reddit fa-lg">
-        </i>
-        <span class="text-lg font-bold">
-          reddit
+<header class="flex items-center justify-between px-4 py-2 border-b border-gray-200 sticky top-0 bg-white z-30">
+  <a routerLink="/home" class="flex items-center gap-3 text-orange-500 font-semibold" href="#">
+    <i class="fab fa-reddit fa-lg">
+    </i>
+    <span class="text-lg font-bold">
+      Talent
+    </span>
+  </a>
+  <form class="flex flex-1 max-w-xl mx-4">
+    <label class="sr-only" for="search">
+      Search Talent
+    </label>
+    <input
+      class="w-full rounded-full bg-gray-100 text-gray-700 placeholder-gray-400 text-sm px-4 py-2 focus:outline-none focus:ring-2 focus:ring-orange-500"
+      id="search" placeholder="Search Talent" type="search" />
+  </form>
+  <div class="flex items-center space-x-4 text-gray-600 text-sm">
+    <button aria-label="Chat" class="text-xl">
+      <i class="far fa-comment-alt">
+      </i>
+    </button>
+    <button aria-label="Create"
+      class="flex items-center space-x-1 text-gray-700 hover:text-gray-900 font-semibold border border-gray-300 rounded-full px-3 py-1">
+      <i class="fas fa-plus">
+      </i>
+      <span>
+        Create
+      </span>
+    </button>
+    <button aria-label="Notifications" class="relative text-xl">
+     <i class="far fa-bell">
+     </i>
+     <span class="absolute -top-1 -right-1 bg-[#FF4500] text-white text-xs rounded-full w-4 h-4 flex items-center justify-center font-bold">
+      1
+     </span>
+    </button>
+    <div class="relative">
+     <img alt="User avatar" class="w-10 h-10 rounded-full hover:cursor-pointer" [src]="avatarUrl"/>
+     <span aria-label="Online status" class="absolute bottom-0 right-0 w-3 h-3 bg-green-600 border-2 border-white rounded-full">
+     </span>
+    </div>
+  </div>
+</header>
+<main class="flex mx-auto px-4 py-4 space-x-6">
+  <app-community-left-sidebar></app-community-left-sidebar>
+  <router-outlet></router-outlet>
+
+  <!-- Right Sidebar -->
+  <!-- <aside class="w-72 flex-shrink-0 space-y-4">
+    <div class="bg-gray-100 rounded-md p-4 text-xs text-gray-600 space-y-2 max-w-xs" style="line-height: 1.2">
+      <div class="flex justify-between items-center font-semibold text-gray-700">
+        <span>
+          RECENT POSTS
         </span>
-      </a>
-      <ul class="mt-6 space-y-1">
-        <li>
-          <a class="flex items-center gap-3 rounded-md px-3 py-2 hover:bg-gray-100 text-gray-900 font-semibold"
-            href="#">
-            <i class="fas fa-home fa-fw">
-            </i>
-            Home
-          </a>
-        </li>
-        <li>
-          <a class="flex items-center gap-3 rounded-md px-3 py-2 bg-gray-100 text-gray-900 font-semibold"
-            href="#">
-            <i class="fas fa-fire fa-fw">
-            </i>
-            Popular
-          </a>
-        </li>
-        <li>
-          <a class="flex items-center gap-3 rounded-md px-3 py-2 hover:bg-gray-100" href="#">
-            <i class="fas fa-compass fa-fw">
-            </i>
-            Explore
-          </a>
-        </li>
-        <li>
-          <a class="flex items-center gap-3 rounded-md px-3 py-2 hover:bg-gray-100" href="#">
-            <i class="fas fa-bolt fa-fw">
-            </i>
-            All
-          </a>
-        </li>
-      </ul>
-    </nav>
-    <div class="mt-8">
-      <h3 class="text-xs font-semibold uppercase text-gray-400 tracking-wide mb-2">
-        Custom Feeds
-      </h3>
-      <button class="flex items-center gap-2 text-gray-600 hover:text-gray-900 text-sm font-semibold">
-        <i class="fas fa-plus">
-        </i>
-        Create a custom feed
-      </button>
+        <button class="text-blue-600 hover:underline">
+          Clear
+        </button>
+      </div>
+      <div class="flex items-center space-x-2">
+        <img alt="Subreddit r/vozforums icon, black circle with white letter r" class="w-5 h-5 rounded-full" height="20"
+          src="https://storage.googleapis.com/a1aa/image/50209d23-2747-4373-9bdb-7240e2876de2.jpg" width="20" />
+        <div class="flex-1">
+          <p class="text-gray-900 font-semibold text-xs mb-0.5">
+            r/vozforums
+          </p>
+          <p class="leading-tight text-xs text-gray-700">
+            33 tuổi làm gì để có thêm thu nhập vậy mọi người
+          </p>
+          <p class="text-gray-400 text-[10px] mt-0.5">
+            37 upvotes · 48 comments
+          </p>
+        </div>
+      </div>
     </div>
-    <div class="mt-8">
-      <h3 class="text-xs font-semibold uppercase text-gray-400 tracking-wide mb-2">
-        Reddit Feeds
-      </h3>
-      <ul class="space-y-1 text-gray-600 text-sm">
-        <li>
-          <a class="flex items-center gap-2 hover:text-gray-900" href="#">
-            <span class="text-xs text-gray-400">
-              r/
-            </span>
-            BestofRedditorUpdates
-          </a>
-        </li>
-        <li>
-          <a class="flex items-center gap-2 hover:text-gray-900" href="#">
-            <span class="text-xs text-gray-400">
-              r/
-            </span>
-            stocks
-          </a>
-        </li>
-        <li>
-          <a class="flex items-center gap-2 hover:text-gray-900" href="#">
-            <span class="text-xs text-gray-400">
-              r/
-            </span>
-            MaliciousCompliance
-          </a>
-        </li>
-        <li>
-          <a class="flex items-center gap-2 hover:text-gray-900" href="#">
-            <span class="text-xs text-gray-400">
-              r/
-            </span>
-            unforgiven
-          </a>
-        </li>
-      </ul>
+    <div class="text-[9px] text-gray-400 max-w-xs space-y-1">
+      <p>
+        Reddit Rules
+      </p>
+      <p>
+        Privacy Policy
+      </p>
+      <p>
+        User Agreement
+      </p>
+      <p>
+        Reddit, Inc. © 2025. All rights reserved.
+      </p>
     </div>
-    <div class="mt-8">
-      <h3 class="text-xs font-semibold uppercase text-gray-400 tracking-wide mb-2">
-        Communities
-      </h3>
-      <ul class="space-y-1 text-gray-600 text-sm">
-        <li>
-          <a class="flex items-center gap-2 hover:text-gray-900" href="#">
-            <span class="text-xs text-gray-400">
-              r/
-            </span>
-            creatacommunity
-          </a>
-        </li>
-        <li>
-          <a class="flex items-center gap-2 hover:text-gray-900" href="#">
-            <span class="text-xs text-gray-400">
-              r/
-            </span>
-            announcements
-          </a>
-        </li>
-        <li>
-          <a class="flex items-center gap-2 hover:text-gray-900" href="#">
-            <span class="text-xs text-gray-400">
-              r/
-            </span>
-            confessions
-          </a>
-        </li>
-      </ul>
-    </div>
-  </aside>
-  <main class="flex-1 flex flex-col min-h-screen overflow-y-auto">
-    <header class="flex items-center justify-between border-b border-gray-200 px-4 py-2">
-      <div class="flex items-center gap-3">
-        <button class="md:hidden text-gray-600 hover:text-gray-900">
-          <i class="fas fa-bars fa-lg">
-          </i>
-        </button>
-        <a class="flex items-center gap-2 text-orange-500 font-bold text-xl" href="#">
-          <i class="fab fa-reddit">
-          </i>
-          reddit
-        </a>
-      </div>
-      <div class="flex-1 max-w-xl mx-4 hidden sm:block">
-        <div class="relative">
-          <input
-            class="w-full rounded-full border border-gray-300 bg-gray-100 py-2 pl-10 pr-4 text-sm placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent"
-            placeholder="Search Reddit" type="search" />
-          <i class="fas fa-search absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">
-          </i>
-        </div>
-      </div>
-      <div class="flex items-center gap-4 text-gray-600">
-        <button class="hidden sm:flex items-center gap-1 hover:text-gray-900">
-          <i class="fas fa-ellipsis-h">
-          </i>
-        </button>
-        <button class="hidden sm:flex items-center gap-1 hover:text-gray-900">
-          <i class="fas fa-bell">
-          </i>
-        </button>
-        <button class="hidden sm:flex items-center gap-1 hover:text-gray-900">
-          <i class="fas fa-plus">
-          </i>
-          <span class="hidden md:inline">
-            Create
-          </span>
-        </button>
-        <button class="flex items-center gap-1 hover:text-gray-900">
-          <img alt="User avatar with a red background and white letter U"
-            class="rounded-full max-w-full h-auto"
-            src="https://storage.googleapis.com/a1aa/image/89278c64-bfcb-4ef4-1ca9-fce69b9d6d53.jpg"
-            style="width:24px" />
-        </button>
-      </div>
-    </header>
-    <nav class="flex flex-wrap gap-2 border-b border-gray-200 px-4 py-2 text-sm text-gray-600">
-      <button
-        class="flex items-center gap-1 rounded-full border border-gray-300 px-3 py-1 hover:bg-gray-100 whitespace-nowrap">
-        <i class="fas fa-home">
-        </i>
-        Home
-      </button>
-      <button
-        class="flex items-center gap-1 rounded-full border border-gray-300 px-3 py-1 bg-gray-100 text-gray-900 font-semibold whitespace-nowrap">
-        Popular
-      </button>
-      <button
-        class="flex items-center gap-1 rounded-full border border-gray-300 px-3 py-1 hover:bg-gray-100 whitespace-nowrap">
-        All
-      </button>
-      <button
-        class="flex items-center gap-1 rounded-full border border-gray-300 px-3 py-1 hover:bg-gray-100 whitespace-nowrap">
-        News
-      </button>
-      <button
-        class="flex items-center gap-1 rounded-full border border-gray-300 px-3 py-1 hover:bg-gray-100 whitespace-nowrap">
-        Sports
-      </button>
-      <button
-        class="flex items-center gap-1 rounded-full border border-gray-300 px-3 py-1 hover:bg-gray-100 whitespace-nowrap">
-        Gaming
-      </button>
-      <button
-        class="flex items-center gap-1 rounded-full border border-gray-300 px-3 py-1 hover:bg-gray-100 whitespace-nowrap">
-        Movies &amp; TV
-      </button>
-      <button
-        class="flex items-center gap-1 rounded-full border border-gray-300 px-3 py-1 hover:bg-gray-100 whitespace-nowrap">
-        Aww
-      </button>
-      <button
-        class="flex items-center gap-1 rounded-full border border-gray-300 px-3 py-1 hover:bg-gray-100 whitespace-nowrap">
-        Showerthoughts
-      </button>
-      <button
-        class="flex items-center gap-1 rounded-full border border-gray-300 px-3 py-1 hover:bg-gray-100 whitespace-nowrap">
-        Music
-      </button>
-      <button
-        class="flex items-center gap-1 rounded-full border border-gray-300 px-3 py-1 hover:bg-gray-100 whitespace-nowrap">
-        Art
-      </button>
-      <button
-        class="flex items-center gap-1 rounded-full border border-gray-300 px-3 py-1 hover:bg-gray-100 whitespace-nowrap">
-        Science
-      </button>
-      <button
-        class="flex items-center gap-1 rounded-full border border-gray-300 px-3 py-1 hover:bg-gray-100 whitespace-nowrap">
-        Food
-      </button>
-      <button
-        class="flex items-center gap-1 rounded-full border border-gray-300 px-3 py-1 hover:bg-gray-100 whitespace-nowrap">
-        History
-      </button>
-      <button
-        class="flex items-center gap-1 rounded-full border border-gray-300 px-3 py-1 hover:bg-gray-100 whitespace-nowrap">
-        Space
-      </button>
-    </nav>
-    <section class="flex-1 overflow-y-auto px-4 py-4 space-y-8 max-w-3xl mx-auto">
-      <article class="border border-gray-200 rounded-md p-4 space-y-3">
-        <header class="flex items-center gap-2 text-xs text-gray-500">
-          <img alt="User avatar with a red background and white letter U"
-            class="rounded-full max-w-full h-auto"
-            src="https://storage.googleapis.com/a1aa/image/89278c64-bfcb-4ef4-1ca9-fce69b9d6d53.jpg"
-            style="width:20px" />
-          <span class="font-semibold text-gray-900">
-            u/oneone
-          </span>
-          <span>
-            • 3.1k upvotes
-          </span>
-          <span>
-            • 1.1k comments
-          </span>
-          <span>
-            • 1h ago
-          </span>
-        </header>
-        <p class="text-sm text-gray-900">
-          People living within a mile of a golf course had more than twice the odds of Parkinson’s disease.
-          The risk remained higher for people living up to three miles away but fades after that. Pesticides,
-          including neurotoxins, used to keep fairways and greens well groomed, have been linked to
-          Parkinson’s.
-        </p>
-        <a class="text-xs text-blue-600 break-words"
-          href="http://www.psychiatrist.com/news/golf-course-living-linked-to-higher-parkinson-risk/"
-          target="_blank">
-          http://www.psychiatrist.com/news/golf-course-living-linked-to-higher-parkinson-risk/
-        </a>
-        <div class="flex items-center gap-6 text-xs text-gray-500">
-          <button class="flex items-center gap-1 hover:text-gray-900">
-            <i class="far fa-arrow-alt-circle-up">
-            </i>
-            22k
-          </button>
-          <button class="flex items-center gap-1 hover:text-gray-900">
-            <i class="far fa-comment">
-            </i>
-            1.1k
-          </button>
-          <button class="flex items-center gap-1 hover:text-gray-900">
-            <i class="fas fa-share">
-            </i>
-            Share
-          </button>
-        </div>
-      </article>
-      <article class="border border-gray-200 rounded-md p-4 space-y-3">
-        <header class="flex items-center gap-2 text-xs text-gray-500">
-          <img alt="User avatar with a red background and white letter U"
-            class="rounded-full max-w-full h-auto"
-            src="https://storage.googleapis.com/a1aa/image/89278c64-bfcb-4ef4-1ca9-fce69b9d6d53.jpg"
-            style="width:20px" />
-          <span class="font-semibold text-gray-900">
-            u/username
-          </span>
-          <span>
-            • 3.1k upvotes
-          </span>
-          <span>
-            • 1.1k comments
-          </span>
-          <span>
-            • 1h ago
-          </span>
-        </header>
-        <p class="text-sm text-gray-900">
-          Alerts should help you, not send you into an existential spiral. Learn how to debug your mobile app
-          without the nonsense in this upcoming workshop.
-        </p>
-        <img alt="Workshop banner with purple gradient background, text: Mobile App Monitoring Platforms Don't Have To Be Noisy, Cody De Arkland Head of Developer Experience, Sentry, RSVP NOW button"
-          class="w-full rounded-md h-auto"
-          src="https://storage.googleapis.com/a1aa/image/08c88ce4-197e-4fb5-8998-90dfe7da8863.jpg" />
-        <div class="flex items-center gap-6 text-xs text-gray-500">
-          <button class="flex items-center gap-1 hover:text-gray-900">
-            <i class="far fa-arrow-alt-circle-up">
-            </i>
-            0
-          </button>
-          <button class="flex items-center gap-1 hover:text-gray-900">
-            <i class="fas fa-share">
-            </i>
-            Share
-          </button>
-          <button
-            class="ml-auto rounded border border-gray-300 px-2 py-0.5 text-xs font-semibold hover:bg-gray-100">
-            Sign Up
-          </button>
-        </div>
-      </article>
-      <article class="border border-gray-200 rounded-md p-4 space-y-3">
-        <header class="flex items-center gap-2 text-xs text-gray-500">
-          <img alt="User avatar with a red background and white letter U"
-            class="rounded-full max-w-full h-auto"
-            src="https://storage.googleapis.com/a1aa/image/89278c64-bfcb-4ef4-1ca9-fce69b9d6d53.jpg"
-            style="width:20px" />
-          <span class="font-semibold text-gray-900">
-            u/programmerhumor
-          </span>
-          <span>
-            • 3.7k upvotes
-          </span>
-          <span>
-            • 1.1k comments
-          </span>
-          <span>
-            • 1h ago
-          </span>
-        </header>
-        <p class="text-sm text-gray-900">
-          what todo
-        </p>
-        <img alt="Cartoon man with worried face and text about project completion and boss"
-          class="w-full rounded-md h-auto"
-          src="https://storage.googleapis.com/a1aa/image/04a1bbb6-fdd8-4490-d91b-4572de164a53.jpg" />
-        <div class="flex items-center gap-6 text-xs text-gray-500">
-          <button class="flex items-center gap-1 hover:text-gray-900">
-            <i class="far fa-arrow-alt-circle-up">
-            </i>
-            4.3k
-          </button>
-          <button class="flex items-center gap-1 hover:text-gray-900">
-            <i class="far fa-comment">
-            </i>
-            170
-          </button>
-          <button class="flex items-center gap-1 hover:text-gray-900">
-            <i class="fas fa-share">
-            </i>
-            Share
-          </button>
-        </div>
-      </article>
-      <article class="border border-gray-200 rounded-md p-4 space-y-3">
-        <header class="flex items-center gap-2 text-xs text-gray-500">
-          <img alt="User avatar with a red background and white letter U"
-            class="rounded-full max-w-full h-auto"
-            src="https://storage.googleapis.com/a1aa/image/89278c64-bfcb-4ef4-1ca9-fce69b9d6d53.jpg"
-            style="width:20px" />
-          <span class="font-semibold text-gray-900">
-            u/pics
-          </span>
-          <span>
-            • 3.7k upvotes
-          </span>
-          <span>
-            • 1.1k comments
-          </span>
-          <span>
-            • 1h ago
-          </span>
-        </header>
-        <p class="text-xs text-gray-600">
-          "Angels Unaware" boat in Vatican depicting 140 migrants fleeing war, commissioned by Pope Francis(†)
-        </p>
-        <img alt="Bronze sculpture of people on a boat in Vatican with columns in background"
-          class="w-full rounded-md h-auto"
-          src="https://storage.googleapis.com/a1aa/image/489ae379-27e8-4c57-f0c1-84cccb4c22d8.jpg" />
-        <div class="flex items-center gap-6 text-xs text-gray-500">
-          <button class="flex items-center gap-1 hover:text-gray-900">
-            <i class="far fa-arrow-alt-circle-up">
-            </i>
-            11k
-          </button>
-          <button class="flex items-center gap-1 hover:text-gray-900">
-            <i class="far fa-comment">
-            </i>
-            142
-          </button>
-          <button class="flex items-center gap-1 hover:text-gray-900">
-            <i class="fas fa-share">
-            </i>
-            Share
-          </button>
-        </div>
-      </article>
-      <article class="border border-gray-200 rounded-md p-4 space-y-3">
-        <header class="flex items-center gap-2 text-xs text-gray-500">
-          <span class="font-semibold text-gray-900">Dummy Post</span>
-        </header>
-        <p class="text-sm text-gray-900">This is some dummy content to make the page scrollable.</p>
-      </article>
-      <article class="border border-gray-200 rounded-md p-4 space-y-3">
-        <header class="flex items-center gap-2 text-xs text-gray-500">
-          <span class="font-semibold text-gray-900">Dummy Post</span>
-        </header>
-        <p class="text-sm text-gray-900">This is some dummy content to make the page scrollable.</p>
-      </article>
-      <article class="border border-gray-200 rounded-md p-4 space-y-3">
-        <header class="flex items-center gap-2 text-xs text-gray-500">
-          <span class="font-semibold text-gray-900">Dummy Post</span>
-        </header>
-        <p class="text-sm text-gray-900">This is some dummy content to make the page scrollable.</p>
-      </article>
-      <article class="border border-gray-200 rounded-md p-4 space-y-3">
-        <header class="flex items-center gap-2 text-xs text-gray-500">
-          <span class="font-semibold text-gray-900">Dummy Post</span>
-        </header>
-        <p class="text-sm text-gray-900">This is some dummy content to make the page scrollable.</p>
-      </article>
-      <article class="border border-gray-200 rounded-md p-4 space-y-3">
-        <header class="flex items-center gap-2 text-xs text-gray-500">
-          <span class="font-semibold text-gray-900">Dummy Post</span>
-        </header>
-        <p class="text-sm text-gray-900">This is some dummy content to make the page scrollable.</p>
-      </article>
-      <article class="border border-gray-200 rounded-md p-4 space-y-3">
-        <header class="flex items-center gap-2 text-xs text-gray-500">
-          <span class="font-semibold text-gray-900">Dummy Post</span>
-        </header>
-        <p class="text-sm text-gray-900">This is some dummy content to make the page scrollable.</p>
-      </article>
-      <article class="border border-gray-200 rounded-md p-4 space-y-3">
-        <header class="flex items-center gap-2 text-xs text-gray-500">
-          <span class="font-semibold text-gray-900">Dummy Post</span>
-        </header>
-        <p class="text-sm text-gray-900">This is some dummy content to make the page scrollable.</p>
-      </article>
-      <article class="border border-gray-200 rounded-md p-4 space-y-3">
-        <header class="flex items-center gap-2 text-xs text-gray-500">
-          <span class="font-semibold text-gray-900">Dummy Post</span>
-        </header>
-        <p class="text-sm text-gray-900">This is some dummy content to make the page scrollable.</p>
-      </article>
-      <div class="flex justify-center py-6">
-        <img alt="Reddit logo orange smiling alien face" class="max-w-full h-auto"
-          src="https://storage.googleapis.com/a1aa/image/f06d9541-a044-4955-d0bf-af45cad5aa4a.jpg"
-          style="width:40px" />
-      </div>
-    </section>
-  </main>
-</div>
+  </aside> -->
+
+
+</main>

@@ -1,0 +1,4 @@
+.active {
+  background-color: #e5e7eb; /* Tương ứng với bg-gray-200 */
+  font-weight: 600; /* Tương ứng với font-semibold */
+}

@@ -1,0 +1,433 @@
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>
+   Reddit MaliciousCompliance
+  </title>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&amp;display=swap" rel="stylesheet"/>
+  <style>
+   body {
+      font-family: 'IBM Plex Sans', sans-serif;
+    }
+  </style>
+ </head>
+ <body class="bg-white text-gray-900">
+  <!-- Top Navbar -->
+  <header class="flex items-center justify-between px-4 py-2 border-b border-gray-200 sticky top-0 bg-white z-50">
+   <div class="flex items-center space-x-2">
+    <img alt="Reddit logo stylized R in orange circle" class="w-6 h-6" height="24" src="https://storage.googleapis.com/a1aa/image/b702af1c-3ffb-4522-f9a8-615066d5d39b.jpg" width="24"/>
+    <span class="text-2xl font-extrabold text-[#FF4500] select-none">
+     reddit
+    </span>
+   </div>
+   <form aria-label="Search Reddit" class="flex items-center flex-1 max-w-2xl mx-4 bg-gray-100 rounded-full px-3 py-1" role="search">
+    <button class="text-gray-500 pr-2" type="submit">
+     <i class="fas fa-search">
+     </i>
+    </button>
+    <div class="flex items-center bg-gray-700 text-white rounded-full px-2 py-0.5 text-xs font-semibold mr-2 select-none">
+     <span class="mr-1 font-bold">
+      r/
+     </span>
+     MaliciousCompliance
+     <button aria-label="Remove subreddit filter" class="ml-1 text-gray-300 hover:text-white focus:outline-none" type="button">
+      <i class="fas fa-times">
+      </i>
+     </button>
+    </div>
+    <input aria-label="Search in r/MaliciousCompliance" class="bg-transparent placeholder-gray-500 focus:outline-none flex-grow text-sm" placeholder="Search in r/MaliciousCompliance" type="search"/>
+   </form>
+   <div class="flex items-center space-x-4 text-gray-600 text-lg">
+    <button aria-label="View Reddit Ads" class="hover:text-gray-900">
+     <i class="fas fa-ad">
+     </i>
+    </button>
+    <button aria-label="Chat" class="hover:text-gray-900">
+     <i class="far fa-comment-alt">
+     </i>
+    </button>
+    <button aria-label="Create Post" class="hover:text-gray-900">
+     <i class="fas fa-plus">
+     </i>
+    </button>
+    <button aria-label="Notifications" class="relative hover:text-gray-900">
+     <i class="far fa-bell">
+     </i>
+     <span class="absolute -top-1 -right-1 bg-red-600 text-white text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center">
+      2
+     </span>
+    </button>
+    <img alt="User avatar with brown hair and glasses" class="w-8 h-8 rounded-full border border-gray-300" height="32" src="https://storage.googleapis.com/a1aa/image/6704ec05-e25c-4a27-ee2e-2d8617117bd3.jpg" width="32"/>
+   </div>
+  </header>
+  <main class="flex min-h-screen">
+   <!-- Left Sidebar -->
+   <aside aria-label="Sidebar navigation" class="hidden md:flex flex-col w-56 border-r border-gray-200 px-4 py-6 space-y-8">
+    <nav class="space-y-4">
+     <ul class="space-y-4 text-gray-700 text-sm font-normal">
+      <li class="flex items-center space-x-3 cursor-pointer hover:bg-gray-100 rounded-md px-2 py-1">
+       <i class="fas fa-home text-lg">
+       </i>
+       <span>
+        Home
+       </span>
+      </li>
+      <li class="flex items-center space-x-3 cursor-pointer hover:bg-gray-100 rounded-md px-2 py-1">
+       <i class="fas fa-arrow-trend-up text-lg">
+       </i>
+       <span>
+        Popular
+       </span>
+      </li>
+      <li class="flex items-center space-x-3 cursor-pointer hover:bg-gray-100 rounded-md px-2 py-1">
+       <i class="fas fa-compass text-lg">
+       </i>
+       <span>
+        Explore
+       </span>
+      </li>
+      <li class="flex items-center space-x-3 cursor-pointer hover:bg-gray-100 rounded-md px-2 py-1">
+       <i class="fas fa-chart-bar text-lg">
+       </i>
+       <span>
+        All
+       </span>
+      </li>
+     </ul>
+    </nav>
+    <section>
+     <h3 class="text-xs text-gray-400 uppercase tracking-widest mb-3 select-none">
+      Custom Feeds
+     </h3>
+     <button aria-label="Create a custom feed" class="flex items-center space-x-2 text-gray-700 text-sm font-normal hover:bg-gray-100 rounded-md px-2 py-1 w-full">
+      <i class="fas fa-plus text-base">
+      </i>
+      <span>
+       Create a custom feed
+      </span>
+     </button>
+    </section>
+    <section>
+     <h3 class="text-xs text-gray-400 uppercase tracking-widest mb-3 select-none">
+      Recent
+     </h3>
+     <ul class="space-y-3 text-sm text-gray-700 font-normal">
+      <li class="flex items-center space-x-2 cursor-pointer hover:bg-gray-100 rounded-md px-2 py-1">
+       <img alt="Circle with r/ in white on dark background" class="w-6 h-6 rounded-full" height="24" src="https://storage.googleapis.com/a1aa/image/5080b8a3-0923-4735-d344-2ae5fd45ab14.jpg" width="24"/>
+       <span class="truncate max-w-[140px]">
+        r/MaliciousCompli...
+       </span>
+      </li>
+      <li class="flex items-center space-x-2 cursor-pointer hover:bg-gray-100 rounded-md px-2 py-1">
+       <img alt="Red ant icon on white background" class="w-6 h-6 rounded-full" height="24" src="https://storage.googleapis.com/a1aa/image/1e08b81b-3f3f-42ec-ab28-9213151368e4.jpg" width="24"/>
+       <span>
+        r/AskMen
+       </span>
+      </li>
+      <li class="flex items-center space-x-2 cursor-pointer hover:bg-gray-100 rounded-md px-2 py-1">
+       <img alt="Circle with r/ in white on dark background" class="w-6 h-6 rounded-full" height="24" src="https://storage.googleapis.com/a1aa/image/5080b8a3-0923-4735-d344-2ae5fd45ab14.jpg" width="24"/>
+       <span class="truncate max-w-[140px]">
+        r/BestofRedditorUpd...
+       </span>
+      </li>
+      <li class="flex items-center space-x-2 cursor-pointer hover:bg-gray-100 rounded-md px-2 py-1">
+       <img alt="Blue fish icon on dark background" class="w-6 h-6 rounded-full" height="24" src="https://storage.googleapis.com/a1aa/image/965f7044-591e-41b0-ac7b-8b80b42db86f.jpg" width="24"/>
+       <span>
+        r/stocks
+       </span>
+      </li>
+      <li class="flex items-center space-x-2 cursor-pointer hover:bg-gray-100 rounded-md px-2 py-1">
+       <img alt="Black bird icon on dark background" class="w-6 h-6 rounded-full" height="24" src="https://storage.googleapis.com/a1aa/image/428bdecc-55f4-4bb2-d85f-ce05e6a0ca06.jpg" width="24"/>
+       <span>
+        r/vozforums
+       </span>
+      </li>
+     </ul>
+    </section>
+    <section>
+     <h3 class="text-xs text-gray-400 uppercase tracking-widest mb-3 select-none">
+      Communities
+     </h3>
+     <button aria-label="Create a community" class="flex items-center space-x-2 text-gray-700 text-sm font-normal hover:bg-gray-100 rounded-md px-2 py-1 w-full">
+      <i class="fas fa-plus text-base">
+      </i>
+      <span>
+       Create a community
+      </span>
+     </button>
+     <ul class="mt-3 space-y-3 text-sm text-gray-700 font-normal">
+      <li class="flex items-center space-x-2 cursor-pointer hover:bg-gray-100 rounded-md px-2 py-1">
+       <img alt="Red circle with white R letter" class="w-6 h-6 rounded-full" height="24" src="https://storage.googleapis.com/a1aa/image/b718ef9a-323b-4808-068d-490110475270.jpg" width="24"/>
+       <span class="truncate max-w-[140px]">
+        r/announcemen...
+       </span>
+       <i class="far fa-star text-gray-400">
+       </i>
+      </li>
+     </ul>
+    </section>
+   </aside>
+   <!-- Main Content -->
+   <section class="flex-1 max-w-4xl px-6 py-6">
+    <div class="bg-gray-100 rounded-md h-12 mb-4">
+    </div>
+    <header class="flex items-center justify-between mb-6">
+     <div class="flex items-center space-x-4">
+      <img alt="Dark circle with white r/ text" class="w-14 h-14 rounded-full" height="56" src="https://storage.googleapis.com/a1aa/image/4196b15f-b2ad-4b96-b61e-ee3a40312deb.jpg" width="56"/>
+      <h1 class="text-2xl font-extrabold flex items-center space-x-2">
+       <span>
+        r/MaliciousCompliance
+       </span>
+       <img alt="Ghost emoji" class="w-6 h-6" height="24" src="https://storage.googleapis.com/a1aa/image/c97dbac9-c937-4ff2-5852-48221a1e01d1.jpg" width="24"/>
+      </h1>
+     </div>
+     <div class="flex items-center space-x-3 text-sm font-semibold">
+      <button class="flex items-center space-x-2 border border-gray-300 rounded-full px-4 py-2 hover:bg-gray-200">
+       <i class="fas fa-plus">
+       </i>
+       <span>
+        Create Post
+       </span>
+      </button>
+      <button aria-label="Notifications" class="border border-gray-300 rounded-full p-2 hover:bg-gray-200">
+       <i class="far fa-bell">
+       </i>
+      </button>
+      <button class="border border-gray-300 rounded-full px-4 py-2 hover:bg-gray-200">
+       Joined
+      </button>
+      <button aria-label="More options" class="border border-gray-300 rounded-full p-2 hover:bg-gray-200">
+       <i class="fas fa-ellipsis-h">
+       </i>
+      </button>
+     </div>
+    </header>
+    <div class="flex items-center space-x-4 text-sm text-gray-700 mb-4">
+     <button class="flex items-center space-x-1 hover:text-gray-900">
+      <span>
+       Best
+      </span>
+      <i class="fas fa-caret-down">
+      </i>
+     </button>
+     <button class="flex items-center space-x-1 hover:text-gray-900">
+      <i class="far fa-th-large">
+      </i>
+     </button>
+    </div>
+    <!-- Post 1 -->
+    <article aria-label="Post by u/Lucy_Bloom45" class="mb-6 border-b border-gray-200 pb-4">
+     <header class="flex items-center space-x-2 text-xs text-gray-500 mb-1">
+      <img alt="Yellow circle with user icon" class="w-5 h-5 rounded-full" height="20" src="https://storage.googleapis.com/a1aa/image/9223fc31-72ec-4750-90e9-0610992617d4.jpg" width="20"/>
+      <span class="font-semibold text-black">
+       u/Lucy_Bloom45
+      </span>
+      <span>
+       • 2 days ago
+      </span>
+      <button aria-label="More options" class="ml-auto text-gray-400 hover:text-gray-600">
+       <i class="fas fa-ellipsis-h">
+       </i>
+      </button>
+     </header>
+     <h2 class="font-bold text-base mb-1">
+      You want every mail printed and handed to you? Sure thing, boss
+     </h2>
+     <p class="text-sm text-gray-800 leading-relaxed">
+      I used to work for a middle manager who hated reading emails. Every
+          time we’d send project updates or questions, he’d ignore them. When
+          called out on it, he loudly declared, “If it’s important, PRINT IT and
+          hand it to me. I don’t read emails!” Alrighty then. Cue the malicious
+          compliance. I printed every single email I sent him—reminders, client
+          follow-ups, even memes someone accidentally CC’d me on. I’d walk over
+          to his desk 6–8 times a day with a mini stack of paper like, “Per your
+          request!” Within a week, his desk looked like a filing cabinet
+          exploded. He couldn’t find anything. He started snapping, “Why are you
+          printing all this!?” I smiled sweetly and...
+     </p>
+     <div class="flex items-center space-x-3 mt-3 text-gray-600 text-xs font-semibold">
+      <button aria-label="Upvote" class="flex items-center space-x-1 bg-gray-200 rounded-full px-3 py-1 hover:bg-gray-300">
+       <i class="fas fa-arrow-up">
+       </i>
+       <span>
+        9.5K
+       </span>
+      </button>
+      <button aria-label="Downvote" class="flex items-center space-x-1 bg-gray-200 rounded-full px-3 py-1 hover:bg-gray-300">
+       <i class="fas fa-arrow-down">
+       </i>
+      </button>
+      <button aria-label="Comments" class="flex items-center space-x-1 bg-gray-200 rounded-full px-3 py-1 hover:bg-gray-300">
+       <i class="far fa-comment">
+       </i>
+       <span>
+        299
+       </span>
+      </button>
+      <button aria-label="Award" class="flex items-center space-x-1 bg-gray-200 rounded-full px-3 py-1 hover:bg-gray-300">
+       <i class="fas fa-award">
+       </i>
+      </button>
+      <button aria-label="Share" class="flex items-center space-x-1 bg-gray-200 rounded-full px-3 py-1 hover:bg-gray-300">
+       <i class="fas fa-share">
+       </i>
+       <span>
+        Share
+       </span>
+      </button>
+     </div>
+    </article>
+    <!-- Post 2 -->
+    <article aria-label="Promoted post by u/RevokeEth" class="mb-6 border-b border-gray-200 pb-4">
+     <header class="flex items-center space-x-2 text-xs text-gray-500 mb-1">
+      <img alt="Orange circle with r letter" class="w-5 h-5 rounded-full" height="20" src="https://storage.googleapis.com/a1aa/image/1b4054bc-3297-4023-46ff-261855e75fc3.jpg" width="20"/>
+      <span class="font-semibold text-black">
+       u/RevokeEth
+      </span>
+      <span>
+       • Promoted
+      </span>
+      <button aria-label="More options" class="ml-auto text-gray-400 hover:text-gray-600">
+       <i class="fas fa-ellipsis-h">
+       </i>
+      </button>
+     </header>
+     <h2 class="font-bold text-base mb-1 leading-snug">
+      <span class="mr-1">
+       🚨
+      </span>
+      A victim lost $329,743 ETH due to a phishing
+          approval signed 408 days ago.
+      <span class="mr-1">
+       🔐
+      </span>
+      <br/>
+      <strong>
+       REMINDER: Regularly review and revoke old approvals,
+      </strong>
+      <span class="mr-1">
+       🔍
+      </span>
+      Check https://revokecash.io and revoke old
+          approvals.
+     </h2>
+     <img alt="Screenshot showing phishing approval details with success badge and block confirmations" class="rounded-md border border-gray-300 mt-2" height="300" src="https://storage.googleapis.com/a1aa/image/33a31bd2-d192-498f-55ba-2eeb472f8871.jpg" width="600"/>
+    </article>
+   </section>
+   <!-- Right Sidebar -->
+   <aside aria-label="Right sidebar" class="hidden xl:flex flex-col w-72 border-l border-gray-200 px-4 py-6 space-y-6 text-xs text-gray-600">
+    <div>
+     <div class="mb-2 font-semibold text-gray-400 uppercase tracking-widest select-none">
+      Comments must forward the discussion.
+     </div>
+     <button aria-controls="comment-rule-1" aria-expanded="false" class="flex justify-between w-full text-left hover:text-gray-900">
+      <span>
+       5
+      </span>
+      <i class="fas fa-chevron-down">
+      </i>
+     </button>
+    </div>
+    <div>
+     <div class="mb-2 font-semibold text-gray-400 uppercase tracking-widest select-none">
+      Compliance must be intentional.
+     </div>
+     <button aria-controls="comment-rule-2" aria-expanded="false" class="flex justify-between w-full text-left hover:text-gray-900">
+      <span>
+       6
+      </span>
+      <i class="fas fa-chevron-down">
+      </i>
+     </button>
+    </div>
+    <div>
+     <div class="mb-2 font-semibold text-gray-400 uppercase tracking-widest select-none">
+      Include the fallout.
+     </div>
+     <button aria-controls="comment-rule-3" aria-expanded="false" class="flex justify-between w-full text-left hover:text-gray-900">
+      <span>
+       7
+      </span>
+      <i class="fas fa-chevron-down">
+      </i>
+     </button>
+    </div>
+    <div>
+     <div class="mb-2 font-semibold text-gray-400 uppercase tracking-widest select-none">
+      No Acronyms As Names.
+     </div>
+     <button aria-controls="comment-rule-4" aria-expanded="false" class="flex justify-between w-full text-left hover:text-gray-900">
+      <span>
+       8
+      </span>
+      <i class="fas fa-chevron-down">
+      </i>
+     </button>
+    </div>
+    <div class="text-gray-400 uppercase tracking-widest font-semibold text-[10px] select-none">
+     Moderators
+    </div>
+    <button class="flex items-center space-x-2 bg-gray-200 rounded-full px-4 py-2 w-full text-xs font-semibold">
+     <i class="far fa-envelope">
+     </i>
+     <span>
+      Message Mods
+     </span>
+    </button>
+    <ul class="space-y-3 text-gray-700 text-sm font-normal">
+     <li class="flex items-center space-x-2">
+      <img alt="Green turtle avatar" class="w-6 h-6 rounded-full" height="24" src="https://storage.googleapis.com/a1aa/image/15e1b36a-267e-4ab7-adff-a846d1a0b51f.jpg" width="24"/>
+      <span>
+       u/Not_An_Ambulance
+      </span>
+      <span class="bg-gray-300 text-gray-600 rounded-full px-2 py-0.5 text-[10px] font-semibold select-none">
+       Mastermind
+      </span>
+     </li>
+     <li class="flex items-center space-x-2">
+      <img alt="Blue cap avatar" class="w-6 h-6 rounded-full" height="24" src="https://storage.googleapis.com/a1aa/image/39e51f3a-1df9-45df-d538-d3d25c2091d2.jpg" width="24"/>
+      <span>
+       u/OmgitsRoxieFoxie
+      </span>
+     </li>
+     <li class="flex items-center space-x-2">
+      <img alt="Teal unicorn avatar" class="w-6 h-6 rounded-full" height="24" src="https://storage.googleapis.com/a1aa/image/494c815c-0be4-4730-13ab-f937cbc58138.jpg" width="24"/>
+      <span>
+       u/hexagon_lux
+      </span>
+      <span class="bg-gray-300 text-gray-600 rounded-full px-2 py-0.5 text-[10px] font-semibold select-none">
+       cue MC
+      </span>
+     </li>
+     <li class="flex items-center space-x-2">
+      <img alt="Brown wave avatar" class="w-6 h-6 rounded-full" height="24" src="https://storage.googleapis.com/a1aa/image/876e6a53-3911-41e7-be98-f84647a6d86a.jpg" width="24"/>
+      <div class="flex flex-col text-xs leading-tight">
+       <span>
+        u/MicrosoftSupport
+       </span>
+       <span class="text-gray-400">
+        MicrosCoft Support Jr.VII
+       </span>
+      </div>
+     </li>
+     <li class="flex items-center space-x-2">
+      <img alt="Panda avatar" class="w-6 h-6 rounded-full" height="24" src="https://storage.googleapis.com/a1aa/image/6c1f08e3-83f6-4603-d386-538ca55f9662.jpg" width="24"/>
+      <span>
+       u/Whenitrainsitpours86
+      </span>
+     </li>
+     <li class="flex items-center space-x-2">
+      <img alt="Yellow circle with user icon" class="w-6 h-6 rounded-full" height="24" src="https://storage.googleapis.com/a1aa/image/9223fc31-72ec-4750-90e9-0610992617d4.jpg" width="24"/>
+      <span>
+       u/zephen_just_zephen
+      </span>
+     </li>
+    </ul>
+   </aside>
+  </main>
+ </body>
+</html>

@@ -1,0 +1,502 @@
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>
+   Reddit Explore Communities
+  </title>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+  <style>
+   body {
+      font-family: 'Inter', sans-serif;
+    }
+  </style>
+ </head>
+ <body class="bg-white text-gray-900">
+  <header class="flex items-center justify-between px-4 py-2 border-b border-gray-200 sticky top-0 bg-white z-30">
+   <div class="flex items-center space-x-2">
+    <img alt="Reddit logo, a white smiling alien face with orange background" class="w-6 h-6" height="24" src="https://storage.googleapis.com/a1aa/image/0bfcd89d-4a3f-43cc-6f98-3fb8f83eca5e.jpg" width="24"/>
+    <span class="text-2xl font-extrabold text-[#FF4500] select-none">
+     reddit
+    </span>
+   </div>
+   <form class="flex-grow max-w-xl mx-4 hidden sm:block">
+    <label class="sr-only" for="search">
+     Search Reddit
+    </label>
+    <input class="w-full rounded-full bg-gray-100 text-gray-700 placeholder-gray-400 text-sm py-2 px-4 focus:outline-none focus:ring-2 focus:ring-[#0079d3]" id="search" placeholder="Search Reddit" type="search"/>
+   </form>
+   <nav class="flex items-center space-x-4 text-gray-700 text-sm">
+    <button aria-label="Ad" class="p-1 rounded hover:bg-gray-100">
+     <span class="border border-gray-700 text-[10px] font-bold px-1.5 py-[1px] rounded">
+      AD
+     </span>
+    </button>
+    <button aria-label="Chat" class="p-1 rounded hover:bg-gray-100">
+     <i class="far fa-comment-alt fa-lg">
+     </i>
+    </button>
+    <button aria-label="Create" class="flex items-center space-x-1 font-semibold hover:underline hidden sm:flex">
+     <i class="fas fa-plus fa-sm">
+     </i>
+     <span>
+      Create
+     </span>
+    </button>
+    <button aria-label="Notifications" class="relative p-1 rounded hover:bg-gray-100">
+     <i class="far fa-bell fa-lg">
+     </i>
+     <span class="absolute -top-1 -right-1 bg-[#FF4500] text-white text-[10px] font-bold rounded-full w-4 h-4 flex items-center justify-center">
+      2
+     </span>
+    </button>
+    <button aria-label="User profile" class="rounded-full overflow-hidden border border-gray-300 w-8 h-8">
+     <img alt="User profile avatar, cartoon character with blonde hair and glasses" class="w-full h-full object-cover" height="32" src="https://storage.googleapis.com/a1aa/image/6c258394-2365-4d65-5a31-451f27dc1e94.jpg" width="32"/>
+    </button>
+   </nav>
+  </header>
+  <main class="flex flex-col sm:flex-row min-h-screen">
+   <!-- Sidebar -->
+   <aside class="w-full sm:w-64 border-r border-gray-200 flex flex-col px-4 py-4 sm:py-6 space-y-6 sticky top-[48px] h-auto sm:h-[calc(100vh-48px)] overflow-y-auto bg-white">
+    <nav class="space-y-1 flex sm:block justify-around sm:justify-start">
+     <a class="flex items-center space-x-2 text-gray-900 font-normal hover:bg-gray-100 rounded-md px-3 py-2 sm:px-3 sm:py-2" href="#">
+      <i class="fas fa-home fa-lg w-5 text-center">
+      </i>
+      <span class="text-sm hidden sm:inline">
+       Home
+      </span>
+     </a>
+     <a class="flex items-center space-x-2 text-gray-900 font-normal hover:bg-gray-100 rounded-md px-3 py-2 sm:px-3 sm:py-2" href="#">
+      <i class="fas fa-arrow-up-right-from-square fa-lg w-5 text-center">
+      </i>
+      <span class="text-sm hidden sm:inline">
+       Popular
+      </span>
+     </a>
+     <a class="flex items-center space-x-2 bg-gray-200 rounded-md px-3 py-2 cursor-default sm:px-3 sm:py-2" href="#">
+      <div class="w-5 h-5 flex items-center justify-center rounded-full bg-gray-900 text-white text-xs font-bold select-none">
+       <i class="fas fa-user-friends">
+       </i>
+      </div>
+      <span class="text-sm font-semibold hidden sm:inline">
+       Explore
+      </span>
+     </a>
+     <a class="flex items-center space-x-2 text-gray-900 font-normal hover:bg-gray-100 rounded-md px-3 py-2 sm:px-3 sm:py-2" href="#">
+      <i class="fas fa-chart-bar fa-lg w-5 text-center">
+      </i>
+      <span class="text-sm hidden sm:inline">
+       All
+      </span>
+     </a>
+    </nav>
+    <section>
+     <h3 class="text-xs font-semibold text-gray-400 uppercase tracking-widest mb-2 select-none hidden sm:block">
+      Custom Feeds
+     </h3>
+     <button class="flex items-center space-x-2 text-gray-900 font-normal hover:bg-gray-100 rounded-md px-3 py-2 w-full">
+      <i class="fas fa-plus fa-sm">
+      </i>
+      <span class="text-sm">
+       Create a custom feed
+      </span>
+     </button>
+    </section>
+    <section>
+     <h3 class="text-xs font-semibold text-gray-400 uppercase tracking-widest mb-2 select-none hidden sm:block">
+      Recent
+     </h3>
+     <ul class="space-y-3 flex sm:block overflow-x-auto sm:overflow-visible">
+      <li class="flex items-center space-x-3 text-sm text-gray-900 hover:bg-gray-100 rounded-md px-3 py-2 cursor-pointer whitespace-nowrap sm:whitespace-normal">
+       <div class="w-8 h-8 rounded-full bg-gray-900 text-white flex items-center justify-center font-bold text-lg select-none">
+        r/
+       </div>
+       <span class="truncate">
+        r/BestofRedditorUpd...
+       </span>
+      </li>
+      <li class="flex items-center space-x-3 text-sm text-gray-900 hover:bg-gray-100 rounded-md px-3 py-2 cursor-pointer whitespace-nowrap sm:whitespace-normal">
+       <img alt="Icon for r/stocks subreddit, cartoon character with blue hat and white beard" class="w-8 h-8 rounded-full object-cover" height="32" src="https://storage.googleapis.com/a1aa/image/8dd2ce6d-d492-4cee-a99e-3d57604f2b52.jpg" width="32"/>
+       <span class="truncate">
+        r/stocks
+       </span>
+      </li>
+      <li class="flex items-center space-x-3 text-sm text-gray-900 hover:bg-gray-100 rounded-md px-3 py-2 cursor-pointer whitespace-nowrap sm:whitespace-normal">
+       <div class="w-8 h-8 rounded-full bg-gray-900 text-white flex items-center justify-center font-bold text-lg select-none">
+        r/
+       </div>
+       <span class="truncate">
+        r/MaliciousCompli...
+       </span>
+      </li>
+      <li class="flex items-center space-x-3 text-sm text-gray-900 hover:bg-gray-100 rounded-md px-3 py-2 cursor-pointer whitespace-nowrap sm:whitespace-normal">
+       <img alt="Icon for r/vozforums subreddit, cartoon character with black hat and sunglasses" class="w-8 h-8 rounded-full object-cover" height="32" src="https://storage.googleapis.com/a1aa/image/c749209c-bc7c-4621-98be-0cf4930877ec.jpg" width="32"/>
+       <span class="truncate">
+        r/vozforums
+       </span>
+      </li>
+     </ul>
+    </section>
+    <section>
+     <h3 class="text-xs font-semibold text-gray-400 uppercase tracking-widest mb-2 select-none hidden sm:block">
+      Communities
+     </h3>
+     <button class="flex items-center space-x-2 text-gray-900 font-normal hover:bg-gray-100 rounded-md px-3 py-2 w-full">
+      <i class="fas fa-plus fa-sm">
+      </i>
+      <span class="text-sm">
+       Create a community
+      </span>
+     </button>
+     <ul class="mt-3 space-y-3 hidden sm:block">
+      <li class="flex items-center space-x-3 text-sm text-gray-900 hover:bg-gray-100 rounded-md px-3 py-2 cursor-pointer">
+       <img alt="Icon for r/announcements subreddit, reddit orange circle with white smiling alien face" class="w-8 h-8 rounded-full object-cover" height="32" src="https://storage.googleapis.com/a1aa/image/d3ee96f2-5a10-4ffe-4c32-082583d5955d.jpg" width="32"/>
+       <span class="truncate">
+        r/announcements
+       </span>
+       <i class="far fa-star ml-auto text-gray-400">
+       </i>
+      </li>
+      <li class="flex items-center space-x-3 text-sm text-gray-900 hover:bg-gray-100 rounded-md px-3 py-2 cursor-pointer">
+       <img alt="Icon for r/confession subreddit, green circle with white letter c" class="w-8 h-8 rounded-full object-cover" height="32" src="https://storage.googleapis.com/a1aa/image/a4457c3b-5b0e-42d8-33ff-f6e7657ea4db.jpg" width="32"/>
+       <span class="truncate">
+        r/confession
+       </span>
+       <i class="far fa-star ml-auto text-gray-400">
+       </i>
+      </li>
+     </ul>
+    </section>
+   </aside>
+   <!-- Main content -->
+   <section class="flex-grow px-4 sm:px-6 py-6 max-w-7xl mx-auto">
+    <h1 class="text-xl sm:text-2xl font-extrabold mb-6 select-none">
+     Explore Communities
+    </h1>
+    <!-- Categories -->
+    <nav class="flex space-x-2 overflow-x-auto pb-4 mb-6 border-b border-gray-200">
+     <button class="flex items-center space-x-1 bg-gray-200 text-gray-900 rounded-md px-3 py-1 text-xs sm:text-sm font-semibold whitespace-nowrap select-none">
+      <span>
+       All
+      </span>
+     </button>
+     <button class="flex items-center space-x-1 border border-gray-300 rounded-md px-3 py-1 text-xs sm:text-sm text-gray-700 whitespace-nowrap select-none">
+      <i class="far fa-smile fa-fw">
+      </i>
+      <span>
+       Internet Culture
+      </span>
+     </button>
+     <button class="flex items-center space-x-1 border border-gray-300 rounded-md px-3 py-1 text-xs sm:text-sm text-gray-700 whitespace-nowrap select-none">
+      <i class="fas fa-gamepad fa-fw">
+      </i>
+      <span>
+       Games
+      </span>
+     </button>
+     <button class="flex items-center space-x-1 border border-gray-300 rounded-md px-3 py-1 text-xs sm:text-sm text-gray-700 whitespace-nowrap select-none">
+      <i class="far fa-question-circle fa-fw">
+      </i>
+      <span>
+       Q&amp;As &amp; Stories
+      </span>
+     </button>
+     <button class="flex items-center space-x-1 border border-gray-300 rounded-md px-3 py-1 text-xs sm:text-sm text-gray-700 whitespace-nowrap select-none">
+      <i class="far fa-clapperboard fa-fw">
+      </i>
+      <span>
+       Movies &amp; TV
+      </span>
+     </button>
+     <button class="flex items-center space-x-1 border border-gray-300 rounded-md px-3 py-1 text-xs sm:text-sm text-gray-700 whitespace-nowrap select-none">
+      <i class="far fa-microchip fa-fw">
+      </i>
+      <span>
+       Technology
+      </span>
+     </button>
+     <button class="flex items-center space-x-1 border border-gray-300 rounded-md px-3 py-1 text-xs sm:text-sm text-gray-700 whitespace-nowrap select-none">
+      <i class="fas fa-plane fa-fw">
+      </i>
+      <span>
+       Places &amp; Travel
+      </span>
+     </button>
+     <button class="flex items-center space-x-1 border border-gray-300 rounded-md px-3 py-1 text-xs sm:text-sm text-gray-700 whitespace-nowrap select-none">
+      <i class="far fa-star fa-fw">
+      </i>
+      <span>
+       Pop Culture
+      </span>
+     </button>
+     <button class="flex items-center space-x-1 border border-gray-300 rounded-md px-3 py-1 text-xs sm:text-sm text-gray-700 whitespace-nowrap select-none">
+      <i class="fas fa-link fa-fw">
+      </i>
+      <span>
+       Education &amp; Career
+      </span>
+     </button>
+     <button aria-label="Scroll right" class="flex items-center justify-center w-6 text-gray-700 hover:bg-gray-100 rounded-full">
+      <i class="fas fa-chevron-right">
+      </i>
+     </button>
+    </nav>
+    <!-- Recommended for you -->
+    <section class="mb-10">
+     <h2 class="font-semibold text-gray-800 mb-4 select-none text-sm sm:text-base">
+      Recommended for you
+     </h2>
+     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      <!-- Card 1 -->
+      <article aria-label="AskMen community" class="flex items-start space-x-4 border border-gray-200 rounded-lg p-4 max-w-md" role="region">
+       <img alt="AskMen subreddit icon, white alien face with red eyes on gray background" class="w-12 h-12 rounded-full flex-shrink-0" height="48" src="https://storage.googleapis.com/a1aa/image/0721703a-2dec-4696-01dd-4a965e91854c.jpg" width="48"/>
+       <div class="flex-grow">
+        <h3 class="font-semibold text-gray-900 text-xs sm:text-sm select-text">
+         AskMen
+        </h3>
+        <p class="text-[9px] sm:text-xs text-gray-500 mb-1 select-text">
+         6.8M members
+        </p>
+        <p class="text-[9px] sm:text-xs text-gray-500 select-text">
+         Gain insight into the male mind. Share advice and experiences.
+        </p>
+       </div>
+       <button aria-label="Join AskMen" class="ml-auto bg-[#004182] text-white text-[10px] sm:text-xs font-semibold rounded-full px-4 py-2 hover:bg-[#003366] whitespace-nowrap">
+        Join
+       </button>
+      </article>
+      <!-- Card 2 -->
+      <article aria-label="thetagang community" class="flex items-start space-x-4 border border-gray-200 rounded-lg p-4 max-w-md" role="region">
+       <div class="w-12 h-12 rounded-full flex-shrink-0 flex items-center justify-center border border-gray-400 text-gray-900 font-bold text-xl select-none">
+        ⊖
+       </div>
+       <div class="flex-grow">
+        <h3 class="font-semibold text-gray-900 text-xs sm:text-sm select-text">
+         thetagang
+        </h3>
+        <p class="text-[9px] sm:text-xs text-gray-500 mb-1 select-text">
+         279K members
+        </p>
+        <p class="text-[9px] sm:text-xs text-gray-500 select-text">
+         Master the art of trading options and making a profit using the Theta strategy.
+        </p>
+       </div>
+       <button aria-label="Join thetagang" class="ml-auto bg-[#004182] text-white text-[10px] sm:text-xs font-semibold rounded-full px-4 py-2 hover:bg-[#003366] whitespace-nowrap">
+        Join
+       </button>
+      </article>
+      <!-- Card 3 -->
+      <article aria-label="modhelp community" class="flex items-start space-x-4 border border-gray-200 rounded-lg p-4 max-w-md" role="region">
+       <img alt="modhelp subreddit icon, red circle with white shield" class="w-12 h-12 rounded-full flex-shrink-0" height="48" src="https://storage.googleapis.com/a1aa/image/70aa205f-b533-46dd-5f00-9a0b928a3ee6.jpg" width="48"/>
+       <div class="flex-grow">
+        <h3 class="font-semibold text-gray-900 text-xs sm:text-sm select-text">
+         modhelp
+        </h3>
+        <p class="text-[9px] sm:text-xs text-gray-500 mb-1 select-text">
+         145K members
+        </p>
+        <p class="text-[9px] sm:text-xs text-gray-500 select-text">
+         Get tips and advice from experienced moderators to improve your sub.
+        </p>
+       </div>
+       <button aria-label="Join modhelp" class="ml-auto bg-[#004182] text-white text-[10px] sm:text-xs font-semibold rounded-full px-4 py-2 hover:bg-[#003366] whitespace-nowrap">
+        Join
+       </button>
+      </article>
+      <!-- Card 4 -->
+      <article aria-label="wallstreetbets community" class="flex items-start space-x-4 border border-gray-200 rounded-lg p-4 max-w-md" role="region">
+       <img alt="wallstreetbets subreddit icon, cartoon character with sunglasses and cigar" class="w-12 h-12 rounded-full flex-shrink-0" height="48" src="https://storage.googleapis.com/a1aa/image/1b0dd7e0-6e14-47cb-4168-3a7b1063885c.jpg" width="48"/>
+       <div class="flex-grow">
+        <h3 class="font-semibold text-gray-900 text-xs sm:text-sm select-text">
+         wallstreetbets
+        </h3>
+        <p class="text-[9px] sm:text-xs text-gray-500 mb-1 select-text">
+         19M members
+        </p>
+        <p class="text-[9px] sm:text-xs text-gray-500 select-text">
+         Join the stock market circus and find your voice among the bulls and bears.
+        </p>
+       </div>
+       <button aria-label="Join wallstreetbets" class="ml-auto bg-[#004182] text-white text-[10px] sm:text-xs font-semibold rounded-full px-4 py-2 hover:bg-[#003366] whitespace-nowrap">
+        Join
+       </button>
+      </article>
+      <!-- Card 5 -->
+      <article aria-label="playtoearngames community" class="flex items-start space-x-4 border border-gray-200 rounded-lg p-4 max-w-md" role="region">
+       <img alt="playtoearngames subreddit icon, orange and black MVG logo" class="w-12 h-12 rounded-full flex-shrink-0" height="48" src="https://storage.googleapis.com/a1aa/image/fe349421-0258-4814-2f46-9d3da2c8754d.jpg" width="48"/>
+       <div class="flex-grow">
+        <h3 class="font-semibold text-gray-900 text-xs sm:text-sm select-text">
+         playtoearngames
+        </h3>
+        <p class="text-[9px] sm:text-xs text-gray-500 mb-1 select-text">
+         15K members
+        </p>
+        <p class="text-[9px] sm:text-xs text-gray-500 select-text">
+         Discuss everything related to GameFi, play-to-earn, NFT, and metaverse gaming.
+        </p>
+       </div>
+       <button aria-label="Join playtoearngames" class="ml-auto bg-[#004182] text-white text-[10px] sm:text-xs font-semibold rounded-full px-4 py-2 hover:bg-[#003366] whitespace-nowrap">
+        Join
+       </button>
+      </article>
+      <!-- Card 6 -->
+      <article aria-label="forhire community" class="flex items-start space-x-4 border border-gray-200 rounded-lg p-4 max-w-md" role="region">
+       <div class="w-12 h-12 rounded-full flex-shrink-0 flex items-center justify-center bg-green-700 text-white font-semibold text-sm select-none">
+        <svg aria-hidden="true" class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+         <rect height="4" rx="1" ry="1" width="18" x="3" y="10">
+         </rect>
+        </svg>
+       </div>
+       <div class="flex-grow">
+        <h3 class="font-semibold text-gray-900 text-xs sm:text-sm select-text">
+         forhire
+        </h3>
+        <p class="text-[9px] sm:text-xs text-gray-500 mb-1 select-text">
+         474K members
+        </p>
+        <p class="text-[9px] sm:text-xs text-gray-500 select-text">
+         Share your skills and expertise, or find the perfect talent to complete your project.
+        </p>
+       </div>
+       <button aria-label="Join forhire" class="ml-auto bg-[#004182] text-white text-[10px] sm:text-xs font-semibold rounded-full px-4 py-2 hover:bg-[#003366] whitespace-nowrap">
+        Join
+       </button>
+      </article>
+     </div>
+     <div class="flex justify-center mt-6">
+      <button aria-label="Show more communities" class="bg-gray-200 text-gray-900 text-xs sm:text-sm font-semibold rounded-full px-4 py-2 hover:bg-gray-300 select-none whitespace-nowrap">
+       Show more
+      </button>
+     </div>
+    </section>
+    <!-- More like valorlegends -->
+    <section>
+     <h2 class="font-semibold text-gray-800 mb-4 select-none text-sm sm:text-base">
+      More like valorlegends
+     </h2>
+     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      <!-- Card 1 -->
+      <article aria-label="Montpellier community" class="flex items-start space-x-4 border border-gray-200 rounded-lg p-4 max-w-md" role="region">
+       <div class="w-12 h-12 rounded-full flex-shrink-0 flex items-center justify-center border border-[#FF4500] text-[#FF4500] font-bold text-2xl select-none">
+        r/
+       </div>
+       <div class="flex-grow">
+        <h3 class="font-semibold text-gray-900 text-xs sm:text-sm select-text">
+         Montpellier
+        </h3>
+        <p class="text-[9px] sm:text-xs text-gray-500 mb-1 select-text">
+         19K members
+        </p>
+        <p class="text-[9px] sm:text-xs text-gray-500 select-text">
+         Partage des actualités, expériences et recommandations sur Montpellier.
+        </p>
+       </div>
+       <button aria-label="Join Montpellier" class="ml-auto bg-[#004182] text-white text-[10px] sm:text-xs font-semibold rounded-full px-4 py-2 hover:bg-[#003366] whitespace-nowrap">
+        Join
+       </button>
+      </article>
+      <!-- Card 2 -->
+      <article aria-label="TweakBounty community" class="flex items-start space-x-4 border border-gray-200 rounded-lg p-4 max-w-md" role="region">
+       <img alt="TweakBounty subreddit icon, white alien face with black eyes on white background" class="w-12 h-12 rounded-full flex-shrink-0" height="48" src="https://storage.googleapis.com/a1aa/image/56f2666a-8df5-48fc-6c51-fcdad4bfb09b.jpg" width="48"/>
+       <div class="flex-grow">
+        <h3 class="font-semibold text-gray-900 text-xs sm:text-sm select-text">
+         TweakBounty
+        </h3>
+        <p class="text-[9px] sm:text-xs text-gray-500 mb-1 select-text">
+         30K members
+        </p>
+        <p class="text-[9px] sm:text-xs text-gray-500 select-text">
+         Have an idea for a tweak or theme? Looking for great ideas for your next project? /r/TweakBounty is the place f...
+        </p>
+       </div>
+       <button aria-label="Join TweakBounty" class="ml-auto bg-[#004182] text-white text-[10px] sm:text-xs font-semibold rounded-full px-4 py-2 hover:bg-[#003366] whitespace-nowrap">
+        Join
+       </button>
+      </article>
+      <!-- Card 3 -->
+      <article aria-label="tutor community" class="flex items-start space-x-4 border border-gray-200 rounded-lg p-4 max-w-md" role="region">
+       <div class="w-12 h-12 rounded-full flex-shrink-0 flex items-center justify-center border border-[#FF4500] text-[#FF4500] font-bold text-2xl select-none">
+        r/
+       </div>
+       <div class="flex-grow">
+        <h3 class="font-semibold text-gray-900 text-xs sm:text-sm select-text">
+         tutor
+        </h3>
+        <p class="text-[9px] sm:text-xs text-gray-500 mb-1 select-text">
+         17K members
+        </p>
+        <p class="text-[9px] sm:text-xs text-gray-500 select-text">
+         A place to search for a tutor or offer your tutoring services. Also open to discussions or questions about tutoring....
+        </p>
+       </div>
+       <button aria-label="Join tutor" class="ml-auto bg-[#004182] text-white text-[10px] sm:text-xs font-semibold rounded-full px-4 py-2 hover:bg-[#003366] whitespace-nowrap">
+        Join
+       </button>
+      </article>
+      <!-- Card 4 -->
+      <article aria-label="chrome_extensions community" class="flex items-start space-x-4 border border-gray-200 rounded-lg p-4 max-w-md" role="region">
+       <img alt="chrome_extensions subreddit icon, puzzle piece with gradient orange, yellow, green" class="w-12 h-12 rounded-full flex-shrink-0" height="48" src="https://storage.googleapis.com/a1aa/image/8f2a2f6b-2abf-4518-4bfd-1d353b9750a0.jpg" width="48"/>
+       <div class="flex-grow">
+        <h3 class="font-semibold text-gray-900 text-xs sm:text-sm select-text">
+         chrome_extensions
+        </h3>
+        <p class="text-[9px] sm:text-xs text-gray-500 mb-1 select-text">
+         21K members
+        </p>
+        <p class="text-[9px] sm:text-xs text-gray-500 select-text">
+         Learn, share, build, and discuss Chrome extensions in this awesome place.
+        </p>
+       </div>
+       <button aria-label="Join chrome_extensions" class="ml-auto bg-[#004182] text-white text-[10px] sm:text-xs font-semibold rounded-full px-4 py-2 hover:bg-[#003366] whitespace-nowrap">
+        Join
+       </button>
+      </article>
+      <!-- Card 5 -->
+      <article aria-label="JudgeMyAccent community" class="flex items-start space-x-4 border border-gray-200 rounded-lg p-4 max-w-md" role="region">
+       <div class="w-12 h-12 rounded-full flex-shrink-0 flex items-center justify-center border border-[#FF4500] text-[#FF4500] font-bold text-2xl select-none">
+        r/
+       </div>
+       <div class="flex-grow">
+        <h3 class="font-semibold text-gray-900 text-xs sm:text-sm select-text">
+         JudgeMyAccent
+        </h3>
+        <p class="text-[9px] sm:text-xs text-gray-500 mb-1 select-text">
+         25K members
+        </p>
+        <p class="text-[9px] sm:text-xs text-gray-500 select-text">
+         Get feedback on your accent from native speakers of the language you are learning.
+        </p>
+       </div>
+       <button aria-label="Join JudgeMyAccent" class="ml-auto bg-[#004182] text-white text-[10px] sm:text-xs font-semibold rounded-full px-4 py-2 hover:bg-[#003366] whitespace-nowrap">
+        Join
+       </button>
+      </article>
+      <!-- Card 6 -->
+      <article aria-label="Cloud community" class="flex items-start space-x-4 border border-gray-200 rounded-lg p-4 max-w-md" role="region">
+       <div class="w-12 h-12 rounded-full flex-shrink-0 flex items-center justify-center border border-[#FF4500] text-[#FF4500] font-bold text-2xl select-none">
+        r/
+       </div>
+       <div class="flex-grow">
+        <h3 class="font-semibold text-gray-900 text-xs sm:text-sm select-text">
+         Cloud
+        </h3>
+        <p class="text-[9px] sm:text-xs text-gray-500 mb-1 select-text">
+         26K members
+        </p>
+        <p class="text-[9px] sm:text-xs text-gray-500 select-text">
+         All about Cloud Computing!!!
+        </p>
+       </div>
+       <button aria-label="Join Cloud" class="ml-auto bg-[#004182] text-white text-[10px] sm:text-xs font-semibold rounded-full px-4 py-2 hover:bg-[#003366] whitespace-nowrap">
+        Join
+       </button>
+      </article>
+     </div>
+    </section>
+   </section>
+  </main>
+ </body>
+</html>
