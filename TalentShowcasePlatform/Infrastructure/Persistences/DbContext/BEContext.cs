@@ -65,7 +65,6 @@ public class BEContext : DbContext
 	public DbSet<Job> Jobs { get; set; }
 	public DbSet<Payment> Payments { get; set; }
 	public DbSet<VideoLike> VideoLikes { get; set; }
-	public DbSet<Achievement> Achievements { get; set; }
 	public DbSet<Award> Awards { get; set; }
 	public DbSet<Certification> Certifications { get; set; }
 

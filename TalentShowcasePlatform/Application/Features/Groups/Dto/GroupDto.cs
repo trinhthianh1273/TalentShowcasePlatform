@@ -11,8 +11,11 @@ public class GroupDto
 	public Guid Id { get; set; }
 	public string Name { get; set; }
 	public string Description { get; set; }
-	public Guid CategoryId { get; set; }
+	public string GroupAvatar { get; set; }
+	public Guid? CategoryId { get; set; }
+	public string? CategoryName { get; set; }
 	public Guid CreatedBy { get; set; }
+	public string? CreatedByUserName { get; set; }
 	public DateTime CreatedAt { get; set; }
 
 	// Navigation Properties DTOs (if needed)

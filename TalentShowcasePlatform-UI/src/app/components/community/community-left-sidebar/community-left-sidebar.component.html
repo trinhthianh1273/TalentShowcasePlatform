@@ -55,34 +55,12 @@
     Joined Communities
   </div>
   <ul class="space-y-2 px-3">
-    <li class="flex items-center space-x-2">
+    <li *ngFor="let group of JoinedCommunity" class="flex items-center space-x-2">
       <img alt="Subreddit r/BestofRedditorUpdates icon, black circle with white letter r" class="w-5 h-5 rounded-full"
         height="20" src="https://storage.googleapis.com/a1aa/image/99d9ffe6-6d90-4e18-4ee4-151cfb0b435e.jpg"
         width="20" />
       <a class="truncate text-gray-700 text-sm hover:underline" href="#">
-        r/BestofRedditorUpd...
-      </a>
-    </li>
-    <li class="flex items-center space-x-2">
-      <img alt="Subreddit r/stocks icon, black circle with white letter r" class="w-5 h-5 rounded-full" height="20"
-        src="https://storage.googleapis.com/a1aa/image/73ee1863-0dbc-4663-fbe1-e2ce301b5685.jpg" width="20" />
-      <a class="truncate text-gray-700 text-sm hover:underline" href="#">
-        r/stocks
-      </a>
-    </li>
-    <li class="flex items-center space-x-2">
-      <img alt="Subreddit r/MaliciousCompliance icon, black circle with white letter r" class="w-5 h-5 rounded-full"
-        height="20" src="https://storage.googleapis.com/a1aa/image/1de3859b-9a99-4aa2-fcdd-389f45515cd2.jpg"
-        width="20" />
-      <a class="truncate text-gray-700 text-sm hover:underline" href="#">
-        r/MaliciousCompli...
-      </a>
-    </li>
-    <li class="flex items-center space-x-2">
-      <img alt="Subreddit r/vozforums icon, black circle with white letter r" class="w-5 h-5 rounded-full" height="20"
-        src="https://storage.googleapis.com/a1aa/image/50209d23-2747-4373-9bdb-7240e2876de2.jpg" width="20" />
-      <a class="truncate text-gray-700 text-sm hover:underline" href="#">
-        r/vozforums
+        {{ group.name }}
       </a>
     </li>
   </ul>
@@ -102,22 +80,13 @@
         </span>
       </button>
     </li>
-    <li class="flex items-center space-x-2">
+    <li *ngFor="let group of YourCommunity" class="flex items-center space-x-2">
       <img alt="Subreddit r/announcements icon, orange circle with white letter r" class="w-5 h-5 rounded-full"
         height="20" src="https://storage.googleapis.com/a1aa/image/516e75d3-9a6d-458f-ea2e-0dae686e556d.jpg"
         width="20" />
       <a class="truncate text-gray-700 text-sm hover:underline" href="#">
-        r/announcemen...
+        {{ group.name }}
       </a>
-    </li>
-    <li class="flex items-center space-x-2">
-      <img alt="Subreddit r/confession icon, green circle with white letter r" class="w-5 h-5 rounded-full" height="20"
-        src="https://storage.googleapis.com/a1aa/image/cf5c3e8b-28fb-474a-5c11-adbdd3d03ade.jpg" width="20" />
-      <a class="truncate text-gray-700 text-sm hover:underline" href="#">
-        r/confession
-      </a>
-      <i class="far fa-star text-gray-400">
-      </i>
     </li>
   </ul>
 </nav>

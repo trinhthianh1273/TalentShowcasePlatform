@@ -17,7 +17,7 @@ import { Enviroment } from '../../../../environment';
 })
 export class CommunityPopularComponent implements OnInit {
   private authSubscription: Subscription | undefined;
-  
+
   posts: any[] = [];
 
   avatarUrl: string = Enviroment.tempAvatarPath;
@@ -25,17 +25,24 @@ export class CommunityPopularComponent implements OnInit {
   groupPostImgUrl = '';
   groupPostPath = Enviroment.groupPostPath;
 
+  joinedGroupId: string[] = [];
+
   constructor(
     private authStateService: AuthStateService,
     private subjectService: SubjectService,
     private router: Router,
     private communityService: CommunityService
-  ) {}
+  ) { }
   ngOnInit(): void {
     this.subjectService.receivedCommunityPost$.subscribe((res) => {
-        this.posts = res;
-        console.log("post community: ", this.posts);
-      })
+      this.posts = res;
+      console.log("post community: ", this.posts);
+    })
+
+    this.subjectService.receivedJoinedCommunitiesId$.subscribe((joinedGroupId) => {
+      this.joinedGroupId = joinedGroupId;
+      console.log("Joined Group ID:", this.joinedGroupId);
+    });
   }
 
   gotoPost(postId: string) {

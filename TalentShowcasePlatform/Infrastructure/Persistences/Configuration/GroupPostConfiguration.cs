@@ -20,9 +20,13 @@ public class GroupPostConfiguration : IEntityTypeConfiguration<GroupPost>
 		builder.HasKey(gp => gp.Id);
 
 		// Properties
-		builder.Property(gp => gp.Content)
+		builder.Property(gp => gp.Title)
 			   .IsRequired()
 			   .HasMaxLength(1000);
+
+		// Properties
+		builder.Property(gp => gp.Content)
+			   .IsRequired();
 
 		builder.Property(gp => gp.CreatedAt)
 			   .IsRequired()

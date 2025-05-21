@@ -3,28 +3,128 @@
   "WorkspaceRootPath": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C4A81C72-6FAC-4D2D-9FBD-C87D66D4CD6D}|Infrastructure\\Infrastructure.csproj|a:\\talentshowcaseplatform\\talentshowcaseplatform\\infrastructure\\migrations\\20250517002928_tao-lai-db.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C4A81C72-6FAC-4D2D-9FBD-C87D66D4CD6D}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\migrations\\20250517002928_tao-lai-db.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{FD9469BC-BE4C-4444-9842-54E9E0AA41ED}|Application\\Application.csproj|a:\\talentshowcaseplatform\\talentshowcaseplatform\\application\\features\\groups\\command\\creategroupcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FD9469BC-BE4C-4444-9842-54E9E0AA41ED}|Application\\Application.csproj|solutionrelative:application\\features\\groups\\command\\creategroupcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C4A81C72-6FAC-4D2D-9FBD-C87D66D4CD6D}|Infrastructure\\Infrastructure.csproj|a:\\talentshowcaseplatform\\talentshowcaseplatform\\infrastructure\\services\\fileservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C4A81C72-6FAC-4D2D-9FBD-C87D66D4CD6D}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\services\\fileservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9C72789C-35A8-4C19-B6B0-5376179C2684}|API\\API.csproj|a:\\talentshowcaseplatform\\talentshowcaseplatform\\api\\controllers\\groupscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9C72789C-35A8-4C19-B6B0-5376179C2684}|API\\API.csproj|solutionrelative:api\\controllers\\groupscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FD9469BC-BE4C-4444-9842-54E9E0AA41ED}|Application\\Application.csproj|a:\\talentshowcaseplatform\\talentshowcaseplatform\\application\\services\\ifileservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FD9469BC-BE4C-4444-9842-54E9E0AA41ED}|Application\\Application.csproj|solutionrelative:application\\services\\ifileservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FD9469BC-BE4C-4444-9842-54E9E0AA41ED}|Application\\Application.csproj|a:\\talentshowcaseplatform\\talentshowcaseplatform\\application\\features\\groupposts\\command\\creategrouppostcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FD9469BC-BE4C-4444-9842-54E9E0AA41ED}|Application\\Application.csproj|solutionrelative:application\\features\\groupposts\\command\\creategrouppostcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FD9469BC-BE4C-4444-9842-54E9E0AA41ED}|Application\\Application.csproj|a:\\talentshowcaseplatform\\talentshowcaseplatform\\application\\features\\grouppostcomments\\command\\creategrouppostcommentcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FD9469BC-BE4C-4444-9842-54E9E0AA41ED}|Application\\Application.csproj|solutionrelative:application\\features\\grouppostcomments\\command\\creategrouppostcommentcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FD9469BC-BE4C-4444-9842-54E9E0AA41ED}|Application\\Application.csproj|a:\\talentshowcaseplatform\\talentshowcaseplatform\\application\\features\\groups\\query\\getjoinedgroupforuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FD9469BC-BE4C-4444-9842-54E9E0AA41ED}|Application\\Application.csproj|solutionrelative:application\\features\\groups\\query\\getjoinedgroupforuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FD9469BC-BE4C-4444-9842-54E9E0AA41ED}|Application\\Application.csproj|a:\\talentshowcaseplatform\\talentshowcaseplatform\\application\\features\\groups\\query\\getgroupscreatedbyuserquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FD9469BC-BE4C-4444-9842-54E9E0AA41ED}|Application\\Application.csproj|solutionrelative:application\\features\\groups\\query\\getgroupscreatedbyuserquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FD9469BC-BE4C-4444-9842-54E9E0AA41ED}|Application\\Application.csproj|a:\\talentshowcaseplatform\\talentshowcaseplatform\\application\\features\\groupmembers\\dto\\groupmemberdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FD9469BC-BE4C-4444-9842-54E9E0AA41ED}|Application\\Application.csproj|solutionrelative:application\\features\\groupmembers\\dto\\groupmemberdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FD9469BC-BE4C-4444-9842-54E9E0AA41ED}|Application\\Application.csproj|a:\\talentshowcaseplatform\\talentshowcaseplatform\\application\\features\\groupmembers\\query\\getgroupmembersbyuseridquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FD9469BC-BE4C-4444-9842-54E9E0AA41ED}|Application\\Application.csproj|solutionrelative:application\\features\\groupmembers\\query\\getgroupmembersbyuseridquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9C72789C-35A8-4C19-B6B0-5376179C2684}|API\\API.csproj|a:\\talentshowcaseplatform\\talentshowcaseplatform\\api\\controllers\\grouppostcommentscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9C72789C-35A8-4C19-B6B0-5376179C2684}|API\\API.csproj|solutionrelative:api\\controllers\\grouppostcommentscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C4A81C72-6FAC-4D2D-9FBD-C87D66D4CD6D}|Infrastructure\\Infrastructure.csproj|a:\\talentshowcaseplatform\\talentshowcaseplatform\\infrastructure\\persistences\\configuration\\groupconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C4A81C72-6FAC-4D2D-9FBD-C87D66D4CD6D}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\persistences\\configuration\\groupconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9C72789C-35A8-4C19-B6B0-5376179C2684}|API\\API.csproj|a:\\talentshowcaseplatform\\talentshowcaseplatform\\api\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9C72789C-35A8-4C19-B6B0-5376179C2684}|API\\API.csproj|solutionrelative:api\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FD9469BC-BE4C-4444-9842-54E9E0AA41ED}|Application\\Application.csproj|a:\\talentshowcaseplatform\\talentshowcaseplatform\\application\\features\\groups\\dto\\groupdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FD9469BC-BE4C-4444-9842-54E9E0AA41ED}|Application\\Application.csproj|solutionrelative:application\\features\\groups\\dto\\groupdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FD9469BC-BE4C-4444-9842-54E9E0AA41ED}|Application\\Application.csproj|a:\\talentshowcaseplatform\\talentshowcaseplatform\\application\\features\\groupposts\\dto\\grouppostdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FD9469BC-BE4C-4444-9842-54E9E0AA41ED}|Application\\Application.csproj|solutionrelative:application\\features\\groupposts\\dto\\grouppostdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FD9469BC-BE4C-4444-9842-54E9E0AA41ED}|Application\\Application.csproj|a:\\talentshowcaseplatform\\talentshowcaseplatform\\application\\features\\groupmembers\\command\\removeuserfromgroupcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FD9469BC-BE4C-4444-9842-54E9E0AA41ED}|Application\\Application.csproj|solutionrelative:application\\features\\groupmembers\\command\\removeuserfromgroupcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FD9469BC-BE4C-4444-9842-54E9E0AA41ED}|Application\\Application.csproj|a:\\talentshowcaseplatform\\talentshowcaseplatform\\application\\features\\groupmembers\\command\\addusertogroupcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FD9469BC-BE4C-4444-9842-54E9E0AA41ED}|Application\\Application.csproj|solutionrelative:application\\features\\groupmembers\\command\\addusertogroupcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9C72789C-35A8-4C19-B6B0-5376179C2684}|API\\API.csproj|a:\\talentshowcaseplatform\\talentshowcaseplatform\\api\\controllers\\groupmemberscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9C72789C-35A8-4C19-B6B0-5376179C2684}|API\\API.csproj|solutionrelative:api\\controllers\\groupmemberscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FD9469BC-BE4C-4444-9842-54E9E0AA41ED}|Application\\Application.csproj|a:\\talentshowcaseplatform\\talentshowcaseplatform\\application\\features\\groupmembers\\query\\getjoinedgroupidsbyuserquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FD9469BC-BE4C-4444-9842-54E9E0AA41ED}|Application\\Application.csproj|solutionrelative:application\\features\\groupmembers\\query\\getjoinedgroupidsbyuserquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FD9469BC-BE4C-4444-9842-54E9E0AA41ED}|Application\\Application.csproj|a:\\talentshowcaseplatform\\talentshowcaseplatform\\application\\features\\groups\\query\\getallgroupsquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FD9469BC-BE4C-4444-9842-54E9E0AA41ED}|Application\\Application.csproj|solutionrelative:application\\features\\groups\\query\\getallgroupsquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FD9469BC-BE4C-4444-9842-54E9E0AA41ED}|Application\\Application.csproj|a:\\talentshowcaseplatform\\talentshowcaseplatform\\application\\features\\likegroupposts\\query\\getlikegrouppostbyid.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FD9469BC-BE4C-4444-9842-54E9E0AA41ED}|Application\\Application.csproj|solutionrelative:application\\features\\likegroupposts\\query\\getlikegrouppostbyid.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{48474E94-8CD0-42C5-8209-E8DF9DB489A8}|Domain\\Domain.csproj|a:\\talentshowcaseplatform\\talentshowcaseplatform\\domain\\classdiagram1.cd||{59B0B277-7DDF-4E36-A3ED-02DAC5B9E2FA}|",
+      "RelativeMoniker": "D:0:0:{48474E94-8CD0-42C5-8209-E8DF9DB489A8}|Domain\\Domain.csproj|solutionrelative:domain\\classdiagram1.cd||{59B0B277-7DDF-4E36-A3ED-02DAC5B9E2FA}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FD9469BC-BE4C-4444-9842-54E9E0AA41ED}|Application\\Application.csproj|a:\\talentshowcaseplatform\\talentshowcaseplatform\\application\\mappingprofiles\\grouppostcommentmappingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FD9469BC-BE4C-4444-9842-54E9E0AA41ED}|Application\\Application.csproj|solutionrelative:application\\mappingprofiles\\grouppostcommentmappingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FD9469BC-BE4C-4444-9842-54E9E0AA41ED}|Application\\Application.csproj|a:\\talentshowcaseplatform\\talentshowcaseplatform\\application\\mappingprofiles\\grouppostmappingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FD9469BC-BE4C-4444-9842-54E9E0AA41ED}|Application\\Application.csproj|solutionrelative:application\\mappingprofiles\\grouppostmappingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FD9469BC-BE4C-4444-9842-54E9E0AA41ED}|Application\\Application.csproj|a:\\talentshowcaseplatform\\talentshowcaseplatform\\application\\features\\grouppostcomments\\dto\\grouppostcommentdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FD9469BC-BE4C-4444-9842-54E9E0AA41ED}|Application\\Application.csproj|solutionrelative:application\\features\\grouppostcomments\\dto\\grouppostcommentdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FD9469BC-BE4C-4444-9842-54E9E0AA41ED}|Application\\Application.csproj|a:\\talentshowcaseplatform\\talentshowcaseplatform\\application\\mappingprofiles\\commentprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FD9469BC-BE4C-4444-9842-54E9E0AA41ED}|Application\\Application.csproj|solutionrelative:application\\mappingprofiles\\commentprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{48474E94-8CD0-42C5-8209-E8DF9DB489A8}|Domain\\Domain.csproj|a:\\talentshowcaseplatform\\talentshowcaseplatform\\domain\\entities\\award.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{48474E94-8CD0-42C5-8209-E8DF9DB489A8}|Domain\\Domain.csproj|solutionrelative:domain\\entities\\award.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FD9469BC-BE4C-4444-9842-54E9E0AA41ED}|Application\\Application.csproj|a:\\talentshowcaseplatform\\talentshowcaseplatform\\application\\features\\certifications\\command\\deletecertificationcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FD9469BC-BE4C-4444-9842-54E9E0AA41ED}|Application\\Application.csproj|solutionrelative:application\\features\\certifications\\command\\deletecertificationcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FD9469BC-BE4C-4444-9842-54E9E0AA41ED}|Application\\Application.csproj|a:\\talentshowcaseplatform\\talentshowcaseplatform\\application\\features\\certifications\\command\\createcertificationcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FD9469BC-BE4C-4444-9842-54E9E0AA41ED}|Application\\Application.csproj|solutionrelative:application\\features\\certifications\\command\\createcertificationcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{48474E94-8CD0-42C5-8209-E8DF9DB489A8}|Domain\\Domain.csproj|a:\\talentshowcaseplatform\\talentshowcaseplatform\\domain\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{48474E94-8CD0-42C5-8209-E8DF9DB489A8}|Domain\\Domain.csproj|solutionrelative:domain\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C4A81C72-6FAC-4D2D-9FBD-C87D66D4CD6D}|Infrastructure\\Infrastructure.csproj|a:\\talentshowcaseplatform\\talentshowcaseplatform\\infrastructure\\persistences\\configuration\\grouppostconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C4A81C72-6FAC-4D2D-9FBD-C87D66D4CD6D}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\persistences\\configuration\\grouppostconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{48474E94-8CD0-42C5-8209-E8DF9DB489A8}|Domain\\Domain.csproj|a:\\talentshowcaseplatform\\talentshowcaseplatform\\domain\\entities\\grouppost.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{48474E94-8CD0-42C5-8209-E8DF9DB489A8}|Domain\\Domain.csproj|solutionrelative:domain\\entities\\grouppost.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9C72789C-35A8-4C19-B6B0-5376179C2684}|API\\API.csproj|a:\\talentshowcaseplatform\\talentshowcaseplatform\\api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{9C72789C-35A8-4C19-B6B0-5376179C2684}|API\\API.csproj|solutionrelative:api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C4A81C72-6FAC-4D2D-9FBD-C87D66D4CD6D}|Infrastructure\\Infrastructure.csproj|a:\\talentshowcaseplatform\\talentshowcaseplatform\\infrastructure\\persistences\\dbcontext\\becontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C4A81C72-6FAC-4D2D-9FBD-C87D66D4CD6D}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\persistences\\dbcontext\\becontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{48474E94-8CD0-42C5-8209-E8DF9DB489A8}|Domain\\Domain.csproj|a:\\talentshowcaseplatform\\talentshowcaseplatform\\domain\\entities\\ratinggrouppost.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{48474E94-8CD0-42C5-8209-E8DF9DB489A8}|Domain\\Domain.csproj|solutionrelative:domain\\entities\\ratinggrouppost.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,8 +134,137 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 1,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "ClassDiagram1.cd",
+              "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Domain\\ClassDiagram1.cd",
+              "RelativeDocumentMoniker": "Domain\\ClassDiagram1.cd",
+              "ToolTip": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Domain\\ClassDiagram1.cd",
+              "RelativeToolTip": "Domain\\ClassDiagram1.cd",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000463|",
+              "WhenOpened": "2025-05-20T09:22:48.556Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "CreateGroupCommand.cs",
+              "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\Features\\Groups\\Command\\CreateGroupCommand.cs",
+              "RelativeDocumentMoniker": "Application\\Features\\Groups\\Command\\CreateGroupCommand.cs",
+              "ToolTip": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\Features\\Groups\\Command\\CreateGroupCommand.cs",
+              "RelativeToolTip": "Application\\Features\\Groups\\Command\\CreateGroupCommand.cs",
+              "ViewState": "AgIAACIAAAAAAAAAAAAywDAAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-21T04:17:10.924Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "FileService.cs",
+              "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Infrastructure\\Services\\FileService.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\Services\\FileService.cs",
+              "ToolTip": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Infrastructure\\Services\\FileService.cs",
+              "RelativeToolTip": "Infrastructure\\Services\\FileService.cs",
+              "ViewState": "AgIAAE0AAAAAAAAAAAAIwF0AAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-21T07:11:26.202Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "GroupsController.cs",
+              "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\API\\Controllers\\GroupsController.cs",
+              "RelativeDocumentMoniker": "API\\Controllers\\GroupsController.cs",
+              "ToolTip": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\API\\Controllers\\GroupsController.cs",
+              "RelativeToolTip": "API\\Controllers\\GroupsController.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAAQwCAAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-20T23:52:18.514Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "IFileService.cs",
+              "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\Services\\IFileService.cs",
+              "RelativeDocumentMoniker": "Application\\Services\\IFileService.cs",
+              "ToolTip": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\Services\\IFileService.cs",
+              "RelativeToolTip": "Application\\Services\\IFileService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-21T07:28:58.022Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "CreateGroupPostCommand.cs",
+              "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\Features\\GroupPosts\\Command\\CreateGroupPostCommand.cs",
+              "RelativeDocumentMoniker": "Application\\Features\\GroupPosts\\Command\\CreateGroupPostCommand.cs",
+              "ToolTip": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\Features\\GroupPosts\\Command\\CreateGroupPostCommand.cs",
+              "RelativeToolTip": "Application\\Features\\GroupPosts\\Command\\CreateGroupPostCommand.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-21T04:17:08.755Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "GetJoinedGroupForUser.cs",
+              "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\Features\\Groups\\Query\\GetJoinedGroupForUser.cs",
+              "RelativeDocumentMoniker": "Application\\Features\\Groups\\Query\\GetJoinedGroupForUser.cs",
+              "ToolTip": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\Features\\Groups\\Query\\GetJoinedGroupForUser.cs",
+              "RelativeToolTip": "Application\\Features\\Groups\\Query\\GetJoinedGroupForUser.cs",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAmwDAAAAA/AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-20T23:46:21.073Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "CreateGroupPostCommentCommand.cs",
+              "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\Features\\GroupPostComments\\Command\\CreateGroupPostCommentCommand.cs",
+              "RelativeDocumentMoniker": "Application\\Features\\GroupPostComments\\Command\\CreateGroupPostCommentCommand.cs",
+              "ToolTip": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\Features\\GroupPostComments\\Command\\CreateGroupPostCommentCommand.cs",
+              "RelativeToolTip": "Application\\Features\\GroupPostComments\\Command\\CreateGroupPostCommentCommand.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-20T16:38:40.979Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "GetGroupsCreatedByUserQuery.cs",
+              "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\Features\\Groups\\Query\\GetGroupsCreatedByUserQuery.cs",
+              "RelativeDocumentMoniker": "Application\\Features\\Groups\\Query\\GetGroupsCreatedByUserQuery.cs",
+              "ToolTip": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\Features\\Groups\\Query\\GetGroupsCreatedByUserQuery.cs",
+              "RelativeToolTip": "Application\\Features\\Groups\\Query\\GetGroupsCreatedByUserQuery.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAywCMAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-20T23:45:59.873Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "GroupMemberDto.cs",
+              "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\Features\\GroupMembers\\Dto\\GroupMemberDto.cs",
+              "RelativeDocumentMoniker": "Application\\Features\\GroupMembers\\Dto\\GroupMemberDto.cs",
+              "ToolTip": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\Features\\GroupMembers\\Dto\\GroupMemberDto.cs",
+              "RelativeToolTip": "Application\\Features\\GroupMembers\\Dto\\GroupMemberDto.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-20T23:45:38.159Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
@@ -50,76 +279,257 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "20250517002928_tao-lai-db.cs",
-              "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Infrastructure\\Migrations\\20250517002928_tao-lai-db.cs",
-              "RelativeDocumentMoniker": "Infrastructure\\Migrations\\20250517002928_tao-lai-db.cs",
-              "ToolTip": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Infrastructure\\Migrations\\20250517002928_tao-lai-db.cs",
-              "RelativeToolTip": "Infrastructure\\Migrations\\20250517002928_tao-lai-db.cs",
-              "ViewState": "AgIAAFoAAAAAAAAAAAAuwGYAAAAtAAAAAAAAAA==",
+              "DocumentIndex": 15,
+              "Title": "RemoveUserFromGroupCommand.cs",
+              "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\Features\\GroupMembers\\Command\\RemoveUserFromGroupCommand.cs",
+              "RelativeDocumentMoniker": "Application\\Features\\GroupMembers\\Command\\RemoveUserFromGroupCommand.cs",
+              "ToolTip": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\Features\\GroupMembers\\Command\\RemoveUserFromGroupCommand.cs",
+              "RelativeToolTip": "Application\\Features\\GroupMembers\\Command\\RemoveUserFromGroupCommand.cs",
+              "ViewState": "AgIAAB0AAAAAAAAAAAAYwCsAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-17T00:29:28.502Z",
+              "WhenOpened": "2025-05-20T15:54:37.924Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "GroupPostDto.cs",
+              "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\Features\\GroupPosts\\Dto\\GroupPostDto.cs",
+              "RelativeDocumentMoniker": "Application\\Features\\GroupPosts\\Dto\\GroupPostDto.cs",
+              "ToolTip": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\Features\\GroupPosts\\Dto\\GroupPostDto.cs",
+              "RelativeToolTip": "Application\\Features\\GroupPosts\\Dto\\GroupPostDto.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABAAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-20T13:18:50.676Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "GroupPostCommentsController.cs",
+              "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\API\\Controllers\\GroupPostCommentsController.cs",
+              "RelativeDocumentMoniker": "API\\Controllers\\GroupPostCommentsController.cs",
+              "ToolTip": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\API\\Controllers\\GroupPostCommentsController.cs",
+              "RelativeToolTip": "API\\Controllers\\GroupPostCommentsController.cs",
+              "ViewState": "AgIAACoAAAAAAAAAAAAowD4AAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-20T00:21:05.179Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 9,
+              "Title": "GetGroupMembersByUserIdQuery.cs",
+              "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\Features\\GroupMembers\\Query\\GetGroupMembersByUserIdQuery.cs",
+              "RelativeDocumentMoniker": "Application\\Features\\GroupMembers\\Query\\GetGroupMembersByUserIdQuery.cs",
+              "ToolTip": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\Features\\GroupMembers\\Query\\GetGroupMembersByUserIdQuery.cs",
+              "RelativeToolTip": "Application\\Features\\GroupMembers\\Query\\GetGroupMembersByUserIdQuery.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAiwCEAAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-20T14:53:12.467Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "GroupDto.cs",
+              "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\Features\\Groups\\Dto\\GroupDto.cs",
+              "RelativeDocumentMoniker": "Application\\Features\\Groups\\Dto\\GroupDto.cs",
+              "ToolTip": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\Features\\Groups\\Dto\\GroupDto.cs",
+              "RelativeToolTip": "Application\\Features\\Groups\\Dto\\GroupDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-20T16:31:38.131Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "GroupConfiguration.cs",
+              "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Infrastructure\\Persistences\\Configuration\\GroupConfiguration.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\Persistences\\Configuration\\GroupConfiguration.cs",
+              "ToolTip": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Infrastructure\\Persistences\\Configuration\\GroupConfiguration.cs",
+              "RelativeToolTip": "Infrastructure\\Persistences\\Configuration\\GroupConfiguration.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABgAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-20T16:32:19.471Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "UsersController.cs",
+              "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\API\\Controllers\\UsersController.cs",
+              "RelativeDocumentMoniker": "API\\Controllers\\UsersController.cs",
+              "ToolTip": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\API\\Controllers\\UsersController.cs",
+              "RelativeToolTip": "API\\Controllers\\UsersController.cs",
+              "ViewState": "AgIAADUAAAAAAAAAAAAYwD8AAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-20T16:34:00.358Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "AddUserToGroupCommand.cs",
+              "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\Features\\GroupMembers\\Command\\AddUserToGroupCommand.cs",
+              "RelativeDocumentMoniker": "Application\\Features\\GroupMembers\\Command\\AddUserToGroupCommand.cs",
+              "ToolTip": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\Features\\GroupMembers\\Command\\AddUserToGroupCommand.cs",
+              "RelativeToolTip": "Application\\Features\\GroupMembers\\Command\\AddUserToGroupCommand.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAABFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-20T15:45:35.924Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "GroupMembersController.cs",
+              "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\API\\Controllers\\GroupMembersController.cs",
+              "RelativeDocumentMoniker": "API\\Controllers\\GroupMembersController.cs",
+              "ToolTip": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\API\\Controllers\\GroupMembersController.cs",
+              "RelativeToolTip": "API\\Controllers\\GroupMembersController.cs",
+              "ViewState": "AgIAADEAAAAAAAAAAAAuwDgAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-20T15:03:32.093Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "GetJoinedGroupIdsByUserQuery.cs",
+              "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\Features\\GroupMembers\\Query\\GetJoinedGroupIdsByUserQuery.cs",
+              "RelativeDocumentMoniker": "Application\\Features\\GroupMembers\\Query\\GetJoinedGroupIdsByUserQuery.cs",
+              "ToolTip": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\Features\\GroupMembers\\Query\\GetJoinedGroupIdsByUserQuery.cs",
+              "RelativeToolTip": "Application\\Features\\GroupMembers\\Query\\GetJoinedGroupIdsByUserQuery.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-20T14:58:51.497Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "GetAllGroupsQuery.cs",
+              "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\Features\\Groups\\Query\\GetAllGroupsQuery.cs",
+              "RelativeDocumentMoniker": "Application\\Features\\Groups\\Query\\GetAllGroupsQuery.cs",
+              "ToolTip": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\Features\\Groups\\Query\\GetAllGroupsQuery.cs",
+              "RelativeToolTip": "Application\\Features\\Groups\\Query\\GetAllGroupsQuery.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAIBAwCYAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-20T14:53:56.771Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "GetLikeGroupPostById.cs",
+              "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\Features\\LikeGroupPosts\\Query\\GetLikeGroupPostById.cs",
+              "RelativeDocumentMoniker": "Application\\Features\\LikeGroupPosts\\Query\\GetLikeGroupPostById.cs",
+              "ToolTip": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\Features\\LikeGroupPosts\\Query\\GetLikeGroupPostById.cs",
+              "RelativeToolTip": "Application\\Features\\LikeGroupPosts\\Query\\GetLikeGroupPostById.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAAAywCEAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-20T13:59:45.355Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "GroupPostCommentMappingProfile.cs",
+              "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\MappingProfiles\\GroupPostCommentMappingProfile.cs",
+              "RelativeDocumentMoniker": "Application\\MappingProfiles\\GroupPostCommentMappingProfile.cs",
+              "ToolTip": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\MappingProfiles\\GroupPostCommentMappingProfile.cs",
+              "RelativeToolTip": "Application\\MappingProfiles\\GroupPostCommentMappingProfile.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABMAAABSAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-20T13:34:42.136Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "GroupPostMappingProfile.cs",
+              "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\MappingProfiles\\GroupPostMappingProfile.cs",
+              "RelativeDocumentMoniker": "Application\\MappingProfiles\\GroupPostMappingProfile.cs",
+              "ToolTip": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\MappingProfiles\\GroupPostMappingProfile.cs",
+              "RelativeToolTip": "Application\\MappingProfiles\\GroupPostMappingProfile.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAcwCMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-19T13:04:43.707Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "GroupPostCommentDto.cs",
+              "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\Features\\GroupPostComments\\Dto\\GroupPostCommentDto.cs",
+              "RelativeDocumentMoniker": "Application\\Features\\GroupPostComments\\Dto\\GroupPostCommentDto.cs",
+              "ToolTip": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\Features\\GroupPostComments\\Dto\\GroupPostCommentDto.cs",
+              "RelativeToolTip": "Application\\Features\\GroupPostComments\\Dto\\GroupPostCommentDto.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABIAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-20T13:34:25.161Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "CommentProfile.cs",
+              "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\MappingProfiles\\CommentProfile.cs",
+              "RelativeDocumentMoniker": "Application\\MappingProfiles\\CommentProfile.cs",
+              "ToolTip": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\MappingProfiles\\CommentProfile.cs",
+              "RelativeToolTip": "Application\\MappingProfiles\\CommentProfile.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAABUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-20T13:35:03.472Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "Award.cs",
+              "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Domain\\Entities\\Award.cs",
+              "RelativeDocumentMoniker": "Domain\\Entities\\Award.cs",
+              "ToolTip": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Domain\\Entities\\Award.cs",
+              "RelativeToolTip": "Domain\\Entities\\Award.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-20T09:19:43.245Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "DeleteCertificationCommand.cs",
+              "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\Features\\Certifications\\Command\\DeleteCertificationCommand.cs",
+              "RelativeDocumentMoniker": "Application\\Features\\Certifications\\Command\\DeleteCertificationCommand.cs",
+              "ToolTip": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\Features\\Certifications\\Command\\DeleteCertificationCommand.cs",
+              "RelativeToolTip": "Application\\Features\\Certifications\\Command\\DeleteCertificationCommand.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-20T08:36:32.675Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "CreateCertificationCommand.cs",
+              "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\Features\\Certifications\\Command\\CreateCertificationCommand.cs",
+              "RelativeDocumentMoniker": "Application\\Features\\Certifications\\Command\\CreateCertificationCommand.cs",
+              "ToolTip": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Application\\Features\\Certifications\\Command\\CreateCertificationCommand.cs",
+              "RelativeToolTip": "Application\\Features\\Certifications\\Command\\CreateCertificationCommand.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-20T08:36:17.978Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
               "Title": "User.cs",
               "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Domain\\Entities\\User.cs",
               "RelativeDocumentMoniker": "Domain\\Entities\\User.cs",
               "ToolTip": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Domain\\Entities\\User.cs",
               "RelativeToolTip": "Domain\\Entities\\User.cs",
-              "ViewState": "AgIAABoAAAAAAAAAAAAywCEAAAAkAAAAAAAAAA==",
+              "ViewState": "AgIAABUAAAAAAAAAAIA8wC4AAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-17T00:28:34.779Z"
+              "WhenOpened": "2025-05-20T08:36:07.908Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "GroupPostConfiguration.cs",
-              "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Infrastructure\\Persistences\\Configuration\\GroupPostConfiguration.cs",
-              "RelativeDocumentMoniker": "Infrastructure\\Persistences\\Configuration\\GroupPostConfiguration.cs",
-              "ToolTip": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Infrastructure\\Persistences\\Configuration\\GroupPostConfiguration.cs",
-              "RelativeToolTip": "Infrastructure\\Persistences\\Configuration\\GroupPostConfiguration.cs",
-              "ViewState": "AgIAACIAAAAAAAAAAAAmwDkAAAAvAAAAAAAAAA==",
+              "DocumentIndex": 30,
+              "Title": "RatingGroupPost.cs",
+              "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Domain\\Entities\\RatingGroupPost.cs",
+              "RelativeDocumentMoniker": "Domain\\Entities\\RatingGroupPost.cs",
+              "ToolTip": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Domain\\Entities\\RatingGroupPost.cs",
+              "RelativeToolTip": "Domain\\Entities\\RatingGroupPost.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-17T00:25:30.303Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "GroupPost.cs",
-              "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Domain\\Entities\\GroupPost.cs",
-              "RelativeDocumentMoniker": "Domain\\Entities\\GroupPost.cs",
-              "ToolTip": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Domain\\Entities\\GroupPost.cs",
-              "RelativeToolTip": "Domain\\Entities\\GroupPost.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAABQAAAARAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-17T00:25:17.932Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\API\\appsettings.json",
-              "RelativeDocumentMoniker": "API\\appsettings.json",
-              "ToolTip": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\API\\appsettings.json",
-              "RelativeToolTip": "API\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAEAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-05-17T00:22:53.139Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "BEContext.cs",
-              "DocumentMoniker": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Infrastructure\\Persistences\\DbContext\\BEContext.cs",
-              "RelativeDocumentMoniker": "Infrastructure\\Persistences\\DbContext\\BEContext.cs",
-              "ToolTip": "A:\\TalentShowcasePlatform\\TalentShowcasePlatform\\Infrastructure\\Persistences\\DbContext\\BEContext.cs",
-              "RelativeToolTip": "Infrastructure\\Persistences\\DbContext\\BEContext.cs",
-              "ViewState": "AgIAACQAAAAAAAAAAAAowC8AAAACAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-16T23:52:19.737Z"
+              "WhenOpened": "2025-05-19T13:05:33.252Z"
             }
           ]
         }

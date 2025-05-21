@@ -8,13 +8,16 @@ import { AuthStateService } from '../../services/auth-state.service';
 import { CommunityService } from '../../services/community/community.service';
 import { Enviroment } from '../../../environment';
 import { SubjectService } from '../../services/subject.service';
+import { DataService } from '../../services/data.service';
+import { CreateCommunityComponent } from './create-community/create-community.component';
 
 @Component({
   selector: 'app-community',
   imports: [
     RouterOutlet,
     SharedModule,
-    CommunityLeftSidebarComponent
+    CommunityLeftSidebarComponent,
+    CreateCommunityComponent
   ],
   templateUrl: './community.component.html',
   styleUrl: './community.component.css'
@@ -30,15 +33,21 @@ export class CommunityComponent implements OnInit {
   currentUser: LoginResponse['data'] | null = null; // Cập nhật kiểu dữ liệu
   private authSubscription: Subscription | undefined;
 
+  yourCommnunity: any[] = [];
+  JoinedCommunity: any[] = [];
+
+  isCreateCommunityPopupOpen: boolean = false;
+
   constructor(
     private authStateService: AuthStateService,
+    private dataService: DataService,
     private subjectService: SubjectService,
     private router: Router,
     private communityService: CommunityService
   ) { }
 
   ngOnInit(): void {
-   this.authSubscription = this.authStateService.isLoggedIn$.subscribe(
+    this.authSubscription = this.authStateService.isLoggedIn$.subscribe(
       (loggedIn) => {
         this.isLoggedIn = loggedIn;
       }
@@ -50,12 +59,23 @@ export class CommunityComponent implements OnInit {
         this.userId = user?.userId;
         this.avatarUrl = this.avatarPath + user?.avatarUrl;
         console.log("user community: ", this.currentUser);
+        this.loadJoinedGroupId(this.userId);
+        this.loadYourGroup(this.userId);
+        this.loadJoinedGroup(this.userId);
       })
     );
 
     this.loadCommunities();
     this.loadPosts();
-    
+    this.loadCategory();
+  }
+
+  loadCategory() {
+    this.dataService.getCategories().subscribe({
+      next: (res) => {
+        this.subjectService.sendCategory(res.data);
+      }, error: (err) => { }
+    })
   }
 
   loadCommunities() {
@@ -63,7 +83,7 @@ export class CommunityComponent implements OnInit {
       next: (res) => {
         this.subjectService.sendCommunity(res.data);
         this.communities = res.data;
-      }, error: (err) => { 
+      }, error: (err) => {
 
       }
     })
@@ -75,5 +95,43 @@ export class CommunityComponent implements OnInit {
         this.subjectService.sendCommunityPost(res.data);
       }, error: (err) => { }
     })
+  }
+
+  loadYourGroup(userId: string) {
+    this.communityService.getYourCommunities(userId).subscribe({
+      next: (res) => {
+        // console.log("Your Group home: ", res.data);
+        this.subjectService.sendYourCommunity(res.data);
+      },
+      error: (err) => {
+        console.error("lỗi your group: ", err);
+      }
+    });
+  }
+
+  loadJoinedGroup(userId: string) {
+    this.communityService.getJoinedCommunities(userId).subscribe({
+      next: (res) => {
+        // console.log("Joined Group: ", res.data);
+        this.subjectService.sendJoinedCommunity(res.data);
+      },
+      error: (err) => { }
+    });
+  }
+
+  loadJoinedGroupId(userId: string) {
+    this.communityService.getJoinedCommunitiesId(userId).subscribe({
+      next: (res) => {
+        this.subjectService.sendJoinedCommunitiesId(res.data);
+      },
+      error: (err) => { }
+    });
+  }
+  openCreateCommunityPopup() {
+    this.isCreateCommunityPopupOpen = true;
+  }
+
+  closeCreateCommunityPopup() {
+    this.isCreateCommunityPopupOpen = false;
   }
 }

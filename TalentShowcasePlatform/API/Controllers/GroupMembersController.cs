@@ -56,6 +56,12 @@ public class GroupMembersController : ControllerBase
 		return await _mediator.Send(new GetGroupMembersByUserIdQuery { UserId = userId }); 
 	}
 
+	[HttpGet("joined-group/{userId}")]
+	public async Task<ActionResult<Result<List<Guid>>>> GetJoinedGroupByUserId(Guid userId)
+	{
+		return await _mediator.Send(new GetJoinedGroupIdsByUserQuery(userId));
+	}
+
 	[HttpDelete("group/{groupId}/user/{userId}")]
 	public async Task<ActionResult<Result<bool>>> RemoveUserFromGroup(Guid groupId, Guid userId)
 	{

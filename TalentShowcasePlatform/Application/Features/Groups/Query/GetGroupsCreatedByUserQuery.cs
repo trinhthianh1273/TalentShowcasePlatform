@@ -31,9 +31,11 @@ public class GetGroupsCreatedByUserQueryHandler : IRequestHandler<GetGroupsCreat
 
 	public async Task<Result<IEnumerable<GroupDto>>> Handle(GetGroupsCreatedByUserQuery request, CancellationToken cancellationToken)
 	{
-		var groups = _unitOfWork.Repository<Group>().Entities
+		var groups = await _unitOfWork.Repository<Group>().Entities
 						.Where(g => g.CreatedBy == request.CreatedBy)
-						.Include(g => g.CreatedByUser);
+						.Include(g => g.CreatedByUser)
+						.Include(g => g.Category)
+						.ToListAsync(cancellationToken);
 		return Result<IEnumerable<GroupDto>>.Success(_mapper.Map<IEnumerable<GroupDto>>(groups));
 	}
 }

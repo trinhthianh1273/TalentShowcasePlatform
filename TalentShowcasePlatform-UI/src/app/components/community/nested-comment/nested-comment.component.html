@@ -7,9 +7,10 @@
 
 <article class="pl-4 mt-2">
     <div class="flex items-center space-x-2 text-xs text-gray-600 font-semibold mb-1">
-        <img [src]="comment.userAvatar" alt="avatar" class="w-8 h-8 rounded-full" height="32" width="32" />
-        <span> {{ comment.userName }} </span>
-        <span> • {{ comment.timeDiff }} </span>
+        <img [src]="avatarPath + comment.userImgUrl" (error)="onImageError($event)" alt="avatar"
+            class="w-8 h-8 rounded-full" height="32" width="32" />
+        <span> {{ comment.userName || '' }} </span>
+        <span> • {{ comment.createdAt | date: 'short'}} </span>
     </div>
     <p class="text-sm text-gray-700 mb-1" [innerHTML]="comment.content"></p>
     <div class="flex items-center space-x-2 text-xs text-gray-600 font-semibold mb-1">
@@ -18,7 +19,7 @@
             <i class="fas fa-minus text-gray-600 text-[10px]"></i>
         </button>
         <i class="far fa-thumbs-up"></i>
-        <span>{{ comment.vote }}</span>
+        <span> like </span>
         <button class="flex items-center space-x-1 text-gray-600 hover:text-black">
             <i class="far fa-comment"></i>
             <span> Trả lời </span>

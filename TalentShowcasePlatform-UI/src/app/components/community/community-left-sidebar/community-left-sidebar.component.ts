@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { SharedModule } from '../../shared/shared.module';
+import { SubjectService } from '../../../services/subject.service';
 
 @Component({
   selector: 'app-community-left-sidebar',
@@ -11,4 +12,21 @@ import { SharedModule } from '../../shared/shared.module';
 })
 export class CommunityLeftSidebarComponent {
 
+  YourCommunity: any[] = [];
+  JoinedCommunity: any[] = [];
+  constructor(
+    private subjectService : SubjectService
+  ) {  }
+
+  ngOnInit(): void {
+    this.subjectService.receivedYourCommunity$.subscribe((data) => {
+      this.YourCommunity = data;
+      // console.log("YourCommunity side bar: ", this.YourCommunity);
+    });
+    this.subjectService.receivedJoinedCommunity$.subscribe((data) => {
+      this.JoinedCommunity = data;
+    });
+  }
+
+  
 }

@@ -14,7 +14,9 @@ public class GroupProfile : Profile
 {
 	public GroupProfile()
 	{
-		CreateMap<Group, GroupDto>();
+		CreateMap<Group, GroupDto>()
+			.ForMember(dest => dest.CreatedByUserName, opt => opt.MapFrom(src => src.CreatedByUser.FullName))
+			.ForMember(dest => dest.CategoryName, opt => opt.MapFrom(src => src.Category.Name));
 		CreateMap<CreateGroupCommand, Group>();
 		CreateMap<UpdateGroupCommand, Group>();
 	}

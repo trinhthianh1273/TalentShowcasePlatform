@@ -13,6 +13,7 @@ public class Category : BaseEntity
 	public string Description { get; set; }
 
 	// Navigation Properties
+	public ICollection<Group> Groups { get; set; }
 	public ICollection<UserTalent> UserTalents { get; set; }
 	public ICollection<Video> Videos { get; set; }
 }

@@ -12,7 +12,12 @@ import { CommunityAllComponent } from './components/community/community-all/comm
 
 export const routes: Routes = [
     { path: '', loadComponent: () => import('./components/home/home.component').then(m => m.HomeComponent) },
-    { path: 'home', loadComponent: () => import('./components/home/home.component').then(m => m.HomeComponent) },
+    {
+        path: 'home', loadComponent: () => import('./components/home/home.component').then(m => m.HomeComponent),
+        children: [
+
+        ]
+    },
     { path: 'login', loadComponent: () => import('./components/login/login.component').then(m => m.LoginComponent) },
     { path: 'register', loadComponent: () => import('./components/register/register.component').then(m => m.RegisterComponent) },
     { path: 'video', loadComponent: () => import('./components/video-detail/video-detail.component').then(m => m.VideoDetailComponent) },
@@ -33,6 +38,8 @@ export const routes: Routes = [
             { path: 'post/:id', loadComponent: () => import('./components/community/community-post/community-post.component').then(m => m.CommunityPostComponent), canActivate: [AuthGuard] }, // ✅ Chặn nếu chưa đăng nhập
             { path: 'explore', loadComponent: () => import('./components/community/community-explore/community-explore.component').then(m => m.CommunityExploreComponent) },
             { path: 'all', loadComponent: () => import('./components/community/community-all/community-all.component').then(m => m.CommunityAllComponent) },
+            { path: 'group/:id', loadComponent: () => import('./components/community/community-group/community-group.component').then(m => m.CommunityGroupComponent) },
+            { path: 'create', loadComponent: () => import('./components/community/create-community/create-community.component').then(m => m.CreateCommunityComponent), canActivate: [AuthGuard] }, // ✅ Chặn nếu chưa đăng nhập
         ]
     }
 ];

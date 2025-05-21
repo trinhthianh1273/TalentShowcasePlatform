@@ -20,5 +20,7 @@ public class CommentGroupPost : BaseEntity
 	public User User { get; set; } // Navigation property to the User who commented
 	public CommentGroupPost ParentComment { get; set; } // Navigation property for nested comments
 	public GroupPost GroupPost { get; set; } // Navigation property to the parent GroupPost
-	public ICollection<CommentGroupPost> ChildComments { get; set; } // Navigation property for child comments
+	public ICollection<CommentGroupPost> ChildComments { get; set; } = new List<CommentGroupPost>();// Navigation property for child comments
+
+	public ICollection<LikeCommentGroupPost> Likes { get; set; } = new List<LikeCommentGroupPost>();
 }

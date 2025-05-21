@@ -1,6 +1,4 @@
-﻿using Application.Features.Achievements.Command;
-using Application.Features.Achievements.Query;
-using Application.Features.Certifications.Command;
+﻿using Application.Features.Certifications.Command;
 using Application.Features.Certifications.Dto;
 using AutoMapper;
 using Domain.Entities;

@@ -13,11 +13,11 @@ using System.Threading.Tasks;
 
 namespace Application.Features.Groups.Query;
 
-public record GetAllGroupsQuery : IRequest<Result<IEnumerable<GroupDto>>>
+public record GetAllGroupostsQuery : IRequest<Result<IEnumerable<GroupDto>>>
 {
 }
 
-public class GetAllGroupsQueryHandler : IRequestHandler<GetAllGroupsQuery, Result<IEnumerable<GroupDto>>>
+public class GetAllGroupsQueryHandler : IRequestHandler<GetAllGroupostsQuery, Result<IEnumerable<GroupDto>>>
 {
 	private readonly IUnitOfWork _unitOfWork;
 	private readonly IMapper _mapper;
@@ -28,10 +28,14 @@ public class GetAllGroupsQueryHandler : IRequestHandler<GetAllGroupsQuery, Resul
 		_mapper = mapper;
 	}
 
-	public async Task<Result<IEnumerable<GroupDto>>> Handle(GetAllGroupsQuery request, CancellationToken cancellationToken)
+	public async Task<Result<IEnumerable<GroupDto>>> Handle(GetAllGroupostsQuery request, CancellationToken cancellationToken)
 	{
 		var groups = await _unitOfWork.Repository<Group>()
-			.GetAllAsync(include: q => q.Include(g => g.CreatedByUser));
+								.Entities
+								.Include(i => i.CreatedByUser)
+								.Include(i => i.Category)
+								.ToListAsync(cancellationToken);
+			//.GetAllAsync(include: q => q.Include(g => g.CreatedByUser));
 		return Result<IEnumerable<GroupDto>>.Success(_mapper.Map<IEnumerable<GroupDto>>(groups));
 	}
 }

@@ -33,7 +33,11 @@ public class GetGroupMemberByIdQueryHandler : IRequestHandler<GetGroupMemberById
 	public async Task<Result<GroupMemberDto>> Handle(GetGroupMemberByIdQuery request, CancellationToken cancellationToken)
 	{
 		var groupMember = await _unitOfWork.Repository<GroupMember>()
-			.GetByIdAsync(request.Id, include: q => q.Include(gm => gm.Group).Include(gm => gm.User));
+									.Entities
+									.Where(i => i.Id == request.Id)
+									.Include(i => i.Group)
+									.Include(i => i.User)
+									.FirstOrDefaultAsync(cancellationToken);
 
 		if (groupMember == null)
 		{

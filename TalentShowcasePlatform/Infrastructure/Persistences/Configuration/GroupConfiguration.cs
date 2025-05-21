@@ -19,11 +19,17 @@ public class GroupConfiguration : IEntityTypeConfiguration<Group>
 		.HasDefaultValueSql("NEWID()");
 		builder.Property(g => g.Name).HasMaxLength(100);
 		builder.Property(g => g.Description).HasMaxLength(500);
+		builder.Property(g => g.GroupAvatar).HasMaxLength(500);
 		builder.Property(g => g.CategoryId).HasMaxLength(50);
 
 		builder.HasOne(g => g.CreatedByUser)
 			   .WithMany(u => u.CreatedGroups)
 			   .HasForeignKey(g => g.CreatedBy)
+			   .OnDelete(DeleteBehavior.Restrict);
+
+		builder.HasOne(g => g.Category)
+			   .WithMany(u => u.Groups)
+			   .HasForeignKey(g => g.CategoryId)
 			   .OnDelete(DeleteBehavior.Restrict);
 		builder.Property(g => g.CreatedAt).HasDefaultValueSql("GETDATE()");
 	}

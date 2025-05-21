@@ -13,7 +13,4 @@ public class GroupMemberDto
 	public Guid UserId { get; set; }
 	public DateTime JoinedAt { get; set; }
 
-	// Navigation Properties DTOs (if needed)
-	// public GroupDto Group { get; set; }
-	// public UserDto User { get; set; }
 }

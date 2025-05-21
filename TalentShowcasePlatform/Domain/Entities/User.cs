@@ -42,11 +42,8 @@ public class User : BaseEntity
 	public ICollection<Payment> SentPayments { get; set; }
 	public ICollection<Payment> ReceivedPayments { get; set; }
 	public ICollection<VideoLike> VideoLikes { get; set; }
-	public ICollection<Achievement> Achievements { get; set; }
 	public ICollection<Award> Awards { get; set; }
 	public ICollection<Certification> Certifications { get; set; }
-	public virtual Wallet Wallet { get; set; }
-	public ICollection<WithdrawalRequest> WithdrawalRequests { get; set; }
 	public ICollection<Follow> Following { get; set; } // Danh sách những người mà người dùng này đang theo dõi
 	public ICollection<Follow> Followers { get; set; } // Danh sách những người theo dõi người dùng này
 	public ICollection<CommentGroupPost> CommentGroupPosts { get; set; } 

@@ -7,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrl: './community-explore.component.css'
 })
 export class CommunityExploreComponent {
-
+  // cần category, nhóm theo category
 }
