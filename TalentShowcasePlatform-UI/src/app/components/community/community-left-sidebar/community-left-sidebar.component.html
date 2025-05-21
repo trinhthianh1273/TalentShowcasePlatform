@@ -11,7 +11,8 @@
       </a>
     </li> -->
     <li>
-      <a  routerLink="popular" routerLinkActive="active" class="flex items-center space-x-3 px-3 py-2 hover:bg-gray-100 rounded-md">
+      <a routerLink="popular" routerLinkActive="active"
+        class="flex items-center space-x-3 px-3 py-2 hover:bg-gray-100 rounded-md">
         <i class="fas fa-fire">
         </i>
         <span>
@@ -20,7 +21,8 @@
       </a>
     </li>
     <li>
-      <a routerLink="explore" routerLinkActive="active" class="flex items-center space-x-3 px-3 py-2 hover:bg-gray-100 rounded-md">
+      <a routerLink="explore" routerLinkActive="active"
+        class="flex items-center space-x-3 px-3 py-2 hover:bg-gray-100 rounded-md">
         <i class="fas fa-compass">
         </i>
         <span>
@@ -29,7 +31,8 @@
       </a>
     </li>
     <li>
-      <a routerLink="all" routerLinkActive="active" class="flex items-center space-x-3 px-3 py-2 hover:bg-gray-100 rounded-md">
+      <a routerLink="all" routerLinkActive="active"
+        class="flex items-center space-x-3 px-3 py-2 hover:bg-gray-100 rounded-md">
         <i class="fas fa-globe">
         </i>
         <span>
@@ -57,9 +60,8 @@
   <ul class="space-y-2 px-3">
     <li *ngFor="let group of JoinedCommunity" class="flex items-center space-x-2">
       <img alt="Subreddit r/BestofRedditorUpdates icon, black circle with white letter r" class="w-5 h-5 rounded-full"
-        height="20" src="https://storage.googleapis.com/a1aa/image/99d9ffe6-6d90-4e18-4ee4-151cfb0b435e.jpg"
-        width="20" />
-      <a class="truncate text-gray-700 text-sm hover:underline" href="#">
+        height="20" [src]="groupPath + group?.groupAvatar" width="20" />
+      <a [routerLink]="['/community/group', group.id]" class="truncate text-gray-700 text-sm hover:underline">
         {{ group.name }}
       </a>
     </li>
@@ -82,9 +84,8 @@
     </li>
     <li *ngFor="let group of YourCommunity" class="flex items-center space-x-2">
       <img alt="Subreddit r/announcements icon, orange circle with white letter r" class="w-5 h-5 rounded-full"
-        height="20" src="https://storage.googleapis.com/a1aa/image/516e75d3-9a6d-458f-ea2e-0dae686e556d.jpg"
-        width="20" />
-      <a class="truncate text-gray-700 text-sm hover:underline" href="#">
+        height="20" [src]="groupPath + group?.groupAvatar" width="20" />
+      <a class="truncate text-gray-700 text-sm hover:underline" [routerLink]="['/community/group', group.id]">
         {{ group.name }}
       </a>
     </li>

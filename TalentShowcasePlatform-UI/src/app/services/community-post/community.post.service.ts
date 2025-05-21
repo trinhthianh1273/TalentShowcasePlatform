@@ -9,6 +9,10 @@ export class CommunityPostService {
   private baseURL: string = Enviroment.baseURL;
   constructor(private http: HttpClient) { }
 
+  getPostByGroup(id: any) {
+    return this.http.get<any>(`${this.baseURL}/api/GroupPosts/by-group/${id}`);
+  }
+
   getPostComments(id: any) {
     return this.http.get<any>(`${this.baseURL}/api/GroupPostComments/by-post/${id}`);
   }

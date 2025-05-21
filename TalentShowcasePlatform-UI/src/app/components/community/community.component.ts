@@ -10,6 +10,7 @@ import { Enviroment } from '../../../environment';
 import { SubjectService } from '../../services/subject.service';
 import { DataService } from '../../services/data.service';
 import { CreateCommunityComponent } from './create-community/create-community.component';
+import { CompletingPopupComponent } from "../popup/completing-popup/completing-popup.component";
 
 @Component({
   selector: 'app-community',
@@ -17,8 +18,9 @@ import { CreateCommunityComponent } from './create-community/create-community.co
     RouterOutlet,
     SharedModule,
     CommunityLeftSidebarComponent,
-    CreateCommunityComponent
-  ],
+    CreateCommunityComponent,
+    CompletingPopupComponent
+],
   templateUrl: './community.component.html',
   styleUrl: './community.component.css'
 })

@@ -20,7 +20,9 @@ public class GroupPostMappingProfile : Profile
 		CreateMap<GroupPost, GroupPostDto>()
 			.ForMember(dest => dest.UserName, opt => opt.MapFrom(src => src.User.UserName))
 			.ForMember(dest => dest.UserImgUrl, opt => opt.MapFrom(src => src.User.AvatarUrl))
-			.ForMember(dest => dest.GroupName, opt => opt.MapFrom(src => src.Group.Name));
+			.ForMember(dest => dest.GroupName, opt => opt.MapFrom(src => src.Group.Name))
+			.ForMember(dest => dest.LikeCount, opt => opt.MapFrom(src => src.Likes.Count))
+			.ForMember(dest => dest.CommentCount, opt => opt.MapFrom(src => src.Comments.Count));
 		// Ánh xạ các thuộc tính còn lại một cách tự động nếu tên trùng khớp
 
 		// RatingGroupPost → RatingGroupPostDto

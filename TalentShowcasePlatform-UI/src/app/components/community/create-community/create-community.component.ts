@@ -103,10 +103,10 @@ export class CreateCommunityComponent {
             timeOut: 5000
           }
         );
-        this.closePopup();
+        // this.closePopup();
         console.log('Tạo cộng đồng thành công:', res);
         setTimeout(() => {
-          this.router.navigate(['/community']);
+          this.router.navigate(['/group', res.data]);
         }, 5000);
       },
       error: (err) => {

@@ -30,6 +30,7 @@ export const routes: Routes = [
     },
     { path: 'profile', loadComponent: () => import('./components/user-profile/user-profile.component').then(m => m.UserProfileComponent) },
     { path: 'profile-edit', loadComponent: () => import('./components/user-profile/edit-profile/edit-profile.component').then(m => m.EditProfileComponent) },
+    { path: 'job', loadComponent: () => import('./components/jobs/jobs.component').then(m => m.JobsComponent) },
     {
         path: 'community', loadComponent: () => import('./components/community/community.component').then(m => m.CommunityComponent), canActivate: [AuthGuard],  // ✅ Chặn nếu chưa đăng nhập 
         children: [

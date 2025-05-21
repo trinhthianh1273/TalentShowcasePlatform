@@ -76,7 +76,7 @@ public class GroupsController : ControllerBase
 		return await _mediator.Send(new DeleteGroupCommand { Id = id }); 
 	}
 
-	[HttpGet("avatar-path/{fileName}")]
+	[HttpGet("group-path/{fileName}")]
 	public IActionResult GetVideoPath(string fileName)
 	{
 		// Lấy thư mục gốc của dự án bằng cách di chuyển lên từ thư mục hiện tại

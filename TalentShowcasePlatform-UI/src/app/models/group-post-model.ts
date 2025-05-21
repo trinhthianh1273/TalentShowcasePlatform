@@ -10,5 +10,7 @@ export interface GroupPostModel {
     userImgUrl?: string,
     groupId: string,
     groupName: string,
+    likeCount : number,
+    commentCount: number,
     groupPostComments: Array<any>
 }

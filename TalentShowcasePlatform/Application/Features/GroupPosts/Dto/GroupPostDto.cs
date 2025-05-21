@@ -21,6 +21,8 @@ public class GroupPostDto
 	public string UserImgUrl { get; set; }
 	public Guid GroupId { get; set; }
 	public string GroupName { get; set; }
+	public int? LikeCount { get; set; }
+	public int? CommentCount { get; set; }
 
 	public ICollection<GroupPostCommentDto> GroupPostComments { get; set; }
 }

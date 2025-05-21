@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { SharedModule } from '../../shared/shared.module';
 import { SubjectService } from '../../../services/subject.service';
+import { Enviroment } from '../../../../environment';
 
 @Component({
   selector: 'app-community-left-sidebar',
@@ -14,6 +15,8 @@ export class CommunityLeftSidebarComponent {
 
   YourCommunity: any[] = [];
   JoinedCommunity: any[] = [];
+  groupPath = Enviroment.groupPath;
+  
   constructor(
     private subjectService : SubjectService
   ) {  }

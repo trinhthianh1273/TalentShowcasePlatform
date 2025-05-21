@@ -40,6 +40,8 @@ public class GetAllGroupPostsByGroupQueryHandler : IRequestHandler<GetAllGroupPo
 								.Where(gp => gp.GroupId == request.GroupId)
 								.Include(gp => gp.User) // Giả sử có navigation property User
 								.Include(gp => gp.Group) // Giả sử có navigation property Group
+								.Include(gp => gp.Comments) // Giả sử có navigation property Comments
+								.Include(gp => gp.Likes) // Giả sử có navigation property Likes
 							   .ToListAsync(cancellationToken);
 
 		var dtos = _mapper.Map<IEnumerable<GroupPostDto>>(groupPosts);
