@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { SharedModule } from '../../shared/shared.module';
+import { SharedModule } from '../../../shared/shared.module';
 import { CommentModel } from '../../../models/CommentModel';
 import { Enviroment } from '../../../../environment';
 

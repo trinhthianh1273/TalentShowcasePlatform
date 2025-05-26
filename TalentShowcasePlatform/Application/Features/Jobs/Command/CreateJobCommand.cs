@@ -13,15 +13,20 @@ namespace Application.Features.Jobs.Command;
 public record CreateJobCommand : IRequest<Result<Guid>>
 {
 	public string Title { get; set; }
-	public string Description { get; set; }
-	public Guid PostedBy { get; set; }
-	public Guid CategoryId { get; set; }
+	public string? CompanyName { get; set; }
 	public string Location { get; set; }
+	public string AddressDetail { get; set; }
+	public string Description { get; set; }
+	public string Requirements { get; set; }
+	public string Benefits { get; set; }
 	public string JobType { get; set; }
-	public decimal? SalaryFrom { get; set; }
-	public decimal? SalaryTo { get; set; }
+	public decimal SalaryFrom { get; set; }
+	public decimal SalaryTo { get; set; }
 	public DateTime? ExpiryDate { get; set; }
 	public string ContactEmail { get; set; }
+	public string ContactPhone { get; set; }
+	public Guid PostedBy { get; set; }
+	public Guid CategoryId { get; set; }
 }
 
 public class CreateJobCommandHandler : IRequestHandler<CreateJobCommand, Result<Guid>>
@@ -39,16 +44,20 @@ public class CreateJobCommandHandler : IRequestHandler<CreateJobCommand, Result<
 		{
 			Id = Guid.NewGuid(),
 			Title = request.Title,
-			Description = request.Description,
-			PostedBy = request.PostedBy,
-			CategoryId = request.CategoryId,
+			CompanyName = request.CompanyName,
 			Location = request.Location,
+			AddressDetail = request.AddressDetail,
+			Description = request.Description,
+			Requirements = request.Requirements,
+			Benefits = request.Benefits,
 			JobType = request.JobType,
 			SalaryFrom = request.SalaryFrom,
 			SalaryTo = request.SalaryTo,
 			ExpiryDate = request.ExpiryDate,
 			ContactEmail = request.ContactEmail,
-			CreatedAt = DateTime.UtcNow
+			ContactPhone = request.ContactPhone,
+			PostedBy = request.PostedBy,
+			CategoryId = request.CategoryId
 		};
 
 		await _unitOfWork.Repository<Job>().AddAsync(job);

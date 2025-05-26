@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { SharedModule } from '../../../shared/shared.module';
+import { SharedModule } from '../../../../shared/shared.module';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { UserData } from '../../../../interfaces/interface';
@@ -7,7 +7,7 @@ import { DataService } from '../../../../services/data.service';
 import { UserService } from '../../../../services/user.service';
 import { ToastrService } from 'ngx-toastr';
 import { Enviroment } from '../../../../../environment';
-import { AuthStateService } from '../../../../services/auth-state.service';
+import { AuthStateService } from '../../../../services/auth/auth-state.service';
 
 @Component({
   selector: 'app-basic-information',

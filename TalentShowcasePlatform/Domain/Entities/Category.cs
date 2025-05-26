@@ -16,4 +16,5 @@ public class Category : BaseEntity
 	public ICollection<Group> Groups { get; set; }
 	public ICollection<UserTalent> UserTalents { get; set; }
 	public ICollection<Video> Videos { get; set; }
+	public ICollection<Job> Jobs { get; set; }
 }

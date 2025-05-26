@@ -1,0 +1,24 @@
+@startuml
+title Forgot/Reset Password Activity Diagram
+
+(*) --> "User selects 'Forgot Password'"
+--> "Enter registered email address"
+--> "Check if email exists in the system"
+
+if "Email found?" then
+  --> [yes] "Generate reset token"
+  --> "Send reset password email\n(with link or code)"
+  --> "User clicks the reset link"
+  --> "Enter new password and confirm"
+  --> "Encrypt new password"
+  --> "Update password in database"
+  --> "Display success message"
+  --> "Redirect to login page"
+else
+  --> [no] "Display error: Email not found"
+  --> (*)
+endif
+
+--> (*)
+
+@enduml

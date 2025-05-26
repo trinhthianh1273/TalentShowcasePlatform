@@ -71,7 +71,7 @@ public class GroupPostsController : ControllerBase
 	}
 
 	[HttpPost]
-	public async Task<ActionResult<Result<Guid>>> CreateGroupPost([FromBody] CreateGroupPostCommand command)
+	public async Task<ActionResult<Result<Guid>>> CreateGroupPost([FromForm] CreateGroupPostCommand command)
 	{
 		var result = await _mediator.Send(command);
 
@@ -122,7 +122,7 @@ public class GroupPostsController : ControllerBase
 		}
 	}
 
-	[HttpGet("avatar-path/{fileName}")]
+	[HttpGet("path/{fileName}")]
 	public IActionResult GetVideoPath(string fileName)
 	{
 		// Lấy thư mục gốc của dự án bằng cách di chuyển lên từ thư mục hiện tại

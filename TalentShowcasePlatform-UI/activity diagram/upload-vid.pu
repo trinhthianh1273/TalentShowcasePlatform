@@ -1,0 +1,24 @@
+@startuml
+title Upload Video Activity Diagram
+
+(*) --> "Check if user is logged in"
+if "Authenticated?" then
+  --> [yes] "User selects video file (MP4, MOV, AVI, WebM)"
+  --> "Validate file:\n - Format\n - Size ≥ 100MB\n - Duration"
+
+  if "Is file valid?" then
+    --> [yes] "Upload video to server/cloud storage"
+    --> "Store video metadata:\nTitle, Description, Tags, etc."
+    --> "Associate video with user profile"
+    --> "Show 'Upload Successful' message"
+  else
+    --> [no] "Show validation error"
+  endif
+
+else
+  --> [no] "Redirect to login page"
+endif
+
+--> (*)
+
+@enduml

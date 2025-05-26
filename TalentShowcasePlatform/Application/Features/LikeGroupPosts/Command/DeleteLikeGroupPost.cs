@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace Application.Features.LikeGroupPosts.Command;
 
-public record DeleteLikeGroupPostCommand(Guid UserId, Guid GroupPostId) : IRequest<Result<Guid>>;
+public record DeleteLikeGroupPostCommand(Guid Id) : IRequest<Result<Guid>>;
 
 public class DeleteLikeGroupPostCommandHandler : IRequestHandler<DeleteLikeGroupPostCommand, Result<Guid>>
 {
@@ -24,16 +24,21 @@ public class DeleteLikeGroupPostCommandHandler : IRequestHandler<DeleteLikeGroup
 
 	public async Task<Result<Guid>> Handle(DeleteLikeGroupPostCommand request, CancellationToken cancellationToken)
 	{
-		var like = await _unitOfWork.Repository<LikeGroupPost>().Entities
-			.FirstOrDefaultAsync(x => x.UserId == request.UserId && x.GroupPostId == request.GroupPostId, cancellationToken);
+		try
+		{
+			var like = await _unitOfWork.Repository<LikeGroupPost>().Entities
+			.FirstOrDefaultAsync(x => x.Id == request.Id, cancellationToken);
+			if (like is null)
+				return Result<Guid>.Failure("Like not found.");
 
-		if (like is null)
-			return Result<Guid>.Failure("Like not found.");
-
-		await _unitOfWork.Repository<LikeGroupPost>().DeleteAsync(like);
-		await _unitOfWork.Save(cancellationToken);
-
-		return Result<Guid>.Success(like.Id);
+			await _unitOfWork.Repository<LikeGroupPost>().DeleteAsync(like);
+			await _unitOfWork.Save(cancellationToken);
+			return Result<Guid>.Success(like.Id);
+		}
+		catch (Exception ex) { 
+			Console.WriteLine("Lỗi tìm : ", ex);
+			return Result<Guid>.Failure();
+		}
 	}
 }
 

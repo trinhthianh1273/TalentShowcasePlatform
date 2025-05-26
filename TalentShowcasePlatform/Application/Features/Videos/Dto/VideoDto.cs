@@ -17,6 +17,9 @@ public class VideoDto
 	public Guid CategoryId { get; set; }
 	public bool IsPrivate { get; set; }
 	public DateTime UploadedAt { get; set; }
+	public int LikeCount { get; set; } = 0;
+	public int CommentCount { get; set; } = 0;
+	public int ViewCount { get; set; } = 0;
 	public UserNavigationDto UserNavigationDto { get; set; } // Navigation property to UserDto
 
 }

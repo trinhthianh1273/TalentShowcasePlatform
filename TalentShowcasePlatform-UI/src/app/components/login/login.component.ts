@@ -1,10 +1,10 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { SharedModule } from '../shared/shared.module';
+import { SharedModule } from '../../shared/shared.module';
 import { HttpClient } from '@angular/common/http';
 import { LoginResponse } from '../../interfaces/interface';
-import { AuthService } from '../../services/auth.service';
-import { AuthStateService } from '../../services/auth-state.service';
+import { AuthService } from '../../services/auth/auth.service';
+import { AuthStateService } from '../../services/auth/auth-state.service';
 
 @Component({
   selector: 'app-login',

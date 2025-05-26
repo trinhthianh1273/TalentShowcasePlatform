@@ -1,0 +1,69 @@
+<div class="px-4 py-6 max-w-5xl mx-auto">
+    <div class="flex items-center justify-between mb-6">
+        <h2 class="text-xl font-bold text-gray-900">Your Jobs</h2>
+        <button
+            class="bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold rounded-full px-4 py-2 flex items-center space-x-2"
+            (click)="onOpenCreateJob()">
+            <i class="fas fa-plus"></i>
+            <span>Create New Job</span>
+        </button>
+    </div>
+
+    <!-- Danh sách job của bạn -->
+    <div *ngIf="YourJobs.length > 0; else noJob" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <article *ngFor="let job of YourJobs"
+            class="border border-gray-300 rounded-xl p-6 bg-white shadow-sm text-gray-900 flex flex-col">
+            <div class="flex-1">
+                <h3 class="text-lg font-bold mb-1">{{ job.title }}</h3>
+                <p class="text-sm text-gray-600 mb-1">{{ job.companyName }}</p>
+                <p class="text-xs text-gray-400 mb-2">{{ job.location }}</p>
+                <span class="inline-block bg-gray-100 text-gray-700 text-xs rounded px-2 py-1 mb-2">{{ job.categoryName
+                    }}</span>
+                <p class="text-xs text-gray-400">Posted: {{ job.createdAt | date:'dd/MM/yyyy' }}</p>
+                <p class="text-xs text-gray-400">Expire: {{ job.expiryDate | date:'dd/MM/yyyy' }}</p>
+            </div>
+            <div class="flex justify-end space-x-2 mt-4">
+                <button class="text-blue-600 hover:underline text-xs font-semibold" (click)="onViewJob(job)">
+                    <i class="fas fa-eye"></i> View
+                </button>
+                <button class="text-yellow-600 hover:underline text-xs font-semibold" (click)="onEditJob(job)">
+                    <i class="fas fa-edit"></i> Update
+                </button>
+                <button class="text-red-600 hover:underline text-xs font-semibold" (click)="onDeleteJob(job)">
+                    <i class="fas fa-trash"></i> Delete
+                </button>
+            </div>
+        </article>
+    </div>
+    <!-- Popup xác nhận xóa job -->
+    <div *ngIf="showDeleteConfirm" class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
+        <div class="bg-white rounded-lg shadow-lg p-8 w-full max-w-sm text-center">
+            <div class="mb-4 text-red-600 text-2xl">
+                <i class="fas fa-exclamation-triangle"></i>
+            </div>
+            <div class="mb-4 text-gray-800 font-semibold">
+                Bạn có chắc chắn muốn xóa job {{ selectedJob?.title }} không?
+            </div>
+            <div class="flex justify-center gap-4 mt-6">
+                <button class="bg-red-600 text-white px-4 py-2 rounded" (click)="onConfirmDeleteJob()">Xóa</button>
+                <button class="bg-gray-300 px-4 py-2 rounded" (click)="onCancelDeleteJob()">Hủy</button>
+            </div>
+        </div>
+    </div>
+    <ng-template #noJob>
+        <div class="text-center text-gray-400 py-10">
+            <i class="fas fa-inbox text-4xl mb-2"></i>
+            <p class="text-lg font-semibold">Bạn chưa đăng job nào.</p>
+            <p class="text-sm">Hãy tạo job đầu tiên của bạn!</p>
+        </div>
+    </ng-template>
+
+    <!-- Popup tạo mới job -->
+    <app-create-job *ngIf="showCreateJobPopup" [Categories]="Categories" (close)="onCloseCreateJob()"></app-create-job>
+    <!-- Popup xem chi tiết job -->
+    <app-detail-job *ngIf="showJobDetailPopup" [JobData]="selectedJob"
+        (close)="onCloseJobDetailPopup()"></app-detail-job>
+    <!-- Popup cập nhật job -->
+    <app-update-job *ngIf="showEditJobPopup" [JobData]="selectedJob" [Categories]="Categories"
+        (close)="onCloseEditJob()"></app-update-job>
+</div>

@@ -1,19 +1,19 @@
 <aside id="sidebar"
   class="fixed inset-y-0 w-60  border-r border-[#d6dcd4] px-6 py-8 text-sm text-[#0f0f0f] transform -translate-x-full md:translate-x-0 md:flex md:flex-col md:justify-between">
   <div class="mb-10">
-    <a [routerLink]="['/']" 
+    <a [routerLink]="['/home']" 
       class="font-black italic text-3xl select-text cursor-default whitespace-nowrap hover:cursor-pointer">
       Talent
     </a>
   </div>
   <nav class="flex flex-col space-y-4">
-    <a [routerLink]="['/']" aria-current="page"
+    <a [routerLink]="['/home']" aria-current="page"
       class="flex items-center gap-3 bg-[#d9dee4] rounded-lg px-4 py-3 w-full font-semibold text-sm">
       <i class="fas fa-home text-lg">
       </i>
       Home
     </a>
-    <a [routerLink]="['/library']" [queryParams]="{ id: userId }"
+    <a [routerLink]="['/library', userId]"
       class="flex items-center gap-3 text-sm font-normal hover:bg-[#d9dee4] rounded-lg px-4 py-3 w-full">
       <i class="fas fa-th-large text-lg">
       </i>

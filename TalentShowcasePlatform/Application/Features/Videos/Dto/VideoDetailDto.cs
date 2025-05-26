@@ -19,5 +19,6 @@ class VideoDetailDto
 	public bool IsPrivate { get; set; }
 	public DateTime UploadedAt { get; set; }
 	public UserNavigationDto UserNavigationDto { get; set; } // Navigation property to UserDto
-	public List<Comment> Comments { get; set; } = new List<Comment>();
+	public List<CommentVideo> CommentVideos { get; set; } = new List<CommentVideo>();
+	public List<VideoLike> VideoLikes { get; set; } = new List<VideoLike>();
 }

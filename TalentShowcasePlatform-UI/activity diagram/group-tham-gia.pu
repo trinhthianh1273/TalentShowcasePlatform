@@ -1,0 +1,26 @@
+@startuml
+title Join Group Process
+
+(*) --> "User searches for groups"
+
+--> "User selects a group and clicks Join"
+
+--> "Check group's privacy setting"
+
+if (Group is Public?) then (Yes)
+  --> "Add user to GroupMembers as Member"
+  --> "Notify user of successful join"
+else 
+  --> "Create join request record"
+  --> "Notify group admins for approval"
+  --> "Wait for admin approval"
+  if (Admin approves?) then (Yes)
+    --> "Add user to GroupMembers as Member"
+    --> "Notify user of approval"
+  else 
+    --> "Notify user of rejection"
+  endif
+endif
+
+--> (*)
+@enduml

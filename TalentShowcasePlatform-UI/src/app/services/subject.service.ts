@@ -34,6 +34,12 @@ constructor() { }
   private communityPost$ = new BehaviorSubject<any>({});
   receivedCommunityPost$ = this.communityPost$.asObservable();
 
+  private jobs$ = new BehaviorSubject<any>({});
+  receivedJobs$ = this.jobs$.asObservable();
+
+  private jobData$ = new BehaviorSubject<any>({});
+  receivedJobData$ = this.jobData$.asObservable();
+
   sendAccount(data: any) {
     this.account$.next(data);
   }
@@ -67,5 +73,13 @@ constructor() { }
 
   sendCommunityPost(data: any) {
     this.communityPost$.next(data);
+  }
+
+  sendJobs(data: any) {
+    this.jobs$.next(data);
+  }
+
+  sendJobData(data: any) {
+    this.jobData$.next(data);
   }
 }

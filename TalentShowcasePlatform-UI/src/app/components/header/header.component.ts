@@ -1,32 +1,30 @@
 import { Component, ElementRef, HostListener, Input, OnInit, ViewChild } from '@angular/core';
 import { Enviroment } from '../../../environment';
-import { AuthStateService } from '../../services/auth-state.service';
+import { AuthStateService } from '../../services/auth/auth-state.service';
 import { SubjectService } from '../../services/subject.service';
-import { SharedModule } from '../shared/shared.module';
+import { SharedModule } from '../../shared/shared.module';
 import { LoginComponent } from '../login/login.component';
+import { CurrentUserModel } from '../../models/CurrentUserModel';
+import { BaseComponent } from '../base-component/base-component.component';
+import { Router } from '@angular/router';
+import { AvatarDropdownComponent } from "../avatar-dropdown/avatar-dropdown.component";
 
 @Component({
   selector: 'app-header',
   imports: [
     SharedModule,
-    LoginComponent
-  ],
+    LoginComponent,
+    AvatarDropdownComponent
+],
   templateUrl: './header.component.html',
   styleUrl: './header.component.css'
 })
-export class HeaderComponent implements OnInit {
-  userId: string = '';
-  @Input() isLoggedIn!: boolean;
-  @Input() currentUser!: any;
+export class HeaderComponent extends BaseComponent implements OnInit {
   // isLoggedIn: boolean = false;
   // currentUser: LoginResponse['data'] | null = null; // Cập nhật kiểu dữ liệu
 
   // for login
   isLoginPopupVisible: boolean = false;
-
-  avatarUrl: string = Enviroment.tempAvatarPath;
-  avatarPath = Enviroment.avatarPath;
-  tempAvatarPath = Enviroment.tempAvatarPath;
 
   // profile popup
   popupOpen = false;
@@ -34,14 +32,13 @@ export class HeaderComponent implements OnInit {
 
   constructor(
     private subjectService: SubjectService,
-    private authStateService: AuthStateService
-  ) {}
+    authStateService: AuthStateService,
+    private router: Router
+  ) {
+    super(authStateService);
+  }
   ngOnInit(): void {
-    console.log("isLoggedIn", this.isLoggedIn);
-    this.userId = this.currentUser?.userId;
-    if(this.currentUser?.avatarUrl) {
-      this.avatarUrl = this.avatarPath + this.currentUser.avatarUrl;
-    }
+    this.subscribeAuthState();
   }
 
   @HostListener('document:click', ['$event'])
@@ -59,6 +56,7 @@ export class HeaderComponent implements OnInit {
 
   logout(): void {
     this.authStateService.logout();
+    this.router.navigate(['/']);
     window.location.reload(); // Hoặc phương pháp điều hướng khác}
   }
 

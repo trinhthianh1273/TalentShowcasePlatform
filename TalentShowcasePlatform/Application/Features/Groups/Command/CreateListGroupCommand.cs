@@ -1,5 +1,4 @@
-﻿using Application.Features.Comments.Dto;
-using Application.Features.Groups.Dto;
+﻿using Application.Features.Groups.Dto;
 using AutoMapper;
 using Domain.Entities;
 using Domain.Interfaces;

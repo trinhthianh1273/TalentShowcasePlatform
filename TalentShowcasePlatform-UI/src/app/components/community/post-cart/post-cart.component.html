@@ -1,9 +1,9 @@
-<article aria-label="Post by u/Lucy_Bloom45" class="mb-6 border-b border-gray-200 pb-4 hover:cursor-pointer">
+<article (click)="gotoPost(PostData.id)" class="py-4 px-4 border-b" aria-label="Post by u/Lucy_Bloom45">
     <header class="flex items-center space-x-2 text-xs text-gray-500 mb-1">
         <img alt="Yellow circle with user icon" class="w-5 h-5 rounded-full" height="20"
             src="https://storage.googleapis.com/a1aa/image/9223fc31-72ec-4750-90e9-0610992617d4.jpg" width="20" />
         <span class="font-semibold text-black"> {{ PostData.userName }} </span>
-        <span> • {{ PostData.createdAt }} </span>
+        <span> • {{ PostData.createdAt | date: "short" }} </span>
         <button aria-label="More options" class="ml-auto text-gray-400 hover:text-gray-600">
             <i class="fas fa-ellipsis-h"> </i>
         </button>
@@ -14,13 +14,18 @@
     <p class="text-sm text-gray-800 leading-relaxed">
         {{ PostData.content }}
     </p>
+    <!-- Hiển thị ảnh nếu có -->
+  <div *ngIf="PostData.imgUrl" class="mt-3">
+    <img [src]="groupPostPath + PostData.imgUrl" alt="Ảnh không hiển thị"
+      class="w-77 max-h-[500px] object-cover rounded-xl border" />
+  </div>
     <div class="flex items-center space-x-3 mt-3 text-gray-600 text-xs font-semibold hover:cursor-pointer">  
         <button aria-label="Upvote"
             class="flex items-center space-x-1 bg-gray-200 rounded-full px-3 py-1 hover:bg-gray-300">
             <i class="far fa-thumbs-up"> </i>
             <span> {{ PostData.likeCount ?? 0}} </span>
         </button>
-        <button aria-label="Comments"
+        <button (click)="gotoPost(PostData.id)"  type="button" aria-label="Comments"
             class="flex items-center space-x-1 bg-gray-200 rounded-full px-3 py-1 hover:bg-gray-300">
             <i class="far fa-comment"> </i>
             <span> {{ PostData.commentCount ?? 0}} </span>

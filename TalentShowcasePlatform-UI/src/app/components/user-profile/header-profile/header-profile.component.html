@@ -3,13 +3,13 @@
 
         <!-- Left navigation -->
         <div class="flex items-center space-x-6">
-            <a [routerLink]="['/']" class="text-lg font-bold">Talent</a>
-            <a href="#" class="hover:underline">Community</a>
-            <a href="#" class="hover:underline">Find Jobs</a>
-            <a href="#" class="hover:underline">Contests</a>
+            <a [routerLink]="['/home']" class="text-lg font-bold">Talent</a>
+            <a [routerLink]="['/community']" class="hover:underline">Community</a>
+            <a [routerLink]="['/job']" class="hover:underline">Find Jobs</a>
+            <a [routerLink]="['/job/your-jobs']" class="hover:underline">Your Jobs</a>
 
             <!-- Search bar -->
-            <div class="relative">
+            <!-- <div class="relative">
                 <input type="text" placeholder="Search..."
                     class="pl-8 pr-3 py-1 rounded-full bg-gray-700 text-white placeholder-gray-300 text-sm focus:outline-none" />
                 <svg class="w-4 h-4 text-gray-300 absolute left-2 top-1/2 transform -translate-y-1/2" fill="none"
@@ -17,7 +17,7 @@
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                         d="M21 21l-4.35-4.35M10 18a8 8 0 100-16 8 8 0 000 16z"></path>
                 </svg>
-            </div>
+            </div> -->
         </div>
 
         <!-- Right icons -->

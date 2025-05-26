@@ -1,14 +1,15 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { VideosService } from '../../../services/videos.service';
-import { AuthStateService } from '../../../services/auth-state.service';
+import { AuthStateService } from '../../../services/auth/auth-state.service';
 import { ToastrService } from 'ngx-toastr';
 import { ActivatedRoute, Router } from '@angular/router';
 import { LoginResponse } from '../../../interfaces/interface';
 import { Subscription } from 'rxjs';
 import { Enviroment } from '../../../../environment';
 import { DataService } from '../../../services/data.service';
-import { SharedModule } from '../../shared/shared.module';
+import { SharedModule } from '../../../shared/shared.module';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { BaseComponent } from '../../base-component/base-component.component';
 
 @Component({
   selector: 'app-user-video',
@@ -18,13 +19,7 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
   templateUrl: './user-video.component.html',
   styleUrl: './user-video.component.css'
 })
-export class UserVideoComponent implements OnInit {
-  isLoggedIn: any;
-  currentUser: LoginResponse['data'] | null = null; // Cập nhật kiểu dữ liệu
-  private authSubscription: Subscription | undefined;
-
-  avatarUrl: string = Enviroment.tempAvatarPath;
-  avatarPath = Enviroment.avatarPath;
+export class UserVideoComponent extends BaseComponent implements OnInit {
 
   src = Enviroment.videoPath;
   videoId: any;
@@ -37,39 +32,33 @@ export class UserVideoComponent implements OnInit {
   // profile popup
   popupOpen = false;
   @ViewChild('popupWrapper', { static: false }) popupWrapper!: ElementRef;
-  
+
   constructor(
     private videoService: VideosService,
-    private authStateService: AuthStateService,
+    authStateService: AuthStateService,
     private dataService: DataService,
     private toastr: ToastrService,
     private routeActive: ActivatedRoute,
     private fb: FormBuilder,
     private router: Router
-  ) { }
+  ) {
+    super(authStateService);
+  }
   ngOnInit(): void {
     this.videoId = this.routeActive.snapshot.queryParamMap.get('id');
     this.loadVideo(this.videoId);
     this.loadCommentVideo(this.videoId);
 
-    this.authSubscription = this.authStateService.isLoggedIn$.subscribe(
-      (loggedIn) => {
-        this.isLoggedIn = loggedIn;
-      }
-    );
-
-    this.authSubscription.add(
-      this.authStateService.currentUser$.subscribe((user) => {
-        this.currentUser = user;
-        if (this.currentUser?.avatarUrl) {
-          this.avatarUrl = this.avatarPath + this.currentUser.avatarUrl;
-        }
-      })
-    );
+    this.subscribeAuthState();
     this.loadCategory();
   }
 
-
+  override onCurrentUserLoaded(user: any): void {
+    if (user != null) {
+      this.userId = user.userId;
+      this.avatarUrl = this.avatarPath + user.avatarUrl;
+    }
+  }
   refreshComponent() {
     const currentUrl = this.router.url.split('?')[0]; // chỉ lấy path
     const queryParams = this.routeActive.snapshot.queryParams;
@@ -78,7 +67,6 @@ export class UserVideoComponent implements OnInit {
       this.router.navigate([currentUrl], { queryParams });
     });
   }
-
 
   onSubmit(videoId: any) {
     if (this.updateVideoForm.invalid) {

@@ -22,8 +22,8 @@ public class ContestEntryConfiguration : IEntityTypeConfiguration<ContestEntry>
 			   .HasForeignKey(ce => ce.ContestId)
 			   .OnDelete(DeleteBehavior.Restrict);
 		builder.HasOne(ce => ce.Video)
-			   .WithMany(v => v.ContestEntries)
-			   .HasForeignKey(ce => ce.VideoId)
+			   .WithOne(v => v.ContestEntry)
+			   .HasForeignKey<ContestEntry>(ce => ce.VideoId)
 			   .OnDelete(DeleteBehavior.Restrict);
 		builder.Property(ce => ce.SubmittedAt).HasDefaultValueSql("GETDATE()");
 		builder.Property(ce => ce.Votes).IsRequired();

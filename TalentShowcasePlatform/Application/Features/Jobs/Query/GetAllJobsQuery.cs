@@ -13,11 +13,11 @@ using System.Threading.Tasks;
 
 namespace Application.Features.Jobs.Query;
 
-public record GetAllJobsQuery : IRequest<Result<IEnumerable<JobDto>>>
+public record GetAllJobsQuery : IRequest<Result<IEnumerable<JobShortDto>>>
 {
 }
 
-public class GetAllJobsQueryHandler : IRequestHandler<GetAllJobsQuery, Result<IEnumerable<JobDto>>>
+public class GetAllJobsQueryHandler : IRequestHandler<GetAllJobsQuery, Result<IEnumerable<JobShortDto>>>
 {
 	private readonly IUnitOfWork _unitOfWork;
 	private readonly IMapper _mapper;
@@ -28,12 +28,12 @@ public class GetAllJobsQueryHandler : IRequestHandler<GetAllJobsQuery, Result<IE
 		_mapper = mapper;
 	}
 
-	public async Task<Result<IEnumerable<JobDto>>> Handle(GetAllJobsQuery request, CancellationToken cancellationToken)
+	public async Task<Result<IEnumerable<JobShortDto>>> Handle(GetAllJobsQuery request, CancellationToken cancellationToken)
 	{
 		var jobs = await _unitOfWork.Repository<Job>()
 			.GetAllAsync(include: q => q.Include(j => j.PostedByUser).Include(j => j.Category));
 
-		return Result<IEnumerable<JobDto>>.Success(_mapper.Map<IEnumerable<JobDto>>(jobs));
+		return Result<IEnumerable<JobShortDto>>.Success(_mapper.Map<IEnumerable<JobShortDto>>(jobs));
 	}
 }
 

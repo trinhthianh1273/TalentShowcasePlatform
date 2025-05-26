@@ -21,9 +21,10 @@ public class Video : BaseEntity
 	// Navigation Properties
 	public User User { get; set; }
 	public Category Category { get; set; }
-	public ICollection<Comment> Comments { get; set; }
+	public ContestEntry ContestEntry { get; set; }
+	public ICollection<CommentVideo> CommentVideos { get; set; }
 	public ICollection<Rating> Ratings { get; set; }
 	public ICollection<View> Views { get; set; }
-	public ICollection<ContestEntry> ContestEntries { get; set; }
+	
 	public ICollection<VideoLike> VideoLikes { get; set; }
 }

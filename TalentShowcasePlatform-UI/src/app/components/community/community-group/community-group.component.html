@@ -1,12 +1,11 @@
 <div class="bg-gray-100 rounded-md h-12 mb-4"></div>
-<div class="flex gap-6">
+<div class="flex flex-row w-full min-h-screen">
     <!-- Main Content -->
-    <section class="flex-1 max-w-4xl px-6 py-6">
+    <section class="flex-1 min-w-0  px-6 py-6 w-full min-w-[800px]">
         <header class="flex items-center justify-between mb-6">
             <div class="flex items-center space-x-4">
                 <img alt="group avatar" class="w-14 h-14 rounded-full border-gray-200" height="56"
-                    [src]="groupPath + GroupData?.groupAvatar"
-                    width="56" />
+                    [src]="groupPath + GroupData?.groupAvatar" width="56" />
                 <h1 class="text-2xl font-extrabold flex items-center space-x-2">
                     <span> {{ GroupData?.name }} </span>
                     <!-- <img alt="Ghost emoji" class="w-6 h-6" height="24"
@@ -15,7 +14,7 @@
                 </h1>
             </div>
             <div class="flex items-center space-x-3 text-sm font-semibold">
-                <button
+                <button (click)="gotoCreatePost(groupId)" type="button"
                     class="flex items-center space-x-2 border border-gray-300 rounded-full px-4 py-2 hover:bg-gray-200">
                     <i class="fas fa-plus"> </i>
                     <span> Create Post </span>
@@ -23,13 +22,16 @@
                 <!-- <button aria-label="Notifications" class="border border-gray-300 rounded-full p-2 hover:bg-gray-200">
                     <i class="far fa-bell"> </i>
                 </button> -->
-                <button *ngIf="!isGroupOwner && isJoined" class="border border-green-300 bg-green-500 rounded-full px-4 py-2 hover:bg-gray-200">
+                <button *ngIf="!isGroupOwner && isJoined"
+                    class="border border-green-300 bg-green-500 rounded-full px-4 py-2 hover:bg-gray-200">
                     Joined
                 </button>
-                <button *ngIf="!isGroupOwner && !isJoined" class="border border-gray-300 bg-gray-500 rounded-full px-4 py-2 hover:bg-gray-200">
+                <button *ngIf="!isGroupOwner && !isJoined"
+                    class="border border-gray-300 bg-gray-500 rounded-full px-4 py-2 hover:bg-gray-200">
                     Join
                 </button>
-                <button *ngIf="isGroupOwner" class="border border-blue-300 bg-blue-500 rounded-full px-4 py-2 hover:bg-gray-200">
+                <button *ngIf="isGroupOwner"
+                    class="border border-blue-300 bg-blue-500 rounded-full px-4 py-2 hover:bg-gray-200">
                     Owrer
                 </button>
                 <button aria-label="More options" class="border border-gray-300 rounded-full p-2 hover:bg-gray-200">
@@ -46,90 +48,22 @@
                 <i class="far fa-th-large"> </i>
             </button>
         </div>
-        <app-post-cart *ngFor="let item of ListPost" [PostData]="item" ></app-post-cart>
-        <!-- Post 1 -->
-        <!-- <article aria-label="Post by u/Lucy_Bloom45" class="mb-6 border-b border-gray-200 pb-4">
-            <header class="flex items-center space-x-2 text-xs text-gray-500 mb-1">
-                <img alt="Yellow circle with user icon" class="w-5 h-5 rounded-full" height="20"
-                    src="https://storage.googleapis.com/a1aa/image/9223fc31-72ec-4750-90e9-0610992617d4.jpg"
-                    width="20" />
-                <span class="font-semibold text-black"> u/Lucy_Bloom45 </span>
-                <span> • 2 days ago </span>
-                <button aria-label="More options" class="ml-auto text-gray-400 hover:text-gray-600">
-                    <i class="fas fa-ellipsis-h"> </i>
-                </button>
-            </header>
-            <h2 class="font-bold text-base mb-1">
-                You want every mail printed and handed to you? Sure thing, boss
-            </h2>
-            <p class="text-sm text-gray-800 leading-relaxed">
-                I used to work for a middle manager who hated reading emails. Every time
-                we’d send project updates or questions, he’d ignore them. When called
-                out on it, he loudly declared, “If it’s important, PRINT IT and hand it
-                to me. I don’t read emails!” Alrighty then. Cue the malicious
-                compliance. I printed every single email I sent him—reminders, client
-                follow-ups, even memes someone accidentally CC’d me on. I’d walk over to
-                his desk 6–8 times a day with a mini stack of paper like, “Per your
-                request!” Within a week, his desk looked like a filing cabinet exploded.
-                He couldn’t find anything. He started snapping, “Why are you printing
-                all this!?” I smiled sweetly and...
-            </p>
-            <div class="flex items-center space-x-3 mt-3 text-gray-600 text-xs font-semibold">
-                <button aria-label="Upvote"
-                    class="flex items-center space-x-1 bg-gray-200 rounded-full px-3 py-1 hover:bg-gray-300">
-                    <i class="fas fa-arrow-up"> </i>
-                    <span> 9.5K </span>
-                </button>
-                <button aria-label="Downvote"
-                    class="flex items-center space-x-1 bg-gray-200 rounded-full px-3 py-1 hover:bg-gray-300">
-                    <i class="fas fa-arrow-down"> </i>
-                </button>
-                <button aria-label="Comments"
-                    class="flex items-center space-x-1 bg-gray-200 rounded-full px-3 py-1 hover:bg-gray-300">
-                    <i class="far fa-comment"> </i>
-                    <span> 299 </span>
-                </button>
-                <button aria-label="Award"
-                    class="flex items-center space-x-1 bg-gray-200 rounded-full px-3 py-1 hover:bg-gray-300">
-                    <i class="fas fa-award"> </i>
-                </button>
-                <button aria-label="Share"
-                    class="flex items-center space-x-1 bg-gray-200 rounded-full px-3 py-1 hover:bg-gray-300">
-                    <i class="fas fa-share"> </i>
-                    <span> Share </span>
-                </button>
-            </div>
-        </article> -->
-        <!-- Post 2 -->
-        <!-- <article aria-label="Promoted post by u/RevokeEth" class="mb-6 border-b border-gray-200 pb-4">
-            <header class="flex items-center space-x-2 text-xs text-gray-500 mb-1">
-                <img alt="Orange circle with r letter" class="w-5 h-5 rounded-full" height="20"
-                    src="https://storage.googleapis.com/a1aa/image/1b4054bc-3297-4023-46ff-261855e75fc3.jpg"
-                    width="20" />
-                <span class="font-semibold text-black"> u/RevokeEth </span>
-                <span> • Promoted </span>
-                <button aria-label="More options" class="ml-auto text-gray-400 hover:text-gray-600">
-                    <i class="fas fa-ellipsis-h"> </i>
-                </button>
-            </header>
-            <h2 class="font-bold text-base mb-1 leading-snug">
-                <span class="mr-1"> 🚨 </span>
-                A victim lost $329,743 ETH due to a phishing approval signed 408 days
-                ago.
-                <span class="mr-1"> 🔐 </span>
-                <br />
-                <strong> REMINDER: Regularly review and revoke old approvals, </strong>
-                <span class="mr-1"> 🔍 </span>
-                Check https://revokecash.io and revoke old approvals.
-            </h2>
-            <img alt="Screenshot showing phishing approval details with success badge and block confirmations"
-                class="rounded-md border border-gray-300 mt-2" height="300"
-                src="https://storage.googleapis.com/a1aa/image/33a31bd2-d192-498f-55ba-2eeb472f8871.jpg" width="600" />
-        </article> -->
+        <div class=" flex-1 flex flex-col mb-6 border-b border-gray-200 pb-4  hover:cursor-pointer">
+            <ng-container *ngIf="ListPost && ListPost.length > 0; else noPost">
+                <app-post-cart *ngFor="let item of ListPost" [PostData]="item"></app-post-cart>
+            </ng-container>
+            <ng-template #noPost>
+                <div class="w-full text-center bg-white rounded-lg border border-dashed border-gray-300 flex flex-col justify-center py-10 text-gray-400">
+                    <i class="fas fa-inbox text-4xl mb-2"></i>
+                    <p class="text-lg font-semibold">Chưa có bài viết nào trong nhóm này.</p>
+                    <p class="text-sm">Hãy là người đầu tiên đăng bài!</p>
+                </div>
+            </ng-template>
+        </div>
     </section>
     <!-- Right Sidebar -->
     <aside aria-label="Right sidebar"
-        class="hidden xl:flex flex-col w-72 border border-gray-200 px-4 py-6 space-y-6 text-xs text-gray-600">
+        class="flex-shrink-0 w-72 border border-gray-200 px-4 py-6 space-y-6 text-xs text-gray-600">
         <div>
             <div class="mb-2 font-semibold text-gray-400 uppercase tracking-widest select-none">
                 Comments must forward the discussion.

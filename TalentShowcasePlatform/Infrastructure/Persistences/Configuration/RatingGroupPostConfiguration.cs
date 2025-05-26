@@ -28,7 +28,7 @@ public class RatingGroupPostConfiguration : IEntityTypeConfiguration<RatingGroup
 			.OnDelete(DeleteBehavior.Restrict);
 
 		builder.HasOne(x => x.User)
-			.WithMany()
+			.WithMany(x => x.RatingGroupPosts)
 			.HasForeignKey(x => x.UserId)
 			.OnDelete(DeleteBehavior.Restrict);
 

@@ -1,14 +1,16 @@
 import { AfterViewInit, Component, HostListener, Inject, OnInit, PLATFORM_ID } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { SharedModule } from '../shared/shared.module';
+import { SharedModule } from '../../shared/shared.module';
 import { VideoCardComponent } from '../video-card/video-card.component';
 import { Router } from '@angular/router';
 import { VideosService } from '../../services/videos.service';
 import { LoginResponse } from '../../interfaces/interface';
-import { AuthStateService } from '../../services/auth-state.service';
+import { AuthStateService } from '../../services/auth/auth-state.service';
 import { SubjectService } from '../../services/subject.service';
 import { HeaderComponent } from '../header/header.component';
 import { AsideLeftComponent } from "../aside-left/aside-left.component";
+import { BaseComponent } from '../base-component/base-component.component';
+import { CurrentUserModel } from '../../models/CurrentUserModel';
 
 @Component({
   selector: 'app-home',
@@ -22,13 +24,8 @@ import { AsideLeftComponent } from "../aside-left/aside-left.component";
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent extends BaseComponent implements OnInit {
   videoList: any[] = []; // Khai báo biến videoList để lưu trữ danh sách video
-
-  isLoggedIn: boolean = false;
-  userId: any;
-  currentUser: LoginResponse['data'] | null = null; // Cập nhật kiểu dữ liệu
-  private authSubscription: Subscription | undefined;
 
   page = 1;
   pageSize = 12;
@@ -40,24 +37,15 @@ export class HomeComponent implements OnInit {
   constructor(
     private subjectService: SubjectService,
     private videoService: VideosService,
-    private authStateService: AuthStateService,
-    private router: Router
-  ) { }
+    private router: Router,
+    authStateService: AuthStateService,
+  ) { 
+    super(authStateService);
+  }
 
   ngOnInit() {
     this.loadVideos();
-    this.authSubscription = this.authStateService.isLoggedIn$.subscribe(
-      (loggedIn) => {
-        this.isLoggedIn = loggedIn;
-      }
-    );
-
-    this.authSubscription.add(
-      this.authStateService.currentUser$.subscribe((user) => {
-        this.currentUser = user;
-        this.userId = user?.userId;
-      })
-    );
+    this.subscribeAuthState();
     console.log("user home: ", this.currentUser);
   }
 
@@ -121,7 +109,7 @@ export class HomeComponent implements OnInit {
   }
 
 
-  handleLoginSuccess(userData: LoginResponse['data']): void {
+  handleLoginSuccess(userData: CurrentUserModel): void {
     this.isLoggedIn = true;
     this.currentUser = userData; // Lưu trực tiếp dữ liệu người dùng
   }

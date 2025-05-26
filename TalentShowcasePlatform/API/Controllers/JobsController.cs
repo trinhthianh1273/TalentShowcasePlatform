@@ -39,15 +39,24 @@ public class JobsController : ControllerBase
 		return await _mediator.Send(new GetJobByIdQuery { Id = id }); 
 	}
 
+	[HttpGet("get-by-user/{userId}")]
+	public async Task<ActionResult<Result<IEnumerable<JobDto>>>> GetJobByUserId(Guid userId)
+	{
+		return await _mediator.Send(new GetJobByUserIdQuery { UserId = userId });
+	}
+
 	[HttpGet]
-	public async Task<ActionResult<Result<IEnumerable<JobDto>>>> GetAllJobs()
+	public async Task<ActionResult<Result<IEnumerable<JobShortDto>>>> GetAllJobs()
 	{
 		return await _mediator.Send(new GetAllJobsQuery()); 
 	}
 
 	[HttpPut("{id}")]
 	public async Task<ActionResult<Result<bool>>> UpdateJob(Guid id, UpdateJobCommand command)
-	{ 
+	{
+		if (id != command.Id) {
+			return BadRequest("Job not found");
+		}
 		return await _mediator.Send(command); 
 	}
 

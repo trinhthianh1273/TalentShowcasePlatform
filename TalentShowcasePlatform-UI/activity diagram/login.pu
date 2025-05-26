@@ -1,0 +1,19 @@
+@startuml
+title Login and Logout Activity Diagram
+
+(*) --> "Enter email and password"
+--> "Validate credentials\nwith the database"
+
+if "Are credentials valid?" then
+  --> [yes] "Generate session or token\n(JWT or cookie)"
+  --> "User accesses their account"
+else
+  --> [no] "Display authentication error"
+  --> (*)
+endif
+
+--> "User clicks logout"
+--> "Invalidate token/session"
+--> (*)
+
+@enduml

@@ -1,0 +1,23 @@
+@startuml
+title Edit Profile Activity Diagram (with Certificates & Awards)
+
+(*) --> "User accesses Edit Profile page"
+
+--> "Update avatar, bio, and personal info"
+--> "Add or update skills and talent areas"
+--> "Add certificates and awards\n(name, year, issuer)"
+
+--> "Validate all inputs"
+
+if "Are inputs valid?" then
+  --> [yes] "Save updated profile to the database"
+  --> "Display success message"
+  --> "Refresh profile view"
+else
+  --> [no] "Display error messages"
+  --> "Allow user to correct input"
+endif
+    
+--> (*)
+
+@enduml

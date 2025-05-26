@@ -52,7 +52,7 @@ public class BEContext : DbContext
 	public DbSet<Category> Categories { get; set; }
 	public DbSet<UserTalent> UserTalents { get; set; }
 	public DbSet<Video> Videos { get; set; }
-	public DbSet<Comment> Comments { get; set; }
+	public DbSet<CommentVideo> CommentVideos { get; set; }
 	public DbSet<Rating> Ratings { get; set; }
 	public DbSet<Group> Groups { get; set; }
 	public DbSet<GroupMember> GroupMembers { get; set; }
@@ -63,7 +63,6 @@ public class BEContext : DbContext
 	public DbSet<Notification> Notifications { get; set; }
 	public DbSet<View> Views { get; set; }
 	public DbSet<Job> Jobs { get; set; }
-	public DbSet<Payment> Payments { get; set; }
 	public DbSet<VideoLike> VideoLikes { get; set; }
 	public DbSet<Award> Awards { get; set; }
 	public DbSet<Certification> Certifications { get; set; }

@@ -25,6 +25,12 @@ public class VideoLikesController : ControllerBase
 		return await _mediator.Send(new GetVideoLikeByIdQuery { Id = id }); 
 	}
 
+	[HttpGet("video/{id}")]
+	public async Task<ActionResult<Result<IEnumerable<VideoLikeDto>>>> GetVideoLikeByVideoId(Guid id)
+	{
+		return await _mediator.Send(new GetVideoLikeByVideoIdQuery { VideoId = id });
+	}
+
 	[HttpGet]
 	public async Task<ActionResult<Result<IEnumerable<VideoLikeDto>>>> GetAllVideoLikes()
 	{

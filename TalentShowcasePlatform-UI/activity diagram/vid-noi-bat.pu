@@ -1,0 +1,13 @@
+@startuml
+title Display Featured Videos
+
+(*) --> "System queries videos with:\n - High views\n - High likes/comments\n - Admin-featured flag"
+
+--> "Apply ranking logic (weighting views, likes, comments...)"
+
+--> "Return top N featured videos"
+
+--> "Display in:\n - Explore Page\n - Search Results\n - Top Banners"
+
+--> (*)
+@enduml

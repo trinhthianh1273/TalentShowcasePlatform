@@ -11,7 +11,7 @@ public class View : BaseEntity
 {
 	public Guid VideoId { get; set; }
 	public Guid ViewerId { get; set; }
-	public DateTime ViewedAt { get; set; }
+	public DateTime ViewedAt { get; set; } = DateTime.Now;
 
 	// Navigation Properties
 	public Video Video { get; set; }

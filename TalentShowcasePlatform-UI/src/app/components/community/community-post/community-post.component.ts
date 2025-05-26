@@ -1,10 +1,10 @@
 import { Component, Input } from '@angular/core';
 import { NestedCommentComponent } from "../nested-comment/nested-comment.component";
-import { SharedModule } from '../../shared/shared.module';
+import { SharedModule } from '../../../shared/shared.module';
 import { CommentModel, commentsMockData } from '../../../models/CommentModel';
 import { ActivatedRoute } from '@angular/router';
-import { Subscription } from 'rxjs';
-import { AuthStateService } from '../../../services/auth-state.service';
+import { EMPTY, empty, Subscription } from 'rxjs';
+import { AuthStateService } from '../../../services/auth/auth-state.service';
 import { CommunityService } from '../../../services/community/community.service';
 import { error } from 'console';
 import { GroupPostModel } from '../../../models/group-post-model';
@@ -13,6 +13,7 @@ import { Enviroment } from '../../../../environment';
 import { GroupModel } from '../../../models/GroupModel';
 import { SubjectService } from '../../../services/subject.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { BaseComponent } from '../../base-component/base-component.component';
 
 @Component({
   selector: 'app-community-post',
@@ -20,33 +21,31 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
   templateUrl: './community-post.component.html',
   styleUrl: './community-post.component.css'
 })
-export class CommunityPostComponent {
+export class CommunityPostComponent extends BaseComponent {
   postId: string = '';
   postData!: GroupPostModel; // Dữ liệu bài viết
   groupId: string = ''; // ID của nhóm
   groupData!: GroupModel;
 
+  groupPostPath = Enviroment.groupPostPath;
+
   @Input() comments: CommentModel[] = []; // Truyền từ parent hoặc lấy qua API
   likes: any[] = []; // Dữ liệu like
+  isLikePost: boolean = false;
+  isLikePostId!: string;
+
   constructor(
     private route: ActivatedRoute,
-    private authStateService: AuthStateService,
+    authStateService: AuthStateService,
     private communityService: CommunityService,
     private cPostService: CommunityPostService,
     private subjectService: SubjectService,
   ) {
+    super(authStateService);
     this.commentForm = new FormGroup({
       content: new FormControl('', Validators.required)
     });
   }
-
-  avatarUrl: string = Enviroment.tempAvatarPath;
-  avatarPath = Enviroment.avatarPath;
-
-  isLoggedIn: boolean = false;
-  userId: string = "";
-  currentUser: any = null;
-  private authSubscription: Subscription | undefined;
 
   isJoined: boolean = false;
   joinedGroupId: string[] = [];
@@ -65,35 +64,70 @@ export class CommunityPostComponent {
       }
     });
 
-    // this.commentForm = new FormGroup({
-    //   content: new FormControl(
-    //     { value: '', disabled: !this.joinedGroupId.includes(this.groupId) },  // 👈 Quan trọng!
-    //     Validators.required
-    //   )
-    // });
-
-    this.authSubscription = this.authStateService.isLoggedIn$.subscribe(
-      (loggedIn) => {
-        this.isLoggedIn = loggedIn;
-      }
-    );
-    this.authSubscription.add(
-      this.authStateService.currentUser$.subscribe((user) => {
-        this.currentUser = user;
-        this.userId = user?.userId;
-      })
-    );
-
-    this.subjectService.receivedJoinedCommunitiesId$.subscribe((joinedGroupId) => {
+    this.subscribeAuthState();
+    this.checkLike();
+    this.subjectService.receivedJoinedCommunitiesId$.pipe().subscribe((joinedGroupId) => {
       this.joinedGroupId = joinedGroupId;
       console.log("Joined Group ID:", this.joinedGroupId);
-      
     });
 
   }
 
+  checkLike() {
+    const checkLike = {
+      postId: this.postId,
+      userId: this.userId
+    }
+    this.cPostService.isLikePost(checkLike).subscribe({
+      next: (res) => {
+         this.isLikePost = true;
+         this.isLikePostId = res.data;
+          console.log("isLikePost:", res, this.isLikePost);
+      },
+      error: (error) => {
+        this.isLikePost = error.data;
+        console.error('Error fetching like data:', error);
+      }
+    });
+  }
+
+  protected override onCurrentUserLoaded(user: any): void {
+    if (user != null) {
+      this.userId = user.userId;
+      this.avatarUrl = this.avatarPath + user.avatarUrl;
+    }
+  }
+
+  handleLikePost(groupPostId: string, userId: string) {
+    if (this.isLikePost) {
+      // hủy like
+      this.cPostService.deleteLikePost(this.isLikePostId).subscribe({
+        next: (res) => {
+          this.isLikePost = !this.isLikePost;
+          this.isLikePostId = '';
+          this.loadPostLike(groupPostId);
+        },
+        error: (error) => {
+          console.error('Error submitting like:', error);
+        }
+      })
+    } else {
+      // thực hiện like
+      this.cPostService.sentLikePost({ groupPostId, userId }).subscribe({
+        next: (res) => {
+          this.isLikePost = !this.isLikePost;
+          this.isLikePostId = res.data;
+          this.loadPostLike(groupPostId);
+        },
+        error: (error) => {
+          console.error('Error submitting like:', error);
+        }
+      })
+    }
+  }
+
   submitComment(): void {
-    if(this.joinedGroupId.includes(this.groupId) == false) { 
+    if (this.joinedGroupId.includes(this.groupId) == false) {
       alert("Bạn cần tham gia nhóm để thực hiện");
       return;
     }
@@ -101,7 +135,7 @@ export class CommunityPostComponent {
       console.log('Comment form is invalid');
       return;
     }
-    if(this.joinedGroupId.includes(this.groupId) == false) { 
+    if (this.joinedGroupId.includes(this.groupId) == false) {
       alert('You must join the group to comment');
       return;
     }
@@ -109,7 +143,7 @@ export class CommunityPostComponent {
       groupPostId: this.postData.id,
       userId: this.currentUser.userId,
       content: this.commentForm.get('content')?.value,
-      parentCommentId : null
+      parentCommentId: null
     };
     console.log('Comment Data:', commentData);
     this.cPostService.sentCommentPost(commentData).subscribe({

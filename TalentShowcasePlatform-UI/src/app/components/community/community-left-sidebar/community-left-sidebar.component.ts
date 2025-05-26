@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { SharedModule } from '../../shared/shared.module';
+import { SharedModule } from '../../../shared/shared.module';
 import { SubjectService } from '../../../services/subject.service';
 import { Enviroment } from '../../../../environment';
 

@@ -18,16 +18,16 @@ public class LikeGroupPostController : ControllerBase
 	}
 
 	[HttpPost]
-	public async Task<IActionResult> Create(CreateLikeGroupPostCommand command)
+	public async Task<IActionResult> Create([FromBody] CreateLikeGroupPostCommand command)
 	{
 		var result = await _mediator.Send(command);
 		return result.Succeeded ? Ok(result) : BadRequest(result);
 	}
 
-	[HttpDelete]
-	public async Task<IActionResult> Delete(Guid userId, Guid groupPostId)
+	[HttpDelete("{Id}")]
+	public async Task<IActionResult> Delete(Guid Id)
 	{
-		var result = await _mediator.Send(new DeleteLikeGroupPostCommand(userId, groupPostId));
+		var result = await _mediator.Send(new DeleteLikeGroupPostCommand(Id));
 		return result.Succeeded ? Ok(result) : NotFound(result);
 	}
 
@@ -49,6 +49,13 @@ public class LikeGroupPostController : ControllerBase
 	public async Task<IActionResult> GetByGroupPost(Guid groupPostId)
 	{
 		var result = await _mediator.Send(new GetLikesByGroupPostQuery(groupPostId));
+		return result.Succeeded ? Ok(result) : NotFound(result);
+	}
+
+	[HttpPost("check-like")]
+	public async Task<IActionResult> CheckGroupPostIsLikedByUser(GetLikePostIdUserIdQuery request)
+	{
+		var result = await _mediator.Send(new GetLikePostIdUserIdQuery(request.PostId, request.UserId));
 		return result.Succeeded ? Ok(result) : NotFound(result);
 	}
 }

@@ -1,16 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { share, Subscription } from 'rxjs';
-import { SharedModule } from '../shared/shared.module';
+import { SharedModule } from '../../shared/shared.module';
 import { Router, RouterOutlet } from '@angular/router';
 import { CommunityLeftSidebarComponent } from './community-left-sidebar/community-left-sidebar.component';
 import { LoginResponse } from '../../interfaces/interface';
-import { AuthStateService } from '../../services/auth-state.service';
+import { AuthStateService } from '../../services/auth/auth-state.service';
 import { CommunityService } from '../../services/community/community.service';
-import { Enviroment } from '../../../environment';
 import { SubjectService } from '../../services/subject.service';
 import { DataService } from '../../services/data.service';
 import { CreateCommunityComponent } from './create-community/create-community.component';
-import { CompletingPopupComponent } from "../popup/completing-popup/completing-popup.component";
+import { BaseComponent } from '../base-component/base-component.component';
+import { AvatarDropdownComponent } from "../avatar-dropdown/avatar-dropdown.component";
 
 @Component({
   selector: 'app-community',
@@ -19,21 +19,13 @@ import { CompletingPopupComponent } from "../popup/completing-popup/completing-p
     SharedModule,
     CommunityLeftSidebarComponent,
     CreateCommunityComponent,
-    CompletingPopupComponent
+    AvatarDropdownComponent
 ],
   templateUrl: './community.component.html',
   styleUrl: './community.component.css'
 })
-export class CommunityComponent implements OnInit {
+export class CommunityComponent extends BaseComponent implements OnInit {
   communities: any[] = [];
-
-  avatarUrl: string = Enviroment.tempAvatarPath;
-  avatarPath = Enviroment.avatarPath;
-
-  isLoggedIn: boolean = false;
-  userId: any;
-  currentUser: LoginResponse['data'] | null = null; // Cập nhật kiểu dữ liệu
-  private authSubscription: Subscription | undefined;
 
   yourCommnunity: any[] = [];
   JoinedCommunity: any[] = [];
@@ -41,35 +33,30 @@ export class CommunityComponent implements OnInit {
   isCreateCommunityPopupOpen: boolean = false;
 
   constructor(
-    private authStateService: AuthStateService,
+    authStateService: AuthStateService,
     private dataService: DataService,
     private subjectService: SubjectService,
     private router: Router,
     private communityService: CommunityService
-  ) { }
+  ) {
+    super(authStateService);
+  }
 
   ngOnInit(): void {
-    this.authSubscription = this.authStateService.isLoggedIn$.subscribe(
-      (loggedIn) => {
-        this.isLoggedIn = loggedIn;
-      }
-    );
-
-    this.authSubscription.add(
-      this.authStateService.currentUser$.subscribe((user) => {
-        this.currentUser = user;
-        this.userId = user?.userId;
-        this.avatarUrl = this.avatarPath + user?.avatarUrl;
-        console.log("user community: ", this.currentUser);
-        this.loadJoinedGroupId(this.userId);
-        this.loadYourGroup(this.userId);
-        this.loadJoinedGroup(this.userId);
-      })
-    );
+    this.subscribeAuthState();
 
     this.loadCommunities();
     this.loadPosts();
     this.loadCategory();
+  }
+
+  protected override onCurrentUserLoaded(user: any): void {
+    this.userId = user?.userId;
+    this.avatarUrl = this.avatarPath + user?.avatarUrl;
+    console.log("user community: ", this.currentUser);
+    this.loadJoinedGroupId(this.userId);
+    this.loadYourGroup(this.userId);
+    this.loadJoinedGroup(this.userId);
   }
 
   loadCategory() {

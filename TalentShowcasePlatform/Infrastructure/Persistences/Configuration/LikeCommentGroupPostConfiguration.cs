@@ -24,7 +24,7 @@ public class LikeCommentGroupPostConfiguration : IEntityTypeConfiguration<LikeCo
 			.OnDelete(DeleteBehavior.Restrict);
 
 		builder.HasOne(x => x.User)
-			.WithMany()
+			.WithMany(x => x.LikeCommentGroupPosts)
 			.HasForeignKey(x => x.UserId)
 			.OnDelete(DeleteBehavior.Restrict);
 

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { SharedModule } from './components/shared/shared.module';
-import { AuthStateService } from './services/auth-state.service';
+import { SharedModule } from './shared/shared.module';
+import { AuthStateService } from './services/auth/auth-state.service';
 import { ToastrModule } from 'ngx-toastr';
 
 

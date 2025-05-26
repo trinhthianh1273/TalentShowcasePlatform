@@ -2,12 +2,13 @@ import { Component, EventEmitter, Output } from '@angular/core';
 import { CommunityService } from '../../../services/community/community.service';
 import { SubjectService } from '../../../services/subject.service';
 import { Router } from '@angular/router';
-import { AuthStateService } from '../../../services/auth-state.service';
+import { AuthStateService } from '../../../services/auth/auth-state.service';
 import { Subscription } from 'rxjs';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { ToastrService } from 'ngx-toastr';
-import { SharedModule } from '../../shared/shared.module';
+import { SharedModule } from '../../../shared/shared.module';
+import { BaseComponent } from '../../base-component/base-component.component';
 
 @Component({
   selector: 'app-create-community',
@@ -17,12 +18,8 @@ import { SharedModule } from '../../shared/shared.module';
   templateUrl: './create-community.component.html',
   styleUrl: './create-community.component.css'
 })
-export class CreateCommunityComponent {
+export class CreateCommunityComponent extends BaseComponent {
   @Output() close = new EventEmitter<void>();
-
-  isLoggedIn: boolean = false;
-  currentUser: any = null;
-  private authSubscription: Subscription | undefined;
 
   categorys: any[] = [];
 
@@ -34,11 +31,12 @@ export class CreateCommunityComponent {
     private communityService: CommunityService,
     private subjectService: SubjectService,
     private router: Router,
-    private authStateService: AuthStateService,
+    authStateService: AuthStateService,
     private fb: FormBuilder,
     private toastr: ToastrService,
     private http: HttpClient
   ) {
+    super(authStateService);
     this.form = this.fb.group({
       name: ['', [Validators.required, Validators.maxLength(50)]],
       description: ['', [Validators.required, Validators.maxLength(500)]],
@@ -47,16 +45,7 @@ export class CreateCommunityComponent {
   }
 
   ngOnInit(): void {
-    this.authSubscription = this.authStateService.isLoggedIn$.subscribe(
-      (loggedIn) => {
-        this.isLoggedIn = loggedIn;
-      }
-    );
-    this.authSubscription.add(
-      this.authStateService.currentUser$.subscribe((user) => {
-        this.currentUser = user;
-      })
-    );
+    this.subscribeAuthState();
     this.subjectService.receivedCategory$.subscribe((data) => {
       this.categorys = data;
       console.log("category: ", this.categorys);

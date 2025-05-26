@@ -2,14 +2,15 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { VideoCardComponent } from '../video-card/video-card.component';
 import { Enviroment } from '../../../environment';
-import { SharedModule } from '../shared/shared.module';
+import { SharedModule } from '../../shared/shared.module';
 import { VideosService } from '../../services/videos.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Subscription } from 'rxjs';
-import { AuthStateService } from '../../services/auth-state.service';
+import { AuthStateService } from '../../services/auth/auth-state.service';
 import { DataService } from '../../services/data.service';
 import { SubjectService } from '../../services/subject.service';
 import { HeaderComponent } from '../header/header.component';
+import { BaseComponent } from '../base-component/base-component.component';
 
 @Component({
   selector: 'app-video-detail',
@@ -21,15 +22,13 @@ import { HeaderComponent } from '../header/header.component';
   templateUrl: './video-detail.component.html',
   styleUrl: './video-detail.component.css'
 })
-export class VideoDetailComponent implements OnInit {
-  isLoggedIn: boolean = false;
-  currentUser: any = null;
-  private authSubscription: Subscription | undefined;
-
+export class VideoDetailComponent extends BaseComponent implements OnInit {
+  
   src = Enviroment.videoPath;
   videoId!: any;
   videoDetail: any = null;
   comments: any[] = [];
+  likes: any[] = [];
 
   commentForm!: FormGroup;
   private userSubscription: Subscription | undefined;
@@ -39,8 +38,9 @@ export class VideoDetailComponent implements OnInit {
     private dataService: DataService,
     private videoService: VideosService,
     private route: ActivatedRoute,
-    private authStateService: AuthStateService
+    authStateService: AuthStateService
   ) {
+    super(authStateService);
     this.commentForm = new FormGroup({
       videoId: new FormControl(''),
       userId: new FormControl(''),
@@ -48,20 +48,12 @@ export class VideoDetailComponent implements OnInit {
     });
   }
   ngOnInit(): void {
-    this.authSubscription = this.authStateService.isLoggedIn$.subscribe(
-      (loggedIn) => {
-        this.isLoggedIn = loggedIn;
-      }
-    );
-    this.authSubscription.add(
-      this.authStateService.currentUser$.subscribe((user) => {
-        this.currentUser = user;
-      })
-    );
-
     this.videoId = this.route.snapshot.queryParamMap.get('id');
+    this.subscribeAuthState();
+
     this.getVideoById(this.videoId);
     this.getVideoComment(this.videoId);
+    this.getVideoLikes(this.videoId );
     console.log("check login:", this.isLoggedIn);
 
     const contentControl = this.commentForm.get('content');
@@ -72,9 +64,29 @@ export class VideoDetailComponent implements OnInit {
     }
   }
 
-  ngOnDestroy(): void {
-    if (this.authSubscription) {
-      this.authSubscription.unsubscribe();
+  override onCurrentUserLoaded(user: any): void { 
+    if (user != null) {
+      this.userId = user.userId;
+      this.avatarUrl = this.avatarPath + user.avatarUrl;
+    }
+    this.autoAddView();
+  }
+
+  autoAddView() {
+    console.log("thực hiện tăng view");
+    if (this.videoId && this.userId) {
+      const viewData = {
+        videoId: this.videoId,
+        viewerId: this.userId
+      };
+      this.videoService.addView(viewData).subscribe({
+        next: (res) => {
+          console.log("Tăng view thành công:", res);
+        },
+        error: (err) => {
+          console.error("Lỗi khi tăng view:", err);
+        }
+      });
     }
   }
 
@@ -128,6 +140,20 @@ export class VideoDetailComponent implements OnInit {
       },
       error: (err: any) => {
         console.error("Lỗi khi lấy comment video:", err.message);
+      }
+    });
+  }
+
+  getVideoLikes(videoId: any) {
+    this.videoService.getLikeVideo(videoId).subscribe({
+      next: (res: any) => {
+        if (res?.data) {
+          this.likes = res.data;
+          console.log("Like data: ", this.likes);
+        }
+      },
+      error: (err: any) => {
+        console.error("Lỗi khi lấy like video:", err.message);
       }
     });
   }

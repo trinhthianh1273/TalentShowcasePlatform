@@ -1,0 +1,14 @@
+@startuml
+
+(*) --> "Start"
+--> "Activity A"
+if "Condition?" then
+  --> [yes] "Activity B"
+  --> "Activity C"
+else
+  --> [no] "Activity D"
+endif
+--> "Final Activity"
+--> (*)
+
+@enduml

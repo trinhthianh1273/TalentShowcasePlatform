@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { SharedModule } from '../../shared/shared.module';
+import { SharedModule } from '../../../shared/shared.module';
 import { LoginResponse, UserData } from '../../../interfaces/interface';
 import { Subscription } from 'rxjs';
 import { ActivatedRoute } from '@angular/router';
@@ -28,6 +28,6 @@ export class EditProfileComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.userId = this.route.snapshot.queryParamMap.get('id');
+    this.userId = this.route.snapshot.paramMap.get('id') ?? '';
   }
 }

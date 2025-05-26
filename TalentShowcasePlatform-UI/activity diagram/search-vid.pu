@@ -1,0 +1,17 @@
+@startuml
+title Search and Filter Videos
+
+(*) --> "User enters search keyword:\n - Title\n - Description\n - Uploader name"
+
+--> "User selects optional filters:\n - Talent Category\n - Location\n - Skill Level"
+
+--> "System sends search + filters to backend"
+
+--> "Backend queries DB:\n - Fulltext search\n - Filter by metadata"
+
+--> "Return list of matched videos"
+
+--> "Display videos as thumbnails\n(grid/list view)"
+
+--> (*)
+@enduml

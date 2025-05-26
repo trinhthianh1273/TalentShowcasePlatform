@@ -1,0 +1,429 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Domain.Entities.Award">
+    <Position X="5.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAAAAEAAACAAAAgAAIAAAAAAAAAAAAgAAAA=</HashCode>
+      <FileName>Entities\Award.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Domain.Entities.User">
+    <Position X="12.5" Y="6.75" Width="1.5" />
+    <AssociationLine Name="UserTalents" Type="Domain.Entities.UserTalent" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="13.125" Y="9.714" />
+        <Point X="13.125" Y="12.596" />
+        <Point X="14.75" Y="12.596" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="Comments" Type="Domain.Entities.Comment" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="12.5" Y="9.215" />
+        <Point X="8.562" Y="9.215" />
+        <Point X="8.562" Y="13" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="Ratings" Type="Domain.Entities.Rating" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="12.5" Y="9.188" />
+        <Point X="6.219" Y="9.188" />
+        <Point X="6.219" Y="14.5" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="CreatedGroups" Type="Domain.Entities.Group" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="13.781" Y="6.75" />
+        <Point X="13.781" Y="4.25" />
+        <Point X="20.75" Y="4.25" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="GroupPosts" Type="Domain.Entities.GroupPost" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="14" Y="7.125" />
+        <Point X="20.154" Y="7.125" />
+        <Point X="20.154" Y="7.125" />
+        <Point X="20.26" Y="7.125" Type="JumpStart" />
+        <Point X="20.427" Y="7.125" Type="JumpEnd" />
+        <Point X="23" Y="7.125" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="GroupMembers" Type="Domain.Entities.GroupMember" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="13.75" Y="6.75" />
+        <Point X="13.75" Y="4.25" />
+        <Point X="15.131" Y="4.25" />
+        <Point X="15.131" Y="2.501" />
+        <Point X="16" Y="2.501" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="CreatedContests" Type="Domain.Entities.Contest" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="12.5" Y="6.875" />
+        <Point X="12.125" Y="6.875" />
+        <Point X="12.125" Y="4.281" />
+        <Point X="5.25" Y="4.281" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="SentMessages" Type="Domain.Entities.Message" ManuallyRouted="true" FixedFromPoint="true">
+      <Path>
+        <Point X="12.812" Y="6.75" />
+        <Point X="12.812" Y="3.694" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="ReceivedMessages" Type="Domain.Entities.Message" FixedToPoint="true">
+      <Path>
+        <Point X="13.062" Y="6.75" />
+        <Point X="13.062" Y="3.694" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="Notifications" Type="Domain.Entities.Notification" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="12.5" Y="6.875" />
+        <Point X="12.125" Y="6.875" />
+        <Point X="12.125" Y="1.751" />
+        <Point X="8.75" Y="1.751" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="Views" Type="Domain.Entities.View" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="12.5" Y="9.215" />
+        <Point X="11.688" Y="9.215" />
+        <Point X="11.688" Y="10.5" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="PostedJobs" Type="Domain.Entities.Job" ManuallyRouted="true">
+      <Path>
+        <Point X="12.5" Y="8.393" />
+        <Point X="4.25" Y="8.393" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="VideoLikes" Type="Domain.Entities.VideoLike" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="12.5" Y="9.215" />
+        <Point X="9.938" Y="9.215" />
+        <Point X="9.938" Y="12" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="Awards" Type="Domain.Entities.Award" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="12.5" Y="6.875" />
+        <Point X="12.125" Y="6.875" />
+        <Point X="12.125" Y="3.125" />
+        <Point X="7" Y="3.125" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="Certifications" Type="Domain.Entities.Certification" ManuallyRouted="true">
+      <Path>
+        <Point X="12.5" Y="6.875" />
+        <Point X="10.665" Y="6.875" Type="JumpStart" />
+        <Point X="10.499" Y="6.875" Type="JumpEnd" />
+        <Point X="7.25" Y="6.875" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="LikeGroupPosts" Type="Domain.Entities.LikeGroupPost" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="14" Y="8.875" />
+        <Point X="17.809" Y="8.875" />
+        <Point X="17.809" Y="12.096" />
+        <Point X="20" Y="12.096" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="RatingGroupPosts" Type="Domain.Entities.RatingGroupPost" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="14" Y="8.875" />
+        <Point X="17.781" Y="8.875" />
+        <Point X="17.781" Y="15.562" />
+        <Point X="20" Y="15.562" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="LikeCommentGroupPosts" Type="Domain.Entities.LikeCommentGroupPost" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="14" Y="7.125" />
+        <Point X="18.406" Y="7.125" />
+        <Point X="18.406" Y="6.502" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AhCAAAIAACAgAIIInjIAIQAAAAAQgAIACYAAAAAAoEg=</HashCode>
+      <FileName>Entities\User.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="UserTalents" />
+      <Property Name="Videos" />
+      <Property Name="Comments" />
+      <Property Name="Ratings" />
+      <Property Name="CreatedGroups" />
+      <Property Name="GroupPosts" />
+      <Property Name="GroupMembers" />
+      <Property Name="CreatedContests" />
+      <Property Name="SentMessages" />
+      <Property Name="ReceivedMessages" />
+      <Property Name="Notifications" />
+      <Property Name="Views" />
+      <Property Name="PostedJobs" />
+      <Property Name="VideoLikes" />
+      <Property Name="Awards" />
+      <Property Name="Certifications" />
+      <Property Name="LikeGroupPosts" />
+      <Property Name="CommentGroupPosts" />
+      <Property Name="RatingGroupPosts" />
+      <Property Name="LikeCommentGroupPosts" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Domain.Entities.Category">
+    <Position X="14.5" Y="15" Width="1.5" />
+    <AssociationLine Name="Videos" Type="Domain.Entities.Video" FixedToPoint="true">
+      <Path>
+        <Point X="14.5" Y="16.188" />
+        <Point X="13.5" Y="16.188" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="Jobs" Type="Domain.Entities.Job" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="15.188" Y="16.617" />
+        <Point X="15.188" Y="18.447" />
+        <Point X="3.312" Y="18.447" />
+        <Point X="3.312" Y="12.002" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAgAAAABEAAAAQAAAAAAAAAAAAAAAAAAAg=</HashCode>
+      <FileName>Entities\Category.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="UserTalents" />
+      <Property Name="Videos" />
+      <Property Name="Jobs" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Domain.Entities.Certification">
+    <Position X="5.75" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAFAAAAAAAgAEAQACAAAAgAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\Certification.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Domain.Entities.Comment">
+    <Position X="7.25" Y="13" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAgAAAAAAACAAAAgAAIAAAAAAAAAAAAAAAAg=</HashCode>
+      <FileName>Entities\Comment.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Domain.Entities.CommentGroupPost">
+    <Position X="20" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EgQBAAAAAgAAAIAAACAAAAgAAAAAAAACAAAACAAAAAA=</HashCode>
+      <FileName>Entities\CommentGroupPost.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Likes" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Domain.Entities.Contest">
+    <Position X="3.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAEAAAAAEAAAgAAAAAABAAAAAAEAAAAE=</HashCode>
+      <FileName>Entities\Contest.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="ContestEntries" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Domain.Entities.ContestEntry">
+    <Position X="1.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAAgAAAAAAAAAAAAAAAIAAAAAAEABAAAAAAAg=</HashCode>
+      <FileName>Entities\ContestEntry.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Video" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Domain.Entities.Group">
+    <Position X="20.75" Y="3" Width="1.5" />
+    <AssociationLine Name="GroupPosts" Type="Domain.Entities.GroupPost" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="22.25" Y="4.25" />
+        <Point X="24.062" Y="4.25" />
+        <Point X="24.062" Y="6.75" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAgAAACAAAAQAAAAAAAJQAIAAAAAACAE=</HashCode>
+      <FileName>Entities\Group.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="GroupMembers" />
+      <Property Name="GroupPosts" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Domain.Entities.GroupMember">
+    <Position X="16" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAEAEAAIAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\GroupMember.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Domain.Entities.GroupPost">
+    <Position X="23" Y="6.75" Width="1.5" />
+    <AssociationLine Name="Likes" Type="Domain.Entities.LikeGroupPost" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="23.438" Y="9.714" />
+        <Point X="23.438" Y="12.096" />
+        <Point X="21.5" Y="12.096" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAABQEAEAgAAAEAAAiAAAAgAAAgEAAACAAAAAAAAIAA=</HashCode>
+      <FileName>Entities\GroupPost.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Comments" />
+      <Property Name="Likes" />
+      <Property Name="Ratings" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Domain.Entities.GroupPostFeedbackSummary">
+    <Position X="25.25" Y="11.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EgEAAAAAAAAAAAAABAAAAAAAAAAACAAAACAAAAAAAAA=</HashCode>
+      <FileName>Entities\GroupPostFeedbackSummary.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="GroupPost" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Domain.Entities.Job">
+    <Position X="2.75" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAEQAAAAgAkAkAAAKIAAAAAAQIABAAAAQAAgAAACAA=</HashCode>
+      <FileName>Entities\Job.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Domain.Entities.LikeCommentGroupPost">
+    <Position X="17.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAAAAAAAACAAACgABAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\LikeCommentGroupPost.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Domain.Entities.LikeGroupPost" Collapsed="true">
+    <Position X="20" Y="11.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EgABAAAAAAAAAAAAACAAAAgAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\LikeGroupPost.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Domain.Entities.Message">
+    <Position X="12.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAgAAAAAAAAAAAAAAAACFAAAAAAAABAAIAAA=</HashCode>
+      <FileName>Entities\Message.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Domain.Entities.Notification">
+    <Position X="7.25" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAAAAAAAACAAEAgAAAAAAAAAAAAAIAAAAAA=</HashCode>
+      <FileName>Entities\Notification.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Domain.Entities.Rating">
+    <Position X="5.5" Y="14.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEABAAAAAAAAAAAAAAAAAAgAAIAAAAAAAAAAAAAAAAg=</HashCode>
+      <FileName>Entities\Rating.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Domain.Entities.RatingGroupPost">
+    <Position X="20" Y="14.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EgABAAAAAAAAAAAAACAAAAgAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>Entities\RatingGroupPost.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Domain.Entities.Role">
+    <Position X="7.5" Y="4.75" Width="1.5" />
+    <AssociationLine Name="Users" Type="Domain.Entities.User" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="9" Y="5.188" />
+        <Point X="10.582" Y="5.188" />
+        <Point X="10.582" Y="7.875" />
+        <Point X="12.5" Y="7.875" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\Role.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Users" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Domain.Entities.UserTalent" Collapsed="true">
+    <Position X="14.75" Y="12.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAAAAoAAAAAAAAgAAAAAAAAAAAAAAAAACAA=</HashCode>
+      <FileName>Entities\UserTalent.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Domain.Entities.Video">
+    <Position X="12" Y="14.25" Width="1.5" />
+    <AssociationLine Name="Comments" Type="Domain.Entities.Comment" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="12" Y="15.437" />
+        <Point X="10.227" Y="15.437" />
+        <Point X="10.227" Y="14.688" />
+        <Point X="8.75" Y="14.688" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="Ratings" Type="Domain.Entities.Rating" ManuallyRouted="true" FixedFromPoint="true">
+      <Path>
+        <Point X="12" Y="16.25" />
+        <Point X="9.5" Y="16.25" />
+        <Point X="9.5" Y="16.25" />
+        <Point X="7" Y="16.25" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="Views" Type="Domain.Entities.View" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="12" Y="15.437" />
+        <Point X="11.812" Y="15.437" />
+        <Point X="11.812" Y="12.502" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="VideoLikes" Type="Domain.Entities.VideoLike" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="12" Y="15.453" />
+        <Point X="10.25" Y="15.453" />
+        <Point X="10.25" Y="14.002" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AgABAAAAQAAgAkAAAhAAAAgAQAAAAAAACAAAQAAAKAA=</HashCode>
+      <FileName>Entities\Video.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Comments" />
+      <Property Name="Ratings" />
+      <Property Name="Views" />
+      <Property Name="VideoLikes" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Domain.Entities.VideoLike">
+    <Position X="9.25" Y="12" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAAAAAAAAQAAAAgAAIAAAAAAAAAAAAAAAAg=</HashCode>
+      <FileName>Entities\VideoLike.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Domain.Entities.View">
+    <Position X="11" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAIAAwAAAAAAAAAAAQAg=</HashCode>
+      <FileName>Entities\View.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

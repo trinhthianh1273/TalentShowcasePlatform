@@ -1,6 +1,6 @@
 import { Component, Input, input } from '@angular/core';
 import { Route } from '@angular/router';
-import { SharedModule } from '../shared/shared.module';
+import { SharedModule } from '../../shared/shared.module';
 
 @Component({
   selector: 'app-aside-left',

@@ -1,0 +1,30 @@
+@startuml
+title Extended User Registration Activity Diagram
+
+(*) --> "Enter personal information\n(email, username, password, etc.)"
+--> "Check for duplicate email or username"
+
+if "Is email or username taken?" then
+  --> [yes] "Display error: email/username already exists"
+  --> "Re-enter information"
+  --> "Check for duplicate email or username"
+else
+  --> [no] "Proceed to next step"
+endif
+
+if "Email verification required?" then
+  --> [yes] "Send verification email"
+  --> "User verifies email"
+else
+  --> [no] "Skip email verification"
+endif
+
+--> "Select user role\n(Talent / Mentor / Recruiter)"
+--> "Encrypt password"
+--> "Save user account to the system"
+--> "Send welcome email"
+--> "Redirect to login or dashboard"
+--> "Account successfully created"
+--> (*)
+
+@enduml

@@ -1,18 +1,30 @@
 import { Component, Input, input } from '@angular/core';
 import { GroupPostModel } from '../../../models/group-post-model';
+import { SharedModule } from '../../../shared/shared.module';
+import { Router } from '@angular/router';
+import { Enviroment } from '../../../../environment';
 
 @Component({
   selector: 'app-post-cart',
-  imports: [],
+  imports: [
+    SharedModule
+  ],
   templateUrl: './post-cart.component.html',
   styleUrl: './post-cart.component.css'
 })
 export class PostCartComponent {
   @Input() PostData! : GroupPostModel;
+  groupPostPath = Enviroment.groupPostPath;
+  
+  constructor(
+    private router: Router
+  ) { }
 
-  ngOnInit(): void {
-    //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
-    //Add 'implements OnInit' to the class.
-    console.log(this.PostData);
+  ngOnInit(): void { 
+    console.log(this.groupPostPath);
+  }
+
+  gotoPost(id: string) {
+    this.router.navigate([`/community/post/${id}`])
   }
 }

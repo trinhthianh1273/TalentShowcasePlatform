@@ -28,7 +28,7 @@ public class User : BaseEntity
 	public Role Role { get; set; }
 	public ICollection<UserTalent> UserTalents { get; set; }
 	public ICollection<Video> Videos { get; set; }
-	public ICollection<Comment> Comments { get; set; }
+	public ICollection<CommentVideo> CommentVideos { get; set; }
 	public ICollection<Rating> Ratings { get; set; }
 	public ICollection<Group> CreatedGroups { get; set; }
 	public ICollection<GroupPost> GroupPosts { get; set; }
@@ -39,13 +39,12 @@ public class User : BaseEntity
 	public ICollection<Notification> Notifications { get; set; }
 	public ICollection<View> Views { get; set; }
 	public ICollection<Job> PostedJobs { get; set; }
-	public ICollection<Payment> SentPayments { get; set; }
-	public ICollection<Payment> ReceivedPayments { get; set; }
 	public ICollection<VideoLike> VideoLikes { get; set; }
 	public ICollection<Award> Awards { get; set; }
 	public ICollection<Certification> Certifications { get; set; }
-	public ICollection<Follow> Following { get; set; } // Danh sách những người mà người dùng này đang theo dõi
-	public ICollection<Follow> Followers { get; set; } // Danh sách những người theo dõi người dùng này
+	public ICollection<LikeGroupPost> LikeGroupPosts { get; set; } 
 	public ICollection<CommentGroupPost> CommentGroupPosts { get; set; } 
+	public ICollection<RatingGroupPost> RatingGroupPosts { get; set; } 
+	public ICollection<LikeCommentGroupPost> LikeCommentGroupPosts { get; set; } 
 
 }

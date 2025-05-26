@@ -1,0 +1,282 @@
+<!-- Overlay nền mờ và modal ở giữa màn hình -->
+<div class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
+    <form [formGroup]="jobForm" (ngSubmit)="onSubmit()" role="dialog" aria-modal="true" aria-labelledby="modal-title"
+        class="bg-white rounded-md w-full max-w-3xl max-h-[600px] overflow-hidden flex flex-col">
+
+        <!-- Header -->
+        <div class="flex justify-between items-center px-6 py-4 border-b border-gray-200">
+            <h2 id="modal-title" class="font-semibold text-gray-900 text-lg leading-6">
+                Post a Job
+            </h2>
+            <button aria-label="Close modal" class="text-gray-400 hover:text-gray-600 focus:outline-none"
+                (click)="onClose()">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+
+        <!-- Form Content -->
+        <div class="flex-1 overflow-y-auto px-6 py-4 space-y-8">
+            <!-- Step 1: Basic Information -->
+            <div class="flex space-x-4">
+                <div class="flex flex-col items-center">
+                    <div
+                        class="w-6 h-6 rounded-full border-2 border-blue-600 bg-blue-600 text-white text-xs font-semibold flex items-center justify-center select-none">
+                        1
+                    </div>
+                    <div class="flex-1 w-px bg-gray-300 mt-1"></div>
+                </div>
+                <div class="flex-1 space-y-4">
+                    <h3 class="text-sm font-semibold text-gray-900">Basic Information</h3>
+
+                    <!-- Company Name -->
+                    <div>
+                        <label for="companyName" class="block text-sm font-medium text-gray-700 mb-1">Company Name
+                            (optional)</label>
+                        <input id="companyName" formControlName="companyName" type="text"
+                            class="w-full border border-gray-300 rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                    </div>
+
+                    <!-- Job Title -->
+                    <div>
+                        <label for="title" class="block text-sm font-medium text-gray-700 mb-1">Job Title <span
+                                class="text-red-500">*</span></label>
+                        <input id="title" formControlName="title" type="text" required
+                            class="w-full border border-gray-300 rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                            placeholder="e.g. Senior Software Engineer">
+                        <div *ngIf="jobForm.get('title')?.invalid && (jobForm.get('title')?.dirty || jobForm.get('title')?.touched)"
+                            class="text-red-500 text-xs mt-1">
+                            Job title is required
+                        </div>
+                    </div>
+                    <div>
+                        <label for="categoryId" class="block text-sm font-medium text-gray-700 mb-1">Category <span
+                                class="text-red-500">*</span></label>
+                        <select id="categoryId" formControlName="categoryId" required
+                            class="w-full border border-gray-300 rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                            <option value="">Select category</option>
+                            <option *ngFor="let item of Categories" [value]="item.id">{{ item.name}}</option>
+                        </select>
+                        <div *ngIf="jobForm.get('categoryId')?.invalid && (jobForm.get('categoryId')?.dirty || jobForm.get('title')?.touched)"
+                            class="text-red-500 text-xs mt-1">
+                            Category is required
+                        </div>
+                    </div>
+
+                    <!-- Job Type and Expiry Date -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <!-- Job Type -->
+                        <div>
+                            <label for="jobType" class="block text-sm font-medium text-gray-700 mb-1">Job Type <span
+                                    class="text-red-500">*</span></label>
+                            <select id="jobType" formControlName="jobType" required
+                                class="w-full border border-gray-300 rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                                <option value="">Select job type</option>
+                                <option value="Full-Time">Full-Time</option>
+                                <option value="Part-Time">Part-Time</option>
+                                <option value="Contract">Contract</option>
+                                <option value="Internship">Internship</option>
+                                <option value="Temporary">Temporary</option>
+                            </select>
+                            <div *ngIf="jobForm.get('jobType')?.invalid && (jobForm.get('jobType')?.dirty || jobForm.get('jobType')?.touched)"
+                                class="text-red-500 text-xs mt-1">
+                                Job type is required
+                            </div>
+                        </div>
+
+                        <!-- Expiry Date -->
+                        <div>
+                            <label for="expiryDate" class="block text-sm font-medium text-gray-700 mb-1">
+                                Expiry Date
+                            </label>
+                            <input id="expiryDate" [min]="today" formControlName="expiryDate" type="date"
+                                class="w-full border border-gray-300 rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 2: Location -->
+            <div class="flex space-x-4">
+                <div class="flex flex-col items-center">
+                    <div
+                        class="w-6 h-6 rounded-full border-2 border-blue-600 bg-blue-600 text-white text-xs font-semibold flex items-center justify-center select-none">
+                        2
+                    </div>
+                    <div class="flex-1 w-px bg-gray-300 mt-1"></div>
+                </div>
+                <div class="flex-1 space-y-4">
+                    <h3 class="text-sm font-semibold text-gray-900">Location</h3>
+
+                    <!-- Location Type -->
+                    <div>
+                        <label for="location" class="block text-sm font-medium text-gray-700 mb-1">Location <span
+                                class="text-red-500">*</span></label>
+                        <select id="location" formControlName="location" required
+                            class="w-full border border-gray-300 rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                            <option value="">Select location </option>
+                            <option *ngFor="let item of provinces" [value]="item">{{item}}</option>
+                        </select>
+                        <div *ngIf="jobForm.get('location')?.invalid && (jobForm.get('location')?.dirty || jobForm.get('location')?.touched)"
+                            class="text-red-500 text-xs mt-1">
+                            Location type is required
+                        </div>
+                    </div>
+
+                    <!-- Address Details -->
+                    <div>
+                        <label for="addressDetail" class="block text-sm font-medium text-gray-700 mb-1">Address
+                            Details</label>
+                        <input id="addressDetail" formControlName="addressDetail" type="text"
+                            class="w-full border border-gray-300 rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                            placeholder="Office address if applicable">
+                        <div *ngIf="jobForm.get('addressDetail')?.invalid && (jobForm.get('addressDetail')?.dirty || jobForm.get('location')?.touched)"
+                            class="text-red-500 text-xs mt-1">
+                            Address Detail is required
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 3: Salary & Benefits -->
+            <div class="flex space-x-4">
+                <div class="flex flex-col items-center">
+                    <div
+                        class="w-6 h-6 rounded-full border-2 border-blue-600 bg-blue-600 text-white text-xs font-semibold flex items-center justify-center select-none">
+                        3
+                    </div>
+                    <div class="flex-1 w-px bg-gray-300 mt-1"></div>
+                </div>
+                <div class="flex-1 space-y-4">
+                    <h3 class="text-sm font-semibold text-gray-900">Salary & Benefits</h3>
+
+                    <!-- Salary Range -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <label for="salaryFrom" class="block text-sm font-medium text-gray-700 mb-1">Salary From
+                                ($)</label>
+                            <input id="salaryFrom" formControlName="salaryFrom" type="number" step="0.01" min="0"
+                                class="w-full border border-gray-300 rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                            <div *ngIf="jobForm.get('salaryFrom')?.invalid && (jobForm.get('salaryFrom')?.dirty || jobForm.get('location')?.touched)"
+                                class="text-red-500 text-xs mt-1">
+                                Salary From is required
+                            </div>
+                        </div>
+
+                        <div>
+                            <label for="salaryTo" class="block text-sm font-medium text-gray-700 mb-1">Salary To
+                                ($)</label>
+                            <input id="salaryTo" formControlName="salaryTo" type="number" step="0.01" min="0"
+                                class="w-full border border-gray-300 rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                            <div *ngIf="jobForm.get('salaryTo')?.invalid && (jobForm.get('salaryTo')?.dirty || jobForm.get('location')?.touched)"
+                                class="text-red-500 text-xs mt-1">
+                                Salary To is required
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Benefits -->
+                    <div>
+                        <label for="benefits" class="block text-sm font-medium text-gray-700 mb-1">Benefits</label>
+                        <textarea id="benefits" formControlName="benefits" rows="3"
+                            class="w-full border border-gray-300 rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                            placeholder="Health insurance, 401(k), Paid time off, etc."></textarea>
+                        <div *ngIf="jobForm.get('benefits')?.invalid && (jobForm.get('benefits')?.dirty || jobForm.get('location')?.touched)"
+                            class="text-red-500 text-xs mt-1">
+                            Benefits is required
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 4: Job Details -->
+            <div class="flex space-x-4">
+                <div class="flex flex-col items-center">
+                    <div
+                        class="w-6 h-6 rounded-full border-2 border-blue-600 bg-blue-600 text-white text-xs font-semibold flex items-center justify-center select-none">
+                        4
+                    </div>
+                    <div class="flex-1 w-px bg-gray-300 mt-1"></div>
+                </div>
+                <div class="flex-1 space-y-4">
+                    <h3 class="text-sm font-semibold text-gray-900">Job Details</h3>
+
+                    <!-- Job Description -->
+                    <div>
+                        <label for="description" class="block text-sm font-medium text-gray-700 mb-1">Job Description
+                            <span class="text-red-500">*</span></label>
+                        <textarea id="description" formControlName="description" rows="5" required
+                            class="w-full border border-gray-300 rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                            placeholder="Describe the job responsibilities and expectations"></textarea>
+                        <div *ngIf="jobForm.get('description')?.invalid && (jobForm.get('description')?.dirty || jobForm.get('description')?.touched)"
+                            class="text-red-500 text-xs mt-1">
+                            Job description is required
+                        </div>
+                    </div>
+
+                    <!-- Requirements -->
+                    <div>
+                        <label for="requirements" class="block text-sm font-medium text-gray-700 mb-1">Requirements
+                            <span class="text-red-500">*</span></label>
+                        <textarea id="requirements" formControlName="requirements" rows="5" required
+                            class="w-full border border-gray-300 rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                            placeholder="List the required skills, qualifications, and experience"></textarea>
+                        <div *ngIf="jobForm.get('requirements')?.invalid && (jobForm.get('requirements')?.dirty || jobForm.get('requirements')?.touched)"
+                            class="text-red-500 text-xs mt-1">
+                            Requirements are required
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 5: Contact Information -->
+            <div class="flex space-x-4">
+                <div class="flex flex-col items-center">
+                    <div
+                        class="w-6 h-6 rounded-full border-2 border-blue-600 bg-blue-600 text-white text-xs font-semibold flex items-center justify-center select-none">
+                        5
+                    </div>
+                </div>
+                <div class="flex-1 space-y-4">
+                    <h3 class="text-sm font-semibold text-gray-900">Contact Information</h3>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <!-- Contact Email -->
+                        <div>
+                            <label for="contactEmail" class="block text-sm font-medium text-gray-700 mb-1">Contact Email
+                                <span class="text-red-500">*</span></label>
+                            <input id="contactEmail" formControlName="contactEmail" type="email" required
+                                class="w-full border border-gray-300 rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                            <div *ngIf="jobForm.get('contactEmail')?.invalid && (jobForm.get('contactEmail')?.dirty || jobForm.get('contactEmail')?.touched)"
+                                class="text-red-500 text-xs mt-1">
+                                Valid email is required
+                            </div>
+                        </div>
+
+                        <!-- Contact Phone -->
+                        <div>
+                            <label for="contactPhone" class="block text-sm font-medium text-gray-700 mb-1">Contact
+                                Phone</label>
+                            <input id="contactPhone" formControlName="contactPhone" type="tel"
+                                class="w-full border border-gray-300 rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                            <div *ngIf="jobForm.get('contactPhone')?.invalid && (jobForm.get('contactPhone')?.dirty || jobForm.get('contactEmail')?.touched)"
+                                class="text-red-500 text-xs mt-1">
+                                Valid phone is required
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Form Footer -->
+        <div class="px-6 py-4 border-t border-gray-200 flex justify-end">
+            <button type="submit" [disabled]="jobForm.invalid"
+                class="bg-blue-600 text-white font-medium rounded-md px-6 py-2 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-colors disabled:bg-blue-300">
+                Post Job
+            </button>
+        </div>
+    </form>
+    <app-popup [isOpen]="isJobPost" [title]="createdJobNotiTitle" [message]="createdJobNotiMessage"
+        [type]="createdJobNotiInfo" (closed)="onPopupClosed(createdJobId)"></app-popup>
+
+</div>

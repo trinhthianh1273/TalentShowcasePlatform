@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { AuthStateService } from '../../../services/auth-state.service';
+import { AuthStateService } from '../../../services/auth/auth-state.service';
 import { SubjectService } from '../../../services/subject.service';
 import { Router } from '@angular/router';
 import { CommunityService } from '../../../services/community/community.service';
-import { SharedModule } from '../../shared/shared.module';
+import { SharedModule } from '../../../shared/shared.module';
 import { Enviroment } from '../../../../environment';
 
 @Component({

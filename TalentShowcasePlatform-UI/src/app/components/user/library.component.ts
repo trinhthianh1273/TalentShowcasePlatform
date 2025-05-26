@@ -2,37 +2,31 @@ import { Component, ElementRef, Input, input, OnInit, ViewChild } from '@angular
 import { LoginResponse } from '../../interfaces/interface';
 import { Subscription, take } from 'rxjs';
 import { HeaderComponent } from '../header/header.component';
-import { SharedModule } from '../shared/shared.module';
-import { AuthStateService } from '../../services/auth-state.service';
+import { SharedModule } from '../../shared/shared.module';
+import { AuthStateService } from '../../services/auth/auth-state.service';
 import { SubjectService } from '../../services/subject.service';
 import { AsideLeftComponent } from "../aside-left/aside-left.component";
 import { VideosService } from '../../services/videos.service';
 import { ToastrService } from 'ngx-toastr';
 import { ActivatedRoute, Route, Router, RouterLinkActive } from '@angular/router';
-import { CompletingPopupComponent } from "../popup/completing-popup/completing-popup.component";
+import { BaseComponent } from '../base-component/base-component.component';
 
 @Component({
   selector: 'app-user',
   imports: [
     HeaderComponent,
     SharedModule,
-    AsideLeftComponent,
-    CompletingPopupComponent
+    AsideLeftComponent
   ],
   templateUrl: './library.component.html',
   styleUrl: './library.component.css'
 })
-export class LibraryComponent implements OnInit {
+export class LibraryComponent extends BaseComponent implements OnInit {
   @ViewChild('fileInput') fileInput!: ElementRef<HTMLInputElement>;
-
-  userId: any;
 
   videoList: any[] = []; // Khai báo biến videoList để lưu trữ danh sách video
   videoPath = 'https://localhost:7172/api/Videos/video-path/';
 
-  isLoggedIn: boolean = false;
-  currentUser: LoginResponse['data'] | null = null; // Cập nhật kiểu dữ liệu
-  private authSubscription: Subscription | undefined;
 
   isOpenDropdownAnalysisVideo: boolean = false;
   dropdownVideoId: any;
@@ -43,32 +37,21 @@ export class LibraryComponent implements OnInit {
   uploadedVideoId: any;
 
   constructor(
-    private authStateService: AuthStateService,
+    authStateService: AuthStateService,
     private subjectService: SubjectService,
     private videoService: VideosService,
     private toastr: ToastrService,
     private route: Router,
     private routeActive: ActivatedRoute
   ) {
-
+    super(authStateService);
   }
 
   ngOnInit(): void {
-    this.userId = this.routeActive.snapshot.queryParamMap.get('id');
+    this.userId = this.routeActive.snapshot.paramMap.get('id') ?? '';
     this.loadVideos(this.userId);
 
-    this.authSubscription = this.authStateService.isLoggedIn$.subscribe(
-      (loggedIn) => {
-        this.isLoggedIn = loggedIn;
-      }
-    );
-
-    this.authSubscription.add(
-      this.authStateService.currentUser$.subscribe((user) => {
-        this.currentUser = user;
-
-      })
-    );
+    this.subscribeAuthState();
     console.log("user page: ", this.currentUser);
   }
 
@@ -164,11 +147,6 @@ export class LibraryComponent implements OnInit {
   recordVideo() {
     console.log("record video");
     this.isCompletingPopup = true;
-  }
-
-  closePopup() {
-    console.log("đóng popup");
-    this.isCompletingPopup = false;
   }
   onLoadedMetadata(event: Event, video: any): void {
     const duration = (event.target as HTMLVideoElement).duration;

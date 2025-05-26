@@ -34,6 +34,9 @@ public class GetAllVideosQueryHandler : IRequestHandler<GetAllVideosQuery, Resul
 			.GetAllAsync(include: q => q
 				.Include(v => v.User)
 				.Include(v => v.Category)
+				.Include(v => v.CommentVideos)
+				.Include(v => v.VideoLikes)
+				.Include(v => v.Views)
 				// Include other navigation properties if needed, but be mindful of performance
 				);
 

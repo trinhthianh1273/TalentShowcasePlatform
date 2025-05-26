@@ -15,8 +15,8 @@ public class GroupPost : BaseEntity
 	public string Title { get; set; }
 	public string Content { get; set; }
 	public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
-	public DateTime? LastActivityDate { get; set; }
-	public string ImgUrl { get; set; }
+	public DateTime? LastActivityDate { get; set; } = DateTime.UtcNow;
+	public string? ImgUrl { get; set; }
 
 	public Guid UserId { get; set; }
 	public User User { get; set; } // Navigation property to the User entity

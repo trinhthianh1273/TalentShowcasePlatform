@@ -1,0 +1,23 @@
+@startuml
+title Comment Functionality – Activity Diagram
+
+(*) --> "User enters comment"
+
+if "User is logged in?" then
+  --> [yes] "Check for sensitive words or spam"
+
+  if "Content is valid?" then
+    --> [yes] "Save comment to database"
+    --> "Display comment (ordered by time)"
+  else
+    --> [no] "Show warning: Sensitive content"
+  endif
+
+  --> "Allow edit/delete (if user is author)"
+
+else
+  --> [no] "Redirect to Login page"
+endif
+
+--> (*)
+@enduml

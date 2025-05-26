@@ -26,6 +26,7 @@ public class JobDto
 	public string ContactPhone { get; set; }
 	public Guid PostedBy { get; set; }
 	public Guid CategoryId { get; set; }
+	public string CategoryName { get; set; }
 	public DateTime CreatedAt { get; set; }
 
 	// Navigation Properties

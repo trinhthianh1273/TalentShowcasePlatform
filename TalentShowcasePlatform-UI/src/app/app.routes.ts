@@ -22,15 +22,14 @@ export const routes: Routes = [
     { path: 'register', loadComponent: () => import('./components/register/register.component').then(m => m.RegisterComponent) },
     { path: 'video', loadComponent: () => import('./components/video-detail/video-detail.component').then(m => m.VideoDetailComponent) },
     {
-        path: 'library', loadComponent: () => import('./components/user/library.component').then(m => m.LibraryComponent),
+        path: 'library/:id', loadComponent: () => import('./components/user/library.component').then(m => m.LibraryComponent),
     },
     {
         path: 'video-analysis',
         loadComponent: () => import('./components/user/user-video/user-video.component').then(m => m.UserVideoComponent)
     },
-    { path: 'profile', loadComponent: () => import('./components/user-profile/user-profile.component').then(m => m.UserProfileComponent) },
-    { path: 'profile-edit', loadComponent: () => import('./components/user-profile/edit-profile/edit-profile.component').then(m => m.EditProfileComponent) },
-    { path: 'job', loadComponent: () => import('./components/jobs/jobs.component').then(m => m.JobsComponent) },
+    { path: 'profile/:id', loadComponent: () => import('./components/user-profile/user-profile.component').then(m => m.UserProfileComponent) },
+    { path: 'profile-edit/:id', loadComponent: () => import('./components/user-profile/edit-profile/edit-profile.component').then(m => m.EditProfileComponent) },
     {
         path: 'community', loadComponent: () => import('./components/community/community.component').then(m => m.CommunityComponent), canActivate: [AuthGuard],  // ✅ Chặn nếu chưa đăng nhập 
         children: [
@@ -40,7 +39,17 @@ export const routes: Routes = [
             { path: 'explore', loadComponent: () => import('./components/community/community-explore/community-explore.component').then(m => m.CommunityExploreComponent) },
             { path: 'all', loadComponent: () => import('./components/community/community-all/community-all.component').then(m => m.CommunityAllComponent) },
             { path: 'group/:id', loadComponent: () => import('./components/community/community-group/community-group.component').then(m => m.CommunityGroupComponent) },
-            { path: 'create', loadComponent: () => import('./components/community/create-community/create-community.component').then(m => m.CreateCommunityComponent), canActivate: [AuthGuard] }, // ✅ Chặn nếu chưa đăng nhập
+            // { path: 'create', loadComponent: () => import('./components/community/create-community/create-community.component').then(m => m.CreateCommunityComponent), canActivate: [AuthGuard] }, // ✅ Chặn nếu chưa đăng nhập
+            { path: 'create-post/:groupId', loadComponent: () => import('./components/community/community-post/create-post/create-post.component').then(m => m.CreatePostComponent), canActivate: [AuthGuard] }, // ✅ Chặn nếu chưa đăng nhập
         ]
-    }
+    },
+    {
+        path: 'job', loadComponent: () => import('./components/jobs/jobs.component').then(m => m.JobsComponent), canActivate: [AuthGuard],
+        children: [
+            { path: '', redirectTo: 'find-jobs', pathMatch: 'full' },
+            { path: 'find-jobs', loadComponent: () => import('./components/jobs/find-job/find-job.component').then(m => m.FindJobComponent) },
+            { path: 'your-jobs', loadComponent: () => import('./components/jobs/your-job/your-job.component').then(m => m.YourJobComponent) },
+        ]
+    },
+
 ];

@@ -1,7 +1,8 @@
 <!-- Left Sidebar -->
-<nav class="w-60 flex-shrink-0 space-y-6 text-sm text-gray-700">
-  <ul class="space-y-1">
-    <!-- <li>
+<aside class="flex flex-col border-r border-[#e7e9ea] px-6 py-6 text-[15px] leading-6 select-none">
+  <nav class="w-60 flex-shrink-0 space-y-6 text-sm text-gray-700">
+    <ul class="space-y-1">
+      <!-- <li>
       <a class="flex items-center space-x-3 rounded-md px-3 py-2 " href="#">
         <i class="fas fa-home text-gray-900">
         </i>
@@ -10,38 +11,38 @@
         </span>
       </a>
     </li> -->
-    <li>
-      <a routerLink="popular" routerLinkActive="active"
-        class="flex items-center space-x-3 px-3 py-2 hover:bg-gray-100 rounded-md">
-        <i class="fas fa-fire">
-        </i>
-        <span>
-          Popular
-        </span>
-      </a>
-    </li>
-    <li>
-      <a routerLink="explore" routerLinkActive="active"
-        class="flex items-center space-x-3 px-3 py-2 hover:bg-gray-100 rounded-md">
-        <i class="fas fa-compass">
-        </i>
-        <span>
-          Explore
-        </span>
-      </a>
-    </li>
-    <li>
-      <a routerLink="all" routerLinkActive="active"
-        class="flex items-center space-x-3 px-3 py-2 hover:bg-gray-100 rounded-md">
-        <i class="fas fa-globe">
-        </i>
-        <span>
-          All
-        </span>
-      </a>
-    </li>
-  </ul>
-  <!-- <div class="text-xs text-gray-400 uppercase font-semibold tracking-wide px-3">
+      <li>
+        <a routerLink="popular" routerLinkActive="active"
+          class="flex items-center text-lg space-x-3 px-3 py-2 hover:bg-gray-100 rounded-md">
+          <i class="fas fa-fire">
+          </i>
+          <span>
+            Popular
+          </span>
+        </a>
+      </li>
+      <li>
+        <a routerLink="explore" routerLinkActive="active"
+          class="flex items-center text-lg space-x-3 px-3 py-2 hover:bg-gray-100 rounded-md">
+          <i class="fas fa-compass">
+          </i>
+          <span>
+            Explore
+          </span>
+        </a>
+      </li>
+      <li>
+        <a routerLink="all" routerLinkActive="active"
+          class="flex items-center text-lg space-x-3 px-3 py-2 hover:bg-gray-100 rounded-md">
+          <i class="fas fa-globe">
+          </i>
+          <span>
+            All
+          </span>
+        </a>
+      </li>
+    </ul>
+    <!-- <div class="text-xs text-gray-400 uppercase font-semibold tracking-wide px-3">
     Custom Feeds
   </div>
   <button class="flex items-center space-x-2 px-3 py-2 text-gray-600 hover:bg-gray-100 rounded-md w-full">
@@ -52,42 +53,44 @@
     </span>
   </button> -->
 
-  <!-- Joined Communities -->
-  <hr class="my-4 border-gray-300" />
-  <div class="text-xs text-gray-400 uppercase font-semibold tracking-wide px-3 mt-6">
-    Joined Communities
-  </div>
-  <ul class="space-y-2 px-3">
-    <li *ngFor="let group of JoinedCommunity" class="flex items-center space-x-2">
-      <img alt="Subreddit r/BestofRedditorUpdates icon, black circle with white letter r" class="w-5 h-5 rounded-full"
-        height="20" [src]="groupPath + group?.groupAvatar" width="20" />
-      <a [routerLink]="['/community/group', group.id]" class="truncate text-gray-700 text-sm hover:underline">
-        {{ group.name }}
-      </a>
-    </li>
-  </ul>
+    <!-- Joined Communities -->
+    <hr class="my-4 border-gray-300" />
+    <div class="text-xs text-gray-400 uppercase font-semibold tracking-wide px-3 mt-6">
+      Joined Communities
+    </div>
+    <ul class="space-y-2 px-3">
+      <li *ngFor="let group of JoinedCommunity" class="flex items-center space-x-2">
+        <img alt="Subreddit r/BestofRedditorUpdates icon, black circle with white letter r" class="w-5 h-5 rounded-full"
+          height="20" [src]="groupPath + group?.groupAvatar" width="20" />
+        <a [routerLink]="['/community/group', group.id]" class="truncate text-gray-700 text-sm hover:underline">
+          {{ group.name }}
+        </a>
+      </li>
+    </ul>
 
-  <!-- Your Communities -->
-  <hr class="my-4 border-gray-300" />
-  <div class="text-xs text-gray-400 uppercase font-semibold tracking-wide px-3 mt-6">
-    Your Communities
-  </div>
-  <ul class="space-y-2 px-3">
-    <li class="flex items-center space-x-2">
-      <button class="flex items-center space-x-2 text-gray-600 hover:bg-gray-100 rounded-md w-full px-2 py-1">
-        <i class="fas fa-plus">
-        </i>
-        <span>
-          Create a community
-        </span>
-      </button>
-    </li>
-    <li *ngFor="let group of YourCommunity" class="flex items-center space-x-2">
-      <img alt="Subreddit r/announcements icon, orange circle with white letter r" class="w-5 h-5 rounded-full"
-        height="20" [src]="groupPath + group?.groupAvatar" width="20" />
-      <a class="truncate text-gray-700 text-sm hover:underline" [routerLink]="['/community/group', group.id]">
-        {{ group.name }}
-      </a>
-    </li>
-  </ul>
-</nav>
+    <!-- Your Communities -->
+    <hr class="my-4 border-gray-300" />
+    <div class="text-xs text-gray-400 uppercase font-semibold tracking-wide px-3 mt-6">
+      Your Communities
+    </div>
+    <ul class="space-y-2 px-3">
+      <li class="flex items-center space-x-2">
+        <button class="flex items-center space-x-2 text-gray-600 hover:bg-gray-100 rounded-md w-full px-2 py-1">
+          <i class="fas fa-plus">
+          </i>
+          <span>
+            Create a community
+          </span>
+        </button>
+      </li>
+      <li *ngFor="let group of YourCommunity" class="flex items-center space-x-2">
+        <img alt="Subreddit r/announcements icon, orange circle with white letter r" class="w-5 h-5 rounded-full"
+          height="20" [src]="groupPath + group?.groupAvatar" width="20" />
+        <a class="truncate text-gray-700 text-sm hover:underline" [routerLink]="['/community/group', group.id]">
+          {{ group.name }}
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+</aside>

@@ -8,6 +8,7 @@ using Shared.Results;
 
 namespace API.Controllers;
 
+[RequestSizeLimit(104857600)] // 100MB
 [Route("api/[controller]")]
 [ApiController]
 public class VideosController : ControllerBase

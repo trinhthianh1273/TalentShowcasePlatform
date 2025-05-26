@@ -1,14 +1,15 @@
 import { Component } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { SubjectService } from '../../../services/subject.service';
-import { AuthStateService } from '../../../services/auth-state.service';
+import { AuthStateService } from '../../../services/auth/auth-state.service';
 import { GroupModel } from '../../../models/GroupModel';
 import { CommunityService } from '../../../services/community/community.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Enviroment } from '../../../../environment';
-import { SharedModule } from '../../shared/shared.module';
+import { SharedModule } from '../../../shared/shared.module';
 import { PostCartComponent } from "../post-cart/post-cart.component";
 import { CommunityPostService } from '../../../services/community-post/community.post.service';
+import { BaseComponent } from '../../base-component/base-component.component';
 
 @Component({
   selector: 'app-community-group',
@@ -19,10 +20,8 @@ import { CommunityPostService } from '../../../services/community-post/community
   templateUrl: './community-group.component.html',
   styleUrl: './community-group.component.css'
 })
-export class CommunityGroupComponent {
-  isLoggedIn: boolean = false;
-  currentUser: any = null;
-  private authSubscription: Subscription | undefined;
+export class CommunityGroupComponent extends BaseComponent {
+  
 
   isGroupOwner: boolean = false;
   isJoined: boolean = false;
@@ -37,23 +36,17 @@ export class CommunityGroupComponent {
 
   constructor(
     private subjectService: SubjectService,
-    private authStateService: AuthStateService,
+    authStateService: AuthStateService,
     private postService: CommunityPostService,
     private communityService: CommunityService,
     private route: ActivatedRoute,
-  ) { }
+    private router : Router
+  ) { 
+    super(authStateService);
+  }
 
   ngOnInit() {
-    this.authSubscription = this.authStateService.isLoggedIn$.subscribe(
-      (loggedIn) => {
-        this.isLoggedIn = loggedIn;
-      }
-    );
-    this.authSubscription.add(
-      this.authStateService.currentUser$.subscribe((user) => {
-        this.currentUser = user;
-      })
-    );
+    this.subscribeAuthState();
     
     this.subjectService.receivedJoinedCommunitiesId$.subscribe((joinedGroupId) => {
       this.joinedGroupId = joinedGroupId;
@@ -74,12 +67,17 @@ export class CommunityGroupComponent {
     });
   }
 
+  gotoCreatePost(groupId: string) {
+    console.log("go to create post");
+    this.router.navigate([`/community/create-post/${groupId}`]);
+  }
+
   loadGroupData(groupId: any) {
     this.communityService.getCommunity(groupId).subscribe({
       next: (res) => {
         this.GroupData = res?.data;
         console.log("Group Data:", this.GroupData);
-        if(this.GroupData.createdBy == this.currentUser?.userId) { 
+        if(this.GroupData.createdBy == this.currentUser.userId) { 
           this.isGroupOwner = true;
         }
       },

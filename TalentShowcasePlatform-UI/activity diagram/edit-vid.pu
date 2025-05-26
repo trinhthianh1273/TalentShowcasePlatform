@@ -1,0 +1,22 @@
+@startuml
+title Edit Video Information (with Ownership Control)
+
+(*) --> "Access 'My Video Library'"
+
+--> "System filters videos:\nOnly videos where user == owner"
+
+--> "User selects a video to edit"
+
+--> "System double-checks ownership on backend"
+
+if "User is owner?" then
+  --> [yes] "Show Edit Form:\n - Title\n - Description\n - Category\n - Thumbnail\n - Privacy"
+  --> "User submits updates"
+  --> "Validate and save to DB"
+  --> "Update UI (Library / Explore)"
+else
+  --> [no] "Show error: Not authorized"
+endif
+
+--> (*)
+@enduml

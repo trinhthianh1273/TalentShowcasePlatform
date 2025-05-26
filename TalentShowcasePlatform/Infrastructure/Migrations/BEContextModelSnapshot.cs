@@ -117,38 +117,6 @@ namespace Infrastructure.Migrations
                     b.ToTable("Certifications", (string)null);
                 });
 
-            modelBuilder.Entity("Domain.Entities.Comment", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier")
-                        .HasDefaultValueSql("NEWID()");
-
-                    b.Property<string>("Content")
-                        .IsRequired()
-                        .HasMaxLength(1000)
-                        .HasColumnType("nvarchar(1000)");
-
-                    b.Property<DateTime>("CreatedAt")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("datetime2")
-                        .HasDefaultValueSql("GETDATE()");
-
-                    b.Property<Guid>("UserId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid>("VideoId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("UserId");
-
-                    b.HasIndex("VideoId");
-
-                    b.ToTable("Comments", (string)null);
-                });
-
             modelBuilder.Entity("Domain.Entities.CommentGroupPost", b =>
                 {
                     b.Property<Guid>("Id")
@@ -182,6 +150,38 @@ namespace Infrastructure.Migrations
                     b.HasIndex("UserId");
 
                     b.ToTable("CommentGroupPosts", (string)null);
+                });
+
+            modelBuilder.Entity("Domain.Entities.CommentVideo", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier")
+                        .HasDefaultValueSql("NEWID()");
+
+                    b.Property<string>("Content")
+                        .IsRequired()
+                        .HasMaxLength(1000)
+                        .HasColumnType("nvarchar(1000)");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasDefaultValueSql("GETDATE()");
+
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("VideoId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId");
+
+                    b.HasIndex("VideoId");
+
+                    b.ToTable("CommentVideos", (string)null);
                 });
 
             modelBuilder.Entity("Domain.Entities.Contest", b =>
@@ -247,32 +247,10 @@ namespace Infrastructure.Migrations
 
                     b.HasIndex("ContestId");
 
-                    b.HasIndex("VideoId");
+                    b.HasIndex("VideoId")
+                        .IsUnique();
 
                     b.ToTable("ContestEntries", (string)null);
-                });
-
-            modelBuilder.Entity("Domain.Entities.Follow", b =>
-                {
-                    b.Property<Guid>("FollowingUserId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid>("FollowedUserId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<DateTime>("CreatedAt")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("datetime2")
-                        .HasDefaultValueSql("GETDATE()");
-
-                    b.Property<Guid>("Id")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.HasKey("FollowingUserId", "FollowedUserId");
-
-                    b.HasIndex("FollowedUserId");
-
-                    b.ToTable("Follows", (string)null);
                 });
 
             modelBuilder.Entity("Domain.Entities.Group", b =>
@@ -300,7 +278,6 @@ namespace Infrastructure.Migrations
                         .HasColumnType("nvarchar(500)");
 
                     b.Property<string>("GroupAvatar")
-                        .IsRequired()
                         .HasMaxLength(500)
                         .HasColumnType("nvarchar(500)");
 
@@ -360,7 +337,6 @@ namespace Infrastructure.Migrations
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("ImgUrl")
-                        .IsRequired()
                         .HasMaxLength(255)
                         .HasColumnType("nvarchar(255)");
 
@@ -439,7 +415,7 @@ namespace Infrastructure.Migrations
 
                     b.Property<string>("Benefits")
                         .IsRequired()
-                        .HasColumnType("TEXT");
+                        .HasColumnType("NVARCHAR(MAX)");
 
                     b.Property<Guid>("CategoryId")
                         .HasColumnType("uniqueidentifier");
@@ -465,7 +441,7 @@ namespace Infrastructure.Migrations
 
                     b.Property<string>("Description")
                         .IsRequired()
-                        .HasColumnType("TEXT");
+                        .HasColumnType("NVARCHAR(MAX)");
 
                     b.Property<DateTime?>("ExpiryDate")
                         .HasColumnType("datetime2");
@@ -485,7 +461,7 @@ namespace Infrastructure.Migrations
 
                     b.Property<string>("Requirements")
                         .IsRequired()
-                        .HasColumnType("TEXT");
+                        .HasColumnType("NVARCHAR(MAX)");
 
                     b.Property<decimal?>("SalaryFrom")
                         .HasColumnType("DECIMAL(18, 2)");
@@ -621,49 +597,6 @@ namespace Infrastructure.Migrations
                     b.HasIndex("UserId");
 
                     b.ToTable("Notifications", (string)null);
-                });
-
-            modelBuilder.Entity("Domain.Entities.Payment", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier")
-                        .HasDefaultValueSql("NEWID()");
-
-                    b.Property<decimal>("Amount")
-                        .HasPrecision(10)
-                        .HasColumnType("decimal(10,0)");
-
-                    b.Property<DateTime>("CreatedAt")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("datetime2")
-                        .HasDefaultValueSql("GETDATE()");
-
-                    b.Property<bool>("IsProcessed")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("Message")
-                        .IsRequired()
-                        .HasMaxLength(200)
-                        .HasColumnType("nvarchar(200)");
-
-                    b.Property<Guid>("ReceiverId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid>("SenderId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("Type")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("ReceiverId");
-
-                    b.HasIndex("SenderId");
-
-                    b.ToTable("Payments", (string)null);
                 });
 
             modelBuilder.Entity("Domain.Entities.Rating", b =>
@@ -934,25 +867,6 @@ namespace Infrastructure.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("Domain.Entities.Comment", b =>
-                {
-                    b.HasOne("Domain.Entities.User", "User")
-                        .WithMany("Comments")
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Domain.Entities.Video", "Video")
-                        .WithMany("Comments")
-                        .HasForeignKey("VideoId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("User");
-
-                    b.Navigation("Video");
-                });
-
             modelBuilder.Entity("Domain.Entities.CommentGroupPost", b =>
                 {
                     b.HasOne("Domain.Entities.GroupPost", "GroupPost")
@@ -979,6 +893,25 @@ namespace Infrastructure.Migrations
                     b.Navigation("User");
                 });
 
+            modelBuilder.Entity("Domain.Entities.CommentVideo", b =>
+                {
+                    b.HasOne("Domain.Entities.User", "User")
+                        .WithMany("CommentVideos")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Domain.Entities.Video", "Video")
+                        .WithMany("CommentVideos")
+                        .HasForeignKey("VideoId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
+
+                    b.Navigation("Video");
+                });
+
             modelBuilder.Entity("Domain.Entities.Contest", b =>
                 {
                     b.HasOne("Domain.Entities.User", "CreatedByUser")
@@ -1003,33 +936,14 @@ namespace Infrastructure.Migrations
                         .IsRequired();
 
                     b.HasOne("Domain.Entities.Video", "Video")
-                        .WithMany("ContestEntries")
-                        .HasForeignKey("VideoId")
+                        .WithOne("ContestEntry")
+                        .HasForeignKey("Domain.Entities.ContestEntry", "VideoId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.Navigation("Contest");
 
                     b.Navigation("Video");
-                });
-
-            modelBuilder.Entity("Domain.Entities.Follow", b =>
-                {
-                    b.HasOne("Domain.Entities.User", "FollowedUser")
-                        .WithMany("Followers")
-                        .HasForeignKey("FollowedUserId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
-                    b.HasOne("Domain.Entities.User", "FollowingUser")
-                        .WithMany("Following")
-                        .HasForeignKey("FollowingUserId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
-                    b.Navigation("FollowedUser");
-
-                    b.Navigation("FollowingUser");
                 });
 
             modelBuilder.Entity("Domain.Entities.Group", b =>
@@ -1103,7 +1017,7 @@ namespace Infrastructure.Migrations
             modelBuilder.Entity("Domain.Entities.Job", b =>
                 {
                     b.HasOne("Domain.Entities.Category", "Category")
-                        .WithMany()
+                        .WithMany("Jobs")
                         .HasForeignKey("CategoryId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -1128,7 +1042,7 @@ namespace Infrastructure.Migrations
                         .IsRequired();
 
                     b.HasOne("Domain.Entities.User", "User")
-                        .WithMany()
+                        .WithMany("LikeCommentGroupPosts")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
@@ -1147,7 +1061,7 @@ namespace Infrastructure.Migrations
                         .IsRequired();
 
                     b.HasOne("Domain.Entities.User", "User")
-                        .WithMany()
+                        .WithMany("LikeGroupPosts")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
@@ -1187,25 +1101,6 @@ namespace Infrastructure.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("Domain.Entities.Payment", b =>
-                {
-                    b.HasOne("Domain.Entities.User", "Receiver")
-                        .WithMany("ReceivedPayments")
-                        .HasForeignKey("ReceiverId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
-                    b.HasOne("Domain.Entities.User", "Sender")
-                        .WithMany("SentPayments")
-                        .HasForeignKey("SenderId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
-                    b.Navigation("Receiver");
-
-                    b.Navigation("Sender");
-                });
-
             modelBuilder.Entity("Domain.Entities.Rating", b =>
                 {
                     b.HasOne("Domain.Entities.User", "User")
@@ -1234,7 +1129,7 @@ namespace Infrastructure.Migrations
                         .IsRequired();
 
                     b.HasOne("Domain.Entities.User", "User")
-                        .WithMany()
+                        .WithMany("RatingGroupPosts")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
@@ -1334,6 +1229,8 @@ namespace Infrastructure.Migrations
                 {
                     b.Navigation("Groups");
 
+                    b.Navigation("Jobs");
+
                     b.Navigation("UserTalents");
 
                     b.Navigation("Videos");
@@ -1383,33 +1280,31 @@ namespace Infrastructure.Migrations
 
                     b.Navigation("CommentGroupPosts");
 
-                    b.Navigation("Comments");
+                    b.Navigation("CommentVideos");
 
                     b.Navigation("CreatedContests");
 
                     b.Navigation("CreatedGroups");
 
-                    b.Navigation("Followers");
-
-                    b.Navigation("Following");
-
                     b.Navigation("GroupMembers");
 
                     b.Navigation("GroupPosts");
+
+                    b.Navigation("LikeCommentGroupPosts");
+
+                    b.Navigation("LikeGroupPosts");
 
                     b.Navigation("Notifications");
 
                     b.Navigation("PostedJobs");
 
+                    b.Navigation("RatingGroupPosts");
+
                     b.Navigation("Ratings");
 
                     b.Navigation("ReceivedMessages");
 
-                    b.Navigation("ReceivedPayments");
-
                     b.Navigation("SentMessages");
-
-                    b.Navigation("SentPayments");
 
                     b.Navigation("UserTalents");
 
@@ -1422,9 +1317,10 @@ namespace Infrastructure.Migrations
 
             modelBuilder.Entity("Domain.Entities.Video", b =>
                 {
-                    b.Navigation("Comments");
+                    b.Navigation("CommentVideos");
 
-                    b.Navigation("ContestEntries");
+                    b.Navigation("ContestEntry")
+                        .IsRequired();
 
                     b.Navigation("Ratings");
 

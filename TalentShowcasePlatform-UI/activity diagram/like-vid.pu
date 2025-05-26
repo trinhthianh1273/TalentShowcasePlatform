@@ -1,0 +1,20 @@
+@startuml
+title Like Functionality – Activity Diagram
+
+(*) --> "User clicks Like button"
+
+if "User is logged in?" then
+  --> [yes] "Toggle Like/Unlike status"
+  --> "Update like count in backend"
+  --> "Update UI like status"
+
+  if "Realtime system enabled?" then
+    --> [yes] "Broadcast like count to other users"
+  endif
+
+else
+  --> [no] "Redirect to Login page"
+endif
+
+--> (*)
+@enduml

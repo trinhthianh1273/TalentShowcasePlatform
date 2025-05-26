@@ -1,5 +1,5 @@
 <div>
-    <app-header [isLoggedIn]="isLoggedIn" [currentUser]="currentUser"></app-header>
+    <app-header></app-header>
     <main *ngIf="videoDetail" class="w-full px-4 sm:px-6 lg:px-8 mb-20 max-w-full mx-auto">
         <div class="flex flex-col lg:flex-row lg:space-x-8">
             <section class="flex-1 max-w-full lg:max-w-none lg:w-2/3 overflow-y-auto"
@@ -20,6 +20,12 @@
                     {{ videoDetail['title'] }}
                 </h1>
                 <div class="flex items-center space-x-3 mt-2 text-gray-600 text-sm">
+                    <button aria-label="Like"
+                        class="hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded"
+                        type="button">
+                        <i class="far fa-heart">
+                        </i>
+                    </button>
                     <span>
                         4,377 views
                     </span>
@@ -29,32 +35,6 @@
                     <span>
                         {{ videoDetail['uploadedAt'] | date: 'MMMM d, y'}}
                     </span>
-                </div>
-                <div class="flex items-center space-x-5 mt-4 text-gray-600 text-lg">
-                    <button aria-label="Share"
-                        class="hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded"
-                        type="button">
-                        <i class="fas fa-paper-plane">
-                        </i>
-                    </button>
-                    <button aria-label="Like"
-                        class="hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded"
-                        type="button">
-                        <i class="far fa-heart">
-                        </i>
-                    </button>
-                    <button aria-label="Add to Watch Later"
-                        class="hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded"
-                        type="button">
-                        <i class="far fa-clock">
-                        </i>
-                    </button>
-                    <button aria-label="More options"
-                        class="hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded"
-                        type="button">
-                        <i class="fas fa-ellipsis-h">
-                        </i>
-                    </button>
                 </div>
                 <div class="flex items-center space-x-3 mt-6">
                     <img alt="Profile picture of Coria Mocibi, a person with short hair and glasses"

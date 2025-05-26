@@ -14,7 +14,6 @@ public class CreateViewCommand : IRequest<Result<Guid>>
 {
 	public Guid VideoId { get; set; }
 	public Guid ViewerId { get; set; }
-	public DateTime ViewedAt { get; set; }
 }
 
 public class CreateViewHandler : IRequestHandler<CreateViewCommand, Result<Guid>>
@@ -32,8 +31,7 @@ public class CreateViewHandler : IRequestHandler<CreateViewCommand, Result<Guid>
 		{
 			Id = Guid.NewGuid(),
 			VideoId = request.VideoId,
-			ViewerId = request.ViewerId,
-			ViewedAt = request.ViewedAt
+			ViewerId = request.ViewerId
 		};
 
 		await _unitOfWork.Repository<View>().AddAsync(view);

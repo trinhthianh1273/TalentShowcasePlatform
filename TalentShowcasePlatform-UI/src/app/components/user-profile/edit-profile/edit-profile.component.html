@@ -1,9 +1,8 @@
 <!-- Top Navigation -->
-<app-header-profile [currentUser]="currentUser"></app-header-profile>
 <main class="max-w-7xl mx-auto px-4 sm:px-6 md:px-10 mt-4 mb-10">
-    <button class="bg-green-700 text-white text-sm font-semibold rounded-md px-5 py-2 mb-6 inline-block">
+    <a [routerLink]="['/profile', userId]" class="bg-green-700 text-white text-sm font-semibold rounded-md px-5 py-2 mb-6 inline-block">
         Back to Profile
-    </button>
+    </a>
     <div class="flex flex-col md:flex-row md:space-x-6">
         <!-- Left Sidebar -->
         <nav

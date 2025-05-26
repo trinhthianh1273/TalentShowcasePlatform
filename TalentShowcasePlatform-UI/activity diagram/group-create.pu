@@ -1,0 +1,21 @@
+@startuml
+title Create Interest Group
+
+(*) --> "User logs in"
+
+--> "User fills in group creation form:\n - Name\n - Description\n - Talent category\n - Avatar (optional)\n - Privacy setting"
+
+--> "Submit group creation request"
+
+--> "Server validates input"
+
+--> "Create Group record in DB"
+
+--> "Assign user as Group Admin"
+
+--> "Add user to Group members list"
+
+--> "Return success and display new Group"
+
+--> (*)
+@enduml

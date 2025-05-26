@@ -33,13 +33,13 @@ public class JobConfiguration : IEntityTypeConfiguration<Job>
 			.HasMaxLength(255);
 
 		builder.Property(j => j.Description)
-			.HasColumnType("TEXT"); // Sử dụng TEXT cho phép lưu trữ văn bản dài
+			.HasColumnType("NVARCHAR(MAX)"); // Sử dụng TEXT cho phép lưu trữ văn bản dài
 
 		builder.Property(j => j.Requirements)
-			.HasColumnType("TEXT");
+			.HasColumnType("NVARCHAR(MAX)");
 
 		builder.Property(j => j.Benefits)
-			.HasColumnType("TEXT");
+			.HasColumnType("NVARCHAR(MAX)");
 
 		builder.Property(j => j.JobType)
 			.HasMaxLength(50); // Chọn độ dài phù hợp

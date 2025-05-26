@@ -1,8 +1,8 @@
 <header class="flex items-center justify-between px-4 py-2 border-b border-gray-200 sticky top-0 bg-white z-30">
   <a [routerLink]="['/']" class="flex items-center gap-3 text-orange-500 font-semibold" href="#">
-    <i class="fab fa-reddit fa-lg">
+    <i class="fab fa-reddit fa-lg text-4xl">
     </i>
-    <span class="text-lg font-bold">
+    <span class="text-xl font-bold">
       Talent
     </span>
   </a>
@@ -15,7 +15,6 @@
       id="search" placeholder="Search Talent" type="search" />
   </form>
   <div class="flex items-center space-x-4 text-gray-600 text-sm">
-    <app-completing-popup></app-completing-popup>
     <button aria-label="Chat" class="text-xl">
       <i class="far fa-comment-alt">
       </i>
@@ -38,15 +37,10 @@
         1
       </span>
     </button>
-    <div class="relative">
-      <img alt="User avatar" class="w-10 h-10 rounded-full hover:cursor-pointer" [src]="avatarUrl" />
-      <span aria-label="Online status"
-        class="absolute bottom-0 right-0 w-3 h-3 bg-green-600 border-2 border-white rounded-full">
-      </span>
-    </div>
+    <app-avatar-dropdown></app-avatar-dropdown>
   </div>
 </header>
-<main class="flex mx-auto px-4 py-4 space-x-6">
+<main class="flex  w-full min-h-screen mx-auto  space-x-4">
   <app-community-left-sidebar></app-community-left-sidebar>
   <router-outlet></router-outlet>
 

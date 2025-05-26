@@ -34,11 +34,15 @@ export class VideosService {
   }
 
   getCommentsVideo(videoId: string) {
-    return this.http.get<any>(`${this.baseURL}/api/Comments/video/${videoId}`);
+    return this.http.get<any>(`${this.baseURL}/api/CommentVideos/video/${videoId}`);
+  }
+
+  getLikeVideo(videoId: string) {
+    return this.http.get<any>(`${this.baseURL}/api/VideoLikes/video/${videoId}`);
   }
 
   postComment(data: any) {
-    return this.http.post<any>(`${this.baseURL}/api/Comments`, data);
+    return this.http.post<any>(`${this.baseURL}/api/CommentVideos`, data);
   }
 
   updateVideo(videoId: any, data: any) {
@@ -46,10 +50,14 @@ export class VideosService {
   }
 
   uploadVideo(data: any) {
-    return this.http.put<any>(`${this.baseURL}/api/Videos`, data);
+    return this.http.post<any>(`${this.baseURL}/api/Videos`, data);
   }
 
   deleteVideo(videoId: any) {
     return this.http.delete<any>(`${this.baseURL}/api/Videos/${videoId}`, videoId);
+  }
+
+  addView(data: any) { 
+    return this.http.post<any>(`${this.baseURL}/api/Views`, data);
   }
 }
