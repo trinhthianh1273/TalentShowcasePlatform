@@ -3,7 +3,6 @@ import { share, Subscription } from 'rxjs';
 import { SharedModule } from '../../shared/shared.module';
 import { Router, RouterOutlet } from '@angular/router';
 import { CommunityLeftSidebarComponent } from './community-left-sidebar/community-left-sidebar.component';
-import { LoginResponse } from '../../interfaces/interface';
 import { AuthStateService } from '../../services/auth/auth-state.service';
 import { CommunityService } from '../../services/community/community.service';
 import { SubjectService } from '../../services/subject.service';
@@ -11,6 +10,7 @@ import { DataService } from '../../services/data.service';
 import { CreateCommunityComponent } from './create-community/create-community.component';
 import { BaseComponent } from '../base-component/base-component.component';
 import { AvatarDropdownComponent } from "../avatar-dropdown/avatar-dropdown.component";
+import { NotificationService } from '../../services/notifications/notification.service';
 
 @Component({
   selector: 'app-community',
@@ -34,12 +34,13 @@ export class CommunityComponent extends BaseComponent implements OnInit {
 
   constructor(
     authStateService: AuthStateService,
+    notiService: NotificationService,
     private dataService: DataService,
     private subjectService: SubjectService,
     private router: Router,
     private communityService: CommunityService
   ) {
-    super(authStateService);
+    super(authStateService, notiService);
   }
 
   ngOnInit(): void {

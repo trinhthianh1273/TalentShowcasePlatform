@@ -4,6 +4,7 @@ import { CommunityService } from '../../services/community/community.service';
 import { GroupModel } from '../../models/GroupModel';
 import { BaseComponent } from './base-component.component';
 import { AuthStateService } from '../../services/auth/auth-state.service';
+import { NotificationService } from '../../services/notifications/notification.service';
 // import { AuthStateService } from '../services/auth-state.service';
 
 export abstract class BaseCommnunityComponent extends BaseComponent {
@@ -13,15 +14,16 @@ export abstract class BaseCommnunityComponent extends BaseComponent {
 
     constructor(
         authStateService: AuthStateService,
-        protected communityService: CommunityService
+        protected communityService: CommunityService,
+        notiService: NotificationService
     ) { 
-        super(authStateService);
+        super(authStateService, notiService);
     }
 
     protected subscribeGroupData(groupId: any) {
         this.communityService.getCommunity(groupId).subscribe({
             next: (res) => {
-                this.groupData = res?.data;
+                this.groupData = Array.isArray(res.data) ? res.data[0] : res.data;
                 console.log('Group Data:', this.groupData);
             },
             error: (error) => {

@@ -1,5 +1,6 @@
 ﻿using Domain.Entities;
 using Domain.Interfaces;
+using Domain.ValueObject;
 using MediatR;
 using Shared.Results;
 using System;
@@ -13,8 +14,11 @@ namespace Application.Features.Notifications.Command;
 public class UpdateNotificationCommand : IRequest<Result<bool>>
 {
 	public Guid Id { get; set; }
+	public string Title { get; set; }
 	public string Message { get; set; }
-	public bool IsRead { get; set; }
+	public string Type { get; set; }
+	public Guid? RelatedEntityId { get; set; }
+	public RelatedEntityType RelatedEntityType { get; set; }
 }
 
 
@@ -36,8 +40,11 @@ public class UpdateNotificationHandler : IRequestHandler<UpdateNotificationComma
 			return Result<bool>.Failure("Notification not found.");
 		}
 
+		notification.Title = request.Title;
 		notification.Message = request.Message;
-		notification.IsRead = request.IsRead;
+		notification.Type = request.Type;
+		notification.RelatedEntityId = request.RelatedEntityId;
+		notification.RelatedEntityType = request.RelatedEntityType;
 
 		await _unitOfWork.Repository<Notification>().UpdateAsync(notification);
 		var saveResult = await _unitOfWork.Save(cancellationToken);

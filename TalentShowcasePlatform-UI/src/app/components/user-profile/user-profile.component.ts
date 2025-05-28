@@ -1,17 +1,13 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Enviroment } from '../../../environment';
 import { AuthStateService } from '../../services/auth/auth-state.service';
-import { SubjectService } from '../../services/subject.service';
 import { SharedModule } from '../../shared/shared.module';
-import { LoginComponent } from '../login/login.component';
-import { LoginResponse } from '../../interfaces/interface';
-import { Subscription } from 'rxjs';
 import { ProfileAchivementsComponent } from "./profile-achivements/profile-achivements.component";
 import { ProfileAwardsComponent } from './profile-awards/profile-awards.component';
 import { ProfileUploadedJobComponent } from './profile-uploaded-job/profile-uploaded-job.component';
 import { HeaderProfileComponent } from './header-profile/header-profile.component';
 import { ActivatedRoute } from '@angular/router';
 import { BaseComponent } from '../base-component/base-component.component';
+import { NotificationService } from '../../services/notifications/notification.service';
 
 @Component({
   selector: 'app-user-profile',
@@ -35,9 +31,10 @@ export class UserProfileComponent extends BaseComponent implements OnInit {
 
   constructor(
     authStateService: AuthStateService,
+    notiService: NotificationService,
     private route: ActivatedRoute
   ) {
-    super(authStateService);
+    super(authStateService, notiService);
   }
   ngOnInit(): void {
 

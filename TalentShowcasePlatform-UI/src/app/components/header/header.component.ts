@@ -1,4 +1,4 @@
-import { Component, ElementRef, HostListener, Input, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, EventEmitter, HostListener, Input, OnInit, Output, ViewChild } from '@angular/core';
 import { Enviroment } from '../../../environment';
 import { AuthStateService } from '../../services/auth/auth-state.service';
 import { SubjectService } from '../../services/subject.service';
@@ -8,6 +8,7 @@ import { CurrentUserModel } from '../../models/CurrentUserModel';
 import { BaseComponent } from '../base-component/base-component.component';
 import { Router } from '@angular/router';
 import { AvatarDropdownComponent } from "../avatar-dropdown/avatar-dropdown.component";
+import { NotificationService } from '../../services/notifications/notification.service';
 
 @Component({
   selector: 'app-header',
@@ -15,13 +16,11 @@ import { AvatarDropdownComponent } from "../avatar-dropdown/avatar-dropdown.comp
     SharedModule,
     LoginComponent,
     AvatarDropdownComponent
-],
+  ],
   templateUrl: './header.component.html',
   styleUrl: './header.component.css'
 })
 export class HeaderComponent extends BaseComponent implements OnInit {
-  // isLoggedIn: boolean = false;
-  // currentUser: LoginResponse['data'] | null = null; // Cập nhật kiểu dữ liệu
 
   // for login
   isLoginPopupVisible: boolean = false;
@@ -30,23 +29,36 @@ export class HeaderComponent extends BaseComponent implements OnInit {
   popupOpen = false;
   @ViewChild('popupWrapper', { static: false }) popupWrapper!: ElementRef;
 
+  @Input() isSidebarOpen = true;
+  @Output() onToggle = new EventEmitter<void>();
+
+  isNotificationOpen = false;
+
   constructor(
     private subjectService: SubjectService,
     authStateService: AuthStateService,
+    notiService: NotificationService,
     private router: Router
   ) {
-    super(authStateService);
+    super(authStateService, notiService);
   }
   ngOnInit(): void {
     this.subscribeAuthState();
   }
-
+  toggle() {
+    this.onToggle.emit();
+  }
   @HostListener('document:click', ['$event'])
   onDocumentClick(event: MouseEvent): void {
     const targetElement = event.target as HTMLElement;
 
     if (this.popupWrapper && !this.popupWrapper.nativeElement.contains(targetElement)) {
       this.popupOpen = false;
+    }
+
+    // Nếu click ngoài vùng dropdown và icon
+    if (!targetElement.closest('.notification-dropdown') && !targetElement.closest('.notification-btn')) {
+      this.isNotificationOpen = false;
     }
   }
 
@@ -62,6 +74,14 @@ export class HeaderComponent extends BaseComponent implements OnInit {
 
   showLoginPopup(): void {
     this.isLoginPopupVisible = true;
+  }
+
+  toggleNotification() {
+    this.isNotificationOpen = !this.isNotificationOpen;
+  }
+
+  closeNotification() {
+    this.isNotificationOpen = false;
   }
 
   hideLoginPopup(): void {

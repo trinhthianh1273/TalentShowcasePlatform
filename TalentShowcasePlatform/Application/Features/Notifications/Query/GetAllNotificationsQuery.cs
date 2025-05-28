@@ -32,9 +32,11 @@ public class GetAllNotificationsQueryHandler : IRequestHandler<GetAllNotificatio
 	public async Task<Result<IEnumerable<NotificationDto>>> Handle(GetAllNotificationsQuery request, CancellationToken cancellationToken)
 	{
 		var notifications = await _unitOfWork.Repository<Notification>()
-			.GetAllAsync(include: q => q.Include(n => n.User));
-
-		return Result<IEnumerable<NotificationDto>>.Success(_mapper.Map<IEnumerable<NotificationDto>>(notifications));
+									.Entities
+									.OrderByDescending(i => i.CreatedAt)
+									.ToListAsync();
+		var dtos = _mapper.Map<IEnumerable<NotificationDto>>(notifications);
+		return Result<IEnumerable<NotificationDto>>.Success(dtos);
 	}
 }
 

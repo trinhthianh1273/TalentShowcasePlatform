@@ -1,4 +1,5 @@
-﻿using Application.Features.LikeGroupPosts.Dto;
+﻿using Application.Features.LikeCommentGroupPosts.Dto;
+using Application.Features.LikeGroupPosts.Dto;
 using AutoMapper;
 using Domain.Entities;
 using Domain.Interfaces;
@@ -19,11 +20,13 @@ public class CreateLikeGroupPostCommandHandler : IRequestHandler<CreateLikeGroup
 {
 	private readonly IUnitOfWork _unitOfWork;
 	private readonly IMapper _mapper;
+	private readonly IActivityEventPublisher _activityEventPublisher;
 
-	public CreateLikeGroupPostCommandHandler(IUnitOfWork unitOfWork, IMapper mapper)
+	public CreateLikeGroupPostCommandHandler(IUnitOfWork unitOfWork, IMapper mapper, IActivityEventPublisher activityEventPublisher)
 	{
 		_unitOfWork = unitOfWork;
 		_mapper = mapper;
+		_activityEventPublisher = activityEventPublisher;
 	}
 
 	public async Task<Result<Guid>> Handle(CreateLikeGroupPostCommand request, CancellationToken cancellationToken)
@@ -43,9 +46,20 @@ public class CreateLikeGroupPostCommandHandler : IRequestHandler<CreateLikeGroup
 		};
 
 		await _unitOfWork.Repository<LikeGroupPost>().AddAsync(like);
-		await _unitOfWork.Save(cancellationToken);
+		var saveResult = await _unitOfWork.Save(cancellationToken);
+		if (saveResult > 0)
+		{
+			var post = await _unitOfWork.Repository<GroupPost>().GetByIdAsync(request.GroupPostId);
+			// Tạo notification
+			await _activityEventPublisher.PublishLikeGroupPostAsync(request.UserId, post.UserId, request.GroupPostId);
 
-		var dto = _mapper.Map<LikeGroupPostDto>(like);
-		return Result<Guid>.Success(dto.Id);
+			var dto = _mapper.Map<LikeGroupPostDto>(like);
+			return Result<Guid>.Success(dto.Id);
+		}
+		else
+		{
+			return Result<Guid>.Failure("Không thể like post.");
+		}
+		
 	}
 }

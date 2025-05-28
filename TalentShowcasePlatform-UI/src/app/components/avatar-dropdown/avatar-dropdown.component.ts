@@ -3,6 +3,7 @@ import { BaseComponent } from '../base-component/base-component.component';
 import { AuthStateService } from '../../services/auth/auth-state.service';
 import { Router } from '@angular/router';
 import { SharedModule } from '../../shared/shared.module';
+import { NotificationService } from '../../services/notifications/notification.service';
 
 @Component({
   selector: 'app-avatar-dropdown',
@@ -17,8 +18,9 @@ export class AvatarDropdownComponent extends BaseComponent implements OnInit {
   @ViewChild('popupWrapper', { static: false }) popupWrapper!: ElementRef;
   constructor(
     authStateService: AuthStateService,
+    notiService: NotificationService,
     private router: Router
-  ) { super(authStateService); }
+  ) { super(authStateService, notiService); }
   ngOnInit(): void {
     this.subscribeAuthState();
   }

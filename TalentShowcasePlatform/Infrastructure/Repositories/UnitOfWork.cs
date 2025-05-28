@@ -71,6 +71,11 @@ public class UnitOfWork : IUnitOfWork
 		return await _context.SaveChangesAsync(cancellationToken);
 	}
 
+	public async Task<int> Save()
+	{
+		return await _context.SaveChangesAsync();
+	}
+
 	public Task<int> SaveAndRemoveCache(CancellationToken cancellationToken, params string[] cacheKeys)
 	{
 		throw new NotImplementedException();

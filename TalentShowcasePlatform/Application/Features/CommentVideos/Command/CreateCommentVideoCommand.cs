@@ -20,10 +20,12 @@ public class CreateCommentVideoCommand : IRequest<Result<Guid>>
 public class CreateCommentVideoCommandHandler : IRequestHandler<CreateCommentVideoCommand, Result<Guid>>
 {
 	private readonly IUnitOfWork _unitOfWork;
+	private readonly IActivityEventPublisher _activityEventPublisher;
 
-	public CreateCommentVideoCommandHandler(IUnitOfWork unitOfWork)
+	public CreateCommentVideoCommandHandler(IUnitOfWork unitOfWork, IActivityEventPublisher activityEventPublisher)
 	{
 		_unitOfWork = unitOfWork;
+		_activityEventPublisher = activityEventPublisher;
 	}
 
 	public async Task<Result<Guid>> Handle(CreateCommentVideoCommand request, CancellationToken cancellationToken)
@@ -42,6 +44,9 @@ public class CreateCommentVideoCommandHandler : IRequestHandler<CreateCommentVid
 
 		if (saveResult > 0)
 		{
+			var videoCommented = await _unitOfWork.Repository<Video>().GetByIdAsync(request.VideoId);
+			// Tạo notification
+			await _activityEventPublisher.PublishCommentVideoAsync(videoCommented.UserId, request.UserId, request.VideoId, CommentVideo.Id);
 			return Result<Guid>.Success(CommentVideo.Id);
 		}
 		else

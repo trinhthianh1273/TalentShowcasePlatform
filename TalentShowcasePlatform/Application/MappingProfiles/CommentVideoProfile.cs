@@ -15,7 +15,8 @@ public class CommentVideoProfile : Profile
 	public CommentVideoProfile()
 	{
 		CreateMap<CommentVideo, CommentVideoDto>()
-					.ForMember(dest => dest.UserName, opt => opt.MapFrom(src => src.User.UserName));
+			.ForMember(dest => dest.userAvatarUrl, opt => opt.MapFrom(src => src.User.AvatarUrl))
+			.ForMember(dest => dest.UserName, opt => opt.MapFrom(src => src.User.UserName));
 		// You can add mappings for Video and User DTOs if you intend to include them
 		// CreateMap<Video, VideoDto>();
 		// CreateMap<User, UserDto>();

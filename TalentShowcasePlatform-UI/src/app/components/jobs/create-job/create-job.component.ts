@@ -7,6 +7,7 @@ import { AuthStateService } from '../../../services/auth/auth-state.service';
 import { DataService } from '../../../services/data.service';
 import { Router } from '@angular/router';
 import { PopupComponent } from '../../popup/popup.component';
+import { NotificationService } from '../../../services/notifications/notification.service';
 
 @Component({
   selector: 'app-create-job',
@@ -32,12 +33,13 @@ export class CreateJobComponent extends BaseComponent implements OnInit {
 
   constructor(
     authStateService: AuthStateService,
+    notiService: NotificationService,
     private jobService: JobService,
     private fb: FormBuilder,
     private dataService: DataService,
     private router: Router
   ) {
-    super(authStateService);
+    super(authStateService, notiService);
     this.jobForm = this.fb.group({
       title: ['', Validators.required],
       companyName: [''],

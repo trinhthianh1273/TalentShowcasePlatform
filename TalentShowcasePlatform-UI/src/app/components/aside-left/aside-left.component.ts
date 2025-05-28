@@ -1,4 +1,4 @@
-import { Component, Input, input } from '@angular/core';
+import { Component, EventEmitter, Input, input, OnInit, Output } from '@angular/core';
 import { Route } from '@angular/router';
 import { SharedModule } from '../../shared/shared.module';
 
@@ -10,13 +10,21 @@ import { SharedModule } from '../../shared/shared.module';
   templateUrl: './aside-left.component.html',
   styleUrl: './aside-left.component.css'
 })
-export class AsideLeftComponent {
+export class AsideLeftComponent implements OnInit {
 
   @Input() userId: any;
+  @Input() isOpen = true;
+  @Output() onToggle = new EventEmitter<void>();
 
   constructor(
-    // private router: Route
   ) { }
+  ngOnInit(): void {
+  }
+
+  toggleSidebar() {
+    this.isOpen = !this.isOpen;
+    this.onToggle.emit();
+  }
 
   navigateToLibrary(userId: any) {
     // this.router.navigate(['/user'], { queryParams: { id: userId } });

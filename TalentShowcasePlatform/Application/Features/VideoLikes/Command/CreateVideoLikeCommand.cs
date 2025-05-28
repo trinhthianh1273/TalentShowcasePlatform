@@ -14,16 +14,17 @@ public class CreateVideoLikeCommand : IRequest<Result<Guid>>
 {
 	public Guid VideoId { get; set; }
 	public Guid UserId { get; set; }
-	public DateTime LikedAt { get; set; }
 }
 
 public class CreateVideoLikeHandler : IRequestHandler<CreateVideoLikeCommand, Result<Guid>>
 {
 	private readonly IUnitOfWork _unitOfWork;
+	private readonly IActivityEventPublisher _activityEventPublisher;
 
-	public CreateVideoLikeHandler(IUnitOfWork unitOfWork)
+	public CreateVideoLikeHandler(IUnitOfWork unitOfWork, IActivityEventPublisher activityEventPublisher)
 	{
 		_unitOfWork = unitOfWork;
+		_activityEventPublisher = activityEventPublisher;
 	}
 
 	public async Task<Result<Guid>> Handle(CreateVideoLikeCommand request, CancellationToken cancellationToken)
@@ -32,8 +33,7 @@ public class CreateVideoLikeHandler : IRequestHandler<CreateVideoLikeCommand, Re
 		{
 			Id = Guid.NewGuid(),
 			VideoId = request.VideoId,
-			UserId = request.UserId,
-			LikedAt = request.LikedAt
+			UserId = request.UserId
 		};
 
 		await _unitOfWork.Repository<VideoLike>().AddAsync(videoLike);
@@ -41,6 +41,10 @@ public class CreateVideoLikeHandler : IRequestHandler<CreateVideoLikeCommand, Re
 
 		if (saveResult > 0)
 		{
+			var video = await _unitOfWork.Repository<Video>().GetByIdAsync(request.VideoId);
+			// Tạo notification
+			await _activityEventPublisher.PublishLikeVideoAsync(request.UserId, video.UserId, request.VideoId);
+
 			return Result<Guid>.Success(videoLike.Id);
 		}
 		else

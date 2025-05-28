@@ -32,15 +32,14 @@ public class NotificationsController : ControllerBase
 		return await _mediator.Send(new GetAllNotificationsQuery()); 
 	}
 
-	[HttpPost]
-	public async Task<ActionResult<Result<Guid>>> CreateNotification(CreateNotificationCommand command)
+	[HttpGet("user/{id}")]
+	public async Task<ActionResult<Result<IEnumerable<NotificationDto>>>> GetNotificationByUser(Guid id)
 	{
-		return await _mediator.Send(command);
+		return await _mediator.Send(new GetNotificationsByUserQuery(id));
 	}
 
 	[HttpPost]
-	[Route("CreateList")]
-	public async Task<ActionResult<Result<List<NotificationDto>>>> CreateListNotification(CreateListNotificationCommand command)
+	public async Task<ActionResult<Result<Guid>>> CreateNotification(CreateNotificationCommand command)
 	{
 		return await _mediator.Send(command);
 	}

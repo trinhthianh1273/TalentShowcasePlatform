@@ -1,5 +1,6 @@
 ﻿using Domain.Entities;
 using Domain.Interfaces;
+using Domain.ValueObject;
 using MediatR;
 using Shared.Results;
 using System;
@@ -13,8 +14,11 @@ namespace Application.Features.Notifications.Command;
 public class CreateNotificationCommand : IRequest<Result<Guid>>
 {
 	public Guid UserId { get; set; }
+	public string Title { get; set; }
 	public string Message { get; set; }
-	public bool IsRead { get; set; }
+	public string Type { get; set; }
+	public Guid? RelatedEntityId { get; set; }
+	public RelatedEntityType RelatedEntityType { get; set; }
 }
 
 
@@ -33,9 +37,11 @@ public class CreateNotificationHandler : IRequestHandler<CreateNotificationComma
 		{
 			Id = Guid.NewGuid(),
 			UserId = request.UserId,
+			Title = request.Title,
 			Message = request.Message,
-			IsRead = request.IsRead,
-			CreatedAt = DateTime.UtcNow
+			Type = request.Type,
+			RelatedEntityId = request.RelatedEntityId,
+			RelatedEntityType = request.RelatedEntityType
 		};
 
 		await _unitOfWork.Repository<Notification>().AddAsync(notification);

@@ -4,13 +4,13 @@ import { SharedModule } from '../../shared/shared.module';
 import { VideoCardComponent } from '../video-card/video-card.component';
 import { Router } from '@angular/router';
 import { VideosService } from '../../services/videos.service';
-import { LoginResponse } from '../../interfaces/interface';
 import { AuthStateService } from '../../services/auth/auth-state.service';
 import { SubjectService } from '../../services/subject.service';
 import { HeaderComponent } from '../header/header.component';
 import { AsideLeftComponent } from "../aside-left/aside-left.component";
 import { BaseComponent } from '../base-component/base-component.component';
 import { CurrentUserModel } from '../../models/CurrentUserModel';
+import { NotificationService } from '../../services/notifications/notification.service';
 
 @Component({
   selector: 'app-home',
@@ -33,20 +33,25 @@ export class HomeComponent extends BaseComponent implements OnInit {
 
   // for login
   isLoginPopupVisible: boolean = false;
-
+  isSidebarOpen = true;
   constructor(
     private subjectService: SubjectService,
     private videoService: VideosService,
     private router: Router,
     authStateService: AuthStateService,
-  ) { 
-    super(authStateService);
+    notiService: NotificationService
+  ) {
+    super(authStateService, notiService);
   }
 
   ngOnInit() {
     this.loadVideos();
     this.subscribeAuthState();
     console.log("user home: ", this.currentUser);
+  }
+
+  toggleSidebar() {
+    this.isSidebarOpen = !this.isSidebarOpen;
   }
 
   ngOnDestroy(): void {
@@ -76,10 +81,6 @@ export class HomeComponent extends BaseComponent implements OnInit {
       },
       error: (err: any) => {
         console.error("Lỗi khi lấy dữ liệu video:", err.message);
-        // Xử lý lỗi tại đây, ví dụ: hiển thị thông báo cho người dùng
-      },
-      complete: () => {
-        // console.log("Hoàn thành việc lấy dữ liệu video");
       }
     });
   }
@@ -95,17 +96,13 @@ export class HomeComponent extends BaseComponent implements OnInit {
       },
       error: (err: any) => {
         console.error("Lỗi khi lấy dữ liệu video:", err.message);
-        // Xử lý lỗi tại đây, ví dụ: hiển thị thông báo cho người dùng
-      },
-      complete: () => {
-        // console.log("Hoàn thành việc lấy dữ liệu video");
       }
     });
   }
 
   navigateToDetail(id: any) {
     console.log(id);
-    this.router.navigate(['/video'], { queryParams: { id: id } });
+    this.router.navigate(['/video', id]);
   }
 
 

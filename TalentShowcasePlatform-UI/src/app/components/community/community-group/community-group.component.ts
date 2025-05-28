@@ -10,6 +10,7 @@ import { SharedModule } from '../../../shared/shared.module';
 import { PostCartComponent } from "../post-cart/post-cart.component";
 import { CommunityPostService } from '../../../services/community-post/community.post.service';
 import { BaseComponent } from '../../base-component/base-component.component';
+import { NotificationService } from '../../../services/notifications/notification.service';
 
 @Component({
   selector: 'app-community-group',
@@ -37,12 +38,13 @@ export class CommunityGroupComponent extends BaseComponent {
   constructor(
     private subjectService: SubjectService,
     authStateService: AuthStateService,
+    notiService: NotificationService,
     private postService: CommunityPostService,
     private communityService: CommunityService,
     private route: ActivatedRoute,
     private router : Router
   ) { 
-    super(authStateService);
+    super(authStateService, notiService);
   }
 
   ngOnInit() {
@@ -75,7 +77,7 @@ export class CommunityGroupComponent extends BaseComponent {
   loadGroupData(groupId: any) {
     this.communityService.getCommunity(groupId).subscribe({
       next: (res) => {
-        this.GroupData = res?.data;
+        this.GroupData = Array.isArray(res.data) ? res.data[0] : res.data;
         console.log("Group Data:", this.GroupData);
         if(this.GroupData.createdBy == this.currentUser.userId) { 
           this.isGroupOwner = true;

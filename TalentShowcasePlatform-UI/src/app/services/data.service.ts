@@ -1,9 +1,7 @@
 import { inject, Injectable } from '@angular/core';
 import { Enviroment } from '../../environment';
 import { HttpClient } from '@angular/common/http';
-import { UserData } from '../interfaces/interface';
 import { Observable } from 'rxjs';
-import { CategoryModel } from '../models/CategoryModel';
 import { ReceivedDataModel } from '../models/ReceivedDataMode';
 
 @Injectable({
@@ -20,20 +18,20 @@ export class DataService {
     return this.http.get<ReceivedDataModel>(`${this.baseURL}/api/Categories`);
   }
 
-  getAchievementByUser(userId: any) {
-    return this.http.get<any>(`${this.baseURL}/api/Achievements/get-by-user/${userId}`);
+  getAchievementByUser(userId: string): Observable<ReceivedDataModel> {
+    return this.http.get<ReceivedDataModel>(`${this.baseURL}/api/Achievements/get-by-user/${userId}`);
   }
 
-  getVideos() {
-    return this.http.get<any>(`${this.baseURL}/api/Videos`);
+  getVideos(): Observable<ReceivedDataModel> {
+    return this.http.get<ReceivedDataModel>(`${this.baseURL}/api/Videos`);
   }
 
-  getVideoById(id: any) {
-    return this.http.get<any>(`${this.baseURL}/api/Videos/${id}`);
+  getVideoById(id: string) : Observable<ReceivedDataModel>{
+    return this.http.get<ReceivedDataModel>(`${this.baseURL}/api/Videos/${id}`);
   }
 
-  getUserById(id: any) {
-    return this.http.get<UserData>(`${this.baseURL}/api/Users/${id}`);
+  getUserById(id: string): Observable<ReceivedDataModel> {
+    return this.http.get<ReceivedDataModel>(`${this.baseURL}/api/Users/${id}`);
   }
 
   getCityFromApi(): Observable<any[]> {

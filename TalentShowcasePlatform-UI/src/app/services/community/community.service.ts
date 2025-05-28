@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { Enviroment } from '../../../environment';
 import { HttpClient } from '@angular/common/http';
 import { CreateGroupRequest } from '../../components/community/create-community/CreateGroupRequest';
+import { Observable } from 'rxjs';
+import { ReceivedDataModel } from '../../models/ReceivedDataMode';
 
 @Injectable({
   providedIn: 'root'
@@ -10,50 +12,50 @@ export class CommunityService {
   private baseURL: string = Enviroment.baseURL;
   constructor(private http: HttpClient) { }
 
-  getCommunities() { 
-    return this.http.get<any>(`${this.baseURL}/api/Groups`);  
+  getCommunities(): Observable<ReceivedDataModel> { 
+    return this.http.get<ReceivedDataModel>(`${this.baseURL}/api/Groups`);  
   }
 
-  getCommunity(id: any) { 
-    return this.http.get<any>(`${this.baseURL}/api/Groups/${id}`);
+  getCommunity(id: string): Observable<ReceivedDataModel> { 
+    return this.http.get<ReceivedDataModel>(`${this.baseURL}/api/Groups/${id}`);
   }
 
-  createCommunity(data: any) { 
-    return this.http.post<any>(`${this.baseURL}/api/Groups`, data);
+  createCommunity(data: any): Observable<ReceivedDataModel> { 
+    return this.http.post<ReceivedDataModel>(`${this.baseURL}/api/Groups`, data);
     }
 
-  getYourCommunities(userId: any) {
-    return this.http.get<any>(`${this.baseURL}/api/Groups/createdby/${userId}`);
+  getYourCommunities(userId: string) : Observable<ReceivedDataModel>{
+    return this.http.get<ReceivedDataModel>(`${this.baseURL}/api/Groups/createdby/${userId}`);
   }
 
-   getJoinedCommunities(userId: any) {
-    return this.http.get<any>(`${this.baseURL}/api/Groups/joined-group/${userId}`);
+   getJoinedCommunities(userId: string): Observable<ReceivedDataModel> {
+    return this.http.get<ReceivedDataModel>(`${this.baseURL}/api/Groups/joined-group/${userId}`);
   }
 
-  getJoinedCommunitiesId(userId: any) {
-    return this.http.get<any>(`${this.baseURL}/api/GroupMembers/joined-group/${userId}`);
+  getJoinedCommunitiesId(userId: string) : Observable<ReceivedDataModel>{
+    return this.http.get<ReceivedDataModel>(`${this.baseURL}/api/GroupMembers/joined-group/${userId}`);
   }
 
-  getCommunityPost() {
-    return this.http.get<any>(`${this.baseURL}/api/GroupPosts`);
+  getCommunityPost(): Observable<ReceivedDataModel> {
+    return this.http.get<ReceivedDataModel>(`${this.baseURL}/api/GroupPosts`);
   }
 
-  getCommunityPostDetail(id: any) {
-    return this.http.get<any>(`${this.baseURL}/api/GroupPosts/${id}`);
+  getCommunityPostDetail(id: string) : Observable<ReceivedDataModel>{
+    return this.http.get<ReceivedDataModel>(`${this.baseURL}/api/GroupPosts/${id}`);
   }
 
-  getCommunityPostComments(id: any) {
-    return this.http.get<any>(`${this.baseURL}/api/GroupPostComments/by-post/${id}`);
+  getCommunityPostComments(id: string) : Observable<ReceivedDataModel>{
+    return this.http.get<ReceivedDataModel>(`${this.baseURL}/api/GroupPostComments/by-post/${id}`);
   }
 
-  addUserToCommunity(groupId: any, userId: any ) {
-    return this.http.post<any>(`${this.baseURL}/api/GroupMembers`, {
+  addUserToCommunity(groupId: any, userId: any ) : Observable<ReceivedDataModel>{
+    return this.http.post<ReceivedDataModel>(`${this.baseURL}/api/GroupMembers`, {
       groupId: groupId,
       userId: userId
     });
   }
 
-  cancelUserToCommunity(groupId: any, userId: any ) {
-    return this.http.delete<any>(`${this.baseURL}/api/GroupMembers/group/${groupId}/user/${userId}`);
+  cancelUserToCommunity(groupId: string, userId: string ) : Observable<ReceivedDataModel>{
+    return this.http.delete<ReceivedDataModel>(`${this.baseURL}/api/GroupMembers/group/${groupId}/user/${userId}`);
   }
 }

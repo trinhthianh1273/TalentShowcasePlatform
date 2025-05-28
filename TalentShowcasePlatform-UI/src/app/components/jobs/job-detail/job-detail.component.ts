@@ -5,6 +5,7 @@ import { BaseComponent } from '../../base-component/base-component.component';
 import { AuthStateService } from '../../../services/auth/auth-state.service';
 import { JobFullModel } from '../models/job-full-model';
 import { JobService } from '../../../services/job/job.service';
+import { NotificationService } from '../../../services/notifications/notification.service';
 
 @Component({
   selector: 'app-job-detail',
@@ -20,9 +21,10 @@ export class JobDetailComponent extends BaseComponent implements OnInit {
 
   constructor(
     authStateService: AuthStateService,
+    notiService: NotificationService,
     private jobService: JobService
   ) {
-    super(authStateService);
+    super(authStateService, notiService);
   }
   ngOnInit(): void {
     console.log('jobId: ', this.jobId);

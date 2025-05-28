@@ -3,6 +3,7 @@ import { SharedModule } from '../../../shared/shared.module';
 import { BaseComponent } from '../../base-component/base-component.component';
 import { AuthStateService } from '../../../services/auth/auth-state.service';
 import { JobFullModel } from '../models/job-full-model';
+import { NotificationService } from '../../../services/notifications/notification.service';
 
 @Component({
   selector: 'app-detail-job',
@@ -17,9 +18,10 @@ export class DetailJobComponent extends BaseComponent implements OnInit {
   @Output() close = new EventEmitter<void>();
 
   constructor(
-    authStateService: AuthStateService
+    authStateService: AuthStateService,
+    notiService: NotificationService,
   ) {
-    super( authStateService );
+    super( authStateService , notiService);
   }
   ngOnInit(): void {
     console.log(this.JobData);

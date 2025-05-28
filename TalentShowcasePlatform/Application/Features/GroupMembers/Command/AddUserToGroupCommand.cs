@@ -19,10 +19,12 @@ public record AddUserToGroupCommand : IRequest<Result<Guid>>
 public class AddUserToGroupCommandHandler : IRequestHandler<AddUserToGroupCommand, Result<Guid>>
 {
 	private readonly IUnitOfWork _unitOfWork;
+	private readonly IActivityEventPublisher _activityEventPublisher;
 
-	public AddUserToGroupCommandHandler(IUnitOfWork unitOfWork)
+	public AddUserToGroupCommandHandler(IUnitOfWork unitOfWork, IActivityEventPublisher activityEventPublisher)
 	{
 		_unitOfWork = unitOfWork;
+		_activityEventPublisher = activityEventPublisher;
 	}
 
 	public async Task<Result<Guid>> Handle(AddUserToGroupCommand request, CancellationToken cancellationToken)
@@ -49,6 +51,10 @@ public class AddUserToGroupCommandHandler : IRequestHandler<AddUserToGroupComman
 
 		if (saveResult > 0)
 		{
+			var groupJoined = await _unitOfWork.Repository<Group>().GetByIdAsync(request.GroupId);
+			// Tạo notification
+			await _activityEventPublisher.PublishJoinGroupAsync(groupMember.UserId, groupJoined.CreatedBy, groupJoined.Id);
+
 			return Result<Guid>.Success(groupMember.Id);
 		}
 		else

@@ -4,6 +4,7 @@ import { AuthStateService } from '../../../services/auth/auth-state.service';
 import { BaseComponent } from '../../base-component/base-component.component';
 import { Router } from '@angular/router';
 import { AvatarDropdownComponent } from "../../avatar-dropdown/avatar-dropdown.component";
+import { NotificationService } from '../../../services/notifications/notification.service';
 
 @Component({
   selector: 'app-job-header',
@@ -24,9 +25,10 @@ export class JobHeaderComponent extends BaseComponent implements OnInit {
 
   constructor(
     authStateService: AuthStateService,
+    notiService: NotificationService,
     private router: Router
   ) {
-    super(authStateService);
+    super(authStateService, notiService);
   }
   ngOnInit(): void {
     this.subscribeAuthState();

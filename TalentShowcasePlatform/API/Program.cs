@@ -6,6 +6,7 @@ using Application.Services;
 using Domain.Interfaces;
 using Infrastructure.Extentiosn;
 using Infrastructure.Persistences.BEContext;
+using Infrastructure.Repositories;
 using Infrastructure.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
@@ -28,6 +29,7 @@ builder.Services.AddInfrastructure(builder.Configuration);
 
 builder.Services.AddDbContext<BEContext>(options =>
 	options.UseSqlServer(builder.Configuration.GetConnectionString("DbContext")));
+builder.Services.AddScoped<IActivityEventPublisher, ActivityEventPublisher>();
 
 builder.Services.AddSingleton<IFileService, FileService>(); // Đăng ký FileService
 

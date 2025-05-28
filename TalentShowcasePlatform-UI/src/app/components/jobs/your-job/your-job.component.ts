@@ -9,6 +9,7 @@ import { CategoryModel } from '../../../models/CategoryModel';
 import { SubjectService } from '../../../services/subject.service';
 import { DetailJobComponent } from "../detail-job/detail-job.component";
 import { UpdateJobComponent } from "../update-job/update-job.component";
+import { NotificationService } from '../../../services/notifications/notification.service';
 
 @Component({
   selector: 'app-your-job',
@@ -36,10 +37,11 @@ export class YourJobComponent extends BaseComponent implements OnInit {
 
   constructor(
     authStateService: AuthStateService,
+    notiService: NotificationService,
     private jobService: JobService,
     private subjectService: SubjectService
   ) {
-    super(authStateService);
+    super(authStateService, notiService);
   }
   ngOnInit(): void {
     this.subscribeAuthState();

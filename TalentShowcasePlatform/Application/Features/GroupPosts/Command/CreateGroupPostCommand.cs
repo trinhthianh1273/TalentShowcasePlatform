@@ -26,11 +26,13 @@ public class CreateGroupPostCommandHandler : IRequestHandler<CreateGroupPostComm
 {
 	private readonly IUnitOfWork _unitOfWork;
 	private readonly IFileService _fileService;
+	private readonly IActivityEventPublisher _activityEventPublisher;
 
-	public CreateGroupPostCommandHandler(IUnitOfWork unitOfWork, IFileService fileService)
+	public CreateGroupPostCommandHandler(IUnitOfWork unitOfWork, IFileService fileService, IActivityEventPublisher activityEventPublisher)
 	{
 		_unitOfWork = unitOfWork;
 		_fileService = fileService;
+		_activityEventPublisher = activityEventPublisher;
 	}
 
 	public async Task<Result<Guid>> Handle(CreateGroupPostCommand request, CancellationToken cancellationToken)
@@ -63,6 +65,10 @@ public class CreateGroupPostCommandHandler : IRequestHandler<CreateGroupPostComm
 
 			if (saveResult > 0)
 			{
+				var group = await _unitOfWork.Repository<Domain.Entities.Group>().GetByIdAsync(request.GroupId);
+				// Tạo notification
+				await _activityEventPublisher.PublishCreatePostInGroupAsync(newGroupPost.UserId, group.CreatedBy, newGroupPost.GroupId, newGroupPost.Id);
+
 				return Result<Guid>.Success(newGroupPost.Id);
 			}
 			else

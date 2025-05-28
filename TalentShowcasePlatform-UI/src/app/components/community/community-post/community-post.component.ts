@@ -14,6 +14,7 @@ import { GroupModel } from '../../../models/GroupModel';
 import { SubjectService } from '../../../services/subject.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { BaseComponent } from '../../base-component/base-component.component';
+import { NotificationService } from '../../../services/notifications/notification.service';
 
 @Component({
   selector: 'app-community-post',
@@ -37,11 +38,12 @@ export class CommunityPostComponent extends BaseComponent {
   constructor(
     private route: ActivatedRoute,
     authStateService: AuthStateService,
+    notiService: NotificationService,
     private communityService: CommunityService,
     private cPostService: CommunityPostService,
     private subjectService: SubjectService,
   ) {
-    super(authStateService);
+    super(authStateService, notiService);
     this.commentForm = new FormGroup({
       content: new FormControl('', Validators.required)
     });
@@ -165,8 +167,8 @@ export class CommunityPostComponent extends BaseComponent {
   loadPost(id: any) {
     this.communityService.getCommunityPostDetail(id).subscribe({
       next: (res) => {
-        this.postData = res?.data;
-        this.groupId = res?.data?.groupId;
+        this.postData = Array.isArray(res.data) ? res.data[0] : res.data;
+        this.groupId = this.postData.groupId;
         console.log('Post Data:', this.postData);
         console.log("Group ID:", this.groupId);
         this.isJoined = this.joinedGroupId.includes(this.groupId);
@@ -206,7 +208,7 @@ export class CommunityPostComponent extends BaseComponent {
   loadCommnuity(id: any) {
     this.communityService.getCommunity(id).subscribe({
       next: (res) => {
-        this.groupData = res?.data;
+        this.groupData = Array.isArray(res.data) ? res.data[0] : res.data;
         console.log('Group Data:', this.groupData);
       },
       error: (error) => {

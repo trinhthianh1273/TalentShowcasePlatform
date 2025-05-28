@@ -2,12 +2,12 @@ import { Component, Input, OnInit } from '@angular/core';
 import { SharedModule } from '../../../../shared/shared.module';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
-import { UserData } from '../../../../interfaces/interface';
 import { DataService } from '../../../../services/data.service';
 import { UserService } from '../../../../services/user.service';
 import { ToastrService } from 'ngx-toastr';
 import { Enviroment } from '../../../../../environment';
 import { AuthStateService } from '../../../../services/auth/auth-state.service';
+import { UserDataModel } from '../../../../models/UserDataModel';
 
 @Component({
   selector: 'app-basic-information',
@@ -19,7 +19,7 @@ import { AuthStateService } from '../../../../services/auth/auth-state.service';
 })
 export class BasicInformationComponent implements OnInit {
   @Input() userId: any;
-  @Input() currentUser: UserData['data'] | null = null; // Cập nhật kiểu dữ liệu
+  @Input() currentUser: UserDataModel | null = null; // Cập nhật kiểu dữ liệu
 
   profileForm!: FormGroup;
   isEditing = false;
@@ -121,7 +121,7 @@ export class BasicInformationComponent implements OnInit {
           next: (res) => {
             this.authStateService.setCurrentUser(res.data);
             console.log("new user: ", res.data);
-            this.avatarUrl = this.avatarPath + res.data?.avatarUrl; // cập nhật UI
+            // this.avatarUrl = this.avatarPath + res.data.avatarUrl; // cập nhật UI
             this.toastr.success('Avatar updated successfully');
           },
           error: (err) => {

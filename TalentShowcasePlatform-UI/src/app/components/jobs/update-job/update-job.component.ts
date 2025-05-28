@@ -8,6 +8,7 @@ import { SharedModule } from '../../../shared/shared.module';
 import { JobService } from '../../../services/job/job.service';
 import { DataService } from '../../../services/data.service';
 import { Router } from '@angular/router';
+import { NotificationService } from '../../../services/notifications/notification.service';
 
 @Component({
   selector: 'app-update-job',
@@ -33,12 +34,13 @@ export class UpdateJobComponent extends BaseComponent implements OnInit {
 
   constructor(
     authStateService: AuthStateService,
+    notiService: NotificationService,
     private fb: FormBuilder,
     private jobService: JobService,
     private dataService: DataService,
     private router: Router
   ) {
-    super(authStateService);
+    super(authStateService, notiService);
     this.jobForm = this.fb.group({
       title: ['', Validators.required],
       companyName: [''],

@@ -17,8 +17,6 @@ public class UserDto
 	public string AvatarUrl { get; set; }
 	public string Location { get; set; }
 	public Guid RoleId { get; set; }
+	public string RoleName { get; set; }
 	public DateTime CreatedAt { get; set; }
-
-	// Navigation Properties DTOs (selectively include what you need to avoid cycles/overloading)
-	public Role Role { get; set; }
 }

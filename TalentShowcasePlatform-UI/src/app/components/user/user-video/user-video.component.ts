@@ -3,13 +3,13 @@ import { VideosService } from '../../../services/videos.service';
 import { AuthStateService } from '../../../services/auth/auth-state.service';
 import { ToastrService } from 'ngx-toastr';
 import { ActivatedRoute, Router } from '@angular/router';
-import { LoginResponse } from '../../../interfaces/interface';
-import { Subscription } from 'rxjs';
 import { Enviroment } from '../../../../environment';
 import { DataService } from '../../../services/data.service';
 import { SharedModule } from '../../../shared/shared.module';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { BaseComponent } from '../../base-component/base-component.component';
+import { VideoDataModel } from '../../../models/VideoDataModel';
+import { NotificationService } from '../../../services/notifications/notification.service';
 
 @Component({
   selector: 'app-user-video',
@@ -23,7 +23,7 @@ export class UserVideoComponent extends BaseComponent implements OnInit {
 
   src = Enviroment.videoPath;
   videoId: any;
-  videoData: any = null;
+  videoData: VideoDataModel | null = null;
   categories: any[] = [];
   commentVideo: any[] = [];
 
@@ -36,13 +36,14 @@ export class UserVideoComponent extends BaseComponent implements OnInit {
   constructor(
     private videoService: VideosService,
     authStateService: AuthStateService,
+    notiService: NotificationService,
     private dataService: DataService,
     private toastr: ToastrService,
     private routeActive: ActivatedRoute,
     private fb: FormBuilder,
     private router: Router
   ) {
-    super(authStateService);
+    super(authStateService, notiService);
   }
   ngOnInit(): void {
     this.videoId = this.routeActive.snapshot.queryParamMap.get('id');
@@ -130,7 +131,9 @@ export class UserVideoComponent extends BaseComponent implements OnInit {
 
   onTogglePublic(event: any) {
     console.log('Checkbox được chọn:', event.checked);
-    this.videoData.IsPrivate = !this.videoData.IsPrivate; // Đảo ngược trạng thái isPublic
+    if (this.videoData?.IsPrivate) {
+      this.videoData.IsPrivate = !this.videoData.IsPrivate; // Đảo ngược trạng thái isPublic
+    }
     console.log('Trạng thái mới:', this.videoData?.IsPrivate); // Thay đổi trạng thái nếu cần
   }
 
@@ -155,12 +158,12 @@ export class UserVideoComponent extends BaseComponent implements OnInit {
   formInit() {
     //Tạo form phù hợp backend, nhưng hiển thị isPublic
     this.updateVideoForm = new FormGroup({
-      id: new FormControl(this.videoData.id || null),
-      title: new FormControl(this.videoData.title, Validators.required),
-      description: new FormControl(this.videoData.description, Validators.required),
-      url: new FormControl(this.videoData.url),
-      categoryId: new FormControl(this.videoData.categoryId),
-      IsPrivate: new FormControl(this.videoData.isPrivate) // để hiển thị checkbox
+      id: new FormControl(this.videoData?.id || null),
+      title: new FormControl(this.videoData?.title, Validators.required),
+      description: new FormControl(this.videoData?.description, Validators.required),
+      url: new FormControl(this.videoData?.url),
+      categoryId: new FormControl(this.videoData?.categoryId),
+      IsPrivate: new FormControl(this.videoData?.IsPrivate ?? false) // để hiển thị checkbox
     });
   }
 

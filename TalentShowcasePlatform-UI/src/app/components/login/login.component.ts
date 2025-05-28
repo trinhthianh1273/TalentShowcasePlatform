@@ -2,9 +2,9 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { SharedModule } from '../../shared/shared.module';
 import { HttpClient } from '@angular/common/http';
-import { LoginResponse } from '../../interfaces/interface';
 import { AuthService } from '../../services/auth/auth.service';
 import { AuthStateService } from '../../services/auth/auth-state.service';
+import { CurrentUserModel } from '../../models/CurrentUserModel';
 
 @Component({
   selector: 'app-login',
@@ -16,14 +16,15 @@ import { AuthStateService } from '../../services/auth/auth-state.service';
 })
 export class LoginComponent implements OnInit {
   @Output() closed = new EventEmitter<void>();
-  @Output() loginSuccess = new EventEmitter<LoginResponse['data']>(); // Phát ra chỉ phần data
+  @Output() loginSuccess = new EventEmitter<CurrentUserModel>(); // Phát ra chỉ phần data
   isVisible: boolean = false; // Thêm biến trạng thái hiển thị
 
   // for login
   loginForm!: FormGroup;
   errorMessage: string = '';
   isLoading: boolean = false;
-  LoginResponse!: any;
+
+  loginResponeData: CurrentUserModel | null = null;
 
   constructor(
     private http: HttpClient,
@@ -68,14 +69,15 @@ export class LoginComponent implements OnInit {
           next: (response) => {
             console.log("đang thực hiện đăng nhập");
             this.isLoading = false;
-            if (response.succeeded && response.data?.token) {
+            this.loginResponeData = Array.isArray(response.data) ? response.data[0] : response.data; // Lưu dữ liệu người dùng từ phản hồi
+            if ( this.loginResponeData?.token) {
               this.authStateService.setLoggedIn(true); // Cập nhật trạng thái đăng nhập
               this.authStateService.setCurrentUser(response.data); // Cập nhật thông tin người dùng
 
-              this.loginSuccess.emit(response.data); // Phát ra dữ liệu người dùng
+              this.loginSuccess.emit( this.loginResponeData); // Phát ra dữ liệu người dùng
               alert(response.messages?.[0] || 'Đăng nhập thành công!'); // Hiển thị thông báo thành công
-              localStorage.setItem('authToken', response.data.token);
-              localStorage.setItem('currentUser', JSON.stringify(response.data));
+              localStorage.setItem('authToken',  this.loginResponeData.token);
+              localStorage.setItem('currentUser', JSON.stringify( this.loginResponeData));
 
               // gửi thông tin user
               //this.SDService.sendUser(response.data);

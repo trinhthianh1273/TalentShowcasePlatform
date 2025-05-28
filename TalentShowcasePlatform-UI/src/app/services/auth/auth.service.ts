@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Enviroment } from '../../../environment';
 import { HttpClient } from '@angular/common/http';
-import { LoginResponse } from '../../interfaces/interface';
+import { ReceivedDataModel } from '../../models/ReceivedDataMode';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +13,7 @@ export class AuthService {
     private http: HttpClient
   ) { }
 
-  authenticationLogin(value: any) { 
-    return this.http.post<LoginResponse>(`${this.baseURL}/api/auth/login`, value);  
+  authenticationLogin(value: any): Observable<ReceivedDataModel> { 
+    return this.http.post<ReceivedDataModel>(`${this.baseURL}/api/auth/login`, value);  
   }
 }

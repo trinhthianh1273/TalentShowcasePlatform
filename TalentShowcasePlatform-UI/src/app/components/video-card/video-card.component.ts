@@ -1,5 +1,6 @@
 import { AfterViewInit, Component, ElementRef, Input, OnInit } from '@angular/core';
 import { SharedModule } from '../../shared/shared.module';
+import { Enviroment } from '../../../environment';
 
 @Component({
   selector: 'app-video-card',
@@ -10,7 +11,7 @@ import { SharedModule } from '../../shared/shared.module';
   styleUrl: './video-card.component.css'
 })
 export class VideoCardComponent implements OnInit {
-  videoPath = 'https://localhost:7172/api/Videos/video-path/';
+  videoPath = Enviroment.videoPath;
   @Input() videoData!: any;
   @Input() src!: string;
   visible = false;

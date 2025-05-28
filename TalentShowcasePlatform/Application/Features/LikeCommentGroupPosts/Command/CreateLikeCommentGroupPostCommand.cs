@@ -18,11 +18,13 @@ public class CreateLikeCommentGroupPostCommandHandler : IRequestHandler<CreateLi
 {
 	private readonly IUnitOfWork _unitOfWork;
 	private readonly IMapper _mapper;
+	private readonly IActivityEventPublisher _activityEventPublisher;
 
-	public CreateLikeCommentGroupPostCommandHandler(IUnitOfWork unitOfWork, IMapper mapper)
+	public CreateLikeCommentGroupPostCommandHandler(IUnitOfWork unitOfWork, IMapper mapper, IActivityEventPublisher activityEventPublisher)
 	{
 		_unitOfWork = unitOfWork;
 		_mapper = mapper;
+		_activityEventPublisher = activityEventPublisher;
 	}
 
 	public async Task<Result<LikeCommentGroupPostDto>> Handle(CreateLikeCommentGroupPostCommand request, CancellationToken cancellationToken)
@@ -42,10 +44,21 @@ public class CreateLikeCommentGroupPostCommandHandler : IRequestHandler<CreateLi
 		};
 
 		await _unitOfWork.Repository<LikeCommentGroupPost>().AddAsync(like);
-		await _unitOfWork.Save(cancellationToken);
+		var saveResult = await _unitOfWork.Save(cancellationToken);
 
-		var dto = _mapper.Map<LikeCommentGroupPostDto>(like);
-		return Result<LikeCommentGroupPostDto>.Success(dto);
+		if (saveResult > 0)
+		{
+			var comment = await _unitOfWork.Repository<CommentGroupPost>().GetByIdAsync(request.CommentGroupPostId);
+			// Tạo notification
+			await _activityEventPublisher.PublishLikeCommentGroupPostAsync(like.UserId, comment.UserId, comment.GroupPostId, like.Id);
+
+			var dto = _mapper.Map<LikeCommentGroupPostDto>(like);
+			return Result<LikeCommentGroupPostDto>.Success(dto);
+		}
+		else
+		{
+			return Result<LikeCommentGroupPostDto>.Failure("Không thể like comment.");
+		}
 	}
 }
 

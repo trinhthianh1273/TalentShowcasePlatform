@@ -14,20 +14,17 @@ export const routes: Routes = [
     { path: '', loadComponent: () => import('./components/home/home.component').then(m => m.HomeComponent) },
     {
         path: 'home', loadComponent: () => import('./components/home/home.component').then(m => m.HomeComponent),
-        children: [
-
-        ]
+        children: []
     },
     { path: 'login', loadComponent: () => import('./components/login/login.component').then(m => m.LoginComponent) },
     { path: 'register', loadComponent: () => import('./components/register/register.component').then(m => m.RegisterComponent) },
-    { path: 'video', loadComponent: () => import('./components/video-detail/video-detail.component').then(m => m.VideoDetailComponent) },
-    {
-        path: 'library/:id', loadComponent: () => import('./components/user/library.component').then(m => m.LibraryComponent),
-    },
+    { path: 'video/:id', loadComponent: () => import('./components/video-detail/video-detail.component').then(m => m.VideoDetailComponent) },
+    { path: 'library/:id', loadComponent: () => import('./components/user/library.component').then(m => m.LibraryComponent),},
     {
         path: 'video-analysis',
         loadComponent: () => import('./components/user/user-video/user-video.component').then(m => m.UserVideoComponent)
     },
+    { path: "personal/:id", loadComponent: () => import('./components/personal/personal.component').then(m => m.PersonalComponent) },
     { path: 'profile/:id', loadComponent: () => import('./components/user-profile/user-profile.component').then(m => m.UserProfileComponent) },
     { path: 'profile-edit/:id', loadComponent: () => import('./components/user-profile/edit-profile/edit-profile.component').then(m => m.EditProfileComponent) },
     {

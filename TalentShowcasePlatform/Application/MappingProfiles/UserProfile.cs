@@ -14,7 +14,8 @@ public class UserProfile : Profile
 {
 	public UserProfile()
 	{
-		CreateMap<User, UserDto>();
+		CreateMap<User, UserDto>()
+			.ForMember(dest => dest.RoleName, opt => opt.MapFrom(src => src.Role.Name)); ;
 		CreateMap<CreateUserCommand, User>();
 		CreateMap<UpdateUserCommand, User>();
 

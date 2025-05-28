@@ -5,7 +5,7 @@
             <span class="uppercase mb-3 text-[11px]">
                 Basic Information
             </span>
-            <img [src]="avatarUrl" alt="User Avatar" class="w-28 h-28 mb-2" width="112" height="112" />
+            <img [src]="avatarPath + currentUser?.avatarUrl" alt="User Avatar" class="w-28 h-28 mb-2" width="112" height="112" />
             <input type="file" hidden (change)="onFileSelected($event)" #fileInput />
             <button (click)="fileInput.click()"
                 class="text-blue-600 text-xs font-normal hover:underline focus:outline-none">

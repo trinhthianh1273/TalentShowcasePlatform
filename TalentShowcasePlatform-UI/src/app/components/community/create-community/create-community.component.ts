@@ -9,6 +9,7 @@ import { HttpClient } from '@angular/common/http';
 import { ToastrService } from 'ngx-toastr';
 import { SharedModule } from '../../../shared/shared.module';
 import { BaseComponent } from '../../base-component/base-component.component';
+import { NotificationService } from '../../../services/notifications/notification.service';
 
 @Component({
   selector: 'app-create-community',
@@ -32,11 +33,12 @@ export class CreateCommunityComponent extends BaseComponent {
     private subjectService: SubjectService,
     private router: Router,
     authStateService: AuthStateService,
+    notiService: NotificationService,
     private fb: FormBuilder,
     private toastr: ToastrService,
     private http: HttpClient
   ) {
-    super(authStateService);
+    super(authStateService, notiService);
     this.form = this.fb.group({
       name: ['', [Validators.required, Validators.maxLength(50)]],
       description: ['', [Validators.required, Validators.maxLength(500)]],

@@ -1,6 +1,4 @@
 import { Component, ElementRef, Input, input, OnInit, ViewChild } from '@angular/core';
-import { LoginResponse } from '../../interfaces/interface';
-import { Subscription, take } from 'rxjs';
 import { HeaderComponent } from '../header/header.component';
 import { SharedModule } from '../../shared/shared.module';
 import { AuthStateService } from '../../services/auth/auth-state.service';
@@ -10,6 +8,7 @@ import { VideosService } from '../../services/videos.service';
 import { ToastrService } from 'ngx-toastr';
 import { ActivatedRoute, Route, Router, RouterLinkActive } from '@angular/router';
 import { BaseComponent } from '../base-component/base-component.component';
+import { NotificationService } from '../../services/notifications/notification.service';
 
 @Component({
   selector: 'app-user',
@@ -25,7 +24,7 @@ export class LibraryComponent extends BaseComponent implements OnInit {
   @ViewChild('fileInput') fileInput!: ElementRef<HTMLInputElement>;
 
   videoList: any[] = []; // Khai báo biến videoList để lưu trữ danh sách video
-  videoPath = 'https://localhost:7172/api/Videos/video-path/';
+  
 
 
   isOpenDropdownAnalysisVideo: boolean = false;
@@ -38,13 +37,14 @@ export class LibraryComponent extends BaseComponent implements OnInit {
 
   constructor(
     authStateService: AuthStateService,
+    notiService: NotificationService,
     private subjectService: SubjectService,
     private videoService: VideosService,
     private toastr: ToastrService,
     private route: Router,
     private routeActive: ActivatedRoute
   ) {
-    super(authStateService);
+    super(authStateService, notiService);
   }
 
   ngOnInit(): void {

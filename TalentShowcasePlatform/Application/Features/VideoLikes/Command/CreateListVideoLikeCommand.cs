@@ -21,11 +21,13 @@ public class CreateListVideoLikeCommandHandler : IRequestHandler<CreateListVideo
 {
 	private readonly IUnitOfWork _unitOfWork;
 	private readonly IMapper _mapper;
+	private readonly IActivityEventPublisher _activityEventPublisher;
 
-	public CreateListVideoLikeCommandHandler(IUnitOfWork unitOfWork, IMapper mapper)
+	public CreateListVideoLikeCommandHandler(IUnitOfWork unitOfWork, IMapper mapper, IActivityEventPublisher activityEventPublisher	)
 	{
 		_unitOfWork = unitOfWork;
 		_mapper = mapper;
+		_activityEventPublisher = activityEventPublisher;
 	}
 
 	public async Task<Result<List<VideoLikeDto>>> Handle(CreateListVideoLikeCommand request, CancellationToken cancellationToken)
@@ -37,8 +39,7 @@ public class CreateListVideoLikeCommandHandler : IRequestHandler<CreateListVideo
 			{
 				Id = Guid.NewGuid(),
 				VideoId = item.VideoId,
-				UserId = item.UserId,
-				LikedAt = item.LikedAt
+				UserId = item.UserId
 			};
 			likes.Add(videoLike);
 		} 
@@ -48,6 +49,7 @@ public class CreateListVideoLikeCommandHandler : IRequestHandler<CreateListVideo
 
 		if (saveResult > 0)
 		{
+			
 			var videoLikeDtos = _mapper.Map<List<VideoLikeDto>>(likes);
 			return Result<List<VideoLikeDto>>.Success(videoLikeDtos, "Like Successfully");
 		}

@@ -1,0 +1,168 @@
+<div class="bg-[#f4f7f9] text-[#1a1a1a]">
+    <!-- Navbar -->
+    <app-header [isSidebarOpen]="false"></app-header>
+    <!-- Banner Image -->
+    <!-- <div class="w-full h-28  overflow-hidden bg-black">
+        <img alt="Black and white abstract banner image with horizontal blurred streaks"
+            class="w-full h-full object-cover" height="256"
+            src="https://storage.googleapis.com/a1aa/image/4248a852-8039-4210-aac8-473ac1b33d1c.jpg" width="1920" />
+    </div> -->
+
+    <!-- Main Content -->
+    <main class="w-full mx-auto px-6 py-8 flex flex-col md:flex-row md:space-x-8">
+        <!-- Profile Card -->
+        <section class="bg-white rounded-xl shadow-md p-8 w-full max-w-md mb-8 md:mb-0 relative">
+            <button aria-label="Share profile" class="absolute top-6 right-6 text-gray-600 hover:text-gray-900 text-lg">
+                <i class="fas fa-share-alt">
+                </i>
+            </button>
+            <div class="flex flex-col items-center space-y-4">
+                <div
+                    class="w-[120px] h-[120px] rounded-full bg-white flex items-center justify-center overflow-hidden border border-gray-200">
+                    <img [src]="avatarPath + personalUser?.avatarUrl" alt="User Avatar"
+                        class="max-w-full max-h-full object-contain" width="120" height="120" />
+                </div>
+                <h1 class="text-2xl font-semibold">
+                    {{ personalUser?.fullName ?? personalUser?.userName }}
+                </h1>
+                <div class="flex items-center space-x-2 text-gray-700 text-sm">
+                    <i class="fas fa-map-marker-alt text-sm">
+                    </i>
+                    <span>
+                        {{ personalUser?.location ?? 'Unknown Location' }}
+                    </span>
+                </div>
+                <!-- <p class="text-gray-600 text-sm italic">
+                    she/her
+                </p> -->
+                <p class="text-gray-800 text-sm text-center max-w-xs">
+                    {{ personalUser?.bio ?? 'No bio available. This user has not set a bio yet.' }}
+                </p>
+                <div class="w-full max-w-xs space-y-4">
+                    <a class="flex items-center space-x-3 text-gray-700 hover:text-gray-900 text-sm" href="#">
+                        <img alt="Behance icon" class="w-4 h-4" height="16"
+                            src="https://storage.googleapis.com/a1aa/image/e181226e-de1d-4bbf-993b-4082be429546.jpg"
+                            width="16" />
+                        <span>
+                            Talent
+                        </span>
+                    </a>
+                    <!-- <a class="flex items-center space-x-3 text-gray-700 hover:text-gray-900 text-sm" href="#">
+                        <i class="fab fa-instagram text-lg">
+                        </i>
+                        <span>
+                            Instagram
+                        </span>
+                    </a> -->
+                </div>
+                <div class="flex space-x-4 w-full max-w-xs mt-6">
+                    <button type="button" (click)="handleFollow()"
+                        class="flex items-center justify-center space-x-2 border border-gray-300 rounded-lg py-2 w-full text-sm font-semibold hover:bg-gray-100 transition">
+                        <i class="fas fa-plus"></i>
+                        <span>
+                            Follow
+                        </span>
+                    </button>
+                    <button type="button" (click)="handleMessage()"
+                        class="flex items-center justify-center space-x-2 bg-[#2d9c6a] hover:bg-[#238153] text-white rounded-lg py-2 w-full text-sm font-semibold">
+                        <i class="fas fa-envelope"></i>
+                        <span>
+                            Message
+                        </span>
+                    </button>
+                </div>
+            </div>
+        </section>
+        <!-- Videos Section -->
+        <section class="flex-1">
+            <h2 class="text-xl font-semibold mb-6">
+                {{videoOfUser.length}} videos
+            </h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <article *ngFor="let item of videoOfUser, let i = index" class="space-y-2"
+                    (click)="onOpenVideoModal(item, i)">
+                    <!-- <app-video-card [videoData]="item" [src]="item.url ?? ''"></app-video-card> -->
+                    <div class="relative rounded-md overflow-hidden flex-shrink-0 md:block md:w-full cursor-pointer">
+                        <video class="video-js vjs-default-skin" muted playsinline preload="auto"
+                            disablePictureInPicture controlsList="nodownload nofullscreen noremoteplayback" width="100%"
+                            height="auto" [attr.data-setup]="{}">
+                            <source [src]="videoPath + item.url" type="video/mp4"
+                                (loadedmetadata)="onLoadedMetadata($event, item)" />
+                        </video>
+                        <span
+                            class="absolute bottom-1 right-1 bg-black bg-opacity-70 text-white text-[10px] px-1 rounded select-none">
+
+                        </span>
+                    </div>
+                    <!-- <img alt="Black and white photo of a person with mouth covered by a paper strip with the word ART repeated"
+                        class="rounded-lg w-full object-cover aspect-video" height="225"
+                        src="https://storage.googleapis.com/a1aa/image/7afb4eee-243f-4da3-c0c0-a4e0ae4cfd0f.jpg"
+                        width="400" /> -->
+                    <h3 class="text-sm font-semibold text-gray-700">
+                        {{item.title}}
+                    </h3>
+                </article>
+            </div>
+
+        </section>
+    </main>
+    <div *ngIf="showVideoModal" id="video-modal"
+        class="fixed inset-0 z-50 flex h-screen w-full bg-black items-center justify-center">
+        <!-- Left side image -->
+        <div class="flex-1 flex items-center justify-center p-6">
+            <video controls autoplay class="max-w-full max-h-full object-contain rounded-lg bg-black"
+                [src]="videoPath + selectedVideo?.url"></video>
+        </div>
+        <!-- Right side content -->
+        <div class="w-[400px] flex flex-col p-8 relative bg-[#18181b] rounded-lg shadow-lg h-[90vh]">
+            <!-- Close icon top right -->
+            <button aria-label="Close" class="absolute top-4 right-4 text-slate-400 hover:text-white transition text-xl"
+                (click)="onCloseVideoModal()">
+                <i class="fas fa-times fa-lg"></i>
+            </button>
+            <div class="mt-16 flex-1 flex flex-col justify-center items-start">
+                <h1 class="text-2xl font-semibold leading-tight mb-4 text-white">
+                    {{ selectedVideo?.title }}
+                </h1>
+                <p class="font-semibold mb-2 text-slate-400">
+                    {{ selectedVideo?.uploadedAt | date: 'yyyy-MM-dd' }}
+                </p>
+                <div class="text-slate-500 text-sm leading-relaxed overflow-y-auto max-h-[200px] pr-3 mb-4"
+                    style="scrollbar-width: thin; scrollbar-color: #4b5563 transparent;">
+                    <p>
+                        {{ selectedVideo?.description }}
+                    </p>
+                </div>
+            </div>
+            <!-- Bottom navigation -->
+            <div class="flex justify-between pt-6 text-slate-400 font-semibold text-sm select-none">
+                <button class="flex items-center gap-1 transition
+               hover:text-white
+               [cursor-not-allowed]:disabled" [class.opacity-50]="selectedVideoIndex === 0"
+                    [class.cursor-not-allowed]="selectedVideoIndex === 0" [disabled]="selectedVideoIndex === 0"
+                    (click)="onPreviousVideo()">
+                    <i class="fas fa-step-backward"></i>
+                    Previous
+                </button>
+                <button class="flex items-center gap-1 hover:text-white transition
+               [cursor-not-allowed]:disabled" [class.opacity-50]="selectedVideoIndex === videoOfUser.length - 1"
+                    [class.cursor-not-allowed]="selectedVideoIndex === videoOfUser.length - 1"
+                    [disabled]="selectedVideoIndex === videoOfUser.length - 1" (click)="onNextVideo()">
+                    Up next
+                    <i class="fas fa-step-forward"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<div *ngIf="showFeaturePopup" class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
+    <div class="bg-white rounded-lg shadow-lg p-8 w-full max-w-xs text-center">
+        <div class="mb-4 text-gray-600 text-2xl">
+            <i class="fas fa-info-circle"></i>
+        </div>
+        <div class="mb-4 text-gray-800 font-semibold">
+            Chức năng đang hoàn thiện
+        </div>
+        <button class="bg-gray-600 text-white px-4 py-2 rounded mt-4" (click)="onCloseFeaturePopup()">Đóng</button>
+    </div>
+</div>

@@ -31,13 +31,9 @@ public class GetNotificationByIdQueryHandler : IRequestHandler<GetNotificationBy
 
 	public async Task<Result<NotificationDto>> Handle(GetNotificationByIdQuery request, CancellationToken cancellationToken)
 	{
-		var notification = await _unitOfWork.Repository<Notification>()
-			.GetByIdAsync(request.Id, include: q => q.Include(n => n.User));
-
+		var notification = await _unitOfWork.Repository<Notification>().GetByIdAsync(request.Id);
 		if (notification == null)
-		{
-			return Result<NotificationDto>.Failure("Notification not found.");
-		}
+			return Result<NotificationDto>.Failure("Notification not found");
 
 		return Result<NotificationDto>.Success(_mapper.Map<NotificationDto>(notification));
 	}

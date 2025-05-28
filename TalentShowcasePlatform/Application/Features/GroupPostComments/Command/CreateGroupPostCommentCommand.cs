@@ -21,10 +21,12 @@ public record CreateGroupPostCommentCommand : IRequest<Result<Guid>>
 public class CreateGroupPostCommentCommandHandler : IRequestHandler<CreateGroupPostCommentCommand, Result<Guid>>
 {
 	private readonly IUnitOfWork _unitOfWork;
+	private readonly IActivityEventPublisher _activityEventPublisher;
 
-	public CreateGroupPostCommentCommandHandler(IUnitOfWork unitOfWork)
+	public CreateGroupPostCommentCommandHandler(IUnitOfWork unitOfWork, IActivityEventPublisher activityEventPublisher)
 	{
 		_unitOfWork = unitOfWork;
+		_activityEventPublisher = activityEventPublisher;
 	}
 
 	public async Task<Result<Guid>> Handle(CreateGroupPostCommentCommand request, CancellationToken cancellationToken)
@@ -43,6 +45,10 @@ public class CreateGroupPostCommentCommandHandler : IRequestHandler<CreateGroupP
 
 		if (saveResult > 0)
 		{
+			var groupPost = await _unitOfWork.Repository<GroupPost>().GetByIdAsync(request.GroupPostId);
+			// Tạo notification
+			await _activityEventPublisher.PublishCommentGroupPostAsync(newGroupPostComment.UserId, groupPost.UserId, newGroupPostComment.GroupPostId, newGroupPostComment.Id);
+
 			return Result<Guid>.Success(newGroupPostComment.Id);
 		}
 		else

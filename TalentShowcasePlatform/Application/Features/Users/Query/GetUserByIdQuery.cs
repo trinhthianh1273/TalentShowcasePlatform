@@ -3,6 +3,7 @@ using AutoMapper;
 using Domain.Entities;
 using Domain.Interfaces;
 using MediatR;
+using Microsoft.EntityFrameworkCore;
 using Shared.Results;
 using System;
 using System.Collections.Generic;
@@ -30,7 +31,10 @@ public class GetUserByIdQueryHandler : IRequestHandler<GetUserByIdQuery, Result<
 
 	public async Task<Result<UserDto>> Handle(GetUserByIdQuery request, CancellationToken cancellationToken)
 	{
-		var user = await _unitOfWork.Repository<User>().GetByIdAsync(request.Id);
+		var user = await _unitOfWork.Repository<User>().Entities
+						.Where(i => i.Id == request.Id)
+						.Include(i => i.Role)
+						.FirstOrDefaultAsync(cancellationToken);
 
 		if (user == null)
 		{

@@ -10,6 +10,7 @@ import { CategoryModel } from '../../../models/CategoryModel';
 import { DataService } from '../../../services/data.service';
 import { JobDetailComponent } from "../job-detail/job-detail.component";
 import { CreateJobComponent } from '../create-job/create-job.component';
+import { NotificationService } from '../../../services/notifications/notification.service';
 
 @Component({
   selector: 'app-find-job',
@@ -39,11 +40,12 @@ export class FindJobComponent extends BaseComponent implements OnInit {
 
   constructor(
     authStateService: AuthStateService,
+    notiService: NotificationService,
     private subjectService: SubjectService,
     private router: Router,
     private dataService: DataService
   ) {
-    super(authStateService);
+    super(authStateService, notiService);
   }
 
   ngOnInit(): void {

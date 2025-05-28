@@ -9,6 +9,7 @@ import { GroupModel } from '../../../../models/GroupModel';
 import { SubjectService } from '../../../../services/subject.service';
 import { BaseCommnunityComponent } from '../../../base-component/base-community-component';
 import { CommunityService } from '../../../../services/community/community.service';
+import { NotificationService } from '../../../../services/notifications/notification.service';
 
 @Component({
   selector: 'app-create-post',
@@ -37,12 +38,13 @@ export class CreatePostComponent extends BaseCommnunityComponent {
     private subjectService: SubjectService,
     private fb: FormBuilder,
     AuthStateService: AuthStateService,
+    notiService: NotificationService,
     private route: ActivatedRoute,
     private communityPostService: CommunityPostService,
     communityService: CommunityService,
     private router: Router
   ) {
-    super(AuthStateService, communityService);
+    super(AuthStateService, communityService, notiService);
 
     this.postForm = this.fb.group({
       title: ['', [Validators.required, Validators.maxLength(300)]],

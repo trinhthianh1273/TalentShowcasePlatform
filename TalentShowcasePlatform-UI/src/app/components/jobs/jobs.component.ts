@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 import { ReceivedDataModel } from '../../models/ReceivedDataMode';
 import { DataService } from '../../services/data.service';
 import { CategoryModel } from '../../models/CategoryModel';
+import { NotificationService } from '../../services/notifications/notification.service';
 
 @Component({
   selector: 'app-jobs',
@@ -23,12 +24,13 @@ export class JobsComponent extends BaseComponent implements OnInit {
   
   constructor(
     authStateService: AuthStateService,
+    notiService: NotificationService,
     private JobService: JobService,
     private subjectService: SubjectService,
     private dataService: DataService,
     private router: Router
   ) {
-    super(authStateService);
+    super(authStateService, notiService);
   }
   ngOnInit(): void {
     this.getAllJob();

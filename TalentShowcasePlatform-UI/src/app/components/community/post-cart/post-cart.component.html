@@ -23,12 +23,12 @@
         <button aria-label="Upvote"
             class="flex items-center space-x-1 bg-gray-200 rounded-full px-3 py-1 hover:bg-gray-300">
             <i class="far fa-thumbs-up"> </i>
-            <span> {{ PostData.likeCount ?? 0}} </span>
+            <span> {{ PostData.likeCount}} </span>
         </button>
         <button (click)="gotoPost(PostData.id)"  type="button" aria-label="Comments"
             class="flex items-center space-x-1 bg-gray-200 rounded-full px-3 py-1 hover:bg-gray-300">
             <i class="far fa-comment"> </i>
-            <span> {{ PostData.commentCount ?? 0}} </span>
+            <span> {{ PostData.commentCount}} </span>
         </button>
         <!-- <button aria-label="Share"
             class="flex items-center space-x-1 bg-gray-200 rounded-full px-3 py-1 hover:bg-gray-300">

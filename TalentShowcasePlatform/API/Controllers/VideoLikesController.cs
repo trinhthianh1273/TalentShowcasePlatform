@@ -37,6 +37,12 @@ public class VideoLikesController : ControllerBase
 		return await _mediator.Send(new GetAllVideoLikesQuery()); 
 	}
 
+	[HttpGet("check-like/{videoId}/{userId}")]
+	public async Task<ActionResult<Result<Guid>>> CheckVideoLikeByUser(Guid videoId, Guid userId)
+	{
+		return await _mediator.Send(new CheckLikeVideoByUserQuery(userId, videoId));
+	}
+
 
 	[HttpPost]
 	public async Task<ActionResult<Result<Guid>>> CreateVideoLike(CreateVideoLikeCommand command)

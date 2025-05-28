@@ -1,10 +1,14 @@
-<aside id="sidebar"
+<aside id="sidebar" *ngIf="isOpen"
   class="fixed inset-y-0 w-60  border-r border-[#d6dcd4] px-6 py-8 text-sm text-[#0f0f0f] transform -translate-x-full md:translate-x-0 md:flex md:flex-col md:justify-between">
   <div class="mb-10">
-    <a [routerLink]="['/home']" 
+    <a [routerLink]="['/home']"
       class="font-black italic text-3xl select-text cursor-default whitespace-nowrap hover:cursor-pointer">
       Talent
     </a>
+    <!-- Nút đóng sidebar -->
+    <button class="fixed right-0 bg-white w-8 h-8 border rounded-full p-2 shadow" (click)="toggleSidebar()">
+      <i class="fas fa-bars"></i>
+    </button>
   </div>
   <nav class="flex flex-col space-y-4">
     <a [routerLink]="['/home']" aria-current="page"
@@ -19,12 +23,14 @@
       </i>
       Library
     </a>
-    <a  [routerLink]="['/community']"  class="flex items-center gap-3 text-sm font-normal hover:bg-[#d9dee4] rounded-lg px-4 py-3 w-full">
+    <a [routerLink]="['/community']"
+      class="flex items-center gap-3 text-sm font-normal hover:bg-[#d9dee4] rounded-lg px-4 py-3 w-full">
       <i class="fas fa-video text-lg">
       </i>
       Community
     </a>
-    <a [routerLink]="['/job']"  class="flex items-center gap-3 text-sm font-normal hover:bg-[#d9dee4] rounded-lg px-4 py-3 w-full">
+    <a [routerLink]="['/job']"
+      class="flex items-center gap-3 text-sm font-normal hover:bg-[#d9dee4] rounded-lg px-4 py-3 w-full">
       <i class="fas fa-columns text-lg">
       </i>
       Find Job
@@ -38,6 +44,13 @@
   <div class="mt-10 border-t border-[#cbd2db] pt-4">
 
   </div>
+  <!-- <nav class="flex flex-col space-y-4">
+    <a class="flex items-center gap-3 text-sm font-normal hover:bg-[#d9dee4] rounded-lg px-4 py-3 w-full">
+      <i class="fas fa-th-large text-lg">
+      </i>
+      Library
+    </a>
+  </nav> -->
   <button class="flex items-center gap-3 mt-10 text-sm font-normal hover:bg-[#d9dee4] rounded-lg px-4 py-3 w-full">
     <img alt="SP logo icon" class="w-5 h-5" height="20"
       src="https://storage.googleapis.com/a1aa/image/2b7a12a5-c944-4189-b4b0-dc4e1ce98b8b.jpg" width="20" />

@@ -11,7 +11,7 @@ public class VideoLike : BaseEntity
 {
 	public Guid VideoId { get; set; }
 	public Guid UserId { get; set; }
-	public DateTime LikedAt { get; set; }
+	public DateTime LikedAt { get; set; } = DateTime.Now;
 
 	// Navigation Properties
 	public Video Video { get; set; }

@@ -20,10 +20,12 @@ public record RemoveUserFromGroupCommand : IRequest<Result<bool>>
 public class RemoveUserFromGroupCommandHandler : IRequestHandler<RemoveUserFromGroupCommand, Result<bool>>
 {
 	private readonly IUnitOfWork _unitOfWork;
+	private readonly IActivityEventPublisher _activityEventPublisher;
 
-	public RemoveUserFromGroupCommandHandler(IUnitOfWork unitOfWork)
+	public RemoveUserFromGroupCommandHandler(IUnitOfWork unitOfWork, IActivityEventPublisher activityEventPublisher)
 	{
 		_unitOfWork = unitOfWork;
+		_activityEventPublisher = activityEventPublisher;
 	}
 
 	public async Task<Result<bool>> Handle(RemoveUserFromGroupCommand request, CancellationToken cancellationToken)
@@ -43,6 +45,10 @@ public class RemoveUserFromGroupCommandHandler : IRequestHandler<RemoveUserFromG
 
 		if (saveResult > 0)
 		{
+			var groupJoined = await _unitOfWork.Repository<Group>().GetByIdAsync(request.GroupId);
+			// Tạo notification
+			await _activityEventPublisher.PublishOutGroupAsync(groupJoined.CreatedBy, groupJoined.CreatedBy, groupJoined.Id);
+
 			return Result<bool>.Success(true);
 		}
 		else

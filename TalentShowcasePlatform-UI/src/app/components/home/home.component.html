@@ -1,13 +1,22 @@
-
-    <div class="flex min-h-screen mx-auto relative h-full">
+<div class="w-full flex min-h-screen relative h-full">
 
   <!-- Overlay for sidebar on mobile -->
   <div id="overlay" class="fixed inset-0 bg-black bg-opacity-30 z-20 hidden md:hidden"></div>
+  
+  <!-- Sidebar -->
+  <app-aside-left [userId]="userId" [isOpen]="isSidebarOpen" (onToggle)="toggleSidebar()">
+  </app-aside-left>
+
   <!-- Main content -->
-  <main class="flex-1 px-4 overflow-y-auto scrollbar-thin">
-    
+  <main
+   [ngClass]="{
+      'ml-60': isSidebarOpen,
+      'ml-0': !isSidebarOpen
+    }"
+     class="w-full px-4 overflow-y-auto scrollbar-thin">
+
     <!-- Top bar -->
-    <app-header ></app-header>
+    <app-header [isSidebarOpen]="isSidebarOpen" (onToggle)="toggleSidebar()">></app-header>
     <div class="px-6">
       <!-- Results count and sort -->
       <section class="mt-6 flex flex-wrap items-center justify-between gap-4">
@@ -59,13 +68,6 @@
         <article *ngFor="let video of videoList" (click)="navigateToDetail(video.id)"
           class="flex flex-col md:block space-y-1 cursor-pointer select-text">
           <app-video-card [videoData]="video" [src]="video.url"></app-video-card>
-          <!-- <div class="relative rounded-md overflow-hidden flex-shrink-0 md:block md:w-full">
-            
-            <span
-              class="absolute bottom-1 right-1 bg-black bg-opacity-70 text-white text-[10px] px-1 rounded select-none">
-              {{ video.duration || 'Loading...' }}
-            </span>
-          </div> -->
           <div class="flex items-center space-x-2 text-xs text-[#6b6b6b] mt-2 md:mt-0">
             <img alt="Peter Moussa profile picture, circular avatar with letter P on gray background"
               class="w-5 h-5 rounded-full object-cover" height="20"
@@ -85,8 +87,7 @@
       </section>
     </div>
   </main>
-  <!-- Sidebar -->
-  <app-aside-left [userId]="userId"></app-aside-left>
+
   <!-- Search bar overlay for mobile -->
   <div id="searchOverlay" class="fixed inset-0 bg-black bg-opacity-30 z-20 hidden"></div>
   <div id="searchBarMobile" class="fixed top-0 left-0 right-0 z-30 p-4 bg-white shadow-md rounded-b-md hidden">
